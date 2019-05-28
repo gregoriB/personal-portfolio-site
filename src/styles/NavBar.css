@@ -1,0 +1,45 @@
+.nav-bar {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* align-items: center; */
+    width: 100px;
+    /* height: 100%;s */
+    background-color: black;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    padding: 1rem;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.link {
+    margin: 1rem 0;
+}
+
+.links div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200%;
+}
+
+.home {
+    margin-top: 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.github {
+    margin-top: 200%;
+    /* margin-bottom: 5rem; */
+}

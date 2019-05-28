@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext } from 'react';
+import { StateContext } from './contexts/StateContext';
+import { Route, Switch } from 'react-router-dom';
+
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import AboutMe from './components/AboutMe';
+import Projects from './components/Projects';
+import ContactMe from './components/ContactMe';
+
 import './App.css';
 
 function App() {
+  const state = useContext(StateContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <NavBar />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/aboutMe' component={AboutMe} />
+        <Route exact path='/projects' component={Projects} />
+        <Route exact path='/contactMe' component={ContactMe} />
+      </Switch>
     </div>
-  );
+  )
 }
 
 export default App;
