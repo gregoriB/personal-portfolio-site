@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { StateContext } from './contexts/StateContext';
+import React from 'react';
+// import { StateContext } from './contexts/StateContext';
 import { Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
@@ -11,7 +11,6 @@ import ContactMe from './components/ContactMe';
 import './App.css';
 
 function App() {
-  const state = useContext(StateContext);
 
   return (
     <div className='app'>

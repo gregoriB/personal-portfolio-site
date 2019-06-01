@@ -1,13 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React from 'react';
 import Project from './Project';
-import { StateContext } from '../contexts/StateContext';
+// import { StateContext } from '../contexts/StateContext';
+import projectData from '../helpers/projectData';
 
 export default function Projects() {
-    const state = useContext(StateContext);
-    const projects = state.projects.map((project, index ) => {
+
+    const projectsMapped = projectData.map((project, index ) => {
         return (
             <Project 
-                name={project}
+                name={project.name}
+                image={project.image}
                 index={index}
                 key={index}
             />
@@ -17,7 +19,7 @@ export default function Projects() {
     return (
         <div className='content'>
             <div className='projects-page'>
-                {projects}
+                {projectsMapped}
             </div>
         </div>
     )

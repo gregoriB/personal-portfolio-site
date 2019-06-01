@@ -3,9 +3,6 @@ body {
   margin: 0;
 }
 
-html {
-  /* height: 100vh; */
-}
 
 .app {
   display: flex;
@@ -17,3 +14,7 @@ html {
   margin: 0 auto;
 }
 
+img {
+  max-width: 50px;
+  max-height: 50px;
+}

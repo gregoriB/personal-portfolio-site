@@ -14,7 +14,7 @@ export default function navBar() {
                     <Link className='link projects' to='projects'>Projects</Link>
                     <Link className='link contact-me' to='contactMe'>Contact Me</Link>
                 </div>
-                <a className='github' href='https://github.com/gregoriB?tab=repositories' target="_blank">My Github</a>
+                <a className='github' href='https://github.com/gregoriB?tab=repositories' target="_blank" rel="noopener noreferrer">My Github</a>
             </div>
         </div>
     )
