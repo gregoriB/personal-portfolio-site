@@ -3,13 +3,13 @@
     flex-direction: column;
     justify-content: center; */
     /* align-items: center; */
-    width: 100px;
+    width: 120px;
     /* height: 100%;s */
     background-color: black;
     /* position: fixed;
     top: 0;
     left: 0; */
-    padding: 1rem;
+    padding: 0;
 }
 
 .links {
@@ -20,14 +20,11 @@
     height: 100%;
 }
 
-.link {
-    margin: 1rem 0;
-}
-
 .links div {
     display: flex;
     flex-direction: column;
     margin-top: 200%;
+    width: 100%;
 }
 
 .home {
@@ -37,6 +34,11 @@
 a {
     color: white;
     text-decoration: none;
+    /* background: red; */
+    width: 100%;
+    text-align: center;
+    /* height: 2rem; */
+    padding: 1rem 0;
 }
 
 .github {

@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { StateContext } from '../contexts/StateContext';
 
-export default function Project(props) {
-    console.log(props.image)
-    const pathToImages = require.context('../images', true);
+function Project(props) {
+    const state = useContext(StateContext);
+
+    const handleClick = () => {
+        state.setModalState(!state.isModalOpen);
+        state.setCurrentProject(props.index)
+    }
+
     return (
-        <div className='project'>
+        <div className='project' onClick={handleClick}>
             {props.name}
-            <img src={pathToImages(`${props.image}`, true)} alt={props.name} />
+            <img src={require(`../images/${props.image}`)} alt={props.name} />
         </div>
     );
 }
+
+export default Project;

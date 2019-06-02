@@ -1,0 +1,85 @@
+.project-modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.349);
+    padding-top: 2rem;
+}
+
+.modal-content {
+    margin: 0 auto;
+    width: 70%;
+    height: 82vh;
+    padding: 2rem;
+    padding-top: 0;
+    background: rgb(104, 0, 0);
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    display: block;
+}
+
+.project-modal .content {
+    margin: 2rem auto;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+span {
+    position: relative;
+    top: 0;
+    right: 0;
+    float: right;
+    /* padding: 0 2rem; */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.modal p {
+    width: 70%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.flex-container img {
+      max-width: 70%;
+      max-height: 70%;
+  }

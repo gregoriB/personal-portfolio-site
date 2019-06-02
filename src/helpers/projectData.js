@@ -1,8 +1,8 @@
-const projects = [
+const projectData = [
     {
         name: "The Verge Top Stories API Site",
         date: "September 12th, 2018",
-        image: "/theVerge-top-stories.jpg",
+        image: "theVerge-top-stories.jpg",
         linkSite: "https://theverge-top-stories.herokuapp.com/",
         linkRepo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
         desc: `
@@ -138,4 +138,4 @@ const projects = [
     }
 ]
 
-export default projects;
+export default projectData;
