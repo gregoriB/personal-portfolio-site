@@ -18,7 +18,7 @@ function NavBar() {
                     }}
                     name='Home' 
                     className='link home' 
-                    to='home'
+                    to='Home'
                     onClick={handleSetCurrentPage}
                 >
                     Home
@@ -26,11 +26,11 @@ function NavBar() {
                 <div>
                     <Link 
                         style={{
-                            background: state.currentPage === 'About Me' && 'red'
+                            background: state.currentPage === 'About-Me' && 'red'
                         }}
-                        name='About Me' 
+                        name='About-Me' 
                         className='link about-me' 
-                        to='aboutMe'
+                        to='About-Me'
                         onClick={handleSetCurrentPage}
                     >
                         About Me
@@ -41,18 +41,18 @@ function NavBar() {
                         }}
                         name='Projects' 
                         className='link projects' 
-                        to='projects'
+                        to='Projects'
                         onClick={handleSetCurrentPage}
                     >
                         Projects
                     </Link>
                     <Link 
                         style={{
-                            background: state.currentPage === 'Contact Me' && 'red'
+                            background: state.currentPage === 'Contact-Me' && 'red'
                         }}
-                        name='Contact Me' 
+                        name='Contact-Me' 
                         className='link contact-me' 
-                        to='contactMe'
+                        to='Contact-Me'
                         onClick={handleSetCurrentPage}
                     >
                         Contact Me

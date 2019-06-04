@@ -11,16 +11,15 @@ import ContactMe from './components/ContactMe';
 import './App.css';
 
 function App() {
-
   return (
     <div className='app'>
       <NavBar />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/home' component={Home} />
-        <Route exact path='/aboutMe' component={AboutMe} />
-        <Route exact path='/projects' component={Projects} />
-        <Route exact path='/contactMe' component={ContactMe} />
+        <Route exact path='/Home' component={Home} />
+        <Route exact path='/About-Me' component={AboutMe} />
+        <Route exact path='/Projects' component={Projects} />
+        <Route exact path='/Contact-Me' component={ContactMe} />
       </Switch>
     </div>
   )

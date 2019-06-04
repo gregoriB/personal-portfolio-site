@@ -43,7 +43,7 @@ a {
     margin: 0 auto;
 }
 
-span {
+.close-modal {
     position: relative;
     top: 0;
     right: 0;

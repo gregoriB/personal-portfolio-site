@@ -18,7 +18,7 @@ function ModalProject() {
         && 
         <div className='modal project-modal' onClick={(e) => handleCloseModal(e)} >
             <div className='modal-content' >
-                <span onClick={handleCloseModal}>x</span>
+                <span className='close-modal'onClick={handleCloseModal}>x</span>
                 <div className='content'>
                     <div className='flex-container'>
                         <h1>{projectData[index].name}</h1>

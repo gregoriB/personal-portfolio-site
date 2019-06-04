@@ -1,11 +1,32 @@
 .content {
-    /* box-sizing: border-box; */
     color: black;
-    text-align: center;
-    /* margin: 0 auto; */
-    /* margin-left: calc(100px - 100%); */
     width: 100%;
     height: 100%;
+}
+
+.emails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-left: 10rem;
+    margin-top: 10rem;
+    max-width: 80%;
+}
+
+.contact-form * {
+    border-radius: 3px;
+    padding: .3rem;
+}
+
+.contact-form {
+    max-width: 40%;
+}
+
+.content form {
+    box-sizing: border-box;
+    width: 100%;
 }
 
 h1 {
@@ -36,24 +57,9 @@ h1 {
     margin: 2rem;
 }
 
-.contact-form {
-    margin-left: 10rem;
-    margin-top: 10rem;
-    /* margin-top: 18rem; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    width: 30%;
-    /* height: 100%; */
-}
-
-.contact-form * {
-    border-radius: 3px;
-    padding: .3rem;
-}
-
 input {
     width: 100%;
+    height: 20px;
 }
 
 textarea {
@@ -67,8 +73,49 @@ textarea {
 }
 
 button {
-    border: none;
+    border: 2px solid transparent;
+    border-radius: 3px;
     background: lightblue;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: .2s;
+}
+
+button:hover {
+    background: rgb(192, 238, 255);
+    border: 2px solid lightblue;
+}
+
+.contact-form button {
     width: 100px;
     float: left;
+}
+
+.direct-email {
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.direct-email div {
+    box-sizing: border-box;
+    text-align: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 80%;
+    min-height: 500px;
+}
+
+.direct-email-text {
+    font-size: 1.5rem;
+    color: black;
+    text-align: left;
+}
+
+.direct-email button {
+    margin-top: 10%;
+    padding: 1.3rem;
 }

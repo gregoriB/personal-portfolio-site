@@ -5,8 +5,9 @@ export const StateContext = React.createContext();
 export function StateProvider(props) {
   const [isModalOpen, setModalState] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
-  const [currentPage, setCurrentPage] = useState('Home');
-  const projects = ["project 1", "Project 2", "Project 3", "project 4", "Project 5", "Project 6"]
+  
+  const windowPath = window.location.pathname.replace(/\//g, '');
+  const [currentPage, setCurrentPage] = useState(windowPath || 'Home');
 
 
   return (
@@ -17,8 +18,7 @@ export function StateProvider(props) {
         currentProject,
         setCurrentProject,
         currentPage,
-        setCurrentPage,
-        projects
+        setCurrentPage
       }}
     >
       {props.children}
