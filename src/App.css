@@ -4,18 +4,16 @@ body {
   overflow: hidden;
 }
 
+* {
+  color: hsl(200, 10%, 75%);
+}
 
 .app {
   display: flex;
   box-sizing: border-box;
-  background-color: gray;
+  background-color: hsl(200, 100%, 15%);
   height: 100vh;
   max-height: 100vh;
   border: 2px solid black;
   margin: 0 auto;
-}
-
-img {
-  max-width: 200px;
-  max-height: 200px;
 }

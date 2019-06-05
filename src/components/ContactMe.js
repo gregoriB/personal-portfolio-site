@@ -16,12 +16,12 @@ export default function ContactMe() {
                     />
                     <button type='submit'>SEND</button>
                 </form>
-                <form className='direct-email' action='mailto:brandon.gregori@gmail.com' target='_blank'>
+                {/* <form className='direct-email' action='mailto:brandon.gregori@gmail.com' target='_blank'>
                     <div>
                         <h1 className='direct-email-text'>Or click this button to email me directly from your email client:</h1>
                         <button>brandon.gregori@gmail.com</button>
                     </div>
-                </form>
+                </form> */}
             </div>
         </div>
     )
