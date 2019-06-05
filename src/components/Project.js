@@ -11,8 +11,11 @@ function Project(props) {
 
     return (
         <div className='project' onClick={handleClick}>
-            {props.name}
+            <p className='project-name'>{props.name}</p>
             <img src={require(`../images/${props.image}`)} alt={props.name} />
+            <div className='shadow'>
+                <p>Click to see more</p>
+            </div>
         </div>
     );
 }

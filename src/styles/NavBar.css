@@ -1,6 +1,8 @@
 .nav-bar {
+    font-weight: bold;
     width: 120px;
-    background-color: hsl(200, 100%, 20%);
+    /* background-color: hsl(200, 100%, 20%); */
+    background-color: var(--dark);
     padding: 0;
 }
 
@@ -24,7 +26,8 @@
 }
 
 a {
-    color: hsl(200, 10%, 100%);
+    /* color: hsl(200, 10%, 100%); */
+    color: var(--gray);
     text-decoration: none;
     width: 100%;
     text-align: center;
@@ -41,7 +44,8 @@ a {
 }
 
 .active-link {
-    color: hsl(200, 100%, 70%);
-    font-weight: bold;
+    /* color: hsl(200, 100%, 70%); */
+    color: var(--colorful-lite);
     font-size: 1.1rem;
+    text-shadow: 1px 1px 5px black;
 }

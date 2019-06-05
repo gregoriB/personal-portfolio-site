@@ -6,10 +6,16 @@ export default function ContactMe() {
             <div className='emails'>
                 <form className='contact-form'>
                     <h1>Contact Me</h1>
-                    <input 
-                        placeholder='your_email@email.com'
-                        name='email'
-                    />
+                    <div>                
+                        <input 
+                            placeholder='Name'
+                            name='name'
+                        />
+                        <input 
+                            placeholder='your_email@email.com'
+                            name='email'
+                        />
+                    </div>
                     <textarea
                         placeholder='Enter your message here'
                         autoComplete='off'

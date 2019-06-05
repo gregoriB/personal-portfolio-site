@@ -6,7 +6,7 @@ export default function Home() {
         <div className='content'>
             <div className='home'>
                 <section className='home-container'>
-                    <img src='https://avatars3.githubusercontent.com/u/41794802?s=460&v=4'/>
+                    <img src='https://avatars3.githubusercontent.com/u/41794802?s=460&v=4' alt='selfie'/>
                     <h1>Hello!  I'm Brandon.</h1>
                     <p>
                         I love web development.  Solving problems and challenging myself while also being creative is extremely satisfying.

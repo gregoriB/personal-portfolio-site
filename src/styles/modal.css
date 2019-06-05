@@ -7,7 +7,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background: rgba(0, 0, 0, 0.349);
+    background-color: #66fcf110;
     padding-top: 2rem;
 }
 
@@ -17,7 +17,9 @@
     height: 82vh;
     padding: 2rem;
     padding-top: 0;
-    background: rgb(104, 0, 0);
+    /* background-color: hsl(201, 100%, 20%); */
+    background-color: var(--lite);
+    box-shadow: 3px 3px 15px hsl(201, 100%, 5%);
 }
 
 h1 {

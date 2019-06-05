@@ -14,7 +14,7 @@ function NavBar() {
             <div className='links'>
                 <div className='home-link'>
                     <Link 
-                        className={state.currentPage === 'Home' && 'active-link'}
+                        className={state.currentPage === 'Home' ? 'active-link' : null}
                         name='Home' 
                         to='Home'
                         onClick={handleSetCurrentPage}
@@ -24,7 +24,7 @@ function NavBar() {
                 </div>
                 <div className='page-links'>
                     <Link 
-                        className={state.currentPage === 'About-Me' && 'active-link'}
+                        className={state.currentPage === 'About-Me' ? 'active-link' : null}
                         name='About-Me' 
                         to='About-Me'
                         onClick={handleSetCurrentPage}
@@ -32,7 +32,7 @@ function NavBar() {
                         About Me
                     </Link>
                     <Link 
-                        className={state.currentPage === 'Projects' && 'active-link'}
+                        className={state.currentPage === 'Projects' ? 'active-link' : null}
                         name='Projects' 
                         to='Projects'
                         onClick={handleSetCurrentPage}
@@ -40,7 +40,7 @@ function NavBar() {
                         Projects
                     </Link>
                     <Link 
-                        className={state.currentPage === 'Contact-Me' && 'active-link'}
+                        className={state.currentPage === 'Contact-Me' ? 'active-link' : null}
                         name='Contact-Me' 
                         to='Contact-Me'
                         onClick={handleSetCurrentPage}

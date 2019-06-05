@@ -1,17 +1,22 @@
-body {
-  background-color: red;
-  margin: 0;
-  overflow: hidden;
+:root {
+  --lite: #1f2833;
+  --dark: #0b0c10;
+  --gray: #c5c6c7;
+  --colorful-lite: #66fcf1;
+  --colorful-dark: #45a29e;
 }
 
-* {
-  color: hsl(200, 10%, 75%);
+body {
+  background-color: var(--lite);
+  margin: 0;
+  overflow: hidden;
 }
 
 .app {
   display: flex;
   box-sizing: border-box;
-  background-color: hsl(200, 100%, 15%);
+  /* background-color: hsl(200, 100%, 15%); */
+  background-color: var(--lite);
   height: 100vh;
   max-height: 100vh;
   border: 2px solid black;

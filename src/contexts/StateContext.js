@@ -9,6 +9,8 @@ export function StateProvider(props) {
   const windowPath = window.location.pathname.replace(/\//g, '');
   const [currentPage, setCurrentPage] = useState(windowPath || 'Home');
 
+  const [keyCounter, incrementKey] = useState(1);
+
 
   return (
     <StateContext.Provider 
@@ -18,7 +20,9 @@ export function StateProvider(props) {
         currentProject,
         setCurrentProject,
         currentPage,
-        setCurrentPage
+        setCurrentPage,
+        keyCounter,
+        incrementKey
       }}
     >
       {props.children}
