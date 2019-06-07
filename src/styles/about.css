@@ -1,16 +1,32 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 50%; 
+}
+
 .about-me {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: flex-start;
     font-size: .8rem;
-    width: 70%;
-    margin: 0 auto;
+    width: 40%;
+    /* margin: 0 auto; */
+    margin-left: 15%;
+    height: 100vh;
+}
+
+.about-me h2 {
+    color: var(--colorful-lite);
 }
 
 .about-me-container {
+    max-height: 20%;
     margin-top: 5%;
-    width: 50%;
 }
 
-.about-me-container h2 {
-    width: 60%;
+.about-me-container:nth-child(1) {
+    margin-top: 30%;
 }
 
 .about-me-container ul {
@@ -20,8 +36,9 @@
 
 .about-me-container li {
     list-style: none; 
+    margin: 0 1rem;
 }
 
 .about-me-container p {
-    width: 80%;
+    margin-left: 2rem;
 }

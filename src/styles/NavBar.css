@@ -13,7 +13,7 @@
 .links {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
 }
@@ -22,14 +22,10 @@
     width: 100%;
 }
 
-.page-links {
-    display: flex;
-    flex-direction: column;
-    margin-top: -100%;
-    width: 100%;
-}
+
 
 .nav-bar a {
+    font-size: 1.15rem;
     opacity: .85;
     letter-spacing: 1px;
     color: white;
@@ -43,17 +39,20 @@
     text-shadow: 0 0 2px white;
 }
 
-.github-link {
-    margin-bottom: 10rem;
-}
-
 .home-link {
     margin-top: 50%;
+    margin-bottom: 100%;
+}
+
+.page-links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100%;
+    width: 100%;
 }
 
 .nav-bar .active-link {
     opacity: 1;
     color: var(--colorful-lite);
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 5px black;
 }

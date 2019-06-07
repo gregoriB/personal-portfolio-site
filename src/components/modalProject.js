@@ -10,12 +10,18 @@ function ModalProject() {
     const project = projectData[index];
 
     const handleCloseModal = e => {
-       state.setModalState(false);
+        if (!e.target.id) {
+            
+            return
+        }
+        state.setModalState(false);
     }
 
     const desc = createRef();
     const handleUpdateHTML = () => {
-        if (state.isModalOpen) desc.current.innerHTML = project.desc;
+        if (state.isModalOpen) {
+            desc.current.innerHTML = project.desc;
+        }
     }
 
     useEffect(() => handleUpdateHTML());
@@ -24,18 +30,19 @@ function ModalProject() {
         state.isModalOpen 
         && 
         <div className='project-modal'
-         onClick={(e) => handleCloseModal(e)} 
+            id='outer-modal'
+            onClick={e => handleCloseModal(e)}
         >
             <div className='modal-content' >
                 <header className='modal-header'>
                     <h1>{projectData[index].name}</h1>
-                    <span className='close-modal'onClick={handleCloseModal}>X</span>
+                    <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
                 </header>
                 <article className='modal-article'>
                     <div className='date'>{project.date}</div>
                     <div className='article-content'>
                         <img src={require(`../images/${project.image}`)} alt={project.name}/>
-                        <div ref={desc}></div>
+                        <div ref={desc}>{project.desc}</div>
                     </div>
                 </article>
                 <div className='project-links'>
