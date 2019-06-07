@@ -48,9 +48,8 @@ function NavBar() {
                         Contact Me
                     </Link>
                 </div>
-                <div>
+                <div className='github-link' >
                     <a 
-                        className='github' 
                         href='https://github.com/gregoriB?tab=repositories' 
                         target="_blank" 
                         rel="noopener noreferrer"

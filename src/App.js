@@ -14,13 +14,15 @@ function App() {
   return (
     <div className='app'>
       <NavBar />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/Home' component={Home} />
-        <Route exact path='/About-Me' component={AboutMe} />
-        <Route exact path='/Projects' component={Projects} />
-        <Route exact path='/Contact-Me' component={ContactMe} />
-      </Switch>
+      <div className='app-content'>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/Home' component={Home} />
+          <Route exact path='/About-Me' component={AboutMe} />
+          <Route exact path='/Projects' component={Projects} />
+          <Route exact path='/Contact-Me' component={ContactMe} />
+        </Switch>
+      </div>
     </div>
   )
 }

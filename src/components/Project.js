@@ -5,8 +5,8 @@ function Project(props) {
     const state = useContext(StateContext);
 
     const handleClick = () => {
-        state.setModalState(!state.isModalOpen);
         state.setCurrentProject(props.index)
+        state.setModalState(!state.isModalOpen);
     }
 
     return (

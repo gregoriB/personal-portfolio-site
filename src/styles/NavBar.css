@@ -1,9 +1,13 @@
 .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
     font-weight: bold;
-    width: 120px;
-    /* background-color: hsl(200, 100%, 20%); */
-    background-color: var(--dark);
+    width: 10%;
+    background-color: #0b0c10d5;
     padding: 0;
+    text-align: center;
 }
 
 .links {
@@ -25,26 +29,30 @@
     width: 100%;
 }
 
-a {
-    /* color: hsl(200, 10%, 100%); */
-    color: var(--gray);
+.nav-bar a {
+    opacity: .85;
+    letter-spacing: 1px;
+    color: white;
     text-decoration: none;
-    width: 100%;
-    text-align: center;
     padding: 1rem 0;
     transition: .2s;
 }
 
-.github {
-    margin-bottom: 100%;
+.nav-bar a:hover {
+    opacity: 1;
+    text-shadow: 0 0 2px white;
+}
+
+.github-link {
+    margin-bottom: 10rem;
 }
 
 .home-link {
     margin-top: 50%;
 }
 
-.active-link {
-    /* color: hsl(200, 100%, 70%); */
+.nav-bar .active-link {
+    opacity: 1;
     color: var(--colorful-lite);
     font-size: 1.1rem;
     text-shadow: 1px 1px 5px black;

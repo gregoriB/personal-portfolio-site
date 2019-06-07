@@ -1,0 +1,27 @@
+.about-me {
+    font-size: .8rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about-me-container {
+    margin-top: 5%;
+    width: 50%;
+}
+
+.about-me-container h2 {
+    width: 60%;
+}
+
+.about-me-container ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.about-me-container li {
+    list-style: none; 
+}
+
+.about-me-container p {
+    width: 80%;
+}

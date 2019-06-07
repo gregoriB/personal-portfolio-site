@@ -1,0 +1,40 @@
+.home {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    /* margin-top: 5%; */
+    margin-bottom: 10%;
+    margin-left: 15%;
+}
+
+/* .home-container * {
+    width: 50%;
+} */
+
+.home-container h1 {
+    color: var(--colorful-lite);
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.home-container p {
+    margin: 0 auto;
+}
+
+/* 
+.home-container img {
+    border-radius: 50%;
+    max-width: 35%;
+    max-height: 70vw;
+} */
