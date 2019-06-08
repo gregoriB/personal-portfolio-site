@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.links {
+.main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -18,11 +18,9 @@
     height: 100%;
 }
 
-.links div {
+.main div {
     width: 100%;
 }
-
-
 
 .nav-bar a {
     font-size: 1.15rem;
@@ -39,20 +37,115 @@
     text-shadow: 0 0 2px white;
 }
 
+.nav-bar .active-link {
+    opacity: 1;
+    color: var(--colorful-lite);
+}
+
 .home-link {
     margin-top: 50%;
     margin-bottom: 100%;
 }
 
 .page-links {
-    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 100%;
     width: 100%;
 }
 
-.nav-bar .active-link {
+.social-media {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 8rem;
+}
+
+.social-media * {
+    transition: .3s;
+}
+
+.social-media-links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: .5rem auto;
+}
+
+.social-media-links .media-link {
+    transition-delay: .1s; /* on mouse out */
+    transition-duration: .2s;
+    opacity: 0;
+}
+
+.social-media-links:hover .media-link {
+    transition-delay: .25s;
+}
+
+.social-media-links .media-link {
+    padding: 0;
+    margin: 1rem auto;
+}
+
+.media-image {
+    transform: scale(.8);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .7;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    transition-duration: .25s;
+    transition-delay: .2s;
+}
+
+.social-media-links:hover .media-image {
+    transition-delay: 0s; /* on mouse out */
+    transition-duration: .25s;
+}
+
+#github-image {
+    background-image: url('../SVGs/github.svg');
+}
+
+.social-media-links:nth-child(1):hover #github-link {
     opacity: 1;
-    color: var(--colorful-lite);
+}
+
+.social-media-links:nth-child(1):hover #github-image {
+    opacity: 0;
+}
+
+#linkedin-image {
+    background-image: url('../SVGs/linkedin.svg');
+}
+
+.social-media-links:nth-child(2):hover #linkedin-link {
+    opacity: 1;
+}
+
+.social-media-links:nth-child(2):hover #linkedin-image {
+    opacity: 0;
+}
+
+#facebook-image {
+    background-image: url('../SVGs/facebook.svg');
+}
+
+.social-media-links:nth-child(3):hover #facebook-link {
+    opacity: 1;
+}
+
+.social-media-links:nth-child(3):hover #facebook-image {
+    opacity: 0;
 }

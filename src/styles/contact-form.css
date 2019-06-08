@@ -4,6 +4,7 @@
 }
 
 .contact-form {
+    color: white;
     max-width: 100%;
     box-shadow: 3px 3px 7px var(--dark);
     padding: 1rem;
@@ -12,6 +13,8 @@
 }
 
 input {
+    color: white;
+    outline: none;
     border: thin solid transparent;
     padding: .7rem;
     display: block;
@@ -22,8 +25,9 @@ input {
 }
 
 textarea {
+    outline: none;
     border: thin solid transparent;
-    color: var(--gray);
+    color: white;
     background-color: var(--lite);
     min-width: 100%;
     width: 100%;
@@ -37,6 +41,7 @@ textarea {
 
 *::placeholder {
     color: var(--gray);
+    opacity: .7;
 }
 
 button {
@@ -63,31 +68,27 @@ button:hover {
     float: left;
 }
 
-.direct-email {
-    max-width: 60%;
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
+@keyframes autofill {
+    to {
+      color: white;
+      background: var(--lite);
+    }
+  }
+  
+  input:-webkit-autofill {
+    animation-name: autofill;
+    animation-fill-mode: both;
+  }
+
+  .contact-form .valid {
+      border-color: rgb(0, 156, 0);
+  }
+
+  .contact-form .invalid {
+    border-color: rgb(165, 0, 0);
 }
 
-.direct-email div {
-    box-sizing: border-box;
-    text-align: top;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 80%;
-    min-height: 500px;
-}
-
-.direct-email-text {
-    font-size: 1.5rem;
-    color: black;
-    text-align: left;
-}
-
-.direct-email button {
-    margin-top: 10%;
-    padding: 1.3rem;
+form strong {
+    float: right;
+    color: rgb(165, 0, 0);
 }

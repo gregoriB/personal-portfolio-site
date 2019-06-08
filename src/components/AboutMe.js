@@ -14,7 +14,7 @@ export default function AboutMe() {
                     <li>Node.js</li>
                     <li>Express.js</li>
                     <li>EJS</li>
-                    <li>Bootstrap 3/4</li>
+                    <li>Bootstrap</li>
                     <li>Git</li>
                 </ul>
             </section>

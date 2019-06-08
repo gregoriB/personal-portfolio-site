@@ -5,6 +5,7 @@ export default function ContactMe() {
     const [nameField, changeNameField] = useState({ text: '', isValid: null });
     const [emailField, changeEmailField] = useState({ text: '', isValid: null });
     const [textField, changeTextField] = useState({ text: '', isValid: null });
+    const [errorMessage, setErrorMessage] =useState(null);
 
     const handleNameValidation = () => {
         const name = nameField.text;
@@ -12,17 +13,12 @@ export default function ContactMe() {
         const isValid = re.test(name) && name.length;
         changeNameField({
             ...nameField,
+            text: nameField.text.trim(),
             isValid
         });
-    };
-
-    const handleTextAreaValidation = () => {
-        const text = textField.text;
-        const isValid = text.length;
-        changeTextField({
-            ...textField,
-            isValid
-        });
+        if (!isValid) {
+            setErrorMessage('Please enter your name')
+        }
     };
 
     const handleEmailValidation = () => {
@@ -31,20 +27,36 @@ export default function ContactMe() {
         const isValid = re.test(email);
         changeEmailField({
             ...emailField,
+            text: emailField.text.trim(),
             isValid
         });
+        if (!isValid) {
+            setErrorMessage('Please enter a valid email address')
+        }
+    };
+
+    const handleTextAreaValidation = () => {
+        const text = textField.text;
+        const isValid = text.length;
+        changeTextField({
+            ...textField,
+            text: textField.text.trim(),
+            isValid
+        });
+        if (!isValid) {
+            setErrorMessage('Please add a message')
+        }
     };
 
     const handleSubmit = e => {
         e.preventDefault()
         if (nameField.isValid && emailField.isValid && textField.isValid) {
-            
-            return console.log('Sumbitted!')
+            setErrorMessage('Email Sent!')
+            return;
         }
-        handleNameValidation();
-        handleEmailValidation();
         handleTextAreaValidation();
-        console.log('INVALID FORM')
+        handleEmailValidation();
+        handleNameValidation();
     }
 
     return (
@@ -58,9 +70,8 @@ export default function ContactMe() {
                         value={nameField.text}
                         onBlur={handleNameValidation}
                         onChange={ e => changeNameField({ ...nameField, text: e.target.value }) }
-                        style={{
-                            borderColor: nameField.isValid ? 'green' : nameField.isValid === null ? 'transparent' : 'red'
-                        }}
+                        className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
+                            
                     />
                     <input 
                         placeholder='your_email@email.com'
@@ -68,9 +79,7 @@ export default function ContactMe() {
                         value={emailField.text}
                         onBlur={handleEmailValidation}
                         onChange={ e => changeEmailField({ ...emailField, text: e.target.value }) }
-                        style={{
-                            borderColor: emailField.isValid ? 'green' : emailField.isValid === null ? 'transparent' : 'red'
-                        }}
+                        className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
                     />
                 </div>
                 <textarea
@@ -79,11 +88,12 @@ export default function ContactMe() {
                     value={textField.text}
                     onBlur={handleTextAreaValidation}
                     onChange={ e => changeTextField({ ...textField, text: e.target.value}) }
-                    style={{
-                        borderColor: textField.isValid ? 'green' : textField.isValid === null ? 'transparent' : 'red'
-                    }}
+                    className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
                 />
                 <button type='submit'>SEND</button>
+                <strong>
+                    {errorMessage}
+                </strong>
             </form>
         </div>
     );

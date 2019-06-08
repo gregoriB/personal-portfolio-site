@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
 import '../styles/NavBar.css';
+import { blockStatement } from '@babel/types';
 
 function NavBar() {
     const state = useContext(StateContext);
@@ -11,7 +12,7 @@ function NavBar() {
     }
     return (
         <div className='nav-bar'>
-            <div className='links'>
+            <div className='main'>
                 <div className='home-link'>
                     <Link 
                         className={state.currentPage === 'Home' ? 'active-link' : null}
@@ -48,14 +49,43 @@ function NavBar() {
                         Contact Me
                     </Link>
                 </div>
-                <div className='github-link' >
-                    <a 
-                        href='https://github.com/gregoriB?tab=repositories' 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        My Github
-                    </a>
+                <div className='social-media' >
+                    <div className='social-media-links'>
+                        <a 
+                            className='media-link'
+                            href='https://github.com/gregoriB?tab=repositories' 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            id='github-link'
+                        >
+                            github
+                        </a>
+                        <span className='media-image' id='github-image' />
+                    </div>
+                    <div className='social-media-links'>
+                        <a
+                            className='media-link'
+                            href='https://www.linkedin.com/in/brandon-gregori-59a973176/'
+                            target='blank'
+                            rel='noopener noreferrer'
+                            id='linkedin-link'
+                        >
+                            Linkedin
+                        </a>
+                        <span className='media-image' id='linkedin-image' />
+                    </div>
+                    <div className='social-media-links'>
+                        <a
+                            className='media-link'
+                            href='https://www.facebook.com/people/Brandon-Gregori/1128665234'
+                            target='blank'
+                            rel='noopener noreferrer'
+                            id='facebook-link'
+                        >
+                            Facebook
+                        </a>
+                        <span className='media-image' id='facebook-image' />
+                    </div>
                 </div>
             </div>
         </div>
