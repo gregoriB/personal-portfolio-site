@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, createRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { StateContext } from '../contexts/StateContext';
 import projectData from '../helpers/projectData';
 import '../styles/modal.css';
@@ -17,19 +17,36 @@ function ModalProject() {
         state.setModalState(false);
     }
 
-    const desc = createRef();
-    const handleUpdateHTML = () => {
-        if (state.isModalOpen) {
-            desc.current.innerHTML = project.desc;
+    const handleKeyPress = e => {
+        if (e.key !== 'Escape') {
+
+            return;
         }
+        state.setModalState(false);
     }
 
-    useEffect(() => handleUpdateHTML());
+    const desc = useRef(null);
+    const article = useRef(null);
+
+    const handleUpdateArticle = () => {
+        desc.current.innerHTML = project.desc;
+        article.current.scrollTo(0, 0);
+    }
+
+    useEffect(() => {
+        handleUpdateArticle();
+        window.addEventListener('keydown', handleKeyPress);
+        
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        }
+    }, 
+    // [state.currentProject]
+    )
 
     return (
-        state.isModalOpen 
-        && 
-        <div className='project-modal'
+        <div 
+            className={`project-modal ${state.isModalOpen ? 'active' : 'inactive'}`}
             id='outer-modal'
             onClick={e => handleCloseModal(e)}
         >
@@ -38,7 +55,7 @@ function ModalProject() {
                     <h1>{projectData[index].name}</h1>
                     <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
                 </header>
-                <article className='modal-article'>
+                <article className='modal-article' ref={article}>
                     <div className='date'>{project.date}</div>
                     <div className='article-content'>
                         <img src={require(`../images/${project.image}`)} alt={project.name}/>

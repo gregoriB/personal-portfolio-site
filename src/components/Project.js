@@ -6,7 +6,7 @@ function Project(props) {
 
     const handleClick = () => {
         state.setCurrentProject(props.index)
-        state.setModalState(!state.isModalOpen);
+        state.setModalState(true);
     }
 
     return (

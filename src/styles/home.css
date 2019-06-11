@@ -1,6 +1,5 @@
 .home {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     height: 100vh;
 }
@@ -12,14 +11,19 @@
     align-items: center;
     text-align: center;
     width: 30%;
-    /* margin-top: 5%; */
     margin-bottom: 10%;
     margin-left: 15%;
 }
 
-/* .home-container * {
-    width: 50%;
-} */
+.home.inactive {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.home.active {
+    opacity: 1;
+    visibility: visible;
+}
 
 .home-container h1 {
     color: var(--colorful-lite);
@@ -31,10 +35,3 @@
 .home-container p {
     margin: 0 auto;
 }
-
-/* 
-.home-container img {
-    border-radius: 50%;
-    max-width: 35%;
-    max-height: 70vw;
-} */

@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
 import '../styles/NavBar.css';
-import { blockStatement } from '@babel/types';
 
 function NavBar() {
     const state = useContext(StateContext);
     const handleSetCurrentPage = e => {
         state.setCurrentPage(e.target.name)
     }
+    
     return (
         <div className='nav-bar'>
             <div className='main'>
@@ -58,7 +58,7 @@ function NavBar() {
                             rel="noopener noreferrer"
                             id='github-link'
                         >
-                            github
+                            Github
                         </a>
                         <span className='media-image' id='github-image' />
                     </div>

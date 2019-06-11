@@ -7,6 +7,8 @@ export default function ContactMe() {
     const [textField, changeTextField] = useState({ text: '', isValid: null });
     const [errorMessage, setErrorMessage] =useState(null);
 
+    const isFormValid = nameField.isValid && emailField.isValid && textField.isValid;
+
     const handleNameValidation = () => {
         const name = nameField.text;
         const re = /^[A-Z a-z]*$/;
@@ -50,9 +52,9 @@ export default function ContactMe() {
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (nameField.isValid && emailField.isValid && textField.isValid) {
-            setErrorMessage('Email Sent!')
-            return;
+        if (isFormValid) {
+            
+            return setErrorMessage('Email Sent!');
         }
         handleTextAreaValidation();
         handleEmailValidation();
@@ -60,7 +62,7 @@ export default function ContactMe() {
     }
 
     return (
-        <div className='emails'>
+        <div className='emails page'>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <h1>Contact Me</h1>
                 <div>                

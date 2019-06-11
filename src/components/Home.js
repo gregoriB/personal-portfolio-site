@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/home.css';
+import { StateContext } from '../contexts/StateContext';
 
 export default function Home() {
+    const state = useContext(StateContext);
     return (
-        <div className='home'>
+        <div className={`home page ${state.currentPage === 'Home' ? 'active' : 'inactive'}`}>
             <section className='home-container'>
-                {/* <img src='https://avatars3.githubusercontent.com/u/41794802?s=460&v=4' alt='selfie'/> */}
                 <h1>Hello!  I'm Brandon.</h1>
                 <p>
                     I love web development.  Solving problems, challenging myself, and being creative are things I enjoy, and web development lets me do them all at once.

@@ -4,7 +4,7 @@ export const StateContext = React.createContext();
 
 export function StateProvider(props) {
   const [isModalOpen, setModalState] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
+  const [currentProject, setCurrentProject] = useState(0);
   
   const windowPath = window.location.pathname.replace(/\//g, '');
   const [currentPage, setCurrentPage] = useState(windowPath || 'Home');
