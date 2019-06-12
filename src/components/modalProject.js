@@ -46,29 +46,31 @@ function ModalProject() {
 
     return (
         <div 
-            className={`project-modal ${state.isModalOpen ? 'active' : 'inactive'}`}
+            className={`project-modal ${state.isModalOpen ? 'enter' : 'exit'}`}
             id='outer-modal'
             onClick={e => handleCloseModal(e)}
-        >
-            <div className='modal-content' >
-                <header className='modal-header'>
-                    <h1>{projectData[index].name}</h1>
-                    <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
-                </header>
-                <article className='modal-article' ref={article}>
-                    <div className='date'>{project.date}</div>
-                    <div className='article-content'>
-                        <img src={require(`../images/${project.image}`)} alt={project.name}/>
-                        <div ref={desc}>{project.desc}</div>
+        >   
+            <div className='modal-main'>
+                <div className='modal-content' >
+                    <header className='modal-header'>
+                        <h1>{projectData[index].name}</h1>
+                        <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
+                    </header>
+                    <article className='modal-article' ref={article}>
+                        <div className='date'>{project.date}</div>
+                        <div className='article-content'>
+                            <img src={require(`../images/${project.image}`)} alt={project.name}/>
+                            <div ref={desc}>{project.desc}</div>
+                        </div>
+                    </article>
+                    <div className='project-links'>
+                        { 
+                            project.linkSite 
+                            && 
+                            <a href={project.linkSite} target='_blank' rel="noopener noreferrer">Check it out</a> 
+                        }
+                        <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">GITHUB</a>
                     </div>
-                </article>
-                <div className='project-links'>
-                    { 
-                        project.linkSite 
-                        && 
-                        <a href={project.linkSite} target='_blank' rel="noopener noreferrer">Check it out</a> 
-                    }
-                    <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">GITHUB</a>
                 </div>
             </div>
         </div>

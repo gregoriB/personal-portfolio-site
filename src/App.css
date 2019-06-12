@@ -8,13 +8,11 @@
 }
 
 body {
-  max-height: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Amita', cursive;
   background-color: var(--lite);
   margin: 0;
-  /* overflow: hidden; */
 }
 
 h1, h2, a {
@@ -22,35 +20,16 @@ h1, h2, a {
   text-decoration: none;
 }
 
-.project-name {
-  font-family: 'Dancing Script', cursive;
-}
-
-.page {
-  position: absolute;
-  /* top: 0;
-  left: 10%;
-  width: 80%; */
-  /* height: 100vh; */
-}
-
 .app {
   display: flex;
   box-sizing: border-box;
-  /* background-color: hsl(200, 100%, 15%); */
   background-color: var(--lite);
-  height: 100vh;
-  /* max-height: 100vh; */
-  /* border: 2px solid black; */
   margin: 0 auto;
-  /* border: 1px solid red; */
-  /* height: 200vh; */
 }
 
 * {
   color: var(--gray);
-  box-sizing: border-box;
-
+  /* box-sizing: border-box; */
 }
 
 .app-content {
@@ -59,29 +38,13 @@ h1, h2, a {
   height: 100%;
 }
 
-.project img {
-  max-width: 80%;
-  /* max-height: 200px; */
-}
-
-.emails {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin-left: 10rem;
-  margin-top: 10%;
-  max-width: 30%;
-  max-height: 80%;
-}
-
 .item-enter {
   opacity: 0;
 }
 .item-enter-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
+  pointer-events:none;
 }
 .item-exit {
   opacity: 1;
@@ -89,4 +52,10 @@ h1, h2, a {
 .item-exit-active {
   opacity: 0;
   transition: opacity 500ms ease-in;
+  pointer-events:none;
+}
+
+.page {
+  position: absolute;
+  top: 0;
 }

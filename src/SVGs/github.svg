@@ -1,17 +1,17 @@
-<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+<svg width="1792" height="1792" xmlns="http://www.w3.org/2000/svg" style="vector-effect: non-scaling-stroke;" stroke="null">
 
- <g>
-  <title>background</title>
-  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ <g stroke="null">
+  <title stroke="null">background</title>
+  <rect stroke="null" fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
  </g>
- <g>
-  <title>Layer 1</title>
-  <g id="Line">
-   <g id="svg_1">
-    <path id="svg_2" fill="#ffffff" d="m30,2l0,28l-28,0l0,-28l28,0m1,-1l-30,0l0,30l30,0l0,-30l0,0z"/>
-    <path id="svg_3" fill="#ffffff" d="m30,2l0,28l-28,0l0,-28l28,0m1,-1l-30,0l0,30l30,0l0,-30l0,0z"/>
-   </g>
-   <path id="Cat_5_" fill="#ffffff" d="m19.246,24.945l-2.383,0l-2.385,0c0,0 0.007,-1.415 0,-2.385c-3.264,0.703 -4.175,-1.789 -4.175,-1.789c-0.596,-1.193 -1.193,-1.789 -1.193,-1.789c-1.193,-0.708 0,-0.596 0,-0.596c1.193,0 1.789,1.193 1.789,1.193c1.047,1.777 2.909,1.491 3.578,1.193c0,-0.596 0.261,-1.498 0.596,-1.789c-2.605,-0.293 -4.773,-1.789 -4.773,-4.771s0.599,-3.578 1.195,-4.175c-0.12,-0.294 -0.62,-1.381 0.018,-2.982c0,0 1.172,0 2.365,1.789c0.591,-0.591 2.385,-0.596 2.982,-0.596c0.595,0 2.39,0.005 2.981,0.596c1.193,-1.789 2.368,-1.789 2.368,-1.789c0.638,1.601 0.139,2.688 0.018,2.982c0.596,0.596 1.193,1.193 1.193,4.175s-2.165,4.477 -4.771,4.771c0.336,0.291 0.596,1.317 0.596,1.789l0.001,4.173l0,0z"/>
-  </g>
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <path style="vector-effect: non-scaling-stroke;" stroke="null" fill="#ffffff" id="svg_1" d="m566.35461,1325.808506t6,-22l-6,22zm1104,-967l0,960q0,119 -84.5,203.5t-203.5,84.5l-224,0q-16,0 -24.5,-1t-19.5,-5t-16,-14.5t-5,-27.5l0,-239q0,-97 -52,-142q57,-6 102.5,-18t94,-39t81,-66.5t53,-105t20.5,-150.5q0,-121 -79,-206q37,-91 -8,-204q-28,-9 -81,11t-92,44l-38,24q-93,-26 -192,-26t-192,26q-16,-11 -42.5,-27t-83.5,-38.5t-86,-13.5q-44,113 -7,204q-79,85 -79,206q0,85 20.5,150t52.5,105t80.5,67t94,39t102.5,18q-40,36 -49,103q-21,10 -45,15t-57,5t-65.5,-21.5t-55.5,-62.5q-19,-32 -48.5,-52t-49.5,-24l-20,-3q-21,0 -29,4.5t-5,11.5t9,14t13,12l7,5q22,10 43.5,38t31.5,51l10,23q13,38 44,61.5t67,30t69.5,7t55.5,-3.5l23,-4q0,38 0.5,103t0.5,68q0,22 -11,33.5t-22,13t-33,1.5l-224,0q-119,0 -203.5,-84.5t-84.5,-203.5l0,-960q0,-119 84.5,-203.5t203.5,-84.5l960,0q119,0 203.5,84.5t84.5,203.5z"/>
+  <rect stroke="null" id="svg_5" height="301.843998" width="2151.035694" y="1602.702167" x="-42.893723" stroke-width="null" fill="#ffffff"/>
+  <rect stroke="null" style="vector-effect: non-scaling-stroke;" id="svg_6" height="403.517774" width="625.929146" y="1364.404282" x="1307.461037" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
+  <rect stroke="null" id="svg_7" height="1855.5463" width="803.858243" y="-27.255441" x="1456.794385" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
+  <rect stroke="null" style="vector-effect: non-scaling-stroke;" id="svg_8" height="371.744721" width="2087.489588" y="-78.092328" x="-262.127785" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
+  <rect stroke="null" style="vector-effect: non-scaling-stroke;" id="svg_10" height="308.198615" width="514.72346" y="1513.737631" x="-90.553298" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
+  <rect stroke="null" style="vector-effect: non-scaling-stroke;" id="svg_11" height="1375.773199" width="384.453942" y="233.283592" x="-150.922099" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
  </g>
 </svg>

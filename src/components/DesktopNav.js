@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
-import '../styles/NavBar.css';
+import '../styles/desktopNav.css';
 
-function NavBar() {
+const DesktopNav = () => {
     const state = useContext(StateContext);
     const handleSetCurrentPage = e => {
         state.setCurrentPage(e.target.name)
     }
     
     return (
-        <div className='nav-bar'>
+        <div className='desktop-nav'>
             <div className='main'>
                 <div className='home-link'>
                     <Link 
@@ -92,4 +92,4 @@ function NavBar() {
     )
   }
 
-  export default NavBar;
+  export default DesktopNav;

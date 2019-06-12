@@ -62,7 +62,7 @@ export default function ContactMe() {
     }
 
     return (
-        <div className='emails page'>
+        <div className='email page'>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <h1>Contact Me</h1>
                 <div>                

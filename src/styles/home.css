@@ -15,16 +15,6 @@
     margin-left: 15%;
 }
 
-.home.inactive {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.home.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 .home-container h1 {
     color: var(--colorful-lite);
     font-size: 2.5rem;

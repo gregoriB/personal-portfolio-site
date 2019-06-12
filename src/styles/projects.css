@@ -1,8 +1,9 @@
 .projects-page {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 100%;
+    /* width: 100vw; */
     height: 100vh; 
 }
 
@@ -12,6 +13,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    width: 80%;
 }
 
 .project {
@@ -45,10 +47,16 @@
 }
 
 .project-name {
+    font-family: 'Dancing Script', cursive;
     margin: 0;
     margin-bottom: 5%;
     color: var(--colorful-lite);
 }
+
+.project img {
+    max-width: 80%;
+    /* max-height: 200px; */
+  }
 
 .shadow {
     box-sizing: border-box;
