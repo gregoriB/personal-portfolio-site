@@ -1,27 +1,59 @@
-import React, {  useContext } from 'react';
+import React, {  useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
+import '../styles/mobileNav.css';
 import '../styles/desktopNav.css';
 
-const DesktopNav = () => {
+
+const NavBar = () => {
     const state = useContext(StateContext);
-    const handleSetCurrentPage = e => {
+
+    const handleCheckIfMobile = () => {
+        const mobileScreen = { width: 1000, height: 500 }
+        const isDisplayMobile = window.innerHeight < mobileScreen.height || window.innerWidth < mobileScreen.width;
+        state.setDisplayMode(isDisplayMobile)
+      }
+    
+      useEffect(() => {
+        handleCheckIfMobile();
+        window.addEventListener('resize', handleCheckIfMobile);
+        return () => {
+          window.removeEventListener('resize', handleCheckIfMobile);
+        }
+      });
+
+    
+    const handleUpdateDisplay = e => {
         state.setCurrentPage(e.target.name)
+        state.setNavState(false);
+    }
+
+    const handleToggleNav = () => {
+        state.setNavState(!state.isNavOpen);
     }
 
     const handleOpenLink = url => {
         window.open(url, '_blank');
     }
-    
+
+    const handleAssignNavClass = () => {
+        if (!state.isMobile) {
+            return `desktop-nav`;
+        }
+        
+        return `mobile-nav ${state.isNavOpen ? 'active' : null}`;
+    }
+
     return (
-        <div className='desktop-nav'>
-            <div className='desktop-links'>
+        <div className={handleAssignNavClass()}>
+            {state.isMobile && <button onClick={handleToggleNav}>|||</button>}
+            <div className='links'>
                 <Link 
                     className={state.currentPage === 'Home' ? 'active-link' : null}
                     name='Home' 
                     to='Home'
-                    onClick={handleSetCurrentPage}
+                    onClick={handleUpdateDisplay}
                 >
                     Home
                 </Link>
@@ -29,7 +61,7 @@ const DesktopNav = () => {
                     className={state.currentPage === 'About-Me' ? 'active-link' : null}
                     name='About-Me' 
                     to='About-Me'
-                    onClick={handleSetCurrentPage}
+                    onClick={handleUpdateDisplay}
                 >
                     About Me
                 </Link>
@@ -37,7 +69,7 @@ const DesktopNav = () => {
                     className={state.currentPage === 'Projects' ? 'active-link' : null}
                     name='Projects' 
                     to='Projects'
-                    onClick={handleSetCurrentPage}
+                    onClick={handleUpdateDisplay}
                 >
                     Projects
                 </Link>
@@ -45,7 +77,7 @@ const DesktopNav = () => {
                     className={state.currentPage === 'Contact-Me' ? 'active-link' : null}
                     name='Contact-Me' 
                     to='Contact-Me'
-                    onClick={handleSetCurrentPage}
+                    onClick={handleUpdateDisplay}
                 >
                     Contact Me
                 </Link>
@@ -57,6 +89,6 @@ const DesktopNav = () => {
             </div>
         </div>
     )
-  }
+}
 
-  export default DesktopNav;
+export default NavBar;

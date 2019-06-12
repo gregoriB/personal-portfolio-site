@@ -5,24 +5,26 @@ export const StateContext = React.createContext();
 export function StateProvider(props) {
   const [isModalOpen, setModalState] = useState(false);
   const [currentProject, setCurrentProject] = useState(0);
+
+  const [isMobile, setDisplayMode] = useState(false);
+  const [isNavOpen, setNavState] = useState(false);
   
   const windowPath = window.location.pathname.replace(/\//g, '');
   const [currentPage, setCurrentPage] = useState(windowPath || 'Home');
-
-  const [keyCounter, incrementKey] = useState(1);
-
 
   return (
     <StateContext.Provider 
       value={{
         isModalOpen,
         setModalState,
+        isMobile,
+        setDisplayMode,
+        isNavOpen,
+        setNavState,
         currentProject,
         setCurrentProject,
         currentPage,
-        setCurrentPage,
-        keyCounter,
-        incrementKey
+        setCurrentPage
       }}
     >
       {props.children}

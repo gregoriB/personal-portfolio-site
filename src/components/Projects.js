@@ -8,14 +8,12 @@ export default function Projects() {
     const mapProjects = () => {
         return projectData.map((project, index ) => {
             return (
-                <>
-                    <Project 
-                        name={project.name}
-                        image={project.image}
-                        index={index}
-                        key={index}
-                    />
-                </>
+                <Project 
+                    key={project.name}
+                    name={project.name}
+                    image={project.image}
+                    index={index}
+                />
             );
         });
     }

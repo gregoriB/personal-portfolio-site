@@ -40,9 +40,7 @@ function ModalProject() {
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         }
-    }, 
-    // [state.currentProject]
-    )
+    });
 
     return (
         <div 
@@ -57,8 +55,8 @@ function ModalProject() {
                         <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
                     </header>
                     <article className='modal-article' ref={article}>
-                        <div className='date'>{project.date}</div>
                         <div className='article-content'>
+                            <div className='date'>{project.date}</div>
                             <img src={require(`../images/${project.image}`)} alt={project.name}/>
                             <div ref={desc}>{project.desc}</div>
                         </div>

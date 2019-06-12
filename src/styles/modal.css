@@ -66,11 +66,10 @@
 
 .modal-article * {
     text-shadow: 0.5px 0px 0px black;
-    /* font-weight: bold; */
 }
 
 .article-content {
-    width: 60%;
+    width: 70%;
     text-align: left;
 }
 
@@ -83,6 +82,7 @@
 .modal-article .date {
     font-size: .9rem;
     text-shadow: none;
+    text-align: center;
 }
 
 .close-modal {
@@ -195,4 +195,31 @@
     transition-delay: .5s;
     transition-duration: 1s;
     transition-property: opacity;
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-main {
+        margin: 0;
+        width: 100vw;
+        z-index: 3;
+    }
+
+    .modal-content {
+        height: 100%;
+    }
+
+    .modal-content .article-content * {
+        margin: 0 auto;
+        width: 90vw;
+    }
+
+    .modal-content header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .modal-content header .close-modal {
+        top: 0;
+        right: 0;
+    }
 }
