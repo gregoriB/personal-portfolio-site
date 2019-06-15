@@ -47,7 +47,7 @@ const NavBar = () => {
 
     return (
         <div className={handleAssignNavClass()}>
-            {state.isMobile && <button onClick={handleToggleNav}>|||</button>}
+            <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
                     className={state.currentPage === 'Home' ? 'active-link' : null}

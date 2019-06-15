@@ -1,11 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../styles/about.css';
-import { StateContext } from '../contexts/StateContext';
 
 export default function AboutMe() {
-    const state = useContext(StateContext);
     return (
-        <div className={`about-me page ${state.currentPage === 'About-Me' ? 'active' : 'inactive'}`}>
+        <div className='about-me page'>
             <section className='about-me-container'>
                 <h2>My main skills:</h2>
                 <ul>

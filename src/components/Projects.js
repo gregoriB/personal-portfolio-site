@@ -22,6 +22,7 @@ export default function Projects() {
         <div className='projects-page page'>
             <div className='projects'>
                 {mapProjects()}
+                <div className='center-focus' />
             </div>
             <ModalProject />
         </div>

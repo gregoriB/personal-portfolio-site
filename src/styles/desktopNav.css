@@ -13,6 +13,10 @@
     text-align: center;
 }
 
+.desktop-nav button {
+    visibility: hidden;
+}
+
 .desktop-nav .links {
     display: flex;
     flex-direction: column;

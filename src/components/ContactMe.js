@@ -65,7 +65,6 @@ export default function ContactMe() {
         <div className='email page'>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <h1>Contact Me</h1>
-                <div>                
                     <input 
                         placeholder='Name'
                         name='name'
@@ -83,7 +82,6 @@ export default function ContactMe() {
                         onChange={ e => changeEmailField({ ...emailField, text: e.target.value }) }
                         className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
                     />
-                </div>
                 <textarea
                     placeholder='Enter your message here'
                     autoComplete='off'

@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 export const StateContext = React.createContext();
 
 export function StateProvider(props) {
-  const [isModalOpen, setModalState] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(0);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   const [isMobile, setDisplayMode] = useState(false);
   const [isNavOpen, setNavState] = useState(false);
@@ -16,7 +17,7 @@ export function StateProvider(props) {
     <StateContext.Provider 
       value={{
         isModalOpen,
-        setModalState,
+        setIsModalOpen,
         isMobile,
         setDisplayMode,
         isNavOpen,
@@ -24,7 +25,9 @@ export function StateProvider(props) {
         currentProject,
         setCurrentProject,
         currentPage,
-        setCurrentPage
+        setCurrentPage,
+        isFirstLoad,
+        setIsFirstLoad
       }}
     >
       {props.children}

@@ -30,10 +30,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    /* align-items: center; */
     /* height: 99.8%; */
     height: 100vh;
-    max-height: 200%;
     padding: 1rem;
     /* background-color: var(--colorful-dark);
     box-shadow: 3px 3px 15px hsl(201, 100%, 5%); */
@@ -55,6 +55,7 @@
 }
 
 .modal-article {
+    position: relative;
     margin: 1rem auto;
     max-height: 90%;
     overflow: auto;
@@ -62,6 +63,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    transition: 1s;
+}
+
+.modal-article.active {
+    /* transition: 1s;
+    overflow: hidden; */
+    /* opacity: 0; */
 }
 
 .modal-article * {
@@ -71,6 +79,8 @@
 .article-content {
     width: 70%;
     text-align: left;
+    margin: 0 auto;
+    height: 100%;
 }
 
 .article-content img {
@@ -91,6 +101,9 @@
     border-radius: 50%;
     font-family: cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     right: 1rem;
     padding: .3rem;
@@ -122,9 +135,11 @@
 
 .project-links {
     display: flex;
-    justify-content: center;
+    /* flex-direction: column; */
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
+    padding: 0 5vw;
 }
 
 .project-links a {
@@ -158,9 +173,14 @@
     background: var(--colorful-bright); 
 }
 
+.hide-scroll {
+    visibility: hidden;
+}
+
+
 .project-modal.exit {
     opacity: 0;
-    transition: .3s;
+    transition: .1s;
     visibility: hidden;
 }
 
@@ -169,7 +189,7 @@
     transition: .6s;
     visibility: visible;
 }
-
+/* 
 .project-modal.exit .modal-main {
     height: 10%;
     width: 10%;
@@ -177,7 +197,7 @@
     transition-delay: 0s, .3s, .3s, .3s;
     transition-duration: .3s, 0, 0, 0;
     transition-property: opacity, height, width, margin;
-}
+} */
 
 .project-modal.enter .modal-main  {
     transition: .5s;
@@ -186,7 +206,7 @@
 
 .project-modal.exit .modal-main .modal-content {
     opacity: 0;
-    transition: .3s;
+    transition: .1s;
     transition-delay: 0;
 }
 
@@ -198,28 +218,106 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .modal-main {
-        margin: 0;
-        width: 100vw;
+    .project-modal {
         z-index: 3;
     }
 
+    .modal-main {
+        margin: 0;
+        width: 100vw;
+    }
+
     .modal-content {
+        /* height: 100%; */
+        /* align-items: center; */
+        /* padding: 0; */
+        /* width: 50%; */
+    }
+
+    .modal-content header {
+        display: flex;
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .modal-content header h1 {
+        line-height: 1.5rem;
+        width: 90%;
+        margin: 0;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .modal-content header .close-modal {
+        position: static;
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: -.5rem;
+    }
+
+    .modal-article {
+        margin: 1rem auto;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        max-height: 100%;
         height: 100%;
+    }
+
+    .modal-content .article-content {
+        margin: 0 auto;
+        /* margin-bottom: 5rem; */
+        width: 95%;
+        /* padding: 1rem; */
+        height: 80vh;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
     }
 
     .modal-content .article-content * {
         margin: 0 auto;
-        width: 90vw;
+        /* width: 90vw; */
     }
 
-    .modal-content header h1 {
-        margin: 0;
-        font-size: 1.5rem;
-    }
-
-    .modal-content header .close-modal {
-        top: 0;
+    .modal-content .project-links {
+        position: fixed;
+        bottom: 0;
+        left: 0;
         right: 0;
+        width: 80%;
+        margin: .5rem auto;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 1.5em;
+        z-index: 4;
+        padding: 0;
+    }
+
+    .hide-scroll {
+        visibility: visible;
+        box-sizing: border-box; 
+        position: fixed;
+        right: .8rem;
+        height: 100%;
+        width: 10px;
+        opacity: 1;
+        background-color: var(--colorful-dark);
+        z-index: 3;
+        opacity: 0;
+        transition: .5s;
+    }
+    
+    .modal-article.inactive .hide-scroll {
+        opacity: 1;
+    }
+
+    .project-modal.exit .modal-main {
+        transition: opacity .3s linear 0s;
+    }
+
+    .modal-article.inactive .hide-scroll:hover {
+        opacity: 0;
     }
 }

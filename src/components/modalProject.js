@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { StateContext } from '../contexts/StateContext';
 import projectData from '../helpers/projectData';
 import '../styles/modal.css';
@@ -6,6 +6,8 @@ import '../styles/modal.css';
 function ModalProject() {
 
     const state = useContext(StateContext);
+
+    const [scrollState, setScrollState] = useState('inactive');
     const index = state.currentProject;
     const project = projectData[index];
 
@@ -14,7 +16,7 @@ function ModalProject() {
             
             return
         }
-        state.setModalState(false);
+        state.setIsModalOpen(false);
     }
 
     const handleKeyPress = e => {
@@ -22,7 +24,7 @@ function ModalProject() {
 
             return;
         }
-        state.setModalState(false);
+        state.setIsModalOpen(false);
     }
 
     const desc = useRef(null);
@@ -33,14 +35,25 @@ function ModalProject() {
         article.current.scrollTo(0, 0);
     }
 
+    let scrollTimeout = 0;
+
+    const handleScrollBarVisibility = () => {
+        console.log('enter')
+        clearTimeout(scrollTimeout);
+        setScrollState('active');
+        scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);
+    }
+
     useEffect(() => {
         handleUpdateArticle();
         window.addEventListener('keydown', handleKeyPress);
+        article.current.addEventListener('scroll', handleScrollBarVisibility);
         
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
+            article.current.removeEventListener('scroll', handleScrollBarVisibility);
         }
-    });
+    }, [state.currentProject]);
 
     return (
         <div 
@@ -54,7 +67,8 @@ function ModalProject() {
                         <h1>{projectData[index].name}</h1>
                         <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
                     </header>
-                    <article className='modal-article' ref={article}>
+                    <article className={`modal-article ${scrollState}`} ref={article}>
+                        <div className='hide-scroll' />
                         <div className='article-content'>
                             <div className='date'>{project.date}</div>
                             <img src={require(`../images/${project.image}`)} alt={project.name}/>

@@ -1,6 +1,7 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { StateContext } from './contexts/StateContext';
 
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -11,7 +12,17 @@ import ContactMe from './components/ContactMe';
 import './styles/normalize.css';
 import './App.css';
 
-const App = () => {
+const App = ({ history }) => {
+  const { isModalOpen, setIsModalOpen } = useContext(StateContext);
+  
+  useEffect(() => {
+    const unlisten = history.listen(() => {
+      window.scrollTo(0, 0);
+      isModalOpen && setIsModalOpen(false);
+    });
+
+    return unlisten;
+  }, [history, isModalOpen, setIsModalOpen]);
 
   return (
     <div className='app'>
@@ -30,7 +41,7 @@ const App = () => {
           </TransitionGroup>
         )} />
     </div>
-  )
+  );
 }
 
-export default App;
+export default withRouter(App);

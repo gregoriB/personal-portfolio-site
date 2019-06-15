@@ -6,12 +6,12 @@ function Project(props) {
 
     const handleClick = () => {
         state.setCurrentProject(props.index)
-        state.setModalState(true);
+        state.setIsModalOpen(true);
     }
 
     return (
         <div className='project' onClick={handleClick}>
-            <p className='project-name'>{props.name}</p>
+            <h2 className='project-name'>{props.name}</h2>
             <img src={require(`../images/${props.image}`)} alt={props.name} />
             <div className='shadow'>
                 <p>Click to see more</p>
