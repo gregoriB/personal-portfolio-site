@@ -19,41 +19,61 @@ function ModalProject() {
         state.setIsModalOpen(false);
     }
 
-    const handleKeyPress = e => {
-        if (e.key !== 'Escape') {
+    // const handleKeyPress = e => {
+    //     if (e.key !== 'Escape') {
 
-            return;
-        }
-        state.setIsModalOpen(false);
-    }
+    //         return;
+    //     }
+    //     state.setIsModalOpen(false);
+    // }
 
     const desc = useRef(null);
     const article = useRef(null);
 
-    const handleUpdateArticle = () => {
-        desc.current.innerHTML = project.desc;
-        article.current.scrollTo(0, 0);
-    }
+    // const handleUpdateArticle = () => {
+    //     desc.current.innerHTML = project.desc;
+    //     article.current.scrollTo(0, 0);
+    // }
 
-    let scrollTimeout = 0;
 
-    const handleScrollBarVisibility = () => {
-        console.log('enter')
-        clearTimeout(scrollTimeout);
-        setScrollState('active');
-        scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);
-    }
+
+    // const handleScrollBarVisibility = () => {
+    //     console.log('enter')
+    //     clearTimeout(scrollTimeout);
+    //     setScrollState('active');
+    //     scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);
+    // }
 
     useEffect(() => {
-        handleUpdateArticle();
+        let scrollTimeout = 0;
+        
+        const modalArticle = article.current;
+        const handleKeyPress = e => {
+            if (e.key !== 'Escape') {
+    
+                return;
+            }
+            state.setIsModalOpen(false);
+        }
+        const handleUpdateArticle = (() => {
+            desc.current.innerHTML = project.desc;
+            article.current.scrollTo(0, 0);
+        })();
+
+        const handleScrollBarVisibility = () => {
+            // console.log('enter')
+            clearTimeout(scrollTimeout);
+            setScrollState('active');
+            scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);
+        }
         window.addEventListener('keydown', handleKeyPress);
-        article.current.addEventListener('scroll', handleScrollBarVisibility);
+        modalArticle.addEventListener('scroll', handleScrollBarVisibility);
         
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
-            article.current.removeEventListener('scroll', handleScrollBarVisibility);
+            modalArticle.removeEventListener('scroll', handleScrollBarVisibility);
         }
-    }, [state.currentProject]);
+    }, [state.currentProject,  project.desc, state]);
 
     return (
         <div 
@@ -79,7 +99,7 @@ function ModalProject() {
                         { 
                             project.linkSite 
                             && 
-                            <a href={project.linkSite} target='_blank' rel="noopener noreferrer">Check it out</a> 
+                            <a href={project.linkSite} target='_blank' rel="noopener noreferrer">CHECK IT OUT!</a> 
                         }
                         <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">GITHUB</a>
                     </div>

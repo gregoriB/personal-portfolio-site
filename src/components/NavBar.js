@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect } from 'react';
+import React, {  useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
@@ -10,10 +10,11 @@ const NavBar = () => {
     const state = useContext(StateContext);
 
     const handleCheckIfMobile = () => {
-        const mobileScreen = { width: 1000, height: 500 }
-        const isDisplayMobile = window.innerHeight < mobileScreen.height || window.innerWidth < mobileScreen.width;
-        state.setDisplayMode(isDisplayMobile)
-      }
+        const mobileScreen = { width: 950, height: 400};
+        const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
+        state.setDisplayMode(isDisplayMobile);    
+    }
+
     
       useEffect(() => {
         handleCheckIfMobile();
@@ -42,7 +43,7 @@ const NavBar = () => {
             return `desktop-nav`;
         }
         
-        return `mobile-nav ${state.isNavOpen ? 'active' : null}`;
+        return `mobile-nav ${state.isNavOpen ? 'active' : 'inactive'}`;
     }
 
     return (

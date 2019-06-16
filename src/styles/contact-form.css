@@ -2,12 +2,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
     box-sizing: border-box;
-    margin-left: 10rem;
-    margin-top: 10%;
-    width: 30%;
-    max-height: 80%;
+    /* margin-left: 10rem;
+    margin-top: 10%; */
+    width: 90vw;
+    /* max-height: 80%; */
+    height: 100vh;
+    margin: 0 auto;
   }
 
 .contact-form {
@@ -15,8 +18,9 @@
     max-width: 100%;
     box-shadow: 3px 3px 7px var(--dark);
     padding: 1rem;
-    width: 100%;
+    width: 20rem;
     background-color: var(--dark);
+    margin: 0 5vw;
 }
 
 .contact-form * {
@@ -99,10 +103,45 @@ input:-webkit-autofill {
     border-color: rgb(165, 0, 0);
 }
 
-form strong {
+.contact-form .message {
     float: right;
     min-height: 1rem;
     margin-top: .5rem;
+}
+
+.contact-info {
+    /* margin: 0;
+    margin-right: 40vh; */
+    margin: 0 5vw;
+}
+
+.contact-info h2 {
+    font-size: 1.5rem;
+    color: var(--colorful-lite);
+}
+
+.contact-info div {
+    margin-left: 1rem;
+}
+
+.contact-info div * {
+    font-size: 1.2rem;
+}
+
+.contact-info div a {
+    color: var(--colorful-lite);
+    text-decoration: underline;
+    text-shadow: 0 0 1px white;
+}
+
+.contact-info hr {
+    visibility: visible;
+    border: 0;
+    height: 1px;
+    background: var(--lite);
+    background-image: linear-gradient(to right, var(--lite), var(--gray), var(--lite));
+    width: 150%;
+    margin-left: -25%;
 }
 
 @keyframes autofill {
@@ -112,7 +151,7 @@ form strong {
     }
   }
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
     .email {
         width: 100vw;
         margin: 0;
@@ -129,6 +168,7 @@ form strong {
         padding-top: 10%;
         height: 100vh;
         box-shadow: none;
+        margin: 0 auto;
     }
     
     .contact-form h1 {
@@ -153,8 +193,33 @@ form strong {
         margin: 0 auto;    
     }
 
-    form strong {
+    .contact-form .message {
+        visibility: hidden;
+    }
+
+    .contact-info {
+        /* width: 50%; */
+        margin: 0 auto;
+    }
+
+    .contact-info div {
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+
+    .contact-info * {
         text-align: center;
+        margin: .5rem auto;
+    }
+
+    .contact-info hr {
+        visibility: visible;
+        border: 0;
+        height: 1px;
+        background: var(--lite);
+        background-image: linear-gradient(to right, var(--lite), var(--gray), var(--lite));
+        margin-left: 0;
+        width: 100%;
     }
 
     @keyframes autofill {
@@ -170,5 +235,24 @@ form strong {
         background-color: var(--colorful-lite);
         border: 2px solid var(--colorful-dark);
         color: var(--lite);
+    }
+}
+
+@media (max-height: 400px) {
+    .contact-form {
+        max-width: 80vw;
+        margin: 0 auto;
+        padding: .5rem;
+    }
+    .contact-form h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-form input, .contact-form textArea, .contact-form button {
+        margin: .2rem auto;
+    }
+
+    .contact-form .message {
+        display: none;
     }
 }

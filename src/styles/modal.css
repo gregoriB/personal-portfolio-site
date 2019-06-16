@@ -78,6 +78,10 @@
 }
 
 .article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 70%;
     text-align: left;
     margin: 0 auto;
@@ -85,6 +89,7 @@
 }
 
 .article-content img {
+    text-align: center;
     margin-top: 1rem;
     margin-bottom: 2rem;
     width: 100%;
@@ -178,6 +183,11 @@
     visibility: hidden;
 }
 
+.project-modal.enter {
+    opacity: 1;
+    transition: .6s;
+    visibility: visible;
+}
 
 .project-modal.exit {
     opacity: 0;
@@ -185,30 +195,18 @@
     visibility: hidden;
 }
 
-.project-modal.enter {
-    opacity: 1;
-    transition: .6s;
-    visibility: visible;
-}
-/* 
-.project-modal.exit .modal-main {
-    height: 10%;
-    width: 10%;
-    margin-top: 20%;
-    transition-delay: 0s, .3s, .3s, .3s;
-    transition-duration: .3s, 0, 0, 0;
-    transition-property: opacity, height, width, margin;
-} */
-
 .project-modal.enter .modal-main  {
     transition: .5s;
     transition-delay: 0s;
 }
 
-.project-modal.exit .modal-main .modal-content {
-    opacity: 0;
-    transition: .1s;
-    transition-delay: 0;
+.project-modal.exit .modal-main {
+    height: 50%;
+    width: 50%;
+    margin-top: 20vh;
+    transition-delay: 0s, .3s, .3s, .3s;
+    transition-duration: .3s, 0, 0, 0;
+    transition-property: opacity, height, width, margin;
 }
 
 .project-modal.enter .modal-main .modal-content {
@@ -218,7 +216,13 @@
     transition-property: opacity;
 }
 
-@media only screen and (max-width: 700px) {
+.project-modal.exit .modal-main .modal-content {
+    opacity: 0;
+    transition: .1s;
+    transition-delay: 0;
+}
+
+@media (max-width: 800px) {
     .project-modal {
         z-index: 3;
     }
@@ -267,9 +271,7 @@
 
     .modal-content .article-content {
         margin: 0 auto;
-        /* margin-bottom: 5rem; */
         width: 95%;
-        /* padding: 1rem; */
         height: 80vh;
     }
 
@@ -279,7 +281,6 @@
 
     .modal-content .article-content * {
         margin: 0 auto;
-        /* width: 90vw; */
     }
 
     .modal-content .project-links {
@@ -320,5 +321,12 @@
 
     .modal-article.inactive .hide-scroll:hover {
         opacity: 0;
+    }
+}
+
+@media (max-height: 400px) {
+    .modal-article .article-content img {
+        text-align: center;
+        max-width: 25vw;
     }
 }
