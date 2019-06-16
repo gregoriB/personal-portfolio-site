@@ -5,7 +5,6 @@
 }
 
 .home-container {
-    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -28,11 +27,6 @@
 .home-container p {
     margin: 0 auto;
 }
-
-/* .home-container.first-load {
-    opacity: 0;
-    transform: translateX(500px);
-} */
 
 @media (max-width: 800px) {
     .home {

@@ -9,6 +9,7 @@
 
 .about-me h2 {
     color: var(--colorful-lite);
+
 }
 
 .about-me-stuff {
@@ -30,10 +31,12 @@
 .about-me-container li {
     list-style: none; 
     margin: 0 1rem;
+
 }
 
 .about-me-container p {
     margin-left: 2rem;
+
 }
 
 @media (max-width: 800px) {

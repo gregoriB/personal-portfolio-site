@@ -55,10 +55,12 @@ function ModalProject() {
             }
             state.setIsModalOpen(false);
         }
-        const handleUpdateArticle = (() => {
+        const handleUpdateArticle = () => {
             desc.current.innerHTML = project.desc;
             article.current.scrollTo(0, 0);
-        })();
+        };
+
+        handleUpdateArticle();
 
         const handleScrollBarVisibility = () => {
             // console.log('enter')

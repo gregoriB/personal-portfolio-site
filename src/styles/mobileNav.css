@@ -45,15 +45,10 @@
     left: 1rem;
 }
 
-.mobile-nav.inactive button {
-}
-
 .mobile-nav.active button {
     color: var(--colorful-lite);
-    /* position: static; */
     top: 8vh;
     left: 2.75rem;
-    /* margin: 0 auto; */
     transform: rotate(270deg) scale(1.5);
     transition: .5s;
 }
@@ -66,7 +61,6 @@
     margin: 0 auto;
     margin-top: 20vh;
     width: 100%;
-    /* height: 25vh; */
 }
 
 .mobile-nav .links a {

@@ -65,23 +65,23 @@ export default function ContactMe() {
         <div className='email page'>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <h1>Message Me</h1>
-                    <input 
-                        placeholder='Name'
-                        name='name'
-                        value={nameField.text}
-                        onBlur={handleNameValidation}
-                        onChange={ e => changeNameField({ ...nameField, text: e.target.value }) }
-                        className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
-                            
-                    />
-                    <input 
-                        placeholder='your_email@email.com'
-                        name='email'
-                        value={emailField.text}
-                        onBlur={handleEmailValidation}
-                        onChange={ e => changeEmailField({ ...emailField, text: e.target.value }) }
-                        className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
-                    />
+                <input 
+                    placeholder='Name'
+                    name='name'
+                    value={nameField.text}
+                    onBlur={handleNameValidation}
+                    onChange={ e => changeNameField({ ...nameField, text: e.target.value }) }
+                    className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
+                        
+                />
+                <input 
+                    placeholder='your_email@email.com'
+                    name='email'
+                    value={emailField.text}
+                    onBlur={handleEmailValidation}
+                    onChange={ e => changeEmailField({ ...emailField, text: e.target.value }) }
+                    className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
+                />
                 <textarea
                     placeholder='Enter your message here'
                     autoComplete='off'
@@ -91,9 +91,7 @@ export default function ContactMe() {
                     className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
                 />
                 <button type='submit'>SEND</button>
-                <strong className='message'>
-                    {errorMessage}
-                </strong>
+                <strong className='message'>{errorMessage}</strong>
             </form>
             <div className='contact-info'>
                 <h2>Or contact me directly:</h2>
@@ -101,7 +99,7 @@ export default function ContactMe() {
                     <hr />
                     <p>Brandon Gregori</p>
                     <a href="mailto: brandon.gregori@gmail.com">brandon.gregori@gmail.com</a>
-                    <p>Phone: (720) 260-4150</p>
+                    <p>(720) 260-4150</p>
                     <hr />
                 </div>
             </div>

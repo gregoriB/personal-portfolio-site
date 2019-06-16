@@ -1,25 +1,28 @@
 :root {
-  --lite: #1f2833;
   --dark: #0b0c10;
+  --medium: #1f2833;
+  --lite: #475258;
+  --shadow: #05070c;
   --gray: #c5c6c7;
-  --colorful-lite: #66fcf1;
-  --colorful-dark: #45a29e;
-  --colorful-bright: #98fff8;
+  --colorful-dark: #296777;
+  --colorful-medium: #55a0b3;
+  --colorful-lite: #84e6ff;
+  --colorful-bright: #9bebff;
   --mobile-break-point: 700px;
+  --text-shadow: .5rem .5rem .3rem var(--shadow);
+  --box-shadow: var(--text-shadow);
 }
 
 html, body {
   margin: 0;
-  /* min-height: 200%; */
 }
-
 
 body {
   font-family: 'Amita', cursive;
   font-size: 16px;
   letter-spacing: .2px;
   line-height: 1.5rem;
-  background-color: var(--lite);
+  background-color: var(--medium);
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -32,10 +35,16 @@ h1, h2, a {
 
 h1 {
   line-height: 2.5rem;
+  text-shadow: var(--text-shadow);
 }
 
 h2 {
   line-height: 2rem;
+  text-shadow: var(--text-shadow);
+}
+
+p, strong, li {
+  text-shadow: var(--text-shadow);
 }
 
 .app {
@@ -44,7 +53,7 @@ h2 {
   top: 0;
   display: flex;
   box-sizing: border-box;
-  background-color: var(--lite);
+  background-color: var(--medium);
   margin: 0 auto;
   height: 100vh;
   width: 100vw;

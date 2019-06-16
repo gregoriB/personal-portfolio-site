@@ -8,9 +8,9 @@
     left: 0;
     height: 100vh;
     font-weight: bold;
-    /* min-width: 10rem; */
     width: 10vw;
-    background-color: #0b0c10d5;
+    /* background-color: #0b0c10d5; */
+    background-color: var(--dark);
     text-align: center;
 }
 
