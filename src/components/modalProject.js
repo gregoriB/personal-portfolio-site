@@ -19,30 +19,8 @@ function ModalProject() {
         state.setIsModalOpen(false);
     }
 
-    // const handleKeyPress = e => {
-    //     if (e.key !== 'Escape') {
-
-    //         return;
-    //     }
-    //     state.setIsModalOpen(false);
-    // }
-
     const desc = useRef(null);
     const article = useRef(null);
-
-    // const handleUpdateArticle = () => {
-    //     desc.current.innerHTML = project.desc;
-    //     article.current.scrollTo(0, 0);
-    // }
-
-
-
-    // const handleScrollBarVisibility = () => {
-    //     console.log('enter')
-    //     clearTimeout(scrollTimeout);
-    //     setScrollState('active');
-    //     scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);
-    // }
 
     useEffect(() => {
         let scrollTimeout = 0;
@@ -63,7 +41,6 @@ function ModalProject() {
         handleUpdateArticle();
 
         const handleScrollBarVisibility = () => {
-            // console.log('enter')
             clearTimeout(scrollTimeout);
             setScrollState('active');
             scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);

@@ -1,91 +1,143 @@
 .projects-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
+    height: 100%;
+    /* overflow-x: hidden; */
 }
 
 .projects {
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 5vh;
-    max-width: 100%;
+    justify-content: center;
+    /* display: grid;
+    flex: 1;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, 27.5rem);
+    grid-template-rows: repeat(auto-fill, 16rem); */
+    /* width: 70vw; */
+    /* margin-top: 10vh; */
 }
 
 .project {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
     box-sizing: border-box;
-    margin: 3rem;
+    width: 18rem;
     min-width: 200px;
     text-align: center;
     cursor: pointer;
-    opacity: .8;
     transition: .2s;
     user-select: none;
-}
-
-.project-name {
-    display: flex;
-    align-items: center;
-    font-family: 'Dancing Script', cursive;
-    margin: 0;
-    margin-bottom: 2%;
-    color: var(--colorful-lite);
-    height: 4rem;
-}
-
-.project img {
-    width: 18rem;
+    min-width: 26rem;
+    min-height: 15rem;
+    width: 26rem;
+    height: 15rem;
+    transition: 1s;
     box-shadow: var(--box-shadow);
-  }
+    margin: 1rem;
+}
 
-.shadow {
-    margin: 0 auto;
-    box-sizing: border-box;
+.project:after {
+    opacity: .7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    transition: 1s;
+}
+
+.project:nth-of-type(1):after {
+    background-image: url('../images/theVerge-top-stories.jpg');
+}
+
+.project:nth-of-type(2):after {
+    background-image: url('../images/react-game-thumbnail.jpg');
+}
+
+.project:nth-of-type(3):after {
+    background-image: url('../images/html5-drawing-app.jpg');
+}
+
+.project:nth-of-type(4):after {
+    background-image: url('../images/video-player.jpg');
+}
+
+.project:nth-of-type(5):after {
+    background-image: url('../images/3rd-strike-app.jpg');
+}
+
+.project:nth-of-type(6):after {
+    background-image: url('../images/3rd-strike-extension.jpg');
+}
+
+.project:nth-of-type(7):after {
+    background-image: url('../images/3rd-strike-extension.jpg');
+}
+
+.project h1 {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    width: 18rem;
-    height: 50%;
-    background-image: linear-gradient(to top, black 0%, #0b0c1050 50%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.shadow p {
-    opacity: 0;
+    font-family: 'Dancing Script', cursive;
     color: var(--colorful-lite);
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: .3rem .3rem .3rem var(--shadow);
+    z-index: 1;
+    width: 100%;
     margin: 0 auto;
-    font-size: .9rem;
-    letter-spacing: .5px;
+    padding: .8rem 0;
     transition: .2s;
 }
+
+  .project .click-message {
+      font-weight: bold;
+      font-size: 1rem;
+      color: white;
+      opacity: 0;
+      z-index: 1;
+      transition: .2s;
+      font-style: italic;
+      mix-blend-mode: difference;
+
+  }
 
 .center-focus {
     display: none;
 }
 
 @media (hover: hover) and (min-width: 800px) {
-    .project:hover {
+    .project:hover:after {
         opacity: 1;
     }
 
-    .project:hover .shadow p {
+    .project:hover .click-message {
         opacity: 1;
-        transition-duration: .8s;
+        transition: 2s;
         transition-delay: .5s;
-        transition-timing-function: ease-out;
+    }
+
+    .project:hover h1 {
+        text-shadow: 0 0 .1rem var(--shadow);
+        text-shadow: 0 0 .15rem black;
+        background-color: #00000088;
+        transition-property: text-shadow, background-color;
+        transition-timing-function: linear, ease-out;
+        transition-duration: 1s, 2s;
+        transition-delay: 0s, .5s;
     }
 }
 
@@ -107,21 +159,40 @@
         flex-direction: column;
         justify-content: space-evenly;
         flex-wrap: nowrap;
+        width: 100%;
     }
     
     .project {
+        justify-content: flex-end;
         opacity: 1;
         scroll-snap-align: center;
-        min-width: 90vw;
-        min-width: 70vw;
-        width: 100vw;
-        max-width: 90vw;
-        min-height: 50vw;
-        margin: 2rem auto;
+        margin: 1rem auto;
         padding: 0;
         border: none;
-        box-shadow: none;
+        /* box-shadow: none; */
         background-color: var(--medium);
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        width: 90vw;
+        min-width: 90vw;
+        height: calc(90vw * .58);
+        min-height: calc(90vw * .58);
+        transition: 1s;
+    }
+    
+    .project:after {
+        opacity: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        transition: 1s;
     }
 
     .project:nth-child(1) {
@@ -132,28 +203,17 @@
         margin-bottom: 20vh;
     }
 
-    .project-name {
-        font-size: 1.5rem;
-        margin: 1rem auto;
+    .project h1 {
+        position: relative;
+        /* font-size: 1.5rem; */
+        /* margin: 1rem auto; */
+        /* margin-top: 1rem; */
+        text-shadow: .1rem .1rem .2rem var(--shadow);
+        padding: 0;
     }
 
-    .project img {
-        width: 100%;
-        box-shadow: var(--box-shadow);
-    }
-
-    .shadow {
-        position: static;
-        margin-top: 1rem;
-        background-image: none;
-        bottom: -2rem;
-        font-style: italic;
-        height: 1rem;
-        width: 100%;
-    }
-    
-    .shadow p {
-        opacity: 1;
+    .project .click-message {
+        display: none;
     }
 
     .center-focus {
@@ -165,12 +225,16 @@
         height: 110vh;
         background: linear-gradient(0deg, var(--dark) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, var(--dark) 100%);
         pointer-events:none;
-        z-index: 1;
+        z-index: 2;
     }
 }
 
 @media (max-height: 400px)  {
     .project:nth-child(1) {
         margin: 3rem;
+    }
+
+    .center-focus {
+        display: none;
     }
 }

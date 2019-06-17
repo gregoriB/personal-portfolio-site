@@ -11,11 +11,8 @@ function Project(props) {
 
     return (
         <div className='project' onClick={handleClick}>
-            <h2 className='project-name'>{props.name}</h2>
-            <img src={require(`../images/${props.image}`)} alt={props.name} />
-            <div className='shadow'>
-                <p>Click to see more</p>
-            </div>
+            <p className='click-message'>Click to see more</p>
+            <h1 className='project-name'>{props.name}</h1>
         </div>
     );
 }

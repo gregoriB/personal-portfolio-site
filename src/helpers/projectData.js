@@ -36,7 +36,7 @@ const projectData = [
     {
         name: "A Simple Game Made with React.js",
         date: "October 27th, 2018",
-        image: "react-game.png",
+        image: "react-game.jpg",
         linkSite: "https://gregorib-react-game.netlify.com/",
         linkRepo: "https://github.com/gregoriB/simple-game-React",
         desc: `
@@ -69,7 +69,7 @@ const projectData = [
     {
         name: "HTML5 Canvas Drawing App",
         date: "December 29th, 2018",
-        image: "html5-drawing-app.png",
+        image: "html5-drawing-app.jpg",
         linkSite: "https://codepen.io/gregorib/full/PXJryw",
         linkRepo: "https://github.com/gregoriB/drawing-app-HTML5-Canvas",
         desc: `
@@ -92,7 +92,7 @@ const projectData = [
     {
         name: "HTML5 Video Player",
         date: "January 4th, 2019",
-        image: "video-player.png",
+        image: "video-player.jpg",
         linkSite: "https://codepen.io/gregorib/full/vvReVG",
         linkRepo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
         desc: `
@@ -117,7 +117,7 @@ const projectData = [
     {
         name: "3rd Strike Frame Data in React",
         date: "February 24th, 2019",
-        image: "3rd-strike-app.png",
+        image: "3rd-strike-app.jpg",
         linkSite: "https://3rd-strike-frame-data.netlify.com/",
         linkRepo: "https://github.com/gregoriB/3rd-strike-app",
         desc: `
@@ -150,7 +150,34 @@ const projectData = [
     {
         name: "3rd Strike Web Scraper Extension",
         date: "January 28th, 2019",
-        image: "3rd-strike-extension.png",
+        image: "3rd-strike-extension.jpg",
+        linkSite: null,
+        linkRepo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
+        desc: `
+            <p>
+            This is the browser extension I made and used to scrape the data I needed for my 3rd Strike frame data app.  It's not fun to use or look at, but it served me 
+            well.  Basically I needed the data from a website, and the simplest way to get it was to make an extension for google chrome that would allow me to download JSON-formatted 
+            files when I clicked a button on the page.  It was mostly about solving issues with the data formatting as they came up.  Having everything in the proper format 
+            was going to be crucial for later use in my app.
+            </p>
+            <p>
+            The data being pulled from their website was pretty messy, and not all of it was formatted the same so I had to make a few extra functions to sort through 
+            that.  It really just came down to tackling one problem after the next until I had all of the data being properly formatted and added to an object.  Then I had to 
+            figure out how to download it into a JSON file, which just came down to adding it to a javascript blob, creating a download capable anchor element, adding it to 
+            the 'href' attribute, and using the click() method to click it.
+            </p>
+            <p>
+            This was a project of utility, but I had a lot of fun with it.  I'd never made a browser extension prior to this, and it was the first time I realized I could use them to 
+            just javascript to interface with the HTML on a website to suit my own needs.  Not too long after, I made an a dark theme extension for classic reddit, which is also in my 
+            github profile.
+            </p>
+            <span>- Brandon</span>
+        `
+    },
+    {
+        name: "Personal Portfolio Site",
+        date: "June 17th, 2019",
+        image: "3rd-strike-extension.jpg",
         linkSite: null,
         linkRepo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
         desc: `

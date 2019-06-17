@@ -87,7 +87,7 @@
     transition-delay: 0;
 }
 
-.desktop-nav .social-media div::after {
+.desktop-nav .social-media div:after {
     border-radius: 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -101,19 +101,19 @@
     z-index: -1;
 }
 
-.desktop-nav .social-media div:hover::after {
+.desktop-nav .social-media div:hover:after {
     opacity: .1;
 }
 
-.desktop-nav #github-image::after {
+.desktop-nav #github-image:after {
     background-image: url('../SVGs/github.svg');
 }
 
-.desktop-nav #linkedin-image::after {
+.desktop-nav #linkedin-image:after {
     background-image: url('../SVGs/linkedin.svg');
 }
 
-.desktop-nav #facebook-image::after {
+.desktop-nav #facebook-image:after {
     background-image: url('../SVGs/facebook.svg');
 }
 
