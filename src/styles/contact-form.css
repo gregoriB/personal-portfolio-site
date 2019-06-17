@@ -22,7 +22,8 @@
     padding: 1rem;
     width: 20rem;
     /* background-color: var(--dark); */
-    margin: 0 5vw;
+    margin-bottom: 8vh;
+    margin-left: 8vw;
 }
 
 .contact-form * {
@@ -81,7 +82,7 @@
 .contact-form button {
     display: block;
     font-family: 'Dancing Script', cursive;
-    color: var(--medium);
+    color: var(--dark);
     border: 2px solid transparent;
     border-radius: 3px;
     background-color: var(--colorful-medium);
@@ -90,9 +91,9 @@
     transition: .2s;
     padding: .3rem;
     width: 100px;
-    /* float: left; */
     outline: none;
     box-shadow: var(--box-shadow);
+    text-shadow: 0 .5px .3px var(--dark);
 }
 
 .contact-form button:active {
@@ -126,7 +127,8 @@ input:-webkit-autofill {
 }
 
 .contact-info {
-    margin: 5vw;
+    margin-top: 5vw;
+    margin-left: 8vw;
 }
 
 .contact-info h2 {
@@ -215,7 +217,8 @@ input:-webkit-autofill {
     }
 
     .contact-info {
-        margin: 0 auto;
+        margin: 15vh auto;
+        margin-bottom: 10vh;
     }
 
     .contact-info div {

@@ -8,10 +8,14 @@
     left: 0;
     height: 100vh;
     font-weight: bold;
-    width: 10vw;
-    /* background-color: #0b0c10d5; */
-    background-color: var(--dark);
+    width: 8vw;
+    /* background-color: #0d1116; */
+    background-color: #0b0c10;
+    /* background-color: #0b0c10a1; */
+    /* background-image: linear-gradient(120deg, #0b0c10fa 0%, #0b0c107a 45%, #0b0c1017 150%); */
     text-align: center;
+    transition: .1s;
+    box-shadow: .05rem .01rem .3rem #000000b0;
 }
 
 .desktop-nav button {
@@ -21,30 +25,27 @@
 .desktop-nav .links {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     height: 50vh;
-    margin: 10vh 0;
+    /* margin: 5vh 0; */
 }
 
 .desktop-nav a {
-    font-size: 1.15rem;
+    /* font-size: 1.15rem; */
+    font-size: 1.3vw;
     opacity: .85;
     letter-spacing: 1px;
     color: white;
     text-decoration: none;
-    padding: 1rem 0;
+    padding: 2vh 0;
     transition: .2s;
     width: 100%;
 }
 
 .desktop-nav a:nth-of-type(1) {
-    margin-bottom: 10vh;
-}
-
-.desktop-nav a:hover {
-    opacity: 1;
-    text-shadow: 0 0 2px white;
+    margin-bottom: 15vh;
+    margin-top: 5vh;
 }
 
 .desktop-nav .active-link {
@@ -56,11 +57,11 @@
     user-select: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
     margin: 0 auto;
     height: 50vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .desktop-nav .social-media div {
@@ -69,22 +70,17 @@
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    width: 3rem;
-    height: 3rem;
+    /* width: 3rem;
+    height: 3rem; */
+    width: 3.5vw;
+    height: 3.5vw;
     color: transparent;
     font-size: .9rem;
     opacity: .8;
-    transition: 1s;
-    transition-delay: .2s;
+    transition: .3s;
+    transition-delay: 0s;
     cursor: pointer;
-}
-
-.desktop-nav .social-media div:hover {
-    opacity: 1;
-    color: white;
-    text-shadow: 0 0 3px black;
-    transition: 1s;
-    transition-delay: 0;
+    margin: 1vh 0;
 }
 
 .desktop-nav .social-media div:after {
@@ -101,8 +97,8 @@
     z-index: -1;
 }
 
-.desktop-nav .social-media div:hover:after {
-    opacity: .1;
+.desktop-nav .social-media div:after {
+    transition: .2s;
 }
 
 .desktop-nav #github-image:after {
@@ -130,5 +126,24 @@
 
     .desktop-nav .links {
         margin: 1rem 0;
+    }
+}
+
+@media (hover: hover) {
+    .desktop-nav a:hover {
+        opacity: 1;
+        text-shadow: 0 0 2px white;
+    }
+
+    .desktop-nav .social-media div:hover {
+        opacity: 1;
+        color: white;
+        text-shadow: 0 0 3px black;
+        transition: 1s;
+        transition-delay: .2s;
+    }
+
+    .desktop-nav .social-media div:hover:after {
+        opacity: .1;
     }
 }
