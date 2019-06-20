@@ -34,7 +34,6 @@
     justify-content: space-evenly;;
     height: 100vh;
     padding: 1rem;
-    /* display: none; */
 }
 
 .modal-content * {
@@ -154,8 +153,7 @@
 
 .project-modal.exit {
     opacity: 0;
-    transition: .1s;
-    visibility: hidden;
+    transition: .5s;
 }
 
 .project-modal.enter .modal-main  {
@@ -180,9 +178,33 @@
 }
 
 .project-modal.exit .modal-main .modal-content {
+    height: 0;
+    width: 0;
     opacity: 0;
-    transition: .1s;
-    transition-delay: 0;
+    /* transition: .1s;
+    transition-delay: 0; */
+    transition-delay: 0s, .2s, .2s;
+    transition-duration: .1s, 0, 0;
+    transition-property: opacity, height, width;
+    visibility: hidden;
+}
+
+.modal-article::-webkit-scrollbar {
+    width: 9px;
+}
+
+.modal-article::-webkit-scrollbar-track {
+    background: var(--lite);
+    border-radius: 5px;
+}
+
+.modal-article::-webkit-scrollbar-thumb {
+    background: var(--colorful-lite);
+    border-radius: 5px;
+}
+
+.modal-article::-webkit-scrollbar-thumb:hover {
+    background: var(--colorful-bright); 
 }
 
 @media (hover: hover) {
@@ -195,6 +217,7 @@
 @media (max-width: 800px) {
     .project-modal {
         z-index: 3;
+        margin: 0;
     }
 
     .modal-main {
@@ -238,10 +261,6 @@
         height: 80vh;
     }
 
-    .project-modal ::-webkit-scrollbar {
-        width: 5px;
-    }
-
     .modal-content .article-content * {
         margin: 0 auto;
     }
@@ -262,7 +281,7 @@
 
     .hide-scroll {
         visibility: visible;
-        box-sizing: border-box; 
+        box-sizing: border-box;
         position: fixed;
         right: .8rem;
         height: 100%;
@@ -278,12 +297,40 @@
         opacity: 1;
     }
 
-    .project-modal.exit .modal-main {
-        transition: opacity .3s linear 0s;
-    }
-
     .modal-article.inactive .hide-scroll:hover {
         opacity: 0;
+    }
+
+    .project-modal.enter {
+        transition-timing-function: ease-in;
+        transition: 1s;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .project-modal.exit {
+        transition: .5s;
+        opacity: 1;
+    }
+
+    .project-modal.enter .modal-main {
+        transition-timing-function: ease-out;
+        transition: 1s;
+        opacity: 1;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .project-modal.exit .modal-main {
+        margin: 0;
+        transform: translateX(100%);
+        height: 100vh;
+        width: 100vw;
+        transition: .5s;
+    }
+
+    .modal-article::-webkit-scrollbar {
+        width: 5px;
     }
 }
 

@@ -113,22 +113,6 @@
     background-image: url('../SVGs/facebook.svg');
 }
 
-@media (max-height: 600px) {
-    .desktop-nav .social-media div {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .desktop-nav .links a {
-        font-size: 1.2rem;
-        padding: .5rem;
-    }
-
-    .desktop-nav .links {
-        margin: 1rem 0;
-    }
-}
-
 @media (hover: hover) {
     .desktop-nav a:hover {
         opacity: 1;

@@ -12,6 +12,7 @@ const Project: React.SFC<IProps> = ({ name, index }) => {
     const handleClick = () => {
         state.setCurrentProject(index)
         state.setIsModalOpen(true);
+        state.setNavState(false);
     }
 
     return (

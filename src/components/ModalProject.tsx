@@ -7,7 +7,7 @@ function ModalProject() {
 
     const state = useContext(StateContext);
 
-    const [scrollState, setScrollState] = useState('inactive');
+    const [scrollState, setScrollState] = useState<string | null>('inactive');
     const index =  state.currentProject;
     const project = projectData[index];
 
@@ -21,18 +21,18 @@ function ModalProject() {
         state.setIsModalOpen(false);
     }
 
-    const desc = useRef<HTMLDivElement | null>(null);
+    const description = useRef<HTMLDivElement | null>(null);
     const article = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
         let scrollTimeout: number;
-        const modalArticle = article.current!;
+        const currentDesc = description.current!;
+        const currentArticle = article.current!;
 
         const handleUpdateArticle = () => {
-            desc.current!.innerHTML = project.desc;
-            modalArticle && modalArticle.scrollTo(0, 0);
+            currentDesc.innerHTML = project.desc;
+            currentArticle.scrollTo(0, 0);
         };
-
         handleUpdateArticle();
 
         const handleKeyPress = (e: KeyboardEvent) => {
@@ -42,22 +42,22 @@ function ModalProject() {
             }
             state.setIsModalOpen(false);
         }
-
         window.addEventListener('keydown', handleKeyPress);
 
         const handleScrollBarVisibility = () => {
             clearTimeout(scrollTimeout);
-            setScrollState('active');
+            setScrollState(null);
             scrollTimeout = window.setTimeout(() => setScrollState('inactive'), 1000);
         }
-
-        modalArticle && modalArticle.addEventListener('scroll', handleScrollBarVisibility);
+        currentArticle.addEventListener('scroll', handleScrollBarVisibility);
         
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
-            modalArticle && modalArticle.removeEventListener('scroll', handleScrollBarVisibility);
+            currentArticle.removeEventListener('scroll', handleScrollBarVisibility);
         }
-    }, [state.currentProject,  project.desc, state]);
+    }, 
+        [project.desc, state, article, description]
+    );
 
     return (
         <div 
@@ -71,12 +71,12 @@ function ModalProject() {
                         <h1>{projectData[index].name}</h1>
                         <div id='close' className='close-modal' onClick={handleCloseModal}>X</div>
                     </header>
-                    <article className={`modal-article ${scrollState}`} data-ref={article}>
+                    <article className={`modal-article ${scrollState}`} ref={article}>
                         <div className='hide-scroll' />
                         <div className='article-content'>
                             <div className='date'>{project.date}</div>
                             <img src={require(`../images/${project.image}`)} alt={project.name}/>
-                            <div ref={desc}>{project.desc}</div>
+                            <div ref={description}>{project.desc}</div>
                         </div>
                     </article>
                     <div className='project-links'>

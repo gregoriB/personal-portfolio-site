@@ -3,8 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 100%; */
-    /* overflow-x: hidden; */
 }
 
 .projects {
@@ -13,15 +11,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* display: grid;
-    flex: 1;
-    align-items: center;
-    grid-template-columns: repeat(auto-fill, 27.5rem);
-    grid-template-rows: repeat(auto-fill, 16rem); */
-    /* width: 70vw; */
-    /* margin-top: 10vh; */
-    /* height: 100%; */
-    margin-top: calc(100vh - 60%);
     margin-top: 10vh;
 }
 
@@ -172,7 +161,6 @@
         margin: 1rem auto;
         padding: 0;
         border: none;
-        /* box-shadow: none; */
         background-color: var(--medium);
         text-align: center;
         cursor: pointer;
@@ -208,9 +196,6 @@
 
     .project h1 {
         position: relative;
-        /* font-size: 1.5rem; */
-        /* margin: 1rem auto; */
-        /* margin-top: 1rem; */
         text-shadow: .1rem .1rem .2rem var(--shadow);
         padding: 0;
     }
