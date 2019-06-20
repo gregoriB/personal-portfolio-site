@@ -1,22 +1,6 @@
 import React, { useState } from 'react'
 
-interface IContextProps {
-  isModalOpen: boolean,
-  setIsModalOpen(val: any): any,
-  isMobile: boolean,
-  setDisplayMode(val: any): any,
-  isNavOpen: boolean,
-  setNavState(val: any): any,
-  currentProject: number,
-  setCurrentProject(val: any): any,
-  currentPage: string,
-  setCurrentPage(val: any): any,
-  isFirstLoad: boolean,
-  setIsFirstLoad(val: any): any,
-}
-
-export const StateContext = React.createContext({} as IContextProps);
-
+export const StateContext = React.createContext<any>(null);
 
 export const StateProvider: React.SFC<any> = props => {
 
@@ -49,5 +33,5 @@ export const StateProvider: React.SFC<any> = props => {
     >
       {props.children}
     </StateContext.Provider>
-  )
+  );
 }
