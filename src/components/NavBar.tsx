@@ -24,9 +24,10 @@ const NavBar = () => {
         }
       });
 
+    type MouseClick = React.MouseEvent<any>
     
-    const handleUpdateDisplay = e => {
-        state.setCurrentPage(e.target.name)
+    const handleUpdateDisplay = (e: MouseClick) => {
+        state.setCurrentPage(e.currentTarget.dataset.name)
         state.setNavState(false);
     }
 
@@ -34,7 +35,7 @@ const NavBar = () => {
         state.setNavState(!state.isNavOpen);
     }
 
-    const handleOpenLink = url => {
+    const handleOpenLink = (url: string) => {
         window.open(url, '_blank');
     }
 
@@ -51,32 +52,32 @@ const NavBar = () => {
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
-                    className={state.currentPage === 'Home' ? 'active-link' : null}
-                    name='Home' 
+                    className={state.currentPage === 'Home' ? 'active-link' : 'inactive-link'}
+                    data-name='Home'
                     to='Home'
                     onClick={handleUpdateDisplay}
                 >
                     Home
                 </Link>
                 <Link 
-                    className={state.currentPage === 'About-Me' ? 'active-link' : null}
-                    name='About-Me' 
+                    className={state.currentPage === 'About-Me' ? 'active-link' : 'inactive-link'}
+                    data-name='About-Me' 
                     to='About-Me'
                     onClick={handleUpdateDisplay}
                 >
                     About Me
                 </Link>
                 <Link 
-                    className={state.currentPage === 'Projects' ? 'active-link' : null}
-                    name='Projects' 
+                    className={state.currentPage === 'Projects' ? 'active-link' : 'inactive-link'}
+                    data-name='Projects' 
                     to='Projects'
                     onClick={handleUpdateDisplay}
                 >
                     Projects
                 </Link>
                 <Link 
-                    className={state.currentPage === 'Contact-Me' ? 'active-link' : null}
-                    name='Contact-Me' 
+                    className={state.currentPage === 'Contact-Me' ? 'active-link' : 'inactive-link'}
+                    data-name='Contact-Me' 
                     to='Contact-Me'
                     onClick={handleUpdateDisplay}
                 >

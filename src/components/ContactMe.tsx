@@ -1,21 +1,31 @@
 import React, { useState } from 'react';
 import '../styles/contact-form.css';
 
+
 export default function ContactMe() {
-    const [nameField, changeNameField] = useState({ text: '', isValid: null });
-    const [emailField, changeEmailField] = useState({ text: '', isValid: null });
-    const [textField, changeTextField] = useState({ text: '', isValid: null });
-    const [errorMessage, setErrorMessage] =useState(null);
+    interface MyObject {
+        text: string;
+        isValid: boolean | null;
+    }
+
+    interface SyntheticEvent {
+        target: EventTarget 
+    }
+
+    const [nameField, changeNameField] = useState<MyObject>({ text: '', isValid: null });
+    const [emailField, changeEmailField] = useState<MyObject>({ text: '', isValid: null });
+    const [textField, changeTextField] = useState<MyObject>({ text: '', isValid: null });
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     const isFormValid = nameField.isValid && emailField.isValid && textField.isValid;
 
-    const handleNameValidation = () => {
+    const handleNameValidation = (): void => {
         const name = nameField.text;
         const re = /^[A-Z a-z]*$/;
-        const isValid = re.test(name) && name.length;
+        const isValid : boolean = re.test(name) && name.length > 0;
         changeNameField({
             ...nameField,
-            text: nameField.text.trim(),
+            text: nameField.text,
             isValid
         });
         if (!isValid) {
@@ -23,13 +33,13 @@ export default function ContactMe() {
         }
     };
 
-    const handleEmailValidation = () => {
+    const handleEmailValidation = (): void => {
         const email = emailField.text;
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const isValid = re.test(email);
         changeEmailField({
             ...emailField,
-            text: emailField.text.trim(),
+            text: emailField.text,
             isValid
         });
         if (!isValid) {
@@ -37,12 +47,12 @@ export default function ContactMe() {
         }
     };
 
-    const handleTextAreaValidation = () => {
+    const handleTextAreaValidation = (): void => {
         const text = textField.text;
-        const isValid = text.length;
+        const isValid = text.length > 0;
         changeTextField({
             ...textField,
-            text: textField.text.trim(),
+            text: textField.text,
             isValid
         });
         if (!isValid) {
@@ -50,7 +60,9 @@ export default function ContactMe() {
         }
     };
 
-    const handleSubmit = e => {
+    type FormElem = React.ChangeEvent<HTMLFormElement>;
+
+    const handleSubmit = (e: FormElem ) => {
         e.preventDefault()
         if (isFormValid) {
             

@@ -10,9 +10,11 @@ export default function Home() {
         
     }, [isFirstLoad, setIsFirstLoad])
 
+
+
     return (
-        <div name='Home' className='home page'>
-            <section className={`home-container ${isFirstLoad ? 'first-load' : null }`}>
+        <div data-name='Home' className='home page'>
+            <section className={`home-container ${isFirstLoad && 'first-load'}`}>
                 <h1>Hello!  I'm Brandon.</h1>
                 <p>
                     I love web development.  Solving problems, challenging myself, and being creative are things I enjoy, and web development lets me do them all at once.

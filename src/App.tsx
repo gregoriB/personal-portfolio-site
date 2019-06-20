@@ -12,7 +12,7 @@ import ContactMe from './components/ContactMe';
 import './styles/normalize.css';
 import './App.css';
 
-const App = ({ history }) => {
+const App: React.SFC<any> = ({ history }) => {
   const { isModalOpen, setIsModalOpen } = useContext(StateContext);
   
   useEffect(() => {

@@ -6,12 +6,11 @@ import '../styles/projects.css';
 
 export default function Projects() {
     const mapProjects = () => {
-        return projectData.map((project, index ) => {
+        return projectData.map((project, index: number ) => {
             return (
                 <Project 
                     key={project.name}
                     name={project.name}
-                    image={project.image}
                     index={index}
                 />
             );

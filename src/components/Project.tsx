@@ -1,18 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext  } from 'react';
 import { StateContext } from '../contexts/StateContext';
 
-function Project(props) {
+interface IProps {
+    name: string,
+    index: number
+}
+
+const Project: React.SFC<IProps> = ({ name, index }) => {
     const state = useContext(StateContext);
 
     const handleClick = () => {
-        state.setCurrentProject(props.index)
+        state.setCurrentProject(index)
         state.setIsModalOpen(true);
     }
 
     return (
         <div className='project' onClick={handleClick}>
             <p className='click-message'>Click to see more</p>
-            <h1 className='project-name'>{props.name}</h1>
+            <h1 className='project-name'>{name}</h1>
         </div>
     );
 }

@@ -8,49 +8,54 @@ function ModalProject() {
     const state = useContext(StateContext);
 
     const [scrollState, setScrollState] = useState('inactive');
-    const index = state.currentProject;
+    const index =  state.currentProject;
     const project = projectData[index];
 
-    const handleCloseModal = e => {
-        if (!e.target.id) {
-            
-            return
+    type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
+
+    const handleCloseModal = (e: mouseEvent) => {
+        if (!(e.target instanceof HTMLElement) || !e.target.id) {
+
+            return;
         }
         state.setIsModalOpen(false);
     }
 
-    const desc = useRef(null);
-    const article = useRef(null);
+    const desc = useRef<HTMLDivElement | null>(null);
+    const article = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
-        let scrollTimeout = 0;
-        
-        const modalArticle = article.current;
-        const handleKeyPress = e => {
+        let scrollTimeout: number;
+        const modalArticle = article.current!;
+
+        const handleUpdateArticle = () => {
+            desc.current!.innerHTML = project.desc;
+            modalArticle && modalArticle.scrollTo(0, 0);
+        };
+
+        handleUpdateArticle();
+
+        const handleKeyPress = (e: KeyboardEvent) => {
             if (e.key !== 'Escape') {
     
                 return;
             }
             state.setIsModalOpen(false);
         }
-        const handleUpdateArticle = () => {
-            desc.current.innerHTML = project.desc;
-            article.current.scrollTo(0, 0);
-        };
 
-        handleUpdateArticle();
+        window.addEventListener('keydown', handleKeyPress);
 
         const handleScrollBarVisibility = () => {
             clearTimeout(scrollTimeout);
             setScrollState('active');
-            scrollTimeout = setTimeout(() => setScrollState('inactive'), 1000);
+            scrollTimeout = window.setTimeout(() => setScrollState('inactive'), 1000);
         }
-        window.addEventListener('keydown', handleKeyPress);
-        modalArticle.addEventListener('scroll', handleScrollBarVisibility);
+
+        modalArticle && modalArticle.addEventListener('scroll', handleScrollBarVisibility);
         
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
-            modalArticle.removeEventListener('scroll', handleScrollBarVisibility);
+            modalArticle && modalArticle.removeEventListener('scroll', handleScrollBarVisibility);
         }
     }, [state.currentProject,  project.desc, state]);
 
@@ -58,15 +63,15 @@ function ModalProject() {
         <div 
             className={`project-modal ${state.isModalOpen ? 'enter' : 'exit'}`}
             id='outer-modal'
-            onClick={e => handleCloseModal(e)}
+            onClick={handleCloseModal}
         >   
             <div className='modal-main'>
                 <div className='modal-content' >
                     <header className='modal-header'>
                         <h1>{projectData[index].name}</h1>
-                        <span id='close' className='close-modal' onClick={handleCloseModal}>X</span>
+                        <div id='close' className='close-modal' onClick={handleCloseModal}>X</div>
                     </header>
-                    <article className={`modal-article ${scrollState}`} ref={article}>
+                    <article className={`modal-article ${scrollState}`} data-ref={article}>
                         <div className='hide-scroll' />
                         <div className='article-content'>
                             <div className='date'>{project.date}</div>

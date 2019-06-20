@@ -142,28 +142,6 @@
     text-shadow: 1px 1px 1.5px var(--dark);
 }
 
-.project-links a:hover {
-    color: white;
-}
-
-.project-modal ::-webkit-scrollbar {
-    width: 9px;
-}
-
-.project-modal ::-webkit-scrollbar-track {
-    background: var(--medium);
-    border-radius: 5px;
-}
-
-.project-modal ::-webkit-scrollbar-thumb {
-    background: var(--colorful-lite);
-    border-radius: 5px;
-}
-
-.project-modal ::-webkit-scrollbar-thumb:hover {
-    background: var(--colorful-bright); 
-}
-
 .hide-scroll {
     visibility: hidden;
 }
