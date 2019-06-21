@@ -36,7 +36,7 @@
     min-height: 15rem;
     width: 26rem;
     height: 15rem;
-    transition: 1s;
+    transition: .5s;
     box-shadow: var(--box-shadow);
     margin: 1rem;
 }
@@ -134,6 +134,11 @@
         transition-timing-function: linear, ease-out;
         transition-duration: 1s, 1s;
         transition-delay: 0s, .3s;
+    }
+
+    .project:hover {
+        transition: .2s;
+        box-shadow: 0 .5vh 1vh var(--shadow);
     }
 }
 

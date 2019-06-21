@@ -130,7 +130,7 @@
     width: 100vw;
     transition: opacity .5s;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.521);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -165,8 +165,8 @@
 .hidden-image .close-image {
     align-self: flex-start;
     position: relative;
-    top: .45rem;
-    right: 2rem;
+    top: -3rem;
+    right: 0;
     color: white;
     text-shadow: 0 0 .1rem black;
     background: rgba(255, 255, 255);
