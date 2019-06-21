@@ -93,6 +93,14 @@ function ModalProject() {
                                 alt={project.name}
                                 onClick={handleToggleImage}
                             />
+                            <div className='project-links'>
+                                { 
+                                    project.linkSite 
+                                    && 
+                                    <a href={project.linkSite} target='_blank' rel="noopener noreferrer">Try it out!</a> 
+                                }
+                                <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">Source Code</a>
+                            </div>
                             <div 
                                 id='hidden-image'
                                 className={`hidden-image ${isImageVisible && 'active'}`}
@@ -113,14 +121,6 @@ function ModalProject() {
                             <div ref={description}>{project.desc}</div>
                         </div>
                     </article>
-                    <div className='project-links'>
-                        { 
-                            project.linkSite 
-                            && 
-                            <a href={project.linkSite} target='_blank' rel="noopener noreferrer">CHECK IT OUT!</a> 
-                        }
-                        <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">GITHUB</a>
-                    </div>
                 </div>
             </div>
         </div>
