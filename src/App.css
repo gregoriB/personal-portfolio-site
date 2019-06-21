@@ -9,7 +9,7 @@
   --colorful-lite: #84e6ff;
   --colorful-bright: #9bebff;
   --mobile-break-point: 700px;
-  --text-shadow: .5rem .5rem .3rem var(--shadow);
+  --text-shadow: 0 1vh 1vh var(--shadow);
   --box-shadow: var(--text-shadow);
 }
 
@@ -100,13 +100,12 @@ p, strong, li {
     margin: 0 auto;
     width: 100vw;
   }
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
-@media (min-width: 800px) {
-  ::-webkit-scrollbar {
-    width: 9px;
-  }
-  
+@media (min-width: 801px) {
   ::-webkit-scrollbar-track {
     background: var(--medium);
     border-radius: 5px;

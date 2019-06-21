@@ -8,17 +8,28 @@ function ModalProject() {
     const state = useContext(StateContext);
 
     const [scrollState, setScrollState] = useState<string | null>('inactive');
+    const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
     const index =  state.currentProject;
     const project = projectData[index];
 
     type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
 
     const handleCloseModal = (e: mouseEvent) => {
-        if (!(e.target instanceof HTMLElement) || !e.target.id) {
+        if (!(e.target instanceof HTMLElement) || !e.target.dataset.util || isImageVisible) {
 
             return;
         }
         state.setIsModalOpen(false);
+    }
+
+    const hiddenImage = useRef<HTMLImageElement | null>(null)
+
+    const handleToggleImage = (e: mouseEvent) => {
+        if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'close')) {
+            
+            return;
+        }
+        setIsImageVisible(!isImageVisible);
     }
 
     const description = useRef<HTMLDivElement | null>(null);
@@ -62,20 +73,49 @@ function ModalProject() {
     return (
         <div 
             className={`project-modal ${state.isModalOpen ? 'enter' : 'exit'}`}
-            id='outer-modal'
+            data-util='close'
             onClick={handleCloseModal}
         >   
             <div className='modal-main'>
                 <div className='modal-content' >
                     <header className='modal-header'>
                         <h1>{projectData[index].name}</h1>
-                        <div id='close' className='close-modal' onClick={handleCloseModal}>X</div>
+                        <div data-util='close' className='close-button close-modal' onClick={handleCloseModal}>X</div>
                     </header>
                     <article className={`modal-article ${scrollState}`} ref={article}>
                         <div className='hide-scroll' />
                         <div className='article-content'>
                             <div className='date'>{project.date}</div>
-                            <img src={require(`../images/${project.image}`)} alt={project.name}/>
+                            <img 
+                                className='modal-image'
+                                src={require(`../images/${project.image}`)} 
+                                alt={project.name}
+                                onClick={handleToggleImage}
+                            />
+                            <div 
+                                id='hidden-image'
+                                className={`hidden-image ${isImageVisible && 'active'}`}
+                                ref={hiddenImage}
+                                onClick={handleToggleImage}
+                                data-util='close'
+                            >
+                                <div 
+                                    className='image-container'
+                                    // data-util='close'
+                                    // data-util={`${state.isMobile && 'close'}`}
+                                    // onClick={handleToggleImage}
+                                    // style={{ backgroundImage: `url(${require(`../images/${project.image}`)}` }}
+                                >
+                                    <img 
+                                        // className='modal-image'
+                                        data-util={`${state.isMobile && 'close'}`}
+                                        src={require(`../images/${project.image}`)} 
+                                        alt={project.name}
+                                        onClick={handleToggleImage}
+                                    />
+                                    <div data-util='close' className='close-button close-image' onClick={handleToggleImage}>X</div>
+                                </div>
+                            </div>
                             <div ref={description}>{project.desc}</div>
                         </div>
                     </article>
