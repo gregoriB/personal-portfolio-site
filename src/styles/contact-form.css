@@ -92,16 +92,18 @@
     padding: .3rem;
     width: 100px;
     outline: none;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 .3rem .5rem var(--dark);
     text-shadow: 0 .5px .3px var(--dark);
 }
 
 .contact-form button:active {
-    transform: scale(.95);
+    transform: scale(.98);
     background-color: var(--colorful-lite);
     border: 2px solid var(--colorful-medium);
     color: var(--medium);
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 .3rem .2rem var(--dark);
+    text-shadow: 0 .5px .3px var(--dark);
+
 }
   
 input:-webkit-autofill {
@@ -158,6 +160,21 @@ input:-webkit-autofill {
     background-image: linear-gradient(to right, var(--medium), var(--gray), var(--medium));
     width: 150%;
     margin-left: -25%;
+}
+
+.contact-info div a {
+    font-size: 1rem;
+    /* font-weight: bold; */
+    font-family: 'Amita', cursive;
+    font-style: italic;
+    text-shadow: 0 0 .5rem var(--shadow);
+    transition: .1s;
+}
+
+.contact-info div a:hover {
+    /* color: var(--colorful-bright); */
+    text-shadow: 0 0 .1rem white;
+    transition: .5s;
 }
 
 @keyframes autofill {
@@ -230,7 +247,7 @@ input:-webkit-autofill {
         text-align: center;
         margin: .5rem auto;
     }
-
+    
     .contact-info hr {
         visibility: visible;
         border: 0;

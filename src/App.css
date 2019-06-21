@@ -46,7 +46,7 @@ h2 {
 }
 
 p, strong, li {
-  text-shadow: var(--text-shadow);
+  /* text-shadow: var(--text-shadow); */
 }
 
 .app {
@@ -100,23 +100,23 @@ p, strong, li {
     margin: 0 auto;
     width: 100vw;
   }
-  ::-webkit-scrollbar {
-    width: 0;
-  }
 }
 
 @media (min-width: 801px) {
+  ::-webkit-scrollbar {
+      width: 7px;
+  }
   ::-webkit-scrollbar-track {
-    background: var(--medium);
+    background: var(--lite);
     border-radius: 5px;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--colorful-lite);
+    background: var(--colorful-medium);
     border-radius: 5px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--colorful-bright); 
+    background: var(--colorful-lite); 
   }
 }

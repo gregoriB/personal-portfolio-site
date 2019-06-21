@@ -51,6 +51,7 @@ function ModalProject() {
     
                 return;
             }
+            setIsImageVisible(false);
             state.setIsModalOpen(false);
         }
         window.addEventListener('keydown', handleKeyPress);
@@ -99,15 +100,8 @@ function ModalProject() {
                                 onClick={handleToggleImage}
                                 data-util='close'
                             >
-                                <div 
-                                    className='image-container'
-                                    // data-util='close'
-                                    // data-util={`${state.isMobile && 'close'}`}
-                                    // onClick={handleToggleImage}
-                                    // style={{ backgroundImage: `url(${require(`../images/${project.image}`)}` }}
-                                >
+                                <div className='image-container'>
                                     <img 
-                                        // className='modal-image'
                                         data-util={`${state.isMobile && 'close'}`}
                                         src={require(`../images/${project.image}`)} 
                                         alt={project.name}

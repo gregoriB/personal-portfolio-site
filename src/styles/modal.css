@@ -21,7 +21,7 @@
     right: 0;
     margin: 0 auto;
     width: 70%;
-    height: 100%;
+    max-height: 100vh;
     background-color: var(--colorful-medium);
     box-shadow: 3px 3px 15px hsl(201, 100%, 5%);
 }
@@ -69,23 +69,26 @@
 
 .close-button {
     user-select: none;
-    background-color: rgba(255, 255, 255, 0);
     border-radius: 50%;
     font-family: cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0;
-    right: 1rem;
     padding: .35rem;
     font-size: 1.2rem;
     font-weight: bold;
-    text-shadow: 0 0 1px var(--dark);
     cursor: pointer;
     transition: .15s;
-    text-align: center;
     line-height: 1rem;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 .1rem var(--shadow);
 }
 
 .close-modal:active {
@@ -110,6 +113,7 @@
     width: 80%;
     transition: .5s;
     box-shadow: 0 0 .1vw var(--shadow);
+    border-radius: 5px;
 }
 
 .article-content .hidden-image {
@@ -153,23 +157,29 @@
     user-select: none;
     height: 100%;
     background: black;
+    box-shadow: 0 .1vh 1vh var(--shadow);
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .hidden-image .close-image {
     align-self: flex-start;
     position: relative;
-    top: -.8rem;
-    right: .8rem;
+    top: .45rem;
+    right: 2rem;
     color: white;
     text-shadow: 0 0 .1rem black;
-    background: rgba(0, 0, 0, 0.507);
+    background: rgba(255, 255, 255);
+    color: var(--gray);
     transition: .2s;
+    opacity: .8;
 }
 
 .hidden-image .close-image:hover {
+    color: var(--lite);
+    text-shadow: 0 0 .1rem var(--shadow);
+    opacity: 1;
     transition: .2s;
-    background: rgba(255, 255, 255, 0.9);
-    color: black;
 }
 
 .hidden-image .close-image:active {
@@ -217,7 +227,7 @@
 }
 
 .modal-article::-webkit-scrollbar {
-    width: 9px;
+    width: 7px;
 }
 
 .modal-article::-webkit-scrollbar-track {
@@ -343,9 +353,9 @@
     }
 
     .hidden-image .image-container img{
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
+        border-radius: 0;
+        width: 95%;
+        /* height: auto; */
     }
 
     .hidden-image .close-image {
@@ -389,8 +399,8 @@
 
     .project-modal.enter .modal-main .modal-content {
         opacity: 1;
-        transition: opacity 1s;
-        transition-delay: .6s;
+        transition: opacity .5s;
+        transition-delay: .8s;
     }
 
     .project-modal.exit .modal-main .modal-content {
@@ -420,12 +430,15 @@
     .project-modal.enter .modal-main  {
         transition: .5s;
         transition-delay: 0s;
+        margin: 0 auto;
+        height: 100vh;
+        width: 70vw;
     }
 
     .project-modal.exit .modal-main {
         height: 0;
         width: 0;
-        margin-top: 50vh;
+        margin-top: 40vh;
         transition: 0;
         transition-delay: .6s;
     }

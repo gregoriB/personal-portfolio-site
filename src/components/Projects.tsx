@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Project from './Project';
 import projectData from '../helpers/projectData';
 import ModalProject from './ModalProject';
@@ -17,9 +17,28 @@ export default function Projects() {
         });
     }
 
+    const projects = useRef<HTMLDivElement | null>(null);    
+
+    useEffect(() => {
+        const projectsDiv = projects.current!;
+        const handleProjectsMargin = () => {
+            if (projectsDiv.offsetHeight < window.innerHeight) {
+                projectsDiv.classList.add('full-page'); 
+            } else {
+                projectsDiv.classList.remove('full-page'); 
+            }
+        }
+
+        handleProjectsMargin();
+        window.addEventListener('resize', handleProjectsMargin)
+        return () => {
+            window.removeEventListener('resize', handleProjectsMargin)
+        };
+    }, [projects])
+
     return (
         <div className='projects-page page'>
-            <div className='projects'>
+            <div ref={projects} className='projects'>
                 {mapProjects()}
                 <div className='center-focus' />
             </div>

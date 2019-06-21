@@ -11,6 +11,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.projects.full-page {
+    
     margin-top: 10vh;
 }
 
@@ -141,7 +145,7 @@
         width: 100vw;
         overflow-y: scroll;
         scroll-snap-type: y proximity;
-        scroll-padding: 20%;
+        scroll-padding: 30%;
         justify-content: space-between;
         flex-direction: column;
     }
@@ -218,11 +222,20 @@
 }
 
 @media (max-height: 400px)  {
+    .project {
+        scroll-snap-align: center;
+    }
+
     .project:nth-child(1) {
         margin: 3rem;
     }
 
     .center-focus {
         display: none;
+    }
+
+    .projects-page {
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
     }
 }
