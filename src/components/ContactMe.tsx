@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/contact-form.css';
 
-
-export default function ContactMe() {
+const ContactMe = () => {
     interface MyObject {
         text: string;
         isValid: boolean | null;
@@ -118,3 +117,5 @@ export default function ContactMe() {
         </div>
     );
 }
+
+export default ContactMe;

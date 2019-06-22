@@ -1,0 +1,87 @@
+@media (max-width: 800px) {
+    .project-modal.enter {
+        transition-timing-function: ease-in;
+        transition: 1s;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .project-modal.exit {
+        transition: .7s;
+        opacity: 1;
+    }
+
+    .project-modal.enter .modal-main {
+        height: 100vh;
+        width: 100vw;
+        opacity: 1;
+        transition-property: transform;
+        transition-delay: .2s;
+        transition-duration: .6s;
+        transition-timing-function: ease-out;
+    }
+
+    .project-modal.exit .modal-main {
+        opacity: 1;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transfrom, .1s, .5s;
+    }
+
+    .project-modal.enter .modal-main .modal-content {
+        opacity: 1;
+        transition: opacity .5s;
+        transition-delay: .8s;
+    }
+
+    .project-modal.exit .modal-main .modal-content {
+        opacity: 0;
+        transition: opacity .2s;
+        transition-delay: 0;
+    }
+}
+
+@media (min-width: 801px) {
+    .project-modal.enter {
+        opacity: 1;
+        transition: .6s;
+        visibility: visible;
+    }
+    
+    .project-modal.exit {
+        opacity: 0;
+        transition: .6s; 
+    }
+
+    .project-modal.enter .modal-main  {
+        transition: .5s;
+        transition-delay: 0s;
+        margin: 0 auto;
+        height: 100vh;
+        width: 70vw;
+    }
+
+    .project-modal.exit .modal-main {
+        height: 0;
+        width: 0;
+        margin-top: 40vh;
+        transition: 0;
+        transition-delay: .6s;
+    }
+
+    .project-modal.enter .modal-main .modal-content {
+        opacity: 1;
+        transition: opacity .5s .5s;
+    }
+
+    .project-modal.exit .modal-main .modal-content {
+        height: 0;
+        width: 0;
+        opacity: 0;
+        transition-delay: 0s, .2s, .2s;
+        transition-duration: .1s, 0, 0;
+        transition-property: opacity, height, width;
+    }
+}

@@ -1,0 +1,109 @@
+.article-content .hidden-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    width: 100vw;
+    transition: opacity .5s;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.article-content .hidden-image.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .6s, height .1s, width .1s;
+}
+
+.hidden-image .image-container {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+    transition: .2s;
+    transition-timing-function: ease-in;
+}
+
+.hidden-image .image-container img {
+    user-select: none;
+    height: 100%;
+    background: black;
+    box-shadow: 0 .1vh 1vh var(--shadow);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.hidden-image .close-image {
+    align-self: flex-start;
+    position: relative;
+    top: -3rem;
+    right: 0;
+    color: white;
+    text-shadow: 0 0 .1rem black;
+    background: rgba(255, 255, 255);
+    color: var(--gray);
+    transition: .2s;
+    opacity: .8;
+}
+
+.hidden-image .close-image:hover {
+    color: var(--lite);
+    text-shadow: 0 0 .1rem var(--shadow);
+    opacity: 1;
+    transition: .2s;
+}
+
+.hidden-image .close-image:active {
+    background: rgba(255, 255, 255);
+    color: white;
+    transform: scale(.9);
+}
+
+@media (max-width: 800px) {
+    .article-content .hidden-image {
+        user-select: none;
+        transition: opacity .2s;
+    }
+
+    .article-content .hidden-image.active {
+        transition: opacity 1s;
+    }
+
+    .hidden-image .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .hidden-image .image-container img{
+        border-radius: 0;
+        width: 95%;
+        /* height: auto; */
+    }
+
+    .hidden-image .close-image {
+        display: none;
+    }
+}
+
+
+@media (max-height: 400px) {
+    .modal-article .article-content img {
+        text-align: center;
+        max-width: 25vw;
+    }
+
+    .hidden-image .image-container img{
+        max-width: 100%;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/about.css';
 
-export default function AboutMe() {
+const AboutMe = () => {
     return (
         <div className='about-me page'>
             <div className='about-me-stuff'>
@@ -40,3 +40,5 @@ export default function AboutMe() {
         </div>
     );
 }
+
+export default AboutMe;

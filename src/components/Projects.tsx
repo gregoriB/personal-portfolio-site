@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import Project from './Project';
 import projectData from '../helpers/projectData';
-import ModalProject from './ModalProject';
+import ModalProject from './ProjectModal';
 import '../styles/projects.css';
 
-export default function Projects() {
+const Projects = () => {
     const mapProjects = () => {
         return projectData.map((project, index: number ) => {
             return (
@@ -46,3 +46,5 @@ export default function Projects() {
         </div>
     );
 }
+
+export default Projects;

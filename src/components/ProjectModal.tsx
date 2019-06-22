@@ -1,35 +1,25 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { StateContext } from '../contexts/StateContext';
+import ModalImage from './ImageModal';
 import projectData from '../helpers/projectData';
-import '../styles/modal.css';
+import '../styles/projectModal.css';
+import '../styles/modalTransitions.css';
 
-function ModalProject() {
-
-    const state = useContext(StateContext);
+const ModalProject = () => {
+    const { currentProject, isImageVisible, setIsImageVisible, isModalOpen, setIsModalOpen, handleToggleImage } = useContext(StateContext);
 
     const [scrollState, setScrollState] = useState<string | null>('inactive');
-    const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
-    const index =  state.currentProject;
+    const index = currentProject;
     const project = projectData[index];
 
     type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
 
     const handleCloseModal = (e: mouseEvent) => {
-        if (!(e.target instanceof HTMLElement) || !e.target.dataset.util || isImageVisible) {
+        if (!(e.target instanceof HTMLElement) || !e.target.dataset.util ||  isImageVisible) {
 
             return;
         }
-        state.setIsModalOpen(false);
-    }
-
-    const hiddenImage = useRef<HTMLImageElement | null>(null)
-
-    const handleToggleImage = (e: mouseEvent) => {
-        if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'close')) {
-            
-            return;
-        }
-        setIsImageVisible(!isImageVisible);
+        setIsModalOpen(false);
     }
 
     const description = useRef<HTMLDivElement | null>(null);
@@ -51,8 +41,12 @@ function ModalProject() {
     
                 return;
             }
-            setIsImageVisible(false);
-            state.setIsModalOpen(false);
+
+            if (isImageVisible) {
+                setIsImageVisible(false);
+            } else {
+                setIsModalOpen(false);
+            }
         }
         window.addEventListener('keydown', handleKeyPress);
 
@@ -68,12 +62,12 @@ function ModalProject() {
             currentArticle.removeEventListener('scroll', handleScrollBarVisibility);
         }
     }, 
-        [project.desc, state, article, description]
+        [project.desc, isImageVisible, setIsImageVisible, setIsModalOpen, article, description]
     );
 
     return (
         <div 
-            className={`project-modal ${state.isModalOpen ? 'enter' : 'exit'}`}
+            className={`project-modal ${isModalOpen ? 'enter' : 'exit'}`}
             data-util='close'
             onClick={handleCloseModal}
         >   
@@ -101,23 +95,10 @@ function ModalProject() {
                                 }
                                 <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">Source Code</a>
                             </div>
-                            <div 
-                                id='hidden-image'
-                                className={`hidden-image ${isImageVisible && 'active'}`}
-                                ref={hiddenImage}
-                                onClick={handleToggleImage}
-                                data-util='close'
-                            >
-                                <div className='image-container'>
-                                    <img 
-                                        data-util={`${state.isMobile && 'close'}`}
-                                        src={require(`../images/${project.image}`)} 
-                                        alt={project.name}
-                                        onClick={handleToggleImage}
-                                    />
-                                    <div data-util='close' className='close-button close-image' onClick={handleToggleImage}>X</div>
-                                </div>
-                            </div>
+                            <ModalImage 
+                                image={project.image}
+                                name={project.name}
+                            />
                             <div ref={description}>{project.desc}</div>
                         </div>
                     </article>

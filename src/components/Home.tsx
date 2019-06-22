@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import '../styles/home.css';
 import { StateContext } from '../contexts/StateContext';
 
-export default function Home() {
+const Home = () => {
     const { isFirstLoad, setIsFirstLoad } = useContext(StateContext);
 
     useEffect(() => {
@@ -23,3 +23,5 @@ export default function Home() {
         </div>
     );
 }
+
+export default Home;

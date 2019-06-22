@@ -14,6 +14,18 @@ export const StateProvider: React.SFC<any> = props => {
   const windowPath : string = window.location.pathname.replace(/\//g, '');
   const [currentPage, setCurrentPage] = useState<string>(windowPath || 'Home');
 
+  const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
+
+  type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
+
+  const handleToggleImage = (e: mouseEvent) => {
+      if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'close')) {
+          
+          return;
+      }
+      setIsImageVisible(!isImageVisible);
+  }
+
   return (
     <StateContext.Provider
       value={{
@@ -28,7 +40,10 @@ export const StateProvider: React.SFC<any> = props => {
         currentPage,
         setCurrentPage,
         isFirstLoad,
-        setIsFirstLoad
+        setIsFirstLoad,
+        isImageVisible,
+        setIsImageVisible,
+        handleToggleImage
       }}
     >
       {props.children}
