@@ -1,8 +1,28 @@
 import React, { useState } from 'react'
 
-export const StateContext = React.createContext<any>(null);
+type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
 
-export const StateProvider: React.SFC<any> = props => {
+interface IContextProps {
+  isModalOpen: boolean,	
+  setIsModalOpen(val: boolean): void,	
+  isMobile: boolean,	
+  setDisplayMode(val: boolean): void,	
+  isNavOpen: boolean,	
+  setNavState(val: boolean): void,	
+  currentProject: number,	
+  setCurrentProject(val: number): void,	
+  currentPage: string,	
+  setCurrentPage(val: string): void,	
+  isFirstLoad: boolean,	
+  setIsFirstLoad(val: boolean): void,
+  isImageVisible: boolean
+  setIsImageVisible(val: boolean): void,
+  handleToggleImage(e: mouseEvent): void;
+}
+
+export const StateContext = React.createContext({} as IContextProps);
+
+export const StateProvider: React.SFC = props => {
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [currentProject, setCurrentProject] = useState<number>(0);
@@ -15,8 +35,6 @@ export const StateProvider: React.SFC<any> = props => {
   const [currentPage, setCurrentPage] = useState<string>(windowPath || 'Home');
 
   const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
-
-  type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
 
   const handleToggleImage = (e: mouseEvent) => {
       if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'close')) {
