@@ -311,3 +311,11 @@
         width: 5px;
     }
 }
+
+@media (max-height: 400px) {
+    .article-content .modal-image {
+        margin: 0 auto;
+        height: 50%; 
+        width: 50%;
+    }
+}

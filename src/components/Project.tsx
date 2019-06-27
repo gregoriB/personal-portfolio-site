@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const Project: React.SFC<IProps> = ({ name, index }) => {
-    const state = useContext(StateContext);
+    const { isMobile, setCurrentProject, setIsModalOpen, setNavState } = useContext(StateContext);
 
     const project = useRef<HTMLDivElement | null>(null);
 
@@ -20,13 +20,13 @@ const Project: React.SFC<IProps> = ({ name, index }) => {
     }
 
     const handleClick = () => {
-        if (!handleCheckIfFocused()) {
+        if (!handleCheckIfFocused() && isMobile) {
 
             return;
         }
-        state.setCurrentProject(index)
-        state.setIsModalOpen(true);
-        state.setNavState(false);
+        setCurrentProject(index)
+        setIsModalOpen(true);
+        setNavState(false);
     }
 
     return (

@@ -49,6 +49,45 @@ p, strong, li {
   /* text-shadow: var(--text-shadow); */
 }
 
+.skill {
+  /* border-radius: 50%; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .3;
+}
+
+.skill.inactive {
+  display: none;
+}
+
+.react {
+  animation: react-logo-spin infinite 20s linear;
+  height: 40vmin;
+  border-radius: 50%;
+}
+
+@keyframes react-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moving-objects {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .app {
   position: absolute;
   left: 0;
@@ -107,16 +146,18 @@ p, strong, li {
       width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--lite);
-    border-radius: 5px;
+    background: var(--dark);
+    border-radius: 0;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: var(--colorful-medium);
-    border-radius: 5px;
+    background: var(--colorful-dark);
+    border-radius: 0;
   }
-  
+}
+
+@media (hover: hover) {
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--colorful-lite); 
+    background: var(--colorful-medium); 
   }
 }

@@ -1,0 +1,35 @@
+body {
+    font-family: 'Amita', cursive;
+    background-color: #1f2833;
+}
+
+#no-script {
+    color: #c5c6c7;
+    margin: 0 auto;
+    margin-top: 20vh;
+    width: 50%;
+}
+
+#no-script a {
+    color: #84e6ff;
+}
+
+#no-script a:nth-child(1) {
+    text-decoration: none;
+}
+
+#no-script a:nth-child(2) {
+    font-style: italic;
+}
+
+#no-script p:nth-last-child(1) {
+    font-style: italic;
+}
+
+@media (max-width: 800px) {
+    #no-script {
+        text-align: center;
+        margin-top: 10vh;
+        width: 90%;
+    }
+}

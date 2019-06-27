@@ -5,17 +5,7 @@ import ModalProject from './ProjectModal';
 import '../styles/projects.css';
 
 const Projects = () => {
-    const mapProjects = () => {
-        return projectData.map((project, index: number ) => {
-            return (
-                <Project 
-                    key={project.name}
-                    name={project.name}
-                    index={index}
-                />
-            );
-        });
-    }
+    const mapProjects = () => projectData.map((project, index) => <Project key={project.name} name={project.name} index={index} />);
 
     const projects = useRef<HTMLDivElement | null>(null);    
 

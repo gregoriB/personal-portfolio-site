@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/about.css';
+import MovingObjects from '../components/MovingObjects';
 
 const AboutMe = () => {
+    const page = useRef<HTMLDivElement | null>(null);
+
     return (
-        <div className='about-me page'>
+        <div className='about-me page' ref={page}>
+            <MovingObjects page={page} />
             <div className='about-me-stuff'>
                 <section className='about-me-container'>
                     <h2>My main skills:</h2>
@@ -11,9 +15,10 @@ const AboutMe = () => {
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>Javascript</li>
+                        <li>Typescript</li>
                         <li>React</li>
-                        <li>Node.js</li>
-                        <li>Express.js</li>
+                        <li>Node</li>
+                        <li>Express</li>
                         <li>EJS</li>
                         <li>Bootstrap</li>
                         <li>Git</li>
