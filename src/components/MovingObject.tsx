@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { StateContext } from '../contexts/StateContext';
+import '../styles/skills.css';
 
 interface IProps {
     skill: string,
@@ -65,7 +66,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
                 width: size.width,
                 height: size.height,
                 backgroundImage: `url(${require(`../SVGs/${skill}.svg`)})`,
-                opacity: level / 6
+                opacity: level / 4
             }}
         />
     )

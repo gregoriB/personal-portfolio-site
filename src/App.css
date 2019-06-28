@@ -23,8 +23,6 @@ body {
   letter-spacing: .2px;
   line-height: 1.5rem;
   background-color: var(--medium);
-  /* background-image: linear-gradient(90deg, var(--dark) 0vw, var(--dark) 10vw, var(--medium) 50vw, var(--dark) 100vw); */
-
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
@@ -49,60 +47,21 @@ p, strong, li {
   /* text-shadow: var(--text-shadow); */
 }
 
-.skill {
-  /* border-radius: 50%; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: .3;
-}
-
-.skill.inactive {
-  display: none;
-}
-
-.react {
-  animation: react-logo-spin infinite 20s linear;
-  height: 40vmin;
-  border-radius: 50%;
-}
-
-@keyframes react-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.moving-objects {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .app {
   position: absolute;
   left: 0;
   top: 0;
   display: flex;
   box-sizing: border-box;
-  /* background-color: var(--medium); */
   margin: 0 auto;
   height: 100vh;
   width: 100vw;
-  /* background-image: linear-gradient(90deg, var(--dark) 0vw, var(--dark) 10vw, var(--medium) 50vw, var(--dark) 100vw); */
 }
 
 * {
   color: var(--gray);
+  scrollbar-color: var(--colorful-bright) var(--dark);
+  scrollbar-width: thin;
 }
 
 .item-enter {
