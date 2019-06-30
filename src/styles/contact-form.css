@@ -96,6 +96,11 @@
     text-shadow: 0 .5px .3px var(--dark);
 }
 
+.contact-form button.disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
 .contact-form button:active {
     transform: scale(.98);
     background-color: var(--colorful-lite);

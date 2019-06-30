@@ -16,7 +16,7 @@ const ContactMe = () => {
     const [textField, changeTextField] = useState<MyObject>({ text: '', isValid: null });
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const isFormValid = nameField.isValid && emailField.isValid && textField.isValid;
+    const isFormValid: boolean | null= nameField.isValid && emailField.isValid && textField.isValid;
 
     const handleNameValidation = (): void => {
         const name = nameField.text;
@@ -101,7 +101,7 @@ const ContactMe = () => {
                     onChange={ e => changeTextField({ ...textField, text: e.target.value}) }
                     className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
                 />
-                <button type='submit'>SEND</button>
+                <button type='submit' className={!isFormValid ? 'disabled' : undefined}>SEND</button>
                 <strong className='message'>{errorMessage}</strong>
             </form>
             <div className='contact-info'>
