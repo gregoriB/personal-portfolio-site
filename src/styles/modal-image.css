@@ -1,28 +1,18 @@
-.article-content .hidden-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    visibility: hidden;
+.image-modal {
     opacity: 0;
     z-index: 10;
     width: 100vw;
     transition: opacity .5s;
-    height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-
-.article-content .hidden-image.active {
+.image-modal.active {
     visibility: visible;
     opacity: 1;
     transition: opacity .6s, height .1s, width .1s;
 }
 
-.hidden-image .image-container {
+.image-modal .image-container {
     user-select: none;
     display: flex;
     justify-content: center;
@@ -35,16 +25,16 @@
     transition-timing-function: ease-in;
 }
 
-.hidden-image .image-container img {
+.image-modal .image-container img {
     user-select: none;
     height: 100%;
     background: black;
-    box-shadow: 0 .1vh 1vh var(--shadow);
-    border: 2px solid black;
+    box-shadow: 0 0 2vh black;
+    /* border: 2px solid black; */
     border-radius: 5px;
 }
 
-.hidden-image .close-image {
+.modal.image-modal .close-image {
     align-self: flex-start;
     position: relative;
     top: -3rem;
@@ -57,41 +47,43 @@
     opacity: .8;
 }
 
-.hidden-image .close-image:hover {
-    color: var(--lite);
-    text-shadow: 0 0 .1rem var(--shadow);
-    opacity: 1;
-    transition: .2s;
-}
-
-.hidden-image .close-image:active {
+.image-modal .close-image:active {
     background: rgba(255, 255, 255);
     color: white;
     transform: scale(.9);
 }
 
+@media (hover: hover) {
+    .modal.image-modal .close-image:hover {
+        color: var(--lite);
+        text-shadow: 0 0 .1rem var(--shadow);
+        opacity: 1;
+        transition: .2s;
+    }
+}
+
 @media (max-width: 800px) {
-    .article-content .hidden-image {
+    .article-content .image-modal {
         user-select: none;
         transition: opacity .2s;
     }
 
-    .article-content .hidden-image.active {
+    .article-content .image-modal.active {
         transition: opacity 1s;
     }
 
-    .hidden-image .image-container {
+    .image-modal .image-container {
         width: 100%;
         height: auto;
     }
 
-    .hidden-image .image-container img{
+    .image-modal .image-container img{
         border-radius: 0;
         width: 95%;
         /* height: auto; */
     }
 
-    .hidden-image .close-image {
+    .image-modal .close-image {
         display: none;
     }
 }
@@ -103,7 +95,7 @@
         max-width: 25vw;
     }
 
-    .hidden-image .image-container img{
+    .image-modal .image-container img{
         max-width: 100%;
     }
 }

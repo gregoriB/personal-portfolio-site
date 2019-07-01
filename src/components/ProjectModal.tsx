@@ -67,13 +67,13 @@ const ModalProject = () => {
 
     return (
         <div 
-            className={`project-modal ${isModalOpen ? 'enter' : 'exit'}`}
+            className={`modal project-modal ${isModalOpen ? 'enter' : 'exit'}`}
             data-util='close'
             onClick={handleCloseModal}
         >   
-            <div className='modal-main'>
-                <div className='modal-content' >
-                    <header className='modal-header'>
+            <div className='main'>
+                <div className='content' >
+                    <header className='header'>
                         <h1>{projectData[index].name}</h1>
                         <div data-util='close' className='close-button close-modal' onClick={handleCloseModal}>X</div>
                     </header>
@@ -99,7 +99,7 @@ const ModalProject = () => {
                                 image={project.image}
                                 name={project.name}
                             />
-                            <div ref={description}>{project.desc}</div>
+                            <div className='description' ref={description}>{project.desc}</div>
                         </div>
                     </article>
                 </div>

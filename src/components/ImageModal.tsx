@@ -15,7 +15,7 @@ const ModalImage: React.SFC<IProps> = ({ name, image }) => {
     return (
         <div 
             id='hidden-image'
-            className={`hidden-image ${isImageVisible && 'active'}`}
+            className={`modal image-modal ${isImageVisible && 'active'}`}
             ref={hiddenImage}
             onClick={handleToggleImage}
             data-util='close'

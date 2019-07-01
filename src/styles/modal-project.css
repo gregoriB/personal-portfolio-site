@@ -1,4 +1,4 @@
-.project-modal {
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,35 +14,42 @@
     width: 100vw;
     z-index: 4;
     visibility: hidden;
+    opacity: 0;
 }
 
-.modal-main {
+.main {
     border-radius: 10px;
-    width: 70%;
-    max-height: 100%;
     background-color: var(--colorful-medium);
     box-shadow: 3px 3px 15px hsl(201, 100%, 5%);
 }
 
-.modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+.project-modal .main {
+    width: 70%;
+    max-height: 100%;
+}
+
+.project-modal .main .content {
     justify-content: flex-start;
     height: 96%;
     padding: 1rem;
 }
 
-.modal-content * {
-    color: var(--medium);
-    box-sizing: border-box;
+.main .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.modal-header {
+.project-modal .content * {
+    box-sizing: border-box;
+    color: var(--medium);
+}
+
+.project-modal .header {
     position: relative;
 }
 
-.modal-header h1 {
+.project-modal .header h1 {
     font-size: 2.2rem;
     margin: 0;
     margin-top: 1rem;
@@ -90,7 +97,8 @@
     text-shadow: 0 0 .1rem var(--shadow);
 }
 
-.close-modal:active {
+.close-button.close-modal:active {
+    color: white;
     background-color: white;
     transform: scale(.9);
 }
@@ -104,6 +112,7 @@
     text-align: left;
     margin: 0 auto;
 }
+
 .article-content .modal-image {
     cursor: pointer;
     text-align: center;
@@ -113,7 +122,7 @@
     transition: .2s;
     box-shadow: 0 0 .1vw var(--shadow);
     border-radius: 5px;
-    box-shadow: 0 0 1vh var(--shadow);
+    box-shadow: 0 0 .5vh var(--shadow);
 }
 
 .modal-article .date {
@@ -128,7 +137,7 @@
     margin: 0 auto;
 }
 
-.project-links {
+.project-modal .article-content .project-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +145,7 @@
     margin: 1rem auto;
 }
 
-.project-links a {
+.project-modal .article-content .project-links a {
     font-family: 'Amita', cursive;
     font-size: .8rem;
     margin: 0 1rem;
@@ -145,12 +154,12 @@
     border-radius: 6px;
     transition: .1s;
     background-color: var(--medium);
-    color: var(--gray);
-    box-shadow: 0 .1rem .3rem var(--shadow);
+    color: var(--colorful-bright);
+    box-shadow: 0 0 .05rem var(--shadow);
     text-shadow: none;
 }
 
-.project-links a:active {
+.project-modal .article-content .project-links a:active {
     transition: .2s;
     transition-delay: 0;
     box-shadow:  0 .06rem .25rem var(--shadow);
@@ -190,17 +199,17 @@
 }
 
 @media (hover: hover) {
-    .close-modal:hover {
+    .modal .close-modal:hover {
         color: white;
         background-color: rgba(255, 255, 255, 0.5);
     }
 
-    .project-links a:hover {
+    .project-modal .article-content .project-links a:hover {
         color: white;
         background-color: var(--lite);
         text-shadow: 0 0 1px var(--dark);
-        box-shadow:  0 .06rem .25rem var(--shadow);
-        transition: .8s;
+        /* box-shadow:  0 .06rem .25rem var(--shadow); */
+        transition: .2s;
     }
 
     .modal-article::-webkit-scrollbar-thumb:hover {
@@ -209,7 +218,7 @@
 
     .article-content .modal-image:hover {
         transition: .2s;
-        box-shadow: 0 0 1.3vh var(--shadow);
+        box-shadow: 0 .5vh 1vh var(--shadow);
         transform: scale(1.01);
     }
 }
@@ -220,23 +229,24 @@
         margin: 0;
     }
 
-    .modal-main {
+    .project-modal .main {
         margin: 0;
         width: 100vw;
         border-radius: 0;
     }
 
-    .modal-content {
+    .project-modal .main .content {
         padding: .6rem;
+        height: 97vh;
     }
 
-    .modal-content header {
+    .project-modal .main .content header {
         display: flex;
         justify-content: space-between;
         margin: 0;
     }
 
-    .modal-content header h1 {
+    .project-modal .main .content header h1 {
         line-height: 1.5rem;
         width: 90%;
         margin: 0;
@@ -244,7 +254,7 @@
         text-align: left;
     }
 
-    .modal-content header .close-modal {
+    .project-modal .main .content header .close-modal {
         position: static;
         height: 1.5rem;
         width: 1.5rem;
@@ -253,42 +263,45 @@
 
     .modal-article {
         margin: 1rem auto;
-        margin-bottom: 2rem;
+        /* margin-bottom: 2rem; */
         /* width: 100%; */
-        /* height: 100%; */
         /* max-height: 100%; */
     }
 
-    .modal-content .article-content {
+    .project-modal .main .content .article-content {
         margin: 0 auto;
         width: 96%;
         /* max-height: 80vh; */
     }
 
-    .modal-content .article-content img {
+    .project-modal .main .content .article-content img {
         margin: 0 auto;
     }
 
-    .project-links {
+    .project-modal .article-content .project-links {
         position: fixed;
         bottom: 0;
         left: 0;
         /* right: 0; */
         width: 100%;
-        margin: 0;
+        margin: 0 auto;
         justify-content: flex-start;
         align-items: center;
-        height: 2rem;
+        height: 6vh;
         z-index: 4;
         padding: 0;
-        /* background-color: var(--colorful-medium); */
+        background-color: var(--colorful-medium);
     }
 
-    .project-links a {
+    .project-modal .article-content .project-links a {
         font-family: 'Amita', cursive;
         padding: .1rem .3rem;
         box-shadow: none;
         margin: 0 .5rem;
+    }
+    
+    .project-modal .article-content .description {
+        margin-bottom: 1rem;
     }
 
     .hide-scroll {
@@ -298,7 +311,6 @@
         right: 5px;
         height: 100%;
         width: 10px;
-        opacity: 1;
         background-color: var(--colorful-medium);
         z-index: 3;
         opacity: 0;

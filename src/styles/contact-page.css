@@ -23,7 +23,7 @@
     width: 20rem;
     /* background-color: var(--dark); */
     margin-bottom: 8vh;
-    margin-left: 8vw;
+    margin-left: 10vw;
 }
 
 .contact-form * {
@@ -80,15 +80,17 @@
 }
 
 .contact-form button {
+    cursor: pointer;
     display: block;
     font-family: 'Dancing Script', cursive;
     color: var(--dark);
     border: 2px solid transparent;
     border-radius: 3px;
-    background-color: var(--colorful-medium);
+    background-color: var(--colorful-lite);
     font-weight: bold;
     letter-spacing: 2px;
-    transition: .2s;
+    transition: .1s;
+    transition-timing-function: ease-in;
     padding: .3rem;
     width: 100px;
     outline: none;
@@ -97,8 +99,9 @@
 }
 
 .contact-form button.disabled {
-    opacity: .5;
+    opacity: .3;
     pointer-events: none;
+    box-shadow: none;
 }
 
 .contact-form button:active {
@@ -106,9 +109,9 @@
     background-color: var(--colorful-lite);
     border: 2px solid var(--colorful-medium);
     color: var(--medium);
-    box-shadow: 0 .3rem .2rem var(--dark);
+    box-shadow: 0 .3rem .4rem var(--dark);
     text-shadow: 0 .5px .3px var(--dark);
-
+    transition: .1s;
 }
   
 input:-webkit-autofill {
@@ -273,8 +276,7 @@ input:-webkit-autofill {
 
 @media ( hover: hover ) {
     .contact-form button:hover {
-        background-color: var(--colorful-lite);
-        border: 2px solid var(--colorful-medium);
+        background-color: var(--colorful-bright);
         color: var(--medium);
     }
 }

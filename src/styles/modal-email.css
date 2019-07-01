@@ -1,0 +1,89 @@
+/* .email-modal .main {
+    width: 20vw;
+    height: 20vh;
+} */
+
+.email-modal .main .content {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .main .content .email-message {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+} */
+
+.spinner {
+    position: absolute;
+    transition: .5s;
+    visibility: hidden;
+    margin: 0 auto;
+    opacity: 0;
+    border: 1rem solid var(--colorful-medium);
+    border-top-color: var(--colorful-dark);
+    border-right-color: var(--colorful-dark);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    animation: react-logo-spin infinite 2s linear;
+}
+
+@keyframes spinner-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.spinner.active {
+    transition: .5s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.email-message {
+    height: 100%;
+    font-size: 2rem;
+    text-shadow: 0 0 1px var(--dark);
+    margin: 0 auto;
+    /* visibility: hidden;
+    opacity: 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .email-message.active {
+    transition: .2s;
+    transition-delay: .8s;
+    visibility: visible;
+    opacity: 1;
+} */
+
+.email-message div {
+    margin: 1rem auto;
+    color: var(--dark);
+}
+
+.email-message p {
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    color: var(--medium);
+}
+
+.email-modal .close-modal {
+    color: var(--dark);
+    top: 1rem;
+    right: 1rem;
+}

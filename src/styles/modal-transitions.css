@@ -1,19 +1,18 @@
 @media (max-width: 800px) {
-    .project-modal.enter {
+    .modal.enter {
         transition-timing-function: ease-in;
         transition: 1s;
         opacity: 1;
         visibility: visible;
     }
 
-    .project-modal.exit {
+    .modal.exit {
         transition: .7s;
-        opacity: 1;
+        transition-delay: .5s;
+        opacity: 0;
     }
 
-    .project-modal.enter .modal-main {
-        height: 100vh;
-        width: 100vw;
+    .modal.enter .main {
         opacity: 1;
         transition-property: transform;
         transition-delay: .2s;
@@ -21,62 +20,136 @@
         transition-timing-function: ease-out;
     }
 
-    .project-modal.exit .modal-main {
+    .project-modal.enter main {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .modal.exit .main {
         opacity: 1;
         margin: 0;
-        width: 100vw;
-        height: 100vh;
         transform: translateX(100%);
         transition: transfrom, .1s, .5s;
     }
 
-    .project-modal.enter .modal-main .modal-content {
+    .project-modal.exit .main {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .modal.enter .main .content {
         opacity: 1;
         transition: opacity .5s;
         transition-delay: .8s;
     }
 
-    .project-modal.exit .modal-main .modal-content {
+    .modal.exit .main .content {
         opacity: 0;
         transition: opacity .2s;
+        transition-delay: 0;
+    }
+
+    .email-modal.exit .spinner {
+        visibility: hidden;
+    }
+
+    .email-modal.enter .main  {
+        border-radius: 0;
+        height: 50vh;
+        width: 100vw;
+        transition-delay: .5s;
+    }   
+
+    .email-modal.exit .main  {
+        border-radius: 0;
+        height: 50vh;
+        width: 100vw;
+        transition: .5s;
+        transform: translateX(100%);
+        transition-delay: 0;
+    }
+
+    .email-modal.enter .main.inactive {
+        transform: translateX(100%);
+    }
+    
+    .email-modal .main.inactive .content {
+        opacity: 0;
+    }
+
+    .email-modal.enter .main.active .content {
+        opacity: 1;
+        transition: .2s;
+        transition-delay: 1.1s;
+    }
+
+    .email-modal.exit .main .content {
+        opacity: 0;
+        transition: .1s;
         transition-delay: 0;
     }
 }
 
 @media (min-width: 801px) {
-    .project-modal.enter {
+    .modal.enter {
         opacity: 1;
         transition: .6s;
         visibility: visible;
     }
     
-    .project-modal.exit {
+    .modal.exit {
         opacity: 0;
         transition: .6s; 
     }
 
-    .project-modal.enter .modal-main  {
+    .modal.enter .main  {
         transition: .5s;
         transition-delay: 0s;
         margin: 0 auto;
+    }
+    
+    .project-modal.enter .main  {
         height: 100vh;
         width: 70vw;
     }
 
-    .project-modal.exit .modal-main {
+    .email-modal.enter .main.inactive  {
+        opacity: 0;
         height: 0;
         width: 0;
-        margin-top: 40vh;
+    }
+
+    .email-modal.enter .main.active {
+        transition-delay: .5s;
+        opacity: 1;
+        height: 30vh;
+        width: 35vw;
+    }
+
+    .modal.exit .main {
+        height: 0;
+        width: 0;
         transition: 0;
         transition-delay: .6s;
     }
 
-    .project-modal.enter .modal-main .modal-content {
+    .modal.enter .main .content {
         opacity: 1;
-        transition: opacity .5s .5s;
+        transition: opacity .5s;
+        transition-delay: .5s;
     }
 
-    .project-modal.exit .modal-main .modal-content {
+    .email-modal .main.inactive .content {
+        opacity: 0;
+    }
+
+    .email-modal .main.active .content {
+        opacity: 1;
+        transition: .2s;
+        transition-delay: 1s;
+    }
+
+    .modal.exit .main .content {
         height: 0;
         width: 0;
         opacity: 0;

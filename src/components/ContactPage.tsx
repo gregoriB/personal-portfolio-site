@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import EmailModal from './EmailModal'; 
 import '../styles/contact-page.css';
+import '../styles/modal-email.css';
 
 const ContactMe = () => {
     interface MyObject {
@@ -15,8 +17,11 @@ const ContactMe = () => {
     const [emailField, changeEmailField] = useState<MyObject>({ text: '', isValid: null });
     const [textField, changeTextField] = useState<MyObject>({ text: '', isValid: null });
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [emailSuccessful, setEmailSuccessful] = useState<boolean>(false);
 
-    const isFormValid: boolean | null= nameField.isValid && emailField.isValid && textField.isValid;
+    const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.isValid;
+    const isButtonEnabled: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
 
     const handleNameValidation = (): void => {
         const name = nameField.text;
@@ -59,13 +64,18 @@ const ContactMe = () => {
         }
     };
 
+
+
     type FormElem = React.ChangeEvent<HTMLFormElement>;
 
     const handleSubmit = (e: FormElem ) => {
         e.preventDefault()
         if (isFormValid) {
-            
-            return setErrorMessage('Email Sent!');
+            return (
+                setIsModalOpen(true),
+                setErrorMessage(''),
+                setTimeout(() => setEmailSuccessful(true), 1000)
+            )
         }
         handleTextAreaValidation();
         handleEmailValidation();
@@ -101,7 +111,12 @@ const ContactMe = () => {
                     onChange={ e => changeTextField({ ...textField, text: e.target.value}) }
                     className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
                 />
-                <button type='submit' className={!isFormValid ? 'disabled' : undefined}>SEND</button>
+                <button 
+                    type='submit' 
+                    className={!isButtonEnabled ? 'disabled' : undefined}
+                >
+                    SEND
+                </button>
                 <strong className='message'>{errorMessage}</strong>
             </form>
             <div className='contact-info'>
@@ -114,6 +129,7 @@ const ContactMe = () => {
                     <hr />
                 </div>
             </div>
+            <EmailModal emailSuccessful={emailSuccessful} setEmailSuccessful={setEmailSuccessful} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
         </div>
     );
 }
