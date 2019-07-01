@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import '../styles/home.css';
+import '../styles/home-page.css';
 import { StateContext } from '../contexts/StateContext';
 
 const Home = () => {

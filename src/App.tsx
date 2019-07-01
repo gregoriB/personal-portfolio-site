@@ -4,10 +4,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { StateContext } from './contexts/StateContext';
 
 import NavBar from './components/NavBar';
-import Home from './components/Home';
-import AboutMe from './components/AboutMe';
-import Projects from './components/Projects';
-import ContactMe from './components/ContactMe';
+import Home from './components/HomePage';
+import AboutMe from './components/AboutPage';
+import Projects from './components/ProjectsPage';
+import ContactMe from './components/ContactPage';
 
 import './styles/normalize.css';
 import './App.css';

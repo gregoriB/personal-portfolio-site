@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import '../styles/about.css';
-import MovingObjects from '../components/MovingObjects';
+import '../styles/about-page.css';
+import MovingObjects from './MovingObjects';
 
 const AboutMe = () => {
     const page = useRef<HTMLDivElement | null>(null);

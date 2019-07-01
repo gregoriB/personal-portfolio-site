@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/contact-form.css';
+import '../styles/contact-page.css';
 
 const ContactMe = () => {
     interface MyObject {

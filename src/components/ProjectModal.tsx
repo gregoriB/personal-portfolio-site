@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect, useRef } from 'react';
 import { StateContext } from '../contexts/StateContext';
 import ModalImage from './ImageModal';
 import projectData from '../helpers/projectData';
-import '../styles/projectModal.css';
-import '../styles/modalTransitions.css';
+import '../styles/modal-project.css';
+import '../styles/modal-transitions.css';
 
 const ModalProject = () => {
     const { currentProject, isImageVisible, setIsImageVisible, isModalOpen, setIsModalOpen, handleToggleImage } = useContext(StateContext);

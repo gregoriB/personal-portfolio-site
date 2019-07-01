@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from 'react'
-import '../styles/imageModal.css';
+import '../styles/modal-image.css';
 import { StateContext } from '../contexts/StateContext';
 
 interface IProps {

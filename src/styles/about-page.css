@@ -13,6 +13,7 @@
 }
 
 .about-me-stuff {
+    z-index: 2;
     margin-top: 20vh;
     margin-left: 10vw;
     max-width: 60%;

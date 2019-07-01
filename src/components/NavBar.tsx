@@ -2,8 +2,8 @@ import React, {  useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
-import '../styles/mobileNav.css';
-import '../styles/desktopNav.css';
+import '../styles/nav-mobile.css';
+import '../styles/nav-desktop.css';
 
 
 const NavBar = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Project from './Project';
 import projectData from '../helpers/projectData';
 import ModalProject from './ProjectModal';
-import '../styles/projects.css';
+import '../styles/projects-page.css';
 
 const Projects = () => {
     const mapProjects = () => projectData.map((project, index) => <Project key={project.name} name={project.name} index={index} />);
