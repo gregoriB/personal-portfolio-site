@@ -1,4 +1,4 @@
-.email {
+.contact-page {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -193,7 +193,7 @@ input:-webkit-autofill {
   }
 
 @media (max-width: 800px) {
-    .email {
+    .contact-page {
         width: 100vw;
         margin: 0;
         max-height: 100vh;
@@ -297,5 +297,81 @@ input:-webkit-autofill {
 
     .contact-form .message {
         display: none;
+    }
+}
+
+@media (min-width: 801px) {
+    .contact-page.item-enter .contact-form {
+        opacity: 0;
+        transform: translateX(300%);
+    }
+
+    .contact-page.item-enter-active .contact-form {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity .9s, transform .6s;
+        transition-delay: .2s;
+        transition-timing-function: cubic-bezier(0,.88,.43,.99);
+    }
+
+    .contact-page.item-exit .contact-form {
+        opacity: 1;
+    }
+
+    .contact-page.item-exit-active .contact-form {
+        opacity: 0;
+        transform: translateX(200%);
+        transition: .15s;
+        transition-delay: .1s;
+    }
+
+    .contact-page.item-enter .contact-info {
+        opacity: 0;
+        transform: translateX(300%);
+    }
+
+    .contact-page.item-enter-active .contact-info {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity .9s, transform .7s;
+        transition-delay: .7s;
+        transition-timing-function: cubic-bezier(0,.88,.43,.99);
+    }
+
+    .contact-page.item-exit .contact-info {
+        opacity: 1;
+    }
+
+    .contact-page.item-exit-active .contact-info {
+        opacity: 0;
+        transform: translateX(300%);
+        transition: .15s;
+        transition-delay: 0;
+    }
+
+    .contact-page.item-appear .contact-form {
+        opacity: 0;
+        transform: translateX(300%);
+    }
+
+    .contact-page.item-appear-active .contact-form {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity .9s, transform .5s;
+        transition-delay: .2s;
+        transition-timing-function: cubic-bezier(0,.88,.43,.99);
+    }
+
+    .contact-page.item-appear .contact-info {
+        opacity: 0;
+        transform: translateX(300%);
+    }
+
+    .contact-page.item-appear-active .contact-info {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity .9s, transform .4s;
+        transition-delay: .6s;
+        transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 }

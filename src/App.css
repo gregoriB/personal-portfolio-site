@@ -64,26 +64,6 @@ p, strong, li {
   scrollbar-width: thin;
 }
 
-.item-enter {
-  opacity: 0;
-}
-
-.item-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-  pointer-events:none;
-}
-
-.item-exit {
-  opacity: 1;
-}
-
-.item-exit-active {
-  opacity: 0;
-  transition: opacity 500ms ease-in;
-  pointer-events:none;
-}
-
 .page {
   position: absolute;
   top: 0;
@@ -97,6 +77,22 @@ p, strong, li {
     right: 0;
     margin: 0 auto;
     width: 100vw;
+  }
+
+  .item-enter {
+    opacity: 0;
+  }
+  
+  .item-enter-active {
+    opacity: 1;
+    transition: opacity .5s ease-in .2s;
+    pointer-events:none;
+  }
+  
+  .item-exit-active {
+    opacity: 0;
+    transition: opacity .2s ease-in .1s;
+    pointer-events:none;
   }
 }
 

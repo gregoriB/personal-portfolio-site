@@ -29,7 +29,12 @@ const App: React.SFC<any> = ({ history }) => {
       <NavBar />
         <Route render={({location}) => (
           <TransitionGroup>
-            <CSSTransition key={location.key} timeout={{ enter: 500, exit: 100}} classNames="item">
+            <CSSTransition 
+              key={location.key}
+              timeout={{ enter: 1500, exit: 1200}} 
+              classNames="item"
+              appear={true}
+            >
               <Switch location={location}>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Home' component={Home} />

@@ -5,33 +5,67 @@
 }
 
 .skill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: .3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .3;
+}
+
+.skill.inactive {
+  display: none;
+}
+
+.react {
+  animation: react-logo-spin infinite 20s linear;
+  height: 40vmin;
+  border-radius: 50%;
+}
+
+@keyframes react-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .skill.inactive {
-    display: none;
+  to {
+    transform: rotate(360deg);
   }
-  
-  .react {
-    animation: react-logo-spin infinite 20s linear;
-    height: 40vmin;
-    border-radius: 50%;
-  }
-  
-  @keyframes react-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}
+
+
+.about-me.item-enter .moving-objects {
+  opacity: 0;
+}
+
+.about-me.item-enter-active .moving-objects {
+  opacity: 1;
+  transition: 5s;
+  transition-delay: .2s;
+  transition-timing-function: ease-out;
+}
+
+.about-me.item-enter-done .moving-objects {
+  opacity: 1;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0,.88,.43,.99);
+}
+
+.about-me.item-exit .moving-objects {
+  transition: .5s;
+  opacity: 0;
+}
+
+.about-me.item-appear .moving-objects {
+  opacity: 0;
+}
+
+.about-me.item-appear-active .moving-objects {
+  opacity: 1;
+  transition: 5s;
+  transition-delay: .2s;
+  transition-timing-function: ease-out;
+}

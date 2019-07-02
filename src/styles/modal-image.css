@@ -1,9 +1,9 @@
-.image-modal {
+.modal.image-modal {
     opacity: 0;
     z-index: 10;
     width: 100vw;
     transition: opacity .5s;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 .image-modal.active {
@@ -30,7 +30,6 @@
     height: 100%;
     background: black;
     box-shadow: 0 0 2vh black;
-    /* border: 2px solid black; */
     border-radius: 5px;
 }
 

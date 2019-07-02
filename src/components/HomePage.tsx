@@ -1,20 +1,10 @@
-import React, { useEffect, useContext } from 'react';
+import React from 'react';
 import '../styles/home-page.css';
-import { StateContext } from '../contexts/StateContext';
 
 const Home = () => {
-    const { isFirstLoad, setIsFirstLoad } = useContext(StateContext);
-
-    useEffect(() => {
-        isFirstLoad && setTimeout(() => setIsFirstLoad(false), 100)
-        
-    }, [isFirstLoad, setIsFirstLoad])
-
-
-
     return (
         <div data-name='Home' className='home page'>
-            <section className={`home-container ${isFirstLoad && 'first-load'}`}>
+            <section className='home-container'>
                 <h1>Hello!  I'm Brandon.</h1>
                 <p>
                     I love web development.  Solving problems, challenging myself, and being creative are things I enjoy, and web development lets me do them all at once.

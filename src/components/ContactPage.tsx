@@ -83,7 +83,7 @@ const ContactMe = () => {
     }
 
     return (
-        <div className='email page'>
+        <div className='contact-page page'>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <h1>Message Me</h1>
                 <input 
