@@ -42,8 +42,8 @@ const NavBar = () => {
         return () => {
           window.removeEventListener('resize', handleCheckIfMobile);
         }
-    });
-    
+    }, [setIsMobile]);
+
     return (
         <div className={handleAssignNavClass()}>
             <button onClick={handleToggleNav}>|||</button>
