@@ -45,14 +45,20 @@
 }
 
 @media (min-width: 801px) {
-    .home.item-enter .home-container{
+    .home.item-enter .home-container {
         opacity: 0;
         transform: translateX(200%);
         transition: opacity .9s, transform .7s;
         transition-delay: .2s;
     }
 
-    .home.item-enter-active .home-container{
+    .home.item-enter-done .home-container {
+        transform: translateY(5px);
+        transition: .15s;
+        transition-timing-function: cubic-bezier(.5,.01,1,.3);
+    }
+
+    .home.item-enter-active .home-container {
         opacity: 1;
         transform: translateX(0) rotate(-3deg);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
@@ -63,7 +69,7 @@
         opacity: 1;
     }
 
-    .home.item-exit-active .home-container{
+    .home.item-exit-active .home-container {
         opacity: 0;
         transform: translateX(200%);
         transition: .2s;
@@ -77,14 +83,14 @@
         opacity: 1;
     }
 
-    .home.item-appear .home-container{
+    .home.item-appear .home-container {
         opacity: 0;
         transform: translateX(200%);
         transition: opacity .9s, transform .7s;
         transition-delay: .2s;
     }
 
-    .home.item-appear-active .home-container{
+    .home.item-appear-active .home-container {
         opacity: 1;
         transform: translateX(0) rotate(-3deg);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
@@ -92,15 +98,16 @@
     }
 
     .home.item-appear-done .home-container {
+        transform: translateY(5px);
         transition: .15s;
         transition-timing-function: cubic-bezier(.5,.01,1,.3);
     }
 
     @keyframes end-rotate {
-        0% { transform: rotate(-3deg);}
-        20% { transform: rotate(-3deg);}
-        30% { transform: rotate(0);}
-        100% { transform: rotate(0);}
+        0% { transform: rotate(-3deg); }
+        20% { transform: rotate(-3deg); }
+        30% { transform: rotate(0) translateY(5px); }
+        100% { transform: rotate(0) translateY(5px); }
     }
 
     .home.item-appear-active .home-container p {
