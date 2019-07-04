@@ -3,11 +3,12 @@ import { StateContext } from '../contexts/StateContext';
 
 interface IProps {
     name: string,
-    index: number
+    index: number,
+    setProject(val: number): void
 }
 
-const Project: React.SFC<IProps> = ({ name, index }) => {
-    const { isMobile, setCurrentProject, setIsModalOpen, setNavState } = useContext(StateContext);
+const Project: React.SFC<IProps> = ({ name, index, setProject}) => {
+    const { isMobile, setIsModalOpen, setIsNavOpen } = useContext(StateContext);
 
     const project = useRef<HTMLDivElement | null>(null);
 
@@ -24,9 +25,9 @@ const Project: React.SFC<IProps> = ({ name, index }) => {
 
             return;
         }
-        setCurrentProject(index)
+        setProject(index)
         setIsModalOpen(true);
-        setNavState(false);
+        setIsNavOpen(false);
     }
 
     return (

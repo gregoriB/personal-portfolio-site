@@ -5,14 +5,26 @@ import projectData from '../helpers/projectData';
 import '../styles/modal-project.css';
 import '../styles/modal-transitions.css';
 
-const ModalProject = () => {
-    const { currentProject, isImageVisible, setIsImageVisible, isModalOpen, setIsModalOpen, handleToggleImage } = useContext(StateContext);
+type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
 
+interface IProps {
+    currentProject: number
+}
+
+const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
+    const { isModalOpen, setIsModalOpen } = useContext(StateContext);
     const [scrollState, setScrollState] = useState<string | null>('inactive');
-    const index = currentProject;
-    const project = projectData[index];
+    const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
 
-    type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
+    const handleToggleImage = (e: mouseEvent) => {
+        if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'close')) {
+            
+            return;
+        }
+        setIsImageVisible(!isImageVisible);
+    }
+
+    const project = projectData[currentProject];
 
     const handleCloseModal = (e: mouseEvent) => {
         if (!(e.target instanceof HTMLElement) || !e.target.dataset.util ||  isImageVisible) {
@@ -74,7 +86,7 @@ const ModalProject = () => {
             <div className='main'>
                 <div className='content' >
                     <header className='header'>
-                        <h1>{projectData[index].name}</h1>
+                        <h1>{projectData[currentProject].name}</h1>
                         <div data-util='close' className='close-button close-modal' onClick={handleCloseModal}>X</div>
                     </header>
                     <article className={`modal-article ${scrollState}`} ref={article}>
@@ -95,7 +107,9 @@ const ModalProject = () => {
                                 }
                                 <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">Source Code</a>
                             </div>
-                            <ModalImage 
+                            <ModalImage
+                                handleToggleImage={handleToggleImage}
+                                isImageVisible={isImageVisible}
                                 image={project.image}
                                 name={project.name}
                             />
@@ -108,4 +122,4 @@ const ModalProject = () => {
     )
 }
 
-export default ModalProject;
+export default ProjectModal;

@@ -1,18 +1,19 @@
-import React, {  useContext, useEffect } from 'react';
+import React, {  useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
 import '../styles/nav-mobile.css';
 import '../styles/nav-desktop.css';
 
+type MouseClick = React.MouseEvent<any>
 
 const NavBar = () => {
-    const { setDisplayMode, setCurrentPage, setNavState, isNavOpen, isMobile, currentPage } = useContext(StateContext);
+    const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile } = useContext(StateContext);
 
     const handleCheckIfMobile = () => {
         const mobileScreen = { width: 950, height: 400};
         const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
-        setDisplayMode(isDisplayMobile);    
+        setIsMobile(isDisplayMobile);
     }
 
     
@@ -23,16 +24,14 @@ const NavBar = () => {
           window.removeEventListener('resize', handleCheckIfMobile);
         }
       });
-
-    type MouseClick = React.MouseEvent<any>
     
     const handleUpdateDisplay = (e: MouseClick) => {
         setCurrentPage(e.currentTarget.dataset.name)
-        setNavState(false);
+        setIsNavOpen(false);
     }
 
     const handleToggleNav = () => {
-        setNavState(!isNavOpen);
+        setIsNavOpen(!isNavOpen);
     }
 
     const handleOpenLink = (url: string) => {

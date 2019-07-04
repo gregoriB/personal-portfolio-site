@@ -2,14 +2,17 @@ import React, { useRef, useContext } from 'react'
 import '../styles/modal-image.css';
 import { StateContext } from '../contexts/StateContext';
 
+type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
+
 interface IProps {
     name: string,
-    image: string
+    image: string,
+    isImageVisible: boolean,
+    handleToggleImage(val: mouseEvent): void
 }
 
-
-const ModalImage: React.SFC<IProps> = ({ name, image }) => {
-    const { isImageVisible, isMobile, handleToggleImage } = useContext(StateContext);
+const ModalImage: React.SFC<IProps> = ({ name, image, isImageVisible, handleToggleImage }) => {
+    const { isMobile } = useContext(StateContext);
     const hiddenImage = useRef<HTMLImageElement | null>(null)
 
     return (

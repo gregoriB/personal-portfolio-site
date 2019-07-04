@@ -3,6 +3,8 @@ import EmailModal from './EmailModal';
 import '../styles/contact-page.css';
 import '../styles/modal-email.css';
 
+type FormElem = React.ChangeEvent<HTMLFormElement>;
+
 const formInitialState = {
     text: '', 
     isValid: null
@@ -13,21 +15,16 @@ const ContactMe = () => {
         text: string;
         isValid: boolean | null;
     }
-
-    interface SyntheticEvent {
-        target: EventTarget 
-    }
-
+    
     const [nameField, setNameField] = useState<MyObject>(formInitialState);
     const [emailField, setEmailField] = useState<MyObject>(formInitialState);
     const [textField, setTextField] = useState<MyObject>(formInitialState);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);;
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [emailSuccessful, setEmailSuccessful] = useState<boolean>(false);
     const [emailModalMessage, setEmailModalMessage] = useState<string>('');
 
-    const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.isValid;
-    const isButtonEnabled: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
+    const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
 
     const handleNameValidation = (): void => {
         const name = nameField.text;
@@ -76,12 +73,10 @@ const ContactMe = () => {
         setTextField(formInitialState);
     }
 
-    type FormElem = React.ChangeEvent<HTMLFormElement>;
-
     const handleSendDataToServer = async (e:FormElem) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8080", {
+            const response = await fetch("http://localhost:8000", {
               method: 'POST',
               body: JSON.stringify({ "name": nameField.text, "email": emailField.text, "text": textField.text  }),
               headers: { 'Content-Type': 'applications/json' }
@@ -94,6 +89,7 @@ const ContactMe = () => {
             setTimeout(() => !json && setEmailSuccessful(true), 7000)
         } catch (error) {
             console.error(error);
+            setEmailSuccessful(true);
         }
     }
 
@@ -142,7 +138,7 @@ const ContactMe = () => {
                 />
                 <button 
                     type='submit' 
-                    className={!isButtonEnabled ? 'disabled' : undefined}
+                    className={!isFormValid ? 'disabled' : undefined}
                 >
                     SEND
                 </button>

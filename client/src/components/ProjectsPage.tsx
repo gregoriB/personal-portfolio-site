@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Project from './Project';
 import projectData from '../helpers/projectData';
-import ModalProject from './ProjectModal';
+import ProjectModal from './ProjectModal';
 import '../styles/projects-page.css';
 
 const Projects = () => {
-    const mapProjects = () => projectData.map((project, index) => <Project key={project.name} name={project.name} index={index} />);
+    const [currentProject, setCurrentProject] = useState<number>(0);
+
+    const mapProjects = () => projectData.map((project, index) => <Project setProject={setCurrentProject} key={project.name} name={project.name} index={index} />);
 
     const projects = useRef<HTMLDivElement | null>(null);    
 
@@ -32,7 +34,7 @@ const Projects = () => {
                 {mapProjects()}
                 <div className='center-focus' />
             </div>
-            <ModalProject />
+            <ProjectModal currentProject={currentProject} />
         </div>
     );
 }
