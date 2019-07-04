@@ -7,7 +7,7 @@
   "scripts": {
     "server": "nodemon index.js",
     "client": "npm start --prefix client",
-    "build": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Brandon Gregori",
   "license": "MIT",
