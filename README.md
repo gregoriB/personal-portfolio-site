@@ -1,1 +1,0 @@
-Run `npm install` in the root directory AND the "client" directory, then use `npm run dev` in the main directory to start the app.
