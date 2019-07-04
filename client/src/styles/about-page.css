@@ -1,7 +1,6 @@
 .about-me {
     display: flex;
     flex-direction: column;
-    font-size: .8rem;
     width: 40%;
     height: 100vh;
     transition: 1s;
@@ -74,7 +73,6 @@
     .about-me.item-enter .about-me-container {
         opacity: 0;
         transform: translateX(100%);
-        transition: .7s;
     }
 
     .about-me.item-enter-active .about-me-container {
@@ -121,7 +119,6 @@
     .about-me.item-appear .about-me-container {
         opacity: 0;
         transform: translateX(100%);
-        transition: .7s;
     }
 
     .about-me.item-appear-active .about-me-container {

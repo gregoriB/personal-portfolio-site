@@ -3,6 +3,11 @@ import EmailModal from './EmailModal';
 import '../styles/contact-page.css';
 import '../styles/modal-email.css';
 
+const formInitialState = {
+    text: '', 
+    isValid: null
+}
+
 const ContactMe = () => {
     interface MyObject {
         text: string;
@@ -13,12 +18,13 @@ const ContactMe = () => {
         target: EventTarget 
     }
 
-    const [nameField, changeNameField] = useState<MyObject>({ text: '', isValid: null });
-    const [emailField, changeEmailField] = useState<MyObject>({ text: '', isValid: null });
-    const [textField, changeTextField] = useState<MyObject>({ text: '', isValid: null });
+    const [nameField, setNameField] = useState<MyObject>(formInitialState);
+    const [emailField, setEmailField] = useState<MyObject>(formInitialState);
+    const [textField, setTextField] = useState<MyObject>(formInitialState);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);;
     const [emailSuccessful, setEmailSuccessful] = useState<boolean>(false);
+    const [emailModalMessage, setEmailModalMessage] = useState<string>('');
 
     const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.isValid;
     const isButtonEnabled: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
@@ -27,7 +33,7 @@ const ContactMe = () => {
         const name = nameField.text;
         const re = /^[A-Z a-z]*$/;
         const isValid : boolean = re.test(name) && name.length > 0;
-        changeNameField({
+        setNameField({
             ...nameField,
             text: nameField.text,
             isValid
@@ -41,7 +47,7 @@ const ContactMe = () => {
         const email = emailField.text;
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const isValid = re.test(email);
-        changeEmailField({
+        setEmailField({
             ...emailField,
             text: emailField.text,
             isValid
@@ -54,7 +60,7 @@ const ContactMe = () => {
     const handleTextAreaValidation = (): void => {
         const text = textField.text;
         const isValid = text.length > 0;
-        changeTextField({
+        setTextField({
             ...textField,
             text: textField.text,
             isValid
@@ -64,9 +70,32 @@ const ContactMe = () => {
         }
     };
 
-
+    const handleClearFields = () => {
+        setNameField(formInitialState);
+        setEmailField(formInitialState);
+        setTextField(formInitialState);
+    }
 
     type FormElem = React.ChangeEvent<HTMLFormElement>;
+
+    const handleSendDataToServer = async (e:FormElem) => {
+        e.preventDefault();
+        try {
+            const response = await fetch("http://localhost:8080", {
+              method: 'POST',
+              body: JSON.stringify({ "name": nameField.text, "email": emailField.text, "text": textField.text  }),
+              headers: { 'Content-Type': 'applications/json' }
+            });
+            const json: string = await response.json();
+            json && setTimeout(() => {
+                setEmailModalMessage(json);
+                setEmailSuccessful(true);
+            }, 1000);
+            setTimeout(() => !json && setEmailSuccessful(true), 7000)
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     const handleSubmit = (e: FormElem ) => {
         e.preventDefault()
@@ -74,7 +103,7 @@ const ContactMe = () => {
             return (
                 setIsModalOpen(true),
                 setErrorMessage(''),
-                setTimeout(() => setEmailSuccessful(true), 1000)
+                handleSendDataToServer(e)
             )
         }
         handleTextAreaValidation();
@@ -91,7 +120,7 @@ const ContactMe = () => {
                     name='name'
                     value={nameField.text}
                     onBlur={handleNameValidation}
-                    onChange={ e => changeNameField({ ...nameField, text: e.target.value }) }
+                    onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
                     className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
                         
                 />
@@ -100,7 +129,7 @@ const ContactMe = () => {
                     name='email'
                     value={emailField.text}
                     onBlur={handleEmailValidation}
-                    onChange={ e => changeEmailField({ ...emailField, text: e.target.value }) }
+                    onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
                     className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
                 />
                 <textarea
@@ -108,7 +137,7 @@ const ContactMe = () => {
                     autoComplete='off'
                     value={textField.text}
                     onBlur={handleTextAreaValidation}
-                    onChange={ e => changeTextField({ ...textField, text: e.target.value}) }
+                    onChange={ e => setTextField({ ...textField, text: e.target.value}) }
                     className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
                 />
                 <button 
@@ -129,7 +158,13 @@ const ContactMe = () => {
                     <hr />
                 </div>
             </div>
-            <EmailModal emailSuccessful={emailSuccessful} setEmailSuccessful={setEmailSuccessful} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <EmailModal
+                clearFields={handleClearFields}
+                emailSuccessful={emailSuccessful} 
+                setEmailSuccessful={setEmailSuccessful} 
+                isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}
+                message={emailModalMessage}
+            />
         </div>
     );
 }

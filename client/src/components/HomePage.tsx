@@ -7,7 +7,7 @@ const Home = () => {
             <section className='home-container'>
                 <h1>Hello!  I'm Brandon.</h1>
                 <p>
-                    I love web development.  Solving problems, challenging myself, and being creative are things I enjoy, and web development lets me do them all at once.
+                    I love web development.  Solving problems, challenging myself, and being creative are things I enjoy, and web development lets me do all of that at once.
                 </p>
             </section>
         </div>

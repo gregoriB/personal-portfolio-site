@@ -12,16 +12,10 @@
   }
 
 .contact-form {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     color: white;
     max-width: 100%;
-    /* box-shadow: 3px 3px 7px var(--dark); */
     padding: 1rem;
     width: 20rem;
-    /* background-color: var(--dark); */
     margin-bottom: 8vh;
     margin-left: 10vw;
 }
@@ -29,7 +23,7 @@
 .contact-form * {
     border-radius: 3px;
     box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif   
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .contact-form h1 {
@@ -334,7 +328,7 @@ input:-webkit-autofill {
         opacity: 1;
         transform: translateX(0);
         transition: opacity .9s, transform .7s;
-        transition-delay: .7s;
+        transition-delay: .4s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
@@ -371,7 +365,7 @@ input:-webkit-autofill {
         opacity: 1;
         transform: translateX(0);
         transition: opacity .9s, transform .4s;
-        transition-delay: .6s;
+        transition-delay: .4s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 }

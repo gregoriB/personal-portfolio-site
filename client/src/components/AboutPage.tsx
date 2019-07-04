@@ -12,13 +12,17 @@ const AboutMe = () => {
                 <section className='about-me-container'>
                     <h2>My main skills:</h2>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
                         <li>Javascript</li>
+                        <li>ES6+</li>
                         <li>Typescript</li>
                         <li>React</li>
                         <li>Node</li>
                         <li>Express</li>
+                        <li>AJAX</li>
+                        <li>REST APIs</li>
+                        <li>JSON</li>
                         <li>EJS</li>
                         <li>Bootstrap</li>
                         <li>Git</li>

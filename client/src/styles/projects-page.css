@@ -101,14 +101,15 @@
 
   .project .click-message {
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: white;
+      text-shadow: 0 0 4px black;
+      /* background-color: black; */
       opacity: 0;
       z-index: 1;
       transition: .2s;
       font-style: italic;
-      mix-blend-mode: difference;
-
+      /* mix-blend-mode: difference; */
   }
 
 .center-focus {
@@ -132,7 +133,7 @@
         background-color: #00000088;
         transition-property: text-shadow, background-color;
         transition-timing-function: linear, ease-out;
-        transition-duration: 1s, 1s;
+        transition-duration: .3s, .3s;
         transition-delay: 0s, .3s;
     }
 
