@@ -9,20 +9,6 @@ type MouseClick = React.MouseEvent<any>
 
 const NavBar = () => {
     const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile } = useContext(StateContext);
-
-    const handleCheckIfMobile = () => {
-        const mobileScreen = { width: 950, height: 400};
-        const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
-        setIsMobile(isDisplayMobile);
-    }
-    
-      useEffect(() => {
-        handleCheckIfMobile();
-        window.addEventListener('resize', handleCheckIfMobile);
-        return () => {
-          window.removeEventListener('resize', handleCheckIfMobile);
-        }
-      });
     
     const handleUpdateDisplay = (e: MouseClick) => {
         setCurrentPage(e.currentTarget.dataset.name)
@@ -44,7 +30,20 @@ const NavBar = () => {
         
         return `mobile-nav ${isNavOpen ? 'active' : 'inactive'}`;
     }
-
+    
+    useEffect(() => {
+        const handleCheckIfMobile = () => {
+            const mobileScreen = { width: 950, height: 400};
+            const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
+            setIsMobile(isDisplayMobile);
+        }
+        handleCheckIfMobile();
+        window.addEventListener('resize', handleCheckIfMobile);
+        return () => {
+          window.removeEventListener('resize', handleCheckIfMobile);
+        }
+    });
+    
     return (
         <div className={handleAssignNavClass()}>
             <button onClick={handleToggleNav}>|||</button>
