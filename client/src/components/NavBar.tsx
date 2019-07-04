@@ -1,4 +1,4 @@
-import React, {  useState, useContext, useEffect } from 'react';
+import React, {  useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
@@ -15,7 +15,6 @@ const NavBar = () => {
         const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
         setIsMobile(isDisplayMobile);
     }
-
     
       useEffect(() => {
         handleCheckIfMobile();
