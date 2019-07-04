@@ -18,4 +18,4 @@ app.post('/', (req, res) => {
   res.json(message);
 });
 
-const listener = app.listen(8080, () => console.log(`app listening on port: ${listener.address().port}`));
+const listener = app.listen(8000, () => console.log(`app listening on port: ${listener.address().port}`));
