@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { StateContext } from './contexts/StateContext';
 
@@ -12,21 +12,23 @@ import ContactMe from './components/ContactPage';
 import './styles/normalize.css';
 import './App.css';
 
-const App: React.SFC<any> = ({ history }) => {
-  const { isModalOpen, setIsModalOpen } = useContext(StateContext);
-  
+const App: React.SFC<any> = () => {
+  const { isModalOpen, setIsModalOpen, currentPage } = useContext(StateContext);
+  const [previousPage, setPreviousPage] = useState<string>('Home');
+
   useEffect(() => {
-    const unlisten = history.listen(() => {
+    if (currentPage !== previousPage) {
       window.scrollTo(0, 0);
       isModalOpen && setIsModalOpen(false);
-    });
+      setPreviousPage(currentPage);
+    }
 
-    return unlisten;
-  }, [history, isModalOpen, setIsModalOpen]);
+  }, [previousPage, currentPage, isModalOpen, setIsModalOpen]);
 
   return (
     <div className='app'>
-      <NavBar />
+      <Router>
+        <NavBar/>
         <Route render={({location}) => (
           <TransitionGroup>
             <CSSTransition 
@@ -45,8 +47,9 @@ const App: React.SFC<any> = ({ history }) => {
             </CSSTransition>
           </TransitionGroup>
         )} />
+        </Router>
     </div>
   );
 }
 
-export default withRouter(App);
+export default App;

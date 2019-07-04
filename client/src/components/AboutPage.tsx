@@ -10,7 +10,7 @@ const AboutMe = () => {
             <MovingObjects page={page} />
             <div className='about-me-stuff'>
                 <section className='about-me-container'>
-                    <h2>My main skills:</h2>
+                    <h2>I have experience with:</h2>
                     <ul>
                         <li>HTML5</li>
                         <li>CSS3</li>
@@ -18,6 +18,7 @@ const AboutMe = () => {
                         <li>ES6+</li>
                         <li>Typescript</li>
                         <li>React</li>
+                        <li>Jest</li>
                         <li>Node</li>
                         <li>Express</li>
                         <li>AJAX</li>

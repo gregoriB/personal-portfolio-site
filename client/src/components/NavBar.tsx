@@ -7,12 +7,12 @@ import '../styles/nav-desktop.css';
 
 
 const NavBar = () => {
-    const state = useContext(StateContext);
+    const { setDisplayMode, setCurrentPage, setNavState, isNavOpen, isMobile, currentPage } = useContext(StateContext);
 
     const handleCheckIfMobile = () => {
         const mobileScreen = { width: 950, height: 400};
         const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
-        state.setDisplayMode(isDisplayMobile);    
+        setDisplayMode(isDisplayMobile);    
     }
 
     
@@ -27,12 +27,12 @@ const NavBar = () => {
     type MouseClick = React.MouseEvent<any>
     
     const handleUpdateDisplay = (e: MouseClick) => {
-        state.setCurrentPage(e.currentTarget.dataset.name)
-        state.setNavState(false);
+        setCurrentPage(e.currentTarget.dataset.name)
+        setNavState(false);
     }
 
     const handleToggleNav = () => {
-        state.setNavState(!state.isNavOpen);
+        setNavState(!isNavOpen);
     }
 
     const handleOpenLink = (url: string) => {
@@ -40,11 +40,11 @@ const NavBar = () => {
     }
 
     const handleAssignNavClass = () => {
-        if (!state.isMobile) {
+        if (!isMobile) {
             return `desktop-nav`;
         }
         
-        return `mobile-nav ${state.isNavOpen ? 'active' : 'inactive'}`;
+        return `mobile-nav ${isNavOpen ? 'active' : 'inactive'}`;
     }
 
     return (
@@ -52,7 +52,7 @@ const NavBar = () => {
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
-                    className={state.currentPage === 'Home' ? 'active-link' : 'inactive-link'}
+                    className={currentPage === 'Home' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
                     to='Home'
                     onClick={handleUpdateDisplay}
@@ -60,7 +60,7 @@ const NavBar = () => {
                     Home
                 </Link>
                 <Link 
-                    className={state.currentPage === 'About-Me' ? 'active-link' : 'inactive-link'}
+                    className={currentPage === 'About-Me' ? 'active-link' : 'inactive-link'}
                     data-name='About-Me' 
                     to='About-Me'
                     onClick={handleUpdateDisplay}
@@ -68,7 +68,7 @@ const NavBar = () => {
                     About Me
                 </Link>
                 <Link 
-                    className={state.currentPage === 'Projects' ? 'active-link' : 'inactive-link'}
+                    className={currentPage === 'Projects' ? 'active-link' : 'inactive-link'}
                     data-name='Projects' 
                     to='Projects'
                     onClick={handleUpdateDisplay}
@@ -76,7 +76,7 @@ const NavBar = () => {
                     Projects
                 </Link>
                 <Link 
-                    className={state.currentPage === 'Contact-Me' ? 'active-link' : 'inactive-link'}
+                    className={currentPage === 'Contact-Me' ? 'active-link' : 'inactive-link'}
                     data-name='Contact-Me' 
                     to='Contact-Me'
                     onClick={handleUpdateDisplay}
