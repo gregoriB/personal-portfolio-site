@@ -14,8 +14,8 @@ interface IContextProps {
 export const StateContext = React.createContext({} as IContextProps);
 
 export const StateProvider: React.SFC = props => {
-  const windowPath = window.location.pathname.replace(/\//g, '');
-
+  const windowPath = window.location.pathname.slice(1);
+  
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
