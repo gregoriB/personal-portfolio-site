@@ -1,0 +1,1 @@
+Type `npm install` to install and run with `npm run build`.
