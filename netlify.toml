@@ -1,3 +1,8 @@
 [build]
-    commands = "npm install && npm run react-build && npm run lambda-build"
+    commands = "npm install && npm run lambda-build && npm run react-build"
     functions = "lambda"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
