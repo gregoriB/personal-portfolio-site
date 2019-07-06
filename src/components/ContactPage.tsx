@@ -76,11 +76,11 @@ const ContactMe = () => {
     const handleSendDataToServer = async (e:FormElem) => {
         e.preventDefault();
         try {
-            // const response = await fetch("/.netlify/functions/sendEmail", {
-            const response = await fetch('http://localhost:34567', {
+            const response = await fetch("/.netlify/functions/sendEmail", {
+            // const response = await fetch('http://localhost:34567/sendEmail', {
               method: 'POST',
               body: JSON.stringify({ "name": nameField.text, "email": emailField.text, "text": textField.text  }),
-              headers: { 'Content-Type': 'applications/json' }
+              headers: { 'Content-Type': 'application/json' } 
             });
             const json: string = await response.json();
             json && setTimeout(() => {

@@ -24,3 +24,4 @@ yarn-error.log*
 
 #lambda functions
 lambda
+/.netlify
