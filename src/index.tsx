@@ -4,7 +4,6 @@ import App from './App';
 import { StateProvider } from './contexts/StateContext';
 import { BrowserRouter } from 'react-router-dom';
 
-
 ReactDOM.render(
     <StateProvider>
       <BrowserRouter>
