@@ -1,3 +1,4 @@
 [build]
     commands = "npm install && npm run react-build && npm run lambda-build"
+    publish = "build"
     functions = "lambda"
