@@ -8,7 +8,6 @@ exports.handler = (event, context, callback) => {
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, application/json, Authorization, X-Requested-With, Content-Type, Accept, X-CLIENT-ID, X-CLIENT-SECRET', 
       'Access-Control-Allow-Credentials': 'true'
     },
-
     body: JSON.stringify(event.body)
   });
 }
