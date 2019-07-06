@@ -10,6 +10,7 @@
     "@types/react-router": "^5.0.2",
     "@types/react-router-dom": "^4.3.4",
     "@types/react-transition-group": "^2.9.2",
+    "netlify-lambda": "^1.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.1",
@@ -24,8 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "react-build": "react-scripts build",
-    "lambda-serve": "netlify dev serve functions",
-    "lambda-build": "netlify dev build functions"
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "eslintConfig": {
     "extends": "react-app"

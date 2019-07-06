@@ -2,5 +2,5 @@
     commands = "npm install && npm run react-build && npm run lambda-build"
     functions = "lambda"
 
-[context.production]
-    publish = "build"
+# [context.production]
+#     publish = "build"
