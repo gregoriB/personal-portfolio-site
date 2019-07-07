@@ -33,7 +33,7 @@ const App: React.SFC<any> = () => {
           <TransitionGroup>
             <CSSTransition 
               key={location.key}
-              timeout={{ enter: 1500, exit: 1200}} 
+              timeout={{ enter: 2650, exit: 2650}} 
               classNames="item"
               appear={true}
             >

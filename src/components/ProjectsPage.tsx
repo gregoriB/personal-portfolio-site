@@ -30,11 +30,14 @@ const Projects = () => {
 
     return (
         <div className='projects-page page'>
+                <div className="stylish-container">
             <div ref={projects} className='projects'>
-                {mapProjects()}
-                <div className='center-focus' />
+                    {mapProjects()}
+                    <div className='center-focus' />
+                </div>
             </div>
             <ProjectModal currentProject={currentProject} />
+            <div className='decorative-1' />
         </div>
     );
 }

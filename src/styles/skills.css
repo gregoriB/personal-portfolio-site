@@ -15,6 +15,7 @@
   background-position: center;
   background-repeat: no-repeat;
   opacity: .3;
+  z-index: 1;
 }
 
 .skill.inactive {
@@ -36,7 +37,6 @@
   }
 }
 
-
 .about-me.item-enter .moving-objects {
   opacity: 0;
 }
@@ -44,13 +44,13 @@
 .about-me.item-enter-active .moving-objects {
   opacity: 1;
   transition: 5s;
-  transition-delay: 1s;
+  transition-delay: .2s;
   transition-timing-function: ease-out;
 }
 
 .about-me.item-enter-done .moving-objects {
   opacity: 1;
-  transition: 2.5s;
+  transition: 1s;
   transition-timing-function: cubic-bezier(0,.88,.43,.99);
 }
 
@@ -66,6 +66,6 @@
 .about-me.item-appear-active .moving-objects {
   opacity: 1;
   transition: 5s;
-  transition-delay: .2s;
+  transition-delay: var(--timing-very-fast);
   transition-timing-function: ease-out;
 }

@@ -1,4 +1,8 @@
-.email-modal .main .content {
+.email-modal {
+    display: none;
+}
+
+.main .content {
     margin: 0 auto;
     opacity: 0;
     height: 100%;

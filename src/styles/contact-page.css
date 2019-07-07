@@ -1,14 +1,21 @@
 .contact-page {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* justify-content: flex-start; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     width: 90vw;
     height: 100vh;
     margin: 0 auto;
-    padding-top: 20vh;
-    padding-bottom: 30vh; 
+    padding-top: 25vh;
+    padding-bottom: 30vh;  */
+  }
+
+  .contact-page .stylish-container {
+    pointer-events: auto;
+    align-items: center;
   }
 
 .contact-form {
@@ -16,8 +23,15 @@
     max-width: 100%;
     padding: 1rem;
     width: 20rem;
-    margin-bottom: 8vh;
-    margin-left: 10vw;
+    /* max-height: 100%; */
+    /* padding: 2rem; */
+    /* padding-top: 3rem; */
+    /* margin-bottom: 8vh; */
+    /* margin-left: 10vw; */
+}
+
+.contact {
+    /* display: none; */
 }
 
 .contact-form * {
@@ -41,11 +55,11 @@
     padding: .7rem;
     display: block;
     margin-top: 1rem;
-    /* background-color: var(--medium); */
-    background-color: var(--dark);
+    background-color: var(--medium);
+    /* background-color: var(--colorful-dark); */
     width: 100%;
     height: 2rem;
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
 }
 
 .contact-form textarea {
@@ -53,19 +67,19 @@
     box-sizing: border-box;
     border: thin solid transparent;
     color: white;
-    /* background-color: var(--medium); */
-    background-color: var(--dark);
+    /* background-color: var(--colorful-dark); */
+    background-color: var(--medium);
     min-width: 100%;
     width: 100%;
     max-width: 100%;
     min-height: 15vh;
     height: 25vh;
-    max-height: 45vh;
+    max-height: 35vh;
     margin: 1rem auto;
     padding: .7rem;
     /* height: 50vh;
     max-height: 100vh; */
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
 }
 
 .contact-form *::placeholder {
@@ -128,11 +142,15 @@ input:-webkit-autofill {
     /* margin-top: .5rem; */
     min-width: 100%;
     margin: 1rem auto;
+    display: none;
 }
 
 .contact-info {
     margin-top: 5vw;
-    margin-left: 8vw;
+    /* margin-left: 8vw; */
+    width: 35%;
+    align-self: center;
+    margin-bottom: 9rem;
 }
 
 .contact-info h2 {
@@ -160,7 +178,7 @@ input:-webkit-autofill {
     height: 1px;
     background: var(--medium);
     background-image: linear-gradient(to right, var(--medium), var(--gray), var(--medium));
-    width: 150%;
+    width: 120%;
     margin-left: -25%;
 }
 
@@ -182,7 +200,7 @@ input:-webkit-autofill {
 @keyframes autofill {
     to {
       color: white;
-      background: var(--dark);
+      background: var(--medium);
     }
   }
 
@@ -263,7 +281,7 @@ input:-webkit-autofill {
     @keyframes autofill {
         to {
           color: white;
-          background: var(--dark);
+          background: var(--medium);
         }
     }
 }

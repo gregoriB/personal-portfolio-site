@@ -3,19 +3,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     top: 0;
     left: 0;
     height: 100vh;
     font-weight: bold;
-    width: 8vw;
+    width: 12vw;
     /* background-color: #0d1116; */
     background-color: #0b0c10;
     /* background-color: #0b0c10a1; */
     /* background-image: linear-gradient(120deg, #0b0c10fa 0%, #0b0c107a 45%, #0b0c1017 150%); */
     text-align: center;
     transition: .1s;
-    box-shadow: .05rem .01rem .3rem #000000b0;
+    /* box-shadow: .05rem .01rem .3rem #000000b0; */
+    clip-path: polygon(0% 3%, 70% 0%, 100% 100%, 0% 100%); /* top-left, top-right, bottom-right, bottom-left */
+    mix-blend-mode: luminosity;
+    /* z-index: 2; */
 }
 
 .desktop-nav button {
@@ -29,6 +32,8 @@
     align-items: center;
     height: 50vh;
     /* margin: 5vh 0; */
+    margin-left: .7vw;
+    width: 8vw;
 }
 
 .desktop-nav a {
@@ -59,9 +64,11 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-left: .7vw;
     height: 50vh;
     margin-bottom: 5vh;
+    width: 8vw;
 }
 
 .desktop-nav .social-media div {

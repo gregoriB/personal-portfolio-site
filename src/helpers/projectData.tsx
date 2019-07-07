@@ -34,7 +34,7 @@ const projectData = [
         `
     },
     {
-        name: "A Simple Game Made with React.js",
+        name: "A Simple Game Made with React",
         date: "October 27th, 2018",
         image: "react-game.jpg",
         linkSite: "https://gregorib-react-game.netlify.com/",

@@ -8,7 +8,7 @@ const AboutMe = () => {
     return (
         <div className='about-me page' ref={page}>
             <MovingObjects page={page} />
-            <div className='about-me-stuff'>
+            <div className="stylish-container">
                 <section className='about-me-container'>
                     <h2>I have experience with:</h2>
                     <ul>
@@ -46,7 +46,8 @@ const AboutMe = () => {
                         to know.
                     </p>
                 </section>
-                </div>
+            </div>
+            <div className='decorative-1' />
         </div>
     );
 }

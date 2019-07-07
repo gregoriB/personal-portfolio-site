@@ -31,9 +31,11 @@ const Project: React.SFC<IProps> = ({ name, index, setProject}) => {
     }
 
     return (
-        <div ref={project} className='project' onClick={handleClick}>
-            <p className='click-message'>Click to see more</p>
-            <h1 className='project-name'>{name}</h1>
+        <div className='project-border'>
+            <div ref={project} className='project' onClick={handleClick}>
+                <p className='click-message'>Click to see more</p>
+                <h1 className='project-name'>{name}</h1>
+            </div>
         </div>
     );
 }
