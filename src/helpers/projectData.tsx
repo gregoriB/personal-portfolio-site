@@ -3,181 +3,176 @@ const projectData = [
         name: "The Verge Top Stories API Site",
         date: "September 12th, 2018",
         image: "theVerge-top-stories.jpg",
+        caption: 'A site that fetches the top 10 articles from TheVerge.com using an API from newsapi.org.',
         linkSite: "https://theverge-top-stories.herokuapp.com/",
         linkRepo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
         id: "the-verge",
         desc: `
-            <p>
-            This site uses Node.js with Express.js and an API from newsapi.org.  The API delivers the top 10 news stories from theVerge.com.  
-            I made this to to gain experience using APIs with Node, and make something that was stylish, modern, and responsive for use on mobile devices.
-            </p>
+            <h2>Technologies used:</h2>
+            <p>CSS, Node, Express, EJS</p>
 
-            <p>
-            I learned a lot while making this.  It was actually my first good project after completing the "Web Developer Bootcamp" course on udemy.com.  
-            I developed a better understanding of how APIs worked, how git worked, and how to keep my API key secret by using a dotenv file that does not  
-            upload to the public repository on github.
-            </p>
+            <h2>The goal:</h2>
+            <p>To improve my CSS styling abilities, advance my skills with git, gain experience with fetching data from an external API using asynchronous 
+            requests, and to improve at mobile responsive design.</p>
 
-            <p>
-            Some of the biggest issues I had to solve were with API itself.  I had an issue with images not displaying if their links contained spaces, due 
-            to the way the browser handles spaces itself.  My solution was to replace all spaces in the link with "%20", which is apparently what the browser
-            does itself.  I also had a problem authors not displaying correctly if there were multiple authors.  I ended up creating a simple conditional that
-            looked for a "," in the author string, and if it found one it would just changed the author to "The Verge Staff."  There were other simple issues 
-            like that.  Looking back, these problems seem incredibly easy to solve, but at the time I felt like an absolute legend after figuring them out on my own.
-            </p>
-
-            <p>
-            This project took me around 2-3 days to complete.  Overall, I'm very happy with how the site turned out.  This is probably one of my few projects that 
-            I am completely satisfied with, and the quality of my work still holds up well now.  It's not very flashy or advanced by any stretch, but for a first 
-            real project, I couldn't be happier.
-            </p>
-            <span>- Brandon</span>
+            <h2>Obstacles overcome:</h2>
+            <p>Since the API data is from a 3rd party source that is likely scraped from the theVerge.com website, some of it needed to be altered to make it
+            work nicely with my site.  For example, the image urls had spaces in them, which did not work in the browser.  I had to dynamically replace
+            the spaces with "%20" when necessary for the images to render correctly. I also had to learn how to use .ENV files to export my API key so I could
+            safely upload it to my public github repo without making my key public.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>Even through it's one of my earliest projects, the quality of this site still holds up today. For my first solo website build, I couldn't be happier with how
+            it turned out.</p>
+            <span>- Brandon Gregori</span>
         `
     },
     {
         name: "A Simple Game Made with React",
         date: "October 27th, 2018",
         image: "react-game.jpg",
+        caption: 'A simple video game made with React.js.  Pick up the objects to increase your score as much as possible before the timer reaches zero.',
         linkSite: "https://gregorib-react-game.netlify.com/",
         linkRepo: "https://github.com/gregoriB/simple-game-React",
         id: "react-game",
         desc: `
-            <p>
-            I'm excited to have this project in my portfolio.  it's just a game I made in React.  It's not a complicated game.  The player tries to increase 
-            their score by moving a square around the screen and picking up orange items before the timer runs out.  It's not beautiful game.  The main "character" is 
-            just a black square.  The stage is a green rectangle.  The items you pick up are just orange circles.  Everything is made out of div elements. The music is 
-            royalty-free music I got from youtube, and the sound effects were from a freesound.org.  There are no enemies or different levels.  It's about as simple 
-            as something can get while still being called a game.
-            </p>           
-            <p>
-            So why be excited to show this one off?  Well it's a game I made from the ground up using just React.  No special game libraries were used.  I didn't follow 
-            a tutorial. The movement, collision, timers, score counters, game states, music loop, etc., were all done on my own.  Before that, the only thing I'd done 
-            with React on my own was a to-do list app.  Now I was making simple video games.  The whole experience was great.  I learned a lot about how React works, 
-            especially when it comes to component lifecycles.  
-            </p>
-            <p>
-            Optimization ended up being a big issue at first.  As the number of pickups on screen increased, my 
-            performance decreased.  My solution for that was to maintain strict control over when everything re-rendered.  Outside of that, there were really no big 
-            issues.  Instead there were lots of small issues to deal with.  I had the core gameplay loop working in 3 days, but I spent the next week polishing up the UI, 
-            testing and eliminating bugs, and adding small improvements wherever I saw the need for it.
-            </p>           
-            <p>
-            I did take some of what I learned here to make a different game with shooting and enemies that attack the player, but nothing really came of it.  That is also on 
-            my github. Ultimately I'm just interested in web development, but it was fun to make something a little different using my web dev toolkit.
-            </p>
-            <span>- Brandon</span>
+            <h2>Technologies used:</h2>
+            <p>React, CSS</p>
+
+            <h2>The goal:</h2>
+            <p>After learning the basics of React, I wanted to see if I could use it to make a video game.  Turns out I can.</p>
+
+            <h2>Obstacles overcome:</h2>
+            <p>Moving something on the screen was the first obstacle, which quickly turned into moving something without invoking the operating system automatic
+            key-repeat.  I used <em>setInterval</em> and some simple flags to accomplish that.  When I decided to add more objects to the screen, I then ran into
+            performance issues as the number of objects increased.  I had to learn more about how React lifecyles and updates worked to optimize the game performance.
+            Then I had to figure out the code for object collisions so the player could pick up objects to increase their score.</p>
+            <p>Eventually when I got sick of passing props through multiple child components, I decided to learn to use the React context.api works. Lastly, there was a lot of testing the game for bugs and polishing to user experience.
+            Later on I revisited this project and added in a cheat mode that allows the player to shoot objects and drag the player square just to learn how to do it.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>Even though it's a really simplistic game, I learned a lot about how React works while making it.  Coming from building a to-do list, this was a much more engaging way to 
+            use the library.  I also improved at solving more complicated problems than I usually encountered with regular web development.</p>
+            <span>- Brandon Gregori</span>
         `
     },
     {
         name: "HTML5 Canvas Drawing App",
         date: "December 29th, 2018",
         image: "html5-drawing-app.jpg",
+        caption: 'And HTML5 Canvas drawing app with image download functionality.',
         linkSite: "https://codepen.io/gregorib/full/PXJryw",
         linkRepo: "https://github.com/gregoriB/drawing-app-HTML5-Canvas",
         id: "drawing-app",
-        desc: `
-            <p>
-            After I followed a really basic guide for drawing to the screen in HTML5 canvas, I decided I wanted to go a bit further with that.  As far as drawing apps 
-            go, this one is really basic.  I added different brush sizes, a color pallete, a custom color selector, and the ability to save the image to a png file.  
-            While this isn't a responsive page, it's is touchscren compatible so it should still be usable on tablets and touch screen laptops.
-            </p>
-            <p>
-            This was actaully my first venture into HTML5 canvas, so there was a lot of new stuff to learn.  The most difficult things with this one, were saving the
-            image to a file on the computer, and getting the touchscreen controls to work properly on touch screen devices.  Everything else was just learning how HTML5 
-            canvas works.
-            </p>
-            <p>
-            This wasn't a deep, challenging project at all, but I think it came out really nice so I just wanted to share it.
-            </p>
-            <span>- Brandon</span>
+            desc: `
+            <h2>Technologies used:</h2>
+            <p>HTML5, CSS, Javascript</p>
+
+            <h2>The goal:</h2>
+            <p>I wanted to make something interactive with HTML5 canvas.</p>
+
+            <h2>Obstacles overcome:</h2>
+            <p>This was my introduction to HTML5 canvas, so everything was very new.  I had to learn how canvas works but I didn't want to make another video game so I made this.
+            Learing canvas ended up being the easier part.  I spent more time figuring out how to download the image using <em>toDataUrl</em>, and getting touch input
+            to work on a touch screen laptop and tablet.  I'd hoped mouse emulation would have been enough to make it work on a touch device, but that ended up 
+            not being the case.  The end result was adding extra event listeners and a bit of extra logic for touch inputs.  I didn't have to do this because the odds of anyone
+            but me using this with a touch device are pretty low, but it was my first encounter with touch controls not working and I wanted to learn how to fix that.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>This was a fun way to learn HTML5 canvas and touch events.  While it's too lacking on features to use as my go-to drawing app, 
+            it served a good purpose and was an enjoyable, quick project to make.</p>
+            <span>- Brandon Gregori</span>
         `
     },
     {
         name: "HTML5 Video Player",
         date: "January 4th, 2019",
         image: "video-player.jpg",
+        caption: 'A video player made with HTML5 and Javascript.  Features fullscreen functionality and responsive controls.',
         linkSite: "https://codepen.io/gregorib/full/vvReVG",
         linkRepo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
         id: "video-player",
         desc: `
-            <p>
-            Once I finished my HTML5 canvas drawing app, I was ready to tackle something else.  Making a video player seemed to be a logical choice.  HTML5 video is the 
-            standard for video playback on the web now, and many sites use some sort of custom video player because the one included in browsers leaves a lot to be 
-            desired.
-            </p>
-            <p>
-            The project seemed like it would be really simple at first, but I soon learned that there would be a lot of small issues and features standing between me and 
-            a quality video player.  I also had some problems with getting the video centered in fullscreen mode and ended up solving that by using the height of the screen 
-            and the aspect ratio of the video being played to dynamically create a margin that would center the video properly in fullscreen.  That was important because 
-            I had added a button to load in video files, and I really wanted it to be able to nicely play anything someone could throw at it.
-            </p>
-            <p>
-            I had the video player working in a few hours, but spent the next 4 days tackling bugs, adding features, and polishing everything.  I think it came out really nice, and
-            I hope someday to find a use for it in a different project.
-            </p>
-            <span>- Brandon</span>
+            <h2>Technologies used:</h2>
+            <p>HTML5, CSS, Javascript</p>
+
+            <h2>The goal:</h2>
+            <p>Considering how lacking the built-in browser video player is, I thought it would be a good idea to make my own in case I need one in the future.</p>
+
+            <h2>Obstacles overcome:</h2>
+            <p>By far the biggest hurdle of this project was making the fullscreen functionality work responsively and across the many browsers. It took a while, but eventually I ended up with something with responsive controls that worked consistently across all 
+            the major browsers.  This is mostly because I added in a lot of little features and quality-of-life improvements that I feel all video player should have.
+            Little things like having the controls fade in and out when appropriate, the video pausing and showing the current scene while skipping 
+            ahead and then upausing when the user stops skipping, keyboard controls, and centering the image on fullscreen hogged most of my time and energy.  When I had everything
+            working correctly and the video player felt polished enough, I added in the ability to load in compatible video.  This presented new issues with different video 
+            aspect ratios and how they looked in fullscreen mode that had to be dealt with.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>With this project, I realized how important polish and quality-of-life features can be for a video player.  Platforms like youtube have set the standard 
+            for that, and anything less just feels unsatisfying and limiting.  If I do use this video player for my own sites, I will be spending more time styling it because
+            right now it's not quite where I would like it to be.</p>
+            <span>- Brandon Gregori</span>
         `
     },
     {
         name: "3rd Strike Frame Data in React",
         date: "February 24th, 2019",
         image: "3rd-strike-app.jpg",
+        caption: 'Street Fighter III: Third Strike frame data.  Made using React.js and data scraped from a different website.',
         linkSite: "https://3rd-strike-frame-data.netlify.com/",
         linkRepo: "https://github.com/gregoriB/3rd-strike-app",
         id: "third-strike",
         desc: `
-            <p>
-            This is a frame data app for Street Fighter III, made for desktop using React.  Anyone who looks at this is probably thinking "what's the big deal? It's a 
-            spreadsheet."  Believe me, I can see why this is probably the most underwhelming project in my portfolio at first glance.  It's not much to look at, and it's 
-            really not doing much at any one time.  How I made it is the far more interesting part.
-            </p>
-            <p>
-            The first thing I had to do was get the data I needed.  Unfortunately, no API or JSON files exist for that.  This is, after all, a 20 year old fighting game.  
-            Luckily there is a website with all of the data laid out in tables for each character.  Getting that data from the website was tricky though.  I made my own
-            webscraper browser extension that would put the data from each table into an object and download it in JSON format.  I did that for all 19 characters, which was 
-            a total of 78 JSON files.
-            </p>
-            <p>
-            Once I had all of the data, it was time to make a React app and display it.  That was actually pretty easy itself, but I wanted to sort through all of the data 
-            so I could give everything a class.  For instance, if a number was negative, it was given classes of "number" and "negative", if it was a special move, a super 
-            move, or a parry, it was given those classes, and so on.  I also ended up converting the directional notation into actual unicode characters, so "fwd" would be 
-            and arrow pointing to the right, "360" would be an arrow in a circle, etc..
-            </p>
-            <p>
-            This was a tedious process resulting in a lot of conditionals and switch statements, but the end result is a very clean and easy to read resource that I can 
-            happily use whenever I want to learn about a game character's frame data.  I didn't necessarily need to use React, but there is the possibility that I will 
-            someday add a lot of graphics and other features to in, and possibility even port it to mobile using React-native.  I did this for me, but releasing something 
-            for the 3rd Strike community to use would be satisfying too.
-            </p>
-            <span>- Brandon</span>
+            <h2>Technologies used:</h2>
+            <p>React, React-router, JSON, CSS</p>
+
+            <h2>The goal:</h2>
+            <p>This is the first thing I made purely for personal reasons.  There was no specific learning goal for this one.  It's an ongoing
+            passion project that I'm making for a small community of old-school fighting game enthusiasts.</p>
+
+            <h2>Obstacles overcome:</h2>
+            <p>This was my first introduction to React-router.  While I didn't technically have to use routes, it makes for a more predictable and familiar user experience
+            to have them.  I had to figure out how that worked, how to deal with bad routes, and how to get routes to stay when refreshing the page.  This was also my first
+            project made with using React hooks.  They had just been officially integrated into React when I started this, so I decided to give that a shot.</p>  
+            <p>The biggest obstacle
+            encountered was dynamically mapping the data from JSON files to table while also parsing it and assigning style classes according to the data content.  For instance
+            if the data was a number, it was assigned a class of "number," and also a class of "negative," "zero," or "positive."  This was done with every piece of data in table for many different classes, resulting in 
+            dozens of unique classes used in thousands of table entries.   It was a tedious process that uses a lot of conditional logic.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>The project is ongoing and far from complete, but the core of it, which is the organized tabular data and the nav bar, are there to build upon.  I hope to some day have something 
+            the 3rd Strike community will be happy to use, and expand the project into either a PWA or a mobile app using React-native.</p>
+            <span>- Brandon Gregori</span>
         `
     },
     {
         name: "3rd Strike Web Scraper Extension",
         date: "January 28th, 2019",
         image: "3rd-strike-extension.jpg",
+        caption: 'A browser extension for scraping data from http://ensabahnur.free.fr/BastonNew.  The data is JSON-formatted and used in my 3rd Strike app.',
         linkSite: null,
         linkRepo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
         id: "browser-extension",
         desc: `
-            <p>
-            This is the browser extension I made and used to scrape the data I needed for my 3rd Strike frame data app.  It's not fun to use or look at, but it served me 
-            well.  Basically I needed the data from a website, and the simplest way to get it was to make an extension for google chrome that would allow me to download JSON-formatted 
-            files when I clicked a button on the page.  It was mostly about solving issues with the data formatting as they came up.  Having everything in the proper format 
-            was going to be crucial for later use in my app.
-            </p>
-            <p>
-            The data being pulled from their website was pretty messy, and not all of it was formatted the same so I had to make a few extra functions to sort through 
-            that.  It really just came down to tackling one problem after the next until I had all of the data being properly formatted and added to an object.  Then I had to 
-            figure out how to download it into a JSON file, which just came down to adding it to a javascript blob, creating a download capable anchor element, adding it to 
-            the 'href' attribute, and using the click() method to click it.
-            </p>
-            <p>
-            This was a project of utility, but I had a lot of fun with it.  I'd never made a browser extension prior to this, and it was the first time I realized I could use them to 
-            just javascript to interface with the HTML on a website to suit my own needs.  Not too long after, I made an a dark theme extension for classic reddit, which is also in my 
-            github profile.
-            </p>
-            <span>- Brandon</span>
+            <h2>Technologies used:</h2>
+            <p>HTML, CSS, Javacript</p>
+
+            <h2>The goal:</h2>
+            <p>The data I needed for my 3rd Strike app was only available in tables on one website and was stored on a private database.  I decided to make a 
+            web scraping extension using Javascript that I could format and download the data into a JSON file.  There was almost 80 JSON files worth of data, so scraping 
+            it seemed like the most time efficient option.</p>
+
+            <h2>Obstacles overcome:</h2>
+            <p>I had to learn how to make a browser extension first.  Once I did that, it was really just a matter of looping through the table HTML on the page, getting the 
+            relevant data, putting it into an object, and then downloading it into a JSON file.  Most of the difficulty came form navigating through a table that was clearly not meant for this, and then 
+            creating the conditional logic to get the correct data.  There were a lot of nested loops, but luckily the dataset is small enough that the process still runs 
+            extremely fast.  Then I had to learn how to download the object into a JSON file.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>This was the first time I had to write tool for a project.  Even though I will probably never use it again and it's unlikely that anyone else would
+            need it, I'm glad I made it myself instead of trying to use an existing web scraper application.  It only took me a day to make, and I had an enjoyable  
+            time doing it.</p>
+            <span>- Brandon Gregori</span>
         `
     },
     {

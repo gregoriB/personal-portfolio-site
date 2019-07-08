@@ -69,6 +69,13 @@
     transition: 1s;
 }
 
+.modal-article .date {
+    font-size: .9rem;
+    text-shadow: none;
+    text-align: center;
+    margin: .5rem auto;
+}
+
 .modal-article * {
     text-shadow: 0.5px 0px 0px black;
 }
@@ -114,19 +121,40 @@
     margin: 0 auto;
 }
 
-.article-content .modal-image {
-    cursor: pointer;
-    text-align: center;
+.article-content .image {
+    display: flex;
+    flex-direction: column;
     margin: 1rem auto;
     margin-bottom: 0;
-    width: 80%;
-    transition: .2s;
+    max-width: 600px;
 }
 
-.modal-article .date {
-    font-size: .9rem;
-    text-shadow: none;
+.article-content .image img {
+    cursor: pointer;
     text-align: center;
+    margin: 0;
+    /* margin: 1rem auto;
+    margin-bottom: 0; */
+    width: 100%;
+    transition: .1s;
+    box-shadow: 0 0 2px var(--shadow);
+}
+
+.article-content figcaption {
+    font-size: .8rem;
+    margin: 1rem auto;
+    font-style: italic;
+}
+
+.project-modal .article-content .description {
+    margin: 1rem auto;
+    font-size: .9rem;
+    max-width: 600px;
+}
+
+.modal-article h2{
+    margin: 2rem 0;
+    margin-bottom: .5rem;
 }
 
 .modal-article p {
@@ -135,16 +163,25 @@
     margin: 0 auto;
 }
 
+.modal-article span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+}
+
 .project-modal .article-content .project-links {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     width: 80%;
-    margin: 2rem auto;
+    margin: 0;
 }
 
 .project-modal .article-content .project-links a {
     display: block;
     width: 7.5rem;
-    margin: 0 auto;
+    margin: 0 2rem;
     font-weight: bold;
     text-shadow: 0 0 1px var(--dark);
     border-radius: 10px;
@@ -207,10 +244,10 @@
         background: var(--colorful-bright);
     }
 
-    .article-content .modal-image:hover {
-        transition: .2s;
+    .article-content .image img:hover {
+        transition: .1s;
         transition-delay: .3s;
-        box-shadow: 0 .5vh 1vh var(--shadow);
+        box-shadow: 0 5px 10px var(--shadow);
         transform: scale(1.01);
     }
 }
@@ -314,7 +351,7 @@
 }
 
 @media (max-height: 400px) {
-    .project-modal .modal-image {
+    .project-modal .image {
         margin: 0 auto;
         height: 50%; 
         width: 50%;

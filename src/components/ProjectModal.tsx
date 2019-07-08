@@ -93,12 +93,14 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
                         <div className='hide-scroll' />
                         <div className='article-content'>
                             <div className='date'>{project.date}</div>
-                            <img 
-                                className='modal-image'
-                                src={require(`../images/${project.image}`)} 
-                                alt={project.name}
-                                onClick={handleToggleImage}
-                            />
+                            <div className='image'>
+                                <img 
+                                    src={require(`../images/${project.image}`)} 
+                                    alt={project.name}
+                                    onClick={handleToggleImage}
+                                />
+                                <figcaption>{project.caption}</figcaption>
+                            </div>
                             <div className='project-links'>
                                 { 
                                     project.linkSite 

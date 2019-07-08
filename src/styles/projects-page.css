@@ -106,7 +106,7 @@
     display: none;
 }
 
-@media (hover: hover) and (min-width: 11001px) {
+@media (hover: hover) and (min-width: 1101px) {
     .project-border:hover {
         margin: 0vw;
         background-color: var(--colorful-medium);
