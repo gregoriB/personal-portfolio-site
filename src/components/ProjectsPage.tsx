@@ -7,7 +7,11 @@ import '../styles/projects-page.css';
 const Projects = () => {
     const [currentProject, setCurrentProject] = useState<number>(0);
 
-    const mapProjects = () => projectData.map((project, index) => <Project setProject={setCurrentProject} key={project.name} name={project.name} index={index} />);
+    const mapProjects = () => {
+        return projectData.map((project, index) => {
+            return <Project setProject={setCurrentProject} id={project.id} key={project.name} name={project.name} index={index} />
+        });
+    }
 
     const projects = useRef<HTMLDivElement | null>(null);    
 

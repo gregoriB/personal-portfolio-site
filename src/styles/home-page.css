@@ -35,7 +35,7 @@
 
 .home-container .resume {
     display: block;
-    width: 8rem;
+    width: 6rem;
     margin: 2rem auto;
     font-weight: bold;
     text-shadow: 0 0 1px var(--gray);
@@ -131,16 +131,17 @@
     .home.item-appear .home-container {
         opacity: 1;
     }
-
+    
     .home.item-appear .home-container h1 {
         opacity: 1;
         transform: translateX(100vw);
     }
-
+    
     .home.item-appear-active .home-container h1 {
         transform: translateX(0) rotate(-3deg);
         transition: var(--timing-fast);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
+        transition-delay: .2s;
     }
 
     .home.item-appear .home-container p {

@@ -351,6 +351,7 @@ input:-webkit-autofill {
     .contact-page.item-appear-active .contact-form {
         transform: translateX(0);
         transition: var(--timing-fast);
+        transition-delay: .2s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
@@ -362,7 +363,7 @@ input:-webkit-autofill {
     .contact-page.item-appear-active .contact-info {
         transform: translateX(0);
         transition: var(--timing-fast);
-        transition-delay: .15s;
+        transition-delay: .35s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 }

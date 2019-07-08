@@ -143,7 +143,7 @@
 
 .project-modal .article-content .project-links a {
     display: block;
-    width: 25%;
+    width: 7.5rem;
     margin: 0 auto;
     font-weight: bold;
     text-shadow: 0 0 1px var(--dark);

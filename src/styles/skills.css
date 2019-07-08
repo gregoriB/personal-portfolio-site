@@ -69,6 +69,6 @@
 .about-me.item-appear-active .moving-objects {
   opacity: 1;
   transition: 5s;
-  transition-delay: 1s;
+  transition-delay: 1.2s;
   transition-timing-function: ease-out;
 }

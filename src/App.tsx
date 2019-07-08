@@ -18,8 +18,8 @@ const App: React.SFC<any> = () => {
   const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
 
   let transitions = {
-    enter: isMobile ? 500 : isFirstLoad ? 1000 : 2000,
-    exit: isMobile ? 500 : isFirstLoad ? 1000 : 2000
+    enter: isMobile ? 500 : isFirstLoad ? 1200 : 2000,
+    exit: isMobile ? 500 : isFirstLoad ? 1200 : 2000
   };
 
   useEffect(() => {

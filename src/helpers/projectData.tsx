@@ -5,6 +5,7 @@ const projectData = [
         image: "theVerge-top-stories.jpg",
         linkSite: "https://theverge-top-stories.herokuapp.com/",
         linkRepo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
+        id: "the-verge",
         desc: `
             <p>
             This site uses Node.js with Express.js and an API from newsapi.org.  The API delivers the top 10 news stories from theVerge.com.  
@@ -39,6 +40,7 @@ const projectData = [
         image: "react-game.jpg",
         linkSite: "https://gregorib-react-game.netlify.com/",
         linkRepo: "https://github.com/gregoriB/simple-game-React",
+        id: "react-game",
         desc: `
             <p>
             I'm excited to have this project in my portfolio.  it's just a game I made in React.  It's not a complicated game.  The player tries to increase 
@@ -72,6 +74,7 @@ const projectData = [
         image: "html5-drawing-app.jpg",
         linkSite: "https://codepen.io/gregorib/full/PXJryw",
         linkRepo: "https://github.com/gregoriB/drawing-app-HTML5-Canvas",
+        id: "drawing-app",
         desc: `
             <p>
             After I followed a really basic guide for drawing to the screen in HTML5 canvas, I decided I wanted to go a bit further with that.  As far as drawing apps 
@@ -95,6 +98,7 @@ const projectData = [
         image: "video-player.jpg",
         linkSite: "https://codepen.io/gregorib/full/vvReVG",
         linkRepo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
+        id: "video-player",
         desc: `
             <p>
             Once I finished my HTML5 canvas drawing app, I was ready to tackle something else.  Making a video player seemed to be a logical choice.  HTML5 video is the 
@@ -120,6 +124,7 @@ const projectData = [
         image: "3rd-strike-app.jpg",
         linkSite: "https://3rd-strike-frame-data.netlify.com/",
         linkRepo: "https://github.com/gregoriB/3rd-strike-app",
+        id: "third-strike",
         desc: `
             <p>
             This is a frame data app for Street Fighter III, made for desktop using React.  Anyone who looks at this is probably thinking "what's the big deal? It's a 
@@ -153,6 +158,7 @@ const projectData = [
         image: "3rd-strike-extension.jpg",
         linkSite: null,
         linkRepo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
+        id: "browser-extension",
         desc: `
             <p>
             This is the browser extension I made and used to scrape the data I needed for my 3rd Strike frame data app.  It's not fun to use or look at, but it served me 
@@ -180,6 +186,7 @@ const projectData = [
         image: "3rd-strike-extension.jpg",
         linkSite: null,
         linkRepo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
+        id: "portfolio-site",
         desc: `
             <p>
             This is the browser extension I made and used to scrape the data I needed for my 3rd Strike frame data app.  It's not fun to use or look at, but it served me 

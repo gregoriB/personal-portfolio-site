@@ -4,10 +4,11 @@ import { StateContext } from '../contexts/StateContext';
 interface IProps {
     name: string,
     index: number,
+    id: string,
     setProject(val: number): void
 }
 
-const Project: React.SFC<IProps> = ({ name, index, setProject}) => {
+const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
     const { isMobile, setIsModalOpen, setIsNavOpen } = useContext(StateContext);
 
     const project = useRef<HTMLDivElement | null>(null);
@@ -29,9 +30,10 @@ const Project: React.SFC<IProps> = ({ name, index, setProject}) => {
         setIsModalOpen(true);
         setIsNavOpen(false);
     }
-
+    console.log(id)
+    
     return (
-        <div className='project-border'>
+        <div className='project-border' id={id}>
             <div ref={project} className='project' onClick={handleClick}>
                 <p className='click-message'>Click to see more</p>
                 <h1 className='project-name'>{name}</h1>

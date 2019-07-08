@@ -170,7 +170,7 @@ h2 {
 
   .item-enter-active .decorative-1 {
     transition: var(--timing-medium);
-    transition-delay: var(--timing-slow);
+    transition-delay: 1.4s;
     transform: translateX(0);
   }
 
@@ -180,7 +180,7 @@ h2 {
 
   .item-appear-active .decorative-1 {
     transition: var(--timing-medium);
-    transition-delay: var(--timing-very-fast);
+    transition-delay: .6s;
     transform: translateX(0);
   }
 
