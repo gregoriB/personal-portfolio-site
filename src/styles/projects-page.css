@@ -295,6 +295,7 @@
         transform: translateX(0);
         transition: var(--timing-fast);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
+        pointer-events: none;
     }
 
     .projects-page.item-enter-active .project-border:nth-child(1) {
@@ -339,6 +340,7 @@
         transition-delay: .4s;
         background-color: var(--medium);
         transform: translateX(100vw);
+        pointer-events: none;
     }
 
     .item-exit .project {

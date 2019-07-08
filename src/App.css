@@ -24,6 +24,10 @@ html, body {
 }
 
 body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   font-family: 'Amita', cursive;
   font-size: 16px;
   letter-spacing: .2px;
@@ -47,7 +51,6 @@ h1 {
 h2 {
   line-height: 2rem;
   text-shadow: 0 0 2px var(--dark);
-
 }
 
 .app {
@@ -73,7 +76,6 @@ h2 {
   margin-right: calc(100% - 100vw);
   transform: translateX(100%);
   transition-timing-function: cubic-bezier(0,.88,.43,.99);
-  background-color: #0b0c10;
   pointer-events: none;
 }
 
@@ -141,13 +143,14 @@ h2 {
 
 @media (min-width: 1101px) {
   .stylish-container {
+    opacity: 1;
     width: 70vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     clip-path: polygon( 0% 5%, 100% 0%, 98% 100%, 2% 96%); /* top-left, top-right, bottom-right, bottom-left */
-    background-color: #0b0c10;
+    background-color: var(--dark);
     padding: 5vh;
     z-index: 1;
     min-height: 55vh;

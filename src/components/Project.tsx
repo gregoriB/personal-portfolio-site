@@ -30,7 +30,6 @@ const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
         setIsModalOpen(true);
         setIsNavOpen(false);
     }
-    console.log(id)
     
     return (
         <div className='project-border' id={id}>

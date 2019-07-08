@@ -10,17 +10,25 @@ interface IProps {
 }
 
 const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
-    const { isMobile, currentPage } = useContext(StateContext);
-    
     const getRandomNumber = (min: number, max: number) => Math.random() * (max - min) + min;
     const coinFlip = () => Math.random() > .5 ? getRandomNumber(.1, .5) : -getRandomNumber(.1, .5);
-    const randomPos = [Math.random() * window.innerWidth * .8, Math.random() * window.innerHeight * .8];
+    const randomPos = () => [Math.random() * window.innerWidth * .8, Math.random() * window.innerHeight * .8];
+    const { isMobile, currentPage } = useContext(StateContext);
     const [ skillPos, setSkillPos ] = useState<Array<number>>(randomPos);
-    const [ skillBearing, setSkillBearing ] = useState([coinFlip(), coinFlip()]);
+    const [ skillBearing, setSkillBearing ] = useState<Array<number>>([coinFlip(), coinFlip()]);
     const size = { width: 40 * level, height: 40 * level };
 
     useEffect(() => {
-    }, [])
+        const initializeMovingObjects = () => {
+            const coinFlip = () => Math.random() > .5 ? getRandomNumber(.1, .5) : -getRandomNumber(.1, .5);
+            setSkillPos(randomPos);
+            setSkillBearing([coinFlip(), coinFlip()]);
+        }
+        initializeMovingObjects();
+        window.addEventListener('resize', initializeMovingObjects);
+
+        return () =>  window.addEventListener('resize', initializeMovingObjects);
+    }, [setSkillPos, setSkillBearing]);
     
     useEffect(() => {
         const checkBoundary = (pos: number[], bearing: number[]) => {
@@ -40,7 +48,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
             checkBoundary(pos, bearing);
             const X =  pos[0] + (bearing[0]);
             const Y =  pos[1] + (bearing[1]);
-            pos = [X, Y]
+            pos = [X, Y];
             setSkillPos(pos);
             setSkillBearing(bearing);
         }
@@ -53,7 +61,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
             clearInterval(interval);
         }
         return () => {
-            clearInterval(interval)
+            clearInterval(interval);
         };
     }, [skillPos, index, skillBearing, size, isMobile, currentPage, page]);
 

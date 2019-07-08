@@ -11,7 +11,7 @@ const NavBar = () => {
     const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile } = useContext(StateContext);
     
     const handleUpdateDisplay = (e: MouseClick) => {
-        setCurrentPage(e.currentTarget.dataset.name)
+        setCurrentPage(e.currentTarget.dataset.name);
         setIsNavOpen(false);
     }
 
@@ -29,7 +29,7 @@ const NavBar = () => {
     
     useEffect(() => {
         const handleCheckIfMobile = () => {
-            const mobileScreen = { width: 950, height: 400};
+            const mobileScreen = { width: 1100, height: 400};
             const isDisplayMobile = window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
             setIsMobile(isDisplayMobile);
         }
