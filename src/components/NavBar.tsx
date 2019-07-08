@@ -19,10 +19,6 @@ const NavBar = () => {
         setIsNavOpen(!isNavOpen);
     }
 
-    const handleOpenLink = (url: string) => {
-        window.open(url, '_blank');
-    }
-
     const handleAssignNavClass = () => {
         if (!isMobile) {
             return `desktop-nav`;
@@ -82,9 +78,9 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className='social-media' >
-                <div id='github-image' onClick={() => handleOpenLink('https://github.com/gregoriB?tab=repositories')}>Github</div>
-                <div id='linkedin-image' onClick={() => handleOpenLink('https://www.linkedin.com/in/brandon-gregori-59a973176/')}>Linkedin</div>
-                <div id='facebook-image' onClick={() => handleOpenLink('https://www.facebook.com/people/Brandon-Gregori/1128665234')}>Facebook</div>
+                <a href='https://github.com/gregoriB?tab=repositories' id='github-image' target='_blank' rel="noopener noreferrer">Github</a>
+                <a href='https://www.linkedin.com/in/brandon-gregori-59a973176/' id='linkedin-image' target='_blank' rel="noopener noreferrer">Linkedin</a>
+                <a href='https://www.facebook.com/people/Brandon-Gregori/1128665234' id='facebook-image' target='_blank' rel="noopener noreferrer">Facebook</a>
             </div>
         </div>
     )

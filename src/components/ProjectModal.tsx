@@ -107,17 +107,17 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
                                 }
                                 <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">Source Code</a>
                             </div>
-                            <ModalImage
-                                handleToggleImage={handleToggleImage}
-                                isImageVisible={isImageVisible}
-                                image={project.image}
-                                name={project.name}
-                            />
                             <div className='description' ref={description}>{project.desc}</div>
                         </div>
                     </article>
                 </div>
             </div>
+            <ModalImage
+                handleToggleImage={handleToggleImage}
+                isImageVisible={isImageVisible}
+                image={project.image}
+                name={project.name}
+            />
         </div>
     )
 }

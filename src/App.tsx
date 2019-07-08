@@ -13,8 +13,18 @@ import './styles/normalize.css';
 import './App.css';
 
 const App: React.SFC<any> = () => {
-  const { isModalOpen, setIsModalOpen, currentPage } = useContext(StateContext);
+  const { isModalOpen, setIsModalOpen, isMobile, currentPage } = useContext(StateContext);
   const [previousPage, setPreviousPage] = useState<string>('Home');
+  const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
+
+  let transitions = {
+    enter: isMobile ? 500 : isFirstLoad ? 1000 : 2000,
+    exit: isMobile ? 500 : isFirstLoad ? 1000 : 2000
+  };
+
+  useEffect(() => {
+    setIsFirstLoad(false);
+  }, [setIsFirstLoad])
 
   useEffect(() => {
     if (currentPage !== previousPage) {
@@ -23,7 +33,7 @@ const App: React.SFC<any> = () => {
       setPreviousPage(currentPage);
     }
 
-  }, [previousPage, currentPage, isModalOpen, setIsModalOpen]);
+  }, [previousPage, currentPage, isModalOpen, setIsModalOpen, isMobile, transitions]);
 
   return (
     <div className='app'>
@@ -33,7 +43,7 @@ const App: React.SFC<any> = () => {
           <TransitionGroup>
             <CSSTransition 
               key={location.key}
-              timeout={{ enter: 2650, exit: 2650}} 
+              timeout={transitions} 
               classNames="item"
               appear={true}
             >

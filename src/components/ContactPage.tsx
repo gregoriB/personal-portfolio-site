@@ -76,8 +76,8 @@ const ContactMe = () => {
     const handleSendDataToServer = async (e:FormElem) => {
         e.preventDefault();
         try {
-            const response = await fetch("/.netlify/functions/sendEmail", {
-            // const response = await fetch('http://localhost:34567/sendEmail', {
+            // const response = await fetch("/.netlify/functions/sendEmail", {
+            const response = await fetch('http://localhost:34567/sendEmail', {
               method: 'POST',
               body: JSON.stringify({ "name": nameField.text, "email": emailField.text, "text": textField.text  }),
               headers: { 'Content-Type': 'application/json' } 
@@ -151,7 +151,7 @@ const ContactMe = () => {
                     <div>
                         <hr />
                         <p>Brandon Gregori</p>
-                        <a href="mailto: brandon.gregori@gmail.com">brandon.gregori@gmail.com</a>
+                        <a href="mailto: brandon.gregori@gmail.com" target='_blank' rel="noopener noreferrer">brandon.gregori@gmail.com</a>
                         <p>(720) 260-4150</p>
                         <hr />
                     </div>

@@ -1,8 +1,5 @@
 .home {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100vh; */
+    user-select: none;
 }
 
 .home .stylish-container {
@@ -18,14 +15,10 @@
     align-items: center;
     text-align: center;
     width: 40%;
-    height: 100%;
     margin: 2rem 0;
-    /* margin-top: 28vh; */
     margin-left: 10%;
     transition-duration: 1s;
-    opacity: 1;
-    /* display: none; */
-    /* z-index: 1 */
+    opacity: 0;
 }
 
 .home-container h1 {
@@ -38,10 +31,29 @@
 
 .home-container p {
     margin: 0 auto;
-    opacity: 0;
 }
 
-@media (max-width: 800px) {
+.home-container .resume {
+    display: block;
+    width: 8rem;
+    margin: 2rem auto;
+    font-weight: bold;
+    text-shadow: 0 0 1px var(--gray);
+    border-radius: 10px;
+    border: thin solid var(--gray);
+    transition: .2s;
+}
+
+@media (hover: hover) {
+    .home-container .resume:hover {
+        background-color: var(--gray);
+        color: var(--dark);
+        text-shadow: 0 0 1px var(--dark);
+        transition: .4s;
+    }
+}
+
+@media (max-width: 1100px) {
     .home {
         width: 100vw;
     }
@@ -51,23 +63,32 @@
         margin: 0 auto;
         margin-top: 20vh;
         width: 70vw;
+        opacity: 1;
+    }
+    .home-container .resume {
+        width: 7rem;
     }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 1101px) {
+    .home.item-enter .home-container {
+        opacity: 1;
+    }
+
     .home.item-enter .home-container h1 {
-        opacity: 0;
-        transform: translateX(400%);
-        transition: opacity .9s, transform .9s;
-        transition-delay: .85s;
+        opacity: 1;
+        transform: translateX(100vw);
     }
 
     .home.item-enter-active .home-container h1 {
-        opacity: 1;
         transform: translateX(0) rotate(-3deg);
+        transition: var(--timing-fast);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
         transition-delay: 1s;
-        /* animation: end-rotate 1s linear .85s; */
+    }
+
+    .home.item-enter-done .home-container {
+        opacity: 1;
     }
 
     .home.item-enter-done .home-container h1 {
@@ -76,73 +97,53 @@
         transition-timing-function: cubic-bezier(.5,.01,1,.3);
     }
 
-    .home.item-exit .home-container h1 {
+    .home.item-exit .home-container {
         opacity: 1;
+        visibility: visible;
+    }
+
+    .home.item-exit .home-container h1 {
         transform: translateY(5px);
     }
 
     .home.item-exit-active .home-container h1 {
-        opacity: 0;
-        transform: translateX(200%);
-        transition: .2s;
-        transition-delay: .3s;
+        transform: translateX(100vw);
+        transition: var(--timing-fast);
+        transition-delay: .4s;
     }
 
-    .home.item-enter-active .home-container p {
-        /* animation: p-opacity 1s linear 2.5s; */
+    .home.item-enter .home-container p {
+        opacity: 0;
     }
 
     .home.item-enter-done .home-container p {
         opacity: 1;
-        transition: .5s;
+        transition: var(--timing-fast);
         transition-delay: .23s;
     }
 
     .home.item-exit .home-container p {
-        opacity: 0;
-        transform: translateX(200%);
-        transition: .2s;
-        transition-delay: .4s;
+        transform: translateX(100vw);
+        transition: var(--timing-fast);
+        transition-delay: .5s;
     }
 
     .home.item-appear .home-container {
-        opacity: 0;
-        transform: translateX(200%);
-        transition: opacity .9s, transform .7s;
-        transition-delay: .2s;
+        opacity: 1;
     }
 
-    .home.item-appear-active .home-container {
+    .home.item-appear .home-container h1 {
         opacity: 1;
+        transform: translateX(100vw);
+    }
+
+    .home.item-appear-active .home-container h1 {
         transform: translateX(0) rotate(-3deg);
+        transition: var(--timing-fast);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
-        animation: end-rotate 1s linear .9s;
     }
 
-    .home.item-appear-done .home-container {
-        transform: translateY(5px);
-        /* transition: .15s;
-        transition-timing-function: cubic-bezier(.5,.01,1,.3); */
-    }
-
-    @keyframes end-rotate {
-        0% { transform: rotate(-3deg); }
-        20% { transform: rotate(-3deg); }
-        30% { transform: rotate(0) translateY(5px); }
-        100% { transform: rotate(0) translateY(5px); }
-    }
-
-    .home.item-appear-active .home-container p {
-        animation: p-opacity 1s linear 1.25s;
-    }
-
-    .home.item-appear-done .home-container p {
-        opacity: 1;
-    }
-
-    @keyframes p-opacity {
-        0% { opacity: 0; }
-        20% { opacity: 1; }
-        100% { opacity: 1; }
+    .home.item-appear .home-container p {
+        opacity: 0;
     }
 }

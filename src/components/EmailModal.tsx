@@ -13,7 +13,7 @@ const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isM
     const handleToggleModal = () => {
         setIsModalOpen(false);
         setTimeout(() => setEmailSuccessful(false), 700);
-        clearFields();
+        message && clearFields();
     }
     return (
         <div 

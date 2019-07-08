@@ -18,14 +18,13 @@
 }
 
 .main {
-    /* border-radius: 10px; */
     background-color: var(--colorful-medium);
-    box-shadow: 3px 3px 15px hsl(201, 100%, 5%);
 }
 
 .project-modal .main {
     width: 70%;
     max-height: 100%;
+    height: 100vh;
 }
 
 .project-modal .main .content {
@@ -46,6 +45,7 @@
 }
 
 .project-modal .header {
+    width: 100%;
     position: relative;
 }
 
@@ -75,24 +75,25 @@
 
 .close-button {
     user-select: none;
-    border-radius: 50%;
     font-family: cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .35rem;
+    min-width: 2rem;
+    height: 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: .15s;
     line-height: 1rem;
     text-align: center;
+    clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
 }
 
 .close-modal {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -.5rem;
+    right: -.5rem;
     background-color: rgba(255, 255, 255, 0);
     text-shadow: 0 0 .1rem var(--shadow);
 }
@@ -120,9 +121,6 @@
     margin-bottom: 0;
     width: 80%;
     transition: .2s;
-    box-shadow: 0 0 .1vw var(--shadow);
-    border-radius: 5px;
-    box-shadow: 0 0 .5vh var(--shadow);
 }
 
 .modal-article .date {
@@ -138,35 +136,26 @@
 }
 
 .project-modal .article-content .project-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-flex;
     width: 80%;
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
 .project-modal .article-content .project-links a {
-    font-family: 'Amita', cursive;
-    font-size: .8rem;
-    margin: 0 1rem;
-    padding: .2rem .5rem;
+    display: block;
+    width: 25%;
+    margin: 0 auto;
     font-weight: bold;
-    border-radius: 6px;
-    transition: .1s;
-    background-color: var(--medium);
-    color: var(--colorful-bright);
-    box-shadow: 0 0 .05rem var(--shadow);
-    text-shadow: none;
+    text-shadow: 0 0 1px var(--dark);
+    border-radius: 10px;
+    border: thin solid var(--dark);
+    transition: .2s;
+    text-align: center;
 }
 
+
 .project-modal .article-content .project-links a:active {
-    transition: .2s;
-    transition-delay: 0;
-    box-shadow:  0 .06rem .25rem var(--shadow);
-    transform: scale(.95);
-    color: var(--dark);
-    background-color: var(--gray);
-    text-shadow: 0 0 1px var(--dark);
+    background-color: var(--medium);
 }
 
 .hide-scroll {
@@ -174,16 +163,14 @@
 }
 
 .modal-article::-webkit-scrollbar-track {
-    background: var(--lite);
-    border-radius: 5px;
+    background: var(--medium);
 }
 
 .modal-article::-webkit-scrollbar-thumb {
     background: var(--colorful-lite);
-    border-radius: 5px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1101px) {
     .modal-article {
         scrollbar-color: var(--colorful-bright) var(--lite);
         scrollbar-width: thin;
@@ -196,6 +183,11 @@
     .modal-article::-webkit-scrollbar-thumb:hover {
         background: var(--colorful-bright); 
     }
+
+    .project-modal .main {
+        clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
+        padding-right: 1rem;
+    }
 }
 
 @media (hover: hover) {
@@ -205,11 +197,10 @@
     }
 
     .project-modal .article-content .project-links a:hover {
-        color: white;
-        background-color: var(--lite);
-        text-shadow: 0 0 1px var(--dark);
-        /* box-shadow:  0 .06rem .25rem var(--shadow); */
-        transition: .2s;
+        background-color: var(--dark);
+        color: var(--gray);
+        text-shadow: 0 0 1px var(--gray);
+        transition: .4s;
     }
 
     .modal-article::-webkit-scrollbar-thumb:hover {
@@ -218,12 +209,13 @@
 
     .article-content .modal-image:hover {
         transition: .2s;
+        transition-delay: .3s;
         box-shadow: 0 .5vh 1vh var(--shadow);
         transform: scale(1.01);
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
     .project-modal {
         z-index: 3;
         margin: 0;
@@ -263,15 +255,11 @@
 
     .modal-article {
         margin: 1rem auto;
-        /* margin-bottom: 2rem; */
-        /* width: 100%; */
-        /* max-height: 100%; */
     }
 
     .project-modal .main .content .article-content {
         margin: 0 auto;
         width: 96%;
-        /* max-height: 80vh; */
     }
 
     .project-modal .main .content .article-content img {
@@ -282,7 +270,6 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        /* right: 0; */
         width: 100%;
         margin: 0 auto;
         justify-content: flex-start;
@@ -327,7 +314,7 @@
 }
 
 @media (max-height: 400px) {
-    .article-content .modal-image {
+    .project-modal .modal-image {
         margin: 0 auto;
         height: 50%; 
         width: 50%;
