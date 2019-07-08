@@ -39,7 +39,7 @@
     text-decoration: none;
     margin: 2vh 0;
     transition: .2s;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .desktop-nav a:nth-of-type(1) {

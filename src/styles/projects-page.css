@@ -106,7 +106,7 @@
     display: none;
 }
 
-@media (hover: hover) and (min-width: 800px) {
+@media (hover: hover) and (min-width: 11001px) {
     .project-border:hover {
         margin: 0vw;
         background-color: var(--colorful-medium);
@@ -115,7 +115,6 @@
         animation-iteration-count: infinite;
         width: 17vw;
         height: 11vw;
-        
     }
     
     .project-border:hover .project {
@@ -225,7 +224,8 @@
     .project h1 {
         position: relative;
         text-shadow: .1rem .1rem .2rem var(--shadow);
-        padding: 0;
+        padding: 1rem 0;
+        font-size: 150%;
     }
 
     .project .click-message {
@@ -245,7 +245,7 @@
     }
 }
 
-@media (max-height: 400px)  {
+@media (max-height: 450px)  {
     .project {
         scroll-snap-align: center;
     }
@@ -262,6 +262,11 @@
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
         scroll-padding: 0%;
+    }
+
+    .project h1 {
+        padding: 2rem 0;
+        font-size: 200%;
     }
 }
 
