@@ -19,20 +19,21 @@ exports.handler = (event, _, callback) => {
           pass: process.env.EMAIL_PASSWORD
         }
       });
-      const { email, text, name } = JSON.parse(event.body)
-
+      const body = JSON.parse(event.body);
+      const { email, text, name } = body;
       const info = await transporter.sendMail({
         from: email,
         to: "brandon.gregori@gmail.com, gregori.email.forwarder@gmail.com",
         subject: `Email from ${name}, email: ${email}`,
         text: email + text,
-        html: `<a href="mailto: ${email}">${email}</a><p>${text}</p>`
+      html: `<p>${name}</p><a href="mailto: ${email}">${email}</a><p>${text}</p>`
       });
-      console.log("NEW EMAIL SENT")
+      console.log("*~~~~~~~~~~~~~~~~~~~~~~~~~~* --NEW EMAIL SENT-- *~~~~~~~~~~~~~~~~~~~~~~~~~~*");
       console.log(info.messageId);
       console.log("name: " + name);
       console.log("email: " + email);
       console.log("message: " + text);
+      console.log("*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*");
     })().catch(console.error)
   });
 }

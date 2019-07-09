@@ -199,7 +199,8 @@ input:-webkit-autofill {
         min-height: 100vh;
         box-shadow: none;
         margin: 0 auto;
-        opacity: 1;;
+        opacity: 1;
+        min-width: 70vw;
     }
     
     .contact-form h1 {

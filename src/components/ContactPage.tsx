@@ -79,7 +79,7 @@ const ContactMe = () => {
             const response = await fetch("/.netlify/functions/sendEmail", {
               method: 'POST',
               body: JSON.stringify({ "name": nameField.text, "email": emailField.text, "text": textField.text  }),
-              headers: { 'Content-Type': 'application/json' } 
+              headers: { 'Content-Type': 'text/plain' } 
             });
             const json: string = await response.json();
             json && setTimeout(() => {
