@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Amita';
+	src: url('../fonts/Amita-Regular.ttf') format('truetype'),
+		 url('../fonts/Amita-Bold.tff') format('truetype');
+}
+
+@font-face {
+    font-family: 'Dancing Script';
+	src: url('../fonts/DancingScript-Regular.ttf') format('truetype'),
+		 url('../fonts/DancingScript-Bold.tff') format('truetype');
+}
+
 body {
     font-family: 'Amita', cursive;
     background-color: #1f2833;

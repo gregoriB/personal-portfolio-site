@@ -79,7 +79,7 @@ const projectData = [
             design and CSS skills had improved so much that I went back and re-styled everything.  This was actually my most ambitious and professional project to date at the time
             of completing it.  I refused to use any prefab components, styles, or animations.  Everything, including the modal, responsive navbar, transitions, and animated background on the 
             "About Me" page, were made be me.</p>
-            <p>Node and Express were used for the backend, but I ended up going the serverless route and using AWS lambda functions instead.  I had to learn how to do that, but 
+            <p>Node and Express were initially used for the backend, but I ended up changing to the serverless route and using AWS lambda functions instead.  I had to learn how to do that, but 
             it was worth it since there is no pointing in paying to host a full server when I only need it for the occasional contact form email.</p>
             
             <h2>Final thoughts:</h2>

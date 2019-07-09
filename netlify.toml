@@ -1,5 +1,4 @@
 [build]
-    commands = "npm install && npm run lambda-build && npm run react-build"
     functions = "lambda"
 
 [[redirects]]

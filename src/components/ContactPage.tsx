@@ -150,7 +150,7 @@ const ContactMe = () => {
                     <div>
                         <hr />
                         <p>Brandon Gregori</p>
-                        <a href="mailto: brandon.gregori@gmail.com" target='_blank' rel="noopener noreferrer">brandon.gregori@gmail.com</a>
+                        <a href="mailto: brandon.gregori@gmail.com" target='_blank' rel="noopener noreferrer">brandon@brandon-gregori.com</a>
                         <p>(720) 260-4150</p>
                         <hr />
                     </div>
