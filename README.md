@@ -14,17 +14,6 @@ Made with React, Typescript, CSS, and AWS Lambda functions for using NodeMailer.
 </div>
 
 #
-## Install
-
-<div style='width: 900px; margin: 0 auto;'>
-
-To run locally, run `npm install` or your package manager equivalent.  Then install `netlify-cli` with your package manager and run `netlify dev`.  After it loads, go to `https://localhost:3000`.
-
-To use NodeMailer, configure the `fetch` url in '/src/components/ContactPage.tsx' for `https://localhost:34567/sendEmail`.  Then in '/functions/sendEmail.js' either configure your own smtp email, or follow the example on the [NodeMailer](https://nodemailer.com/about/) website to use an ethereal dummy email.
-
-</div>
-
-#
 
 <p style="text-align: center; margin: 5rem auto;">
     <a href='https://app.netlify.com/sites/brandon-gregori/deploys'>
