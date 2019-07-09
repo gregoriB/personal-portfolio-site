@@ -23,15 +23,10 @@ exports.handler = (event, _, callback) => {
       const info = await transporter.sendMail({
         from: email,
         to: "owner@brandon-gregori.com, forwarder@brandon-gregori.com",
-        subject: `Email from ${name}, email: ${email}`,
-        text: email + text,
-        html: `
-          <div style='color:black; opacity:1; visibility:visible; max-width:600px; display:block;'>
-            <p>${name}</p>
-            <a href="mailto: ${email}">${email}</a>
-            <p>${text}</p>
-          <div>
-        `
+        replyTo: email,
+        subject: `${name} from ${email} has reached out to you`,
+        text: `${name}, ${text}`,
+        html: ` <p style='color:black; opacity:1; visibility:visible; max-width:600px; display:block;'>${text}</p>`
       });
       console.log(`
         '~~~~~~~~~~~~~~~~~~~~~~~~~~* --NEW EMAIL SENT-- *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
