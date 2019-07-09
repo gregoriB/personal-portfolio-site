@@ -133,8 +133,6 @@
     cursor: pointer;
     text-align: center;
     margin: 0;
-    /* margin: 1rem auto;
-    margin-bottom: 0; */
     width: 100%;
     transition: .1s;
     box-shadow: 0 0 2px var(--shadow);
@@ -167,8 +165,7 @@
     font-family: 'Dancing Script', cursive;
     font-size: 1.3rem;
     display: inline-block;
-    margin-top: .5rem;
-    margin-bottom: 1.5rem;
+    margin: 2rem 0;
 }
 
 .project-modal .article-content .project-links {
@@ -300,6 +297,27 @@
     }
 
     .project-modal .main .content .article-content img {
+        margin: 0 auto;
+    }
+
+    .modal-article figcaption {
+        text-align: center;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    .modal-article h2 {
+        text-align: center;
+        margin: .5rem;
+    }
+
+    .modal-article p:nth-of-type(1) {
+        text-align: center;
+    }
+
+    .modal-article p {
+        text-align: justify;
+        text-indent: 0;
         margin: 0 auto;
     }
 
