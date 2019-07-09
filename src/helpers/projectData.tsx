@@ -67,14 +67,14 @@ const projectData = [
         id: "portfolio-site",
         desc: `
             <h2>Technologies used:</h2>
-            <p>Javascript, React, React-router, Node, Express, CSS</p>
+            <p>Typescript, React, React-router, Node, Express, CSS</p>
 
             <h2>The goal:</h2>
             <p>I wanted to create a personal portfolio site that was unique, visually pleasing, fast, efficient, and would show off my skills with 
             React and CSS.</p>
 
             <h2>Obstacles overcome:</h2>
-            <p>There were a number of firsts while making this site.  First time: making component transitions, making a modal from scratch, integrating form validation and 
+            <p>There were a number of firsts while making this site.  First time: Using Typscript, making component transitions, making a modal from scratch, integrating form validation and 
             email forwarding, and using various CSS properties, like keyframes, scroll-snap, clip-path, and mix-blend-mode to great effect.  By the time I reached the end of the project, my
             design and CSS skills had improved so much that I went back and re-styled everything.  This was actually my most ambitious and professional project to date at the time
             of completing it.  I refused to use any prefab components, styles, or animations.  Everything, including the modal, responsive navbar, transitions, and animated background on the 
