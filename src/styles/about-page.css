@@ -48,7 +48,7 @@
     }
 
     .about-me .stylish-container {
-        justify-content: space-around;
+        justify-content: flex-start;
     }
     
     .about-me-container {

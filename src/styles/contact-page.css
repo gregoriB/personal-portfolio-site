@@ -270,7 +270,7 @@ input:-webkit-autofill {
     }
 }
 
-@media (max-height: 400px) {
+@media (max-height: 450px) {
     .contact-form {
         max-width: 80vw;
         margin: 0 auto;

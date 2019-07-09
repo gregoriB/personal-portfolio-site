@@ -161,7 +161,7 @@ const ContactMe = () => {
                 emailSuccessful={emailSuccessful} 
                 setEmailSuccessful={setEmailSuccessful} 
                 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}
-                message={emailModalMessage}
+                name={emailModalMessage}
             />
             <div className='decorative-1' />
         </div>

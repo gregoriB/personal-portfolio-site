@@ -14,8 +14,7 @@ const AboutMe = () => {
                     <ul>
                         <li>HTML5</li>
                         <li>CSS3</li>
-                        <li>Javascript</li>
-                        <li>ES6+</li>
+                        <li>Javascript/ES6+</li>
                         <li>Typescript</li>
                         <li>React</li>
                         <li>Jest</li>
@@ -30,7 +29,7 @@ const AboutMe = () => {
                     </ul>
                 </section>
                 <section className='about-me-container'>
-                    <h2>Other technologies I am currently learning:</h2>
+                    <h2>Other tech I am currently learning:</h2>
                     <ul>
                         <li>React-redux</li>
                         <li>MySQL</li>
@@ -38,12 +37,11 @@ const AboutMe = () => {
                     </ul>
                 </section>
                 <section className='about-me-container'>
-                    <h2>My plans and goals:</h2>
+                    <h2>Plans and goals:</h2>
                     <p>
-                        Soon I intend to get into mobile development using React-native, but right now I'm focused on improving my web development 
-                        skills and getting a web developer job.  I very much enjoy working in the front-end and would love a job working 
-                        with React full-time, but I'm open to learning other Javascript libraries and frameworks, or any other technologies I need 
-                        to know.
+                        My goal is to be a professional full-stack engineer with a focus on the front-end.  I love using React.js and would enjoy working with it full-time, 
+                        but I'm also very open to learning new frameworks and other technologies.  Soon I intend to get more into mobile development with progressive 
+                        web apps and React-native, and building serverless websites using AWS lambda functions and other cloud computing services.
                     </p>
                 </section>
             </div>

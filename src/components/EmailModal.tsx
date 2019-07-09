@@ -3,17 +3,17 @@ import React from 'react'
 interface IProps {
     emailSuccessful: boolean,
     isModalOpen: boolean,
-    message: string,
+    name: string,
     setIsModalOpen(val: boolean): void,
     setEmailSuccessful(val: boolean): void
     clearFields(): void;
 }
 
-const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isModalOpen, setIsModalOpen, message, clearFields }) => {
+const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isModalOpen, setIsModalOpen, name, clearFields }) => {
     const handleToggleModal = () => {
         setIsModalOpen(false);
         setTimeout(() => setEmailSuccessful(false), 700);
-        message && clearFields();
+        name && clearFields();
     }
     return (
         <div 
@@ -26,11 +26,11 @@ const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isM
                     <div className='close-button close-modal'>X</div>
                     <div className='email-message'>
                         {
-                            message 
+                            name 
                             ?
                                 <>
-                                    <div>Email Sent!</div>
-                                    <p>Hi, {message}.  Expect a reply within 1-2 days.</p>
+                                    <div>Email successfully sent!</div>
+                                    <p>Hello, {name}.  I'll be getting back to you in 1-2 days.</p>
                                 </>
                             : 
                                 <>

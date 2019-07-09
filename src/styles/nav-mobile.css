@@ -183,7 +183,7 @@
     background-image: url('../SVGs/facebook.svg');
 }
 
-@media (max-height: 400px) {
+@media (max-height: 450px) {
     .mobile-nav .social-media div {
         width: 1.5rem;
         height: 1.5rem;

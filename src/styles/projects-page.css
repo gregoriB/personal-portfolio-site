@@ -251,7 +251,10 @@
     }
 
     .project-border:nth-child(1) {
-        margin: 3rem;
+        margin: 5vh auto;
+        min-height: 90vh;
+        height: 90vh;
+        max-height: 90vh;
     }
 
     .center-focus {

@@ -14,9 +14,9 @@ const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
     const project = useRef<HTMLDivElement | null>(null);
 
     const handleCheckIfFocused = () => {
-        const projDiv = project.current!.getBoundingClientRect();
-        const topCheck = projDiv.top > 0
-        const bottomCheck = projDiv.bottom < window.innerHeight;
+        const { top, bottom, height } = project.current!.getBoundingClientRect();
+        const topCheck = top + (height / 2) > 0
+        const bottomCheck = bottom - (height / 2) < window.innerHeight;
         
         return topCheck && bottomCheck;
     }

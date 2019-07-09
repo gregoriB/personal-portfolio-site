@@ -142,6 +142,7 @@
     font-size: .8rem;
     margin: 1rem auto;
     font-style: italic;
+    letter-spacing: .5px;
 }
 
 .project-modal .article-content .description {
@@ -296,6 +297,10 @@
         width: 96%;
     }
 
+    .project-modal .main .content .modal-article .date {
+        margin: 0 auto;
+    }
+
     .project-modal .main .content .article-content img {
         margin: 0 auto;
     }
@@ -322,14 +327,13 @@
     }
 
     .project-modal .article-content .project-links {
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         margin: 0 auto;
         justify-content: flex-start;
         align-items: center;
-        height: 6vh;
         z-index: 4;
         padding: 0;
         background-color: var(--colorful-medium);
@@ -343,20 +347,20 @@
     }
     
     .project-modal .article-content .description {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .hide-scroll {
         visibility: visible;
         box-sizing: border-box;
-        position: fixed;
+        position: absolute;
         right: 5px;
         height: 100%;
         width: 10px;
         background-color: var(--colorful-medium);
         z-index: 3;
         opacity: 0;
-        transition: .5s;
+        transition: opacity .5s;
     }
     
     .modal-article.inactive .hide-scroll {
@@ -368,10 +372,14 @@
     }
 }
 
-@media (max-height: 400px) {
+@media (max-height: 450px) {
     .project-modal .image {
         margin: 0 auto;
         height: 50%; 
         width: 50%;
+    }
+
+    .article-content figcaption {
+        line-height: 1rem;
     }
 }

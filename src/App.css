@@ -53,6 +53,11 @@ h2 {
   text-shadow: 0 0 2px var(--dark);
 }
 
+p, li {
+  letter-spacing: 1.3px;
+  line-height: 1.5rem;
+}
+
 .app {
   position: absolute;
   left: 0;
