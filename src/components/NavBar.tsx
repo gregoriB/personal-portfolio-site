@@ -11,6 +11,10 @@ const NavBar = () => {
     const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile } = useContext(StateContext);
     
     const handleUpdateDisplay = (e: MouseClick) => {
+        if (e.currentTarget.dataset.name === currentPage) {
+            
+            return e.preventDefault();
+        }
         setCurrentPage(e.currentTarget.dataset.name);
         setIsNavOpen(false);
     }
