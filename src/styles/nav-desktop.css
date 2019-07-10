@@ -32,9 +32,9 @@
 }
 
 .desktop-nav a {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     opacity: .85;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     color: white;
     text-decoration: none;
     margin: 2vh 0;
@@ -73,7 +73,7 @@
     width: 3.5vw;
     height: 3.5vw;
     color: transparent;
-    font-size: .9rem;
+    font-size: 1.1vw;
     opacity: .8;
     transition: .2s;
     transition-delay: 0s;

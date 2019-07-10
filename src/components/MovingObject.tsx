@@ -16,7 +16,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
     const { isMobile, currentPage } = useContext(StateContext);
     const [ skillPos, setSkillPos ] = useState<Array<number>>(randomPos);
     const [ skillBearing, setSkillBearing ] = useState<Array<number>>([coinFlip(), coinFlip()]);
-    const size = { width: 40 * level, height: 40 * level };
+    const size = { width: window.innerWidth * .025 * level, height: window.innerWidth * .025  * level };
 
     useEffect(() => {
         const initializeMovingObjects = () => {
