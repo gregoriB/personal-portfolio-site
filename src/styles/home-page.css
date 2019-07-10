@@ -116,16 +116,32 @@
         opacity: 0;
     }
 
+    .home.item-enter .home-container .resume {
+        opacity: 0;
+    }
+
     .home.item-enter-done .home-container p {
         opacity: 1;
         transition: var(--timing-fast);
         transition-delay: .23s;
     }
 
+    .home.item-enter-done .home-container .resume {
+        opacity: 1;
+        transition: var(--timing-fast);
+        transition-delay: .3s;
+    }
+
     .home.item-exit .home-container p {
         transform: translateX(100vw);
         transition: var(--timing-fast);
         transition-delay: .5s;
+    }
+
+    .home.item-exit .home-container .resume {
+        transform: translateX(100vw);
+        transition: var(--timing-fast);
+        transition-delay: .6s;
     }
 
     .home.item-appear .home-container {
@@ -145,6 +161,10 @@
     }
 
     .home.item-appear .home-container p {
+        opacity: 0;
+    }
+
+    .home.item-appear .home-container .resume {
         opacity: 0;
     }
 }

@@ -9,8 +9,8 @@ const Home = () => {
                     <h1>Hello!  I'm Brandon.</h1>
                     <p>
                         Solving problems, challenging myself, and being creative are things I enjoy quite a bit.  That's why I love web development.
-                        <a className='resume' href='https://novoresume.com/a/brandon.gregori.1' target='_blank' rel="noopener noreferrer">Resume</a>
                     </p>
+                    <a className='resume' href='https://novoresume.com/a/brandon.gregori.1' target='_blank' rel="noopener noreferrer">Resume</a>
                 </section>
             </div>
             <div className='decorative-1' />
