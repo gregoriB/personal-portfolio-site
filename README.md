@@ -2,7 +2,7 @@
 <h1 style='margin: 2rem auto;'>Personal Portfolio Site<h1>
 
 <div style='margin: 0 auto; width: 700px'  >
-    <img src="https://raw.githubusercontent.com/gregoriB/personal-portfolio-site/experimental/src/images/portfolio-site.jpg" alt="portfolio site"/>
+    <img src="https://raw.githubusercontent.com/gregoriB/personal-portfolio-site/master/src/images/portfolio-site.jpg" alt="portfolio site"/>
 </div>
 
 #### [Check it out here!](https://www.brandon-gregori.com)
