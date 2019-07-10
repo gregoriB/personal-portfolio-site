@@ -152,8 +152,13 @@ input:-webkit-autofill {
     margin-left: 1rem;
 }
 
+.contact-info a {
+    font-size: 1vw;
+}
+
+
 .contact-info p {
-    font-size: 1.3vw;
+    font-size: 1.1vw;
 }
 
 .contact-info hr {
