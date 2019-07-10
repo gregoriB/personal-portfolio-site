@@ -23,13 +23,14 @@ const ContactMe = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [emailSuccessful, setEmailSuccessful] = useState<boolean>(false);
     const [emailModalMessage, setEmailModalMessage] = useState<string>('');
+    const [numEmailsSent, setNumEmailsSent] = useState<number>(0);
 
     const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
 
     const handleNameValidation = (): void => {
         const name = nameField.text;
         const re = /^[A-Z a-z]*$/;
-        const isValid : boolean = re.test(name) && name.length > 0;
+        const isValid : boolean = re.test(name) && name.length > 0 && name.length <= 60;
         setNameField({
             ...nameField,
             text: nameField.text,
@@ -82,6 +83,7 @@ const ContactMe = () => {
               headers: { 'Content-Type': 'text/plain' } 
             });
             const json: string = await response.json();
+            json && setNumEmailsSent(numEmailsSent + 1)
             json && setTimeout(() => {
                 setEmailModalMessage(JSON.parse(json).name);
                 setEmailSuccessful(true);
@@ -113,29 +115,31 @@ const ContactMe = () => {
                 <form className='contact-form contact' onSubmit={handleSubmit}>
                     <h1>Message Me</h1>
                     <input 
-                        placeholder='Name'
+                        placeholder={numEmailsSent > 2 ? '' : 'name'}
                         name='name'
                         value={nameField.text}
                         onBlur={handleNameValidation}
                         onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
                         className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
-                            
+                        disabled={numEmailsSent > 2}
                     />
                     <input 
-                        placeholder='your_email@email.com'
+                        placeholder={numEmailsSent > 2 ? '' : 'your_email@email.com'}
                         name='email'
                         value={emailField.text}
                         onBlur={handleEmailValidation}
                         onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
                         className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
+                        disabled={numEmailsSent > 2}
                     />
                     <textarea
-                        placeholder='Enter your message here'
+                        placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Enter your message here'}
                         autoComplete='off'
                         value={textField.text}
                         onBlur={handleTextAreaValidation}
                         onChange={ e => setTextField({ ...textField, text: e.target.value}) }
                         className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
+                        disabled={numEmailsSent > 2}
                     />
                     <button 
                         type='submit' 
@@ -150,7 +154,7 @@ const ContactMe = () => {
                     <div>
                         <hr />
                         <p>Brandon Gregori</p>
-                        <a href="mailto: owner@brandon-gregori.com" target='_blank' rel="noopener noreferrer">owner@brandon-gregori.com</a>
+                        <a href="mailto: brandon@brandon-gregori.com" target='_blank' rel="noopener noreferrer">brandon@brandon-gregori.com</a>
                         <p>(720) 260-4150</p>
                         <hr />
                     </div>

@@ -1,6 +1,6 @@
 .contact-page .stylish-container {
     pointer-events: auto;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .contact-form {
@@ -9,10 +9,10 @@
     max-width: 100%;
     padding: 1rem;
     width: 20rem;
+    height: 100%;
 }
 
 .contact-form * {
-    border-radius: 3px;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -26,6 +26,7 @@
 }
 
 .contact-form input {
+    font-size: .9rem;
     color: white;
     outline: none;
     border: thin solid transparent;
@@ -37,20 +38,34 @@
     height: 2rem;
 }
 
+.contact-form input:disabled {
+    opacity: .4;
+}
+
+.contact-form textarea:disabled {
+    opacity: .4;
+}
+
+.contact-form textarea:disabled::placeholder {
+    color: rgb(255, 0, 0);
+    text-align: center;
+    letter-spacing: .5rem;
+    line-height: 10rem;
+    font-weight: bold;
+}
+
 .contact-form textarea {
+    font-size: .9rem;
     outline: none;
     box-sizing: border-box;
     border: thin solid transparent;
     color: white;
     background-color: var(--medium);
-    min-width: 100%;
     width: 100%;
-    max-width: 125%;
-    min-height: 15vh;
-    height: 25vh;
-    max-height: 35vh;
+    height: 55%; 
     margin: 1rem auto;
     padding: .7rem;
+    resize: none;
 }
 
 .contact-form *::placeholder {
@@ -64,7 +79,6 @@
     font-family: 'Dancing Script', cursive;
     color: var(--dark);
     border: 2px solid transparent;
-    border-radius: 3px;
     background-color: var(--colorful-lite);
     font-weight: bold;
     letter-spacing: 2px;
