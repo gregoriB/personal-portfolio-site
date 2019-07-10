@@ -1,5 +1,7 @@
 import React from 'react'
 
+type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
+
 interface IProps {
     emailSuccessful: boolean,
     isModalOpen: boolean,
@@ -10,7 +12,11 @@ interface IProps {
 }
 
 const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isModalOpen, setIsModalOpen, name, clearFields }) => {
-    const handleToggleModal = () => {
+    const handleToggleModal = (e:mouseEvent) => {
+        if (!(e.target instanceof HTMLElement) || !e.target.dataset.util) {
+
+            return;
+        }
         setIsModalOpen(false);
         setTimeout(() => setEmailSuccessful(false), 700);
         name && clearFields();
@@ -18,12 +24,13 @@ const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isM
     return (
         <div 
             className={`modal email-modal ${isModalOpen ? 'enter' : 'exit'}`}
+            data-util='close'
             onClick={handleToggleModal}
         >
             <div className={`spinner ${!emailSuccessful && 'active'}`}></div>
             <div className={`main ${emailSuccessful ? 'active' : 'inactive'}`}>
                 <div className='content'>
-                    <div className='close-button close-modal'>X</div>
+                    <div className='close-button close-modal' data-util='close'>X</div>
                     <div className='email-message'>
                         {
                             name 

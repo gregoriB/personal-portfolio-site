@@ -22,7 +22,7 @@ exports.handler = (event, _, callback) => {
       const { email, text, name } = JSON.parse(event.body);
       const info = await transporter.sendMail({
         from: email,
-        to: "owner@brandon-gregori.com, forwarder@brandon-gregori.com",
+        to: "brandon@brandon-gregori.com",
         replyTo: email,
         subject: `${name} from ${email} has reached out to you`,
         text: `${name}, ${text}`,
