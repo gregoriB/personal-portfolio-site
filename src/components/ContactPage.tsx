@@ -114,33 +114,43 @@ const ContactMe = () => {
             <div className="stylish-container">
                 <form className='contact-form contact' onSubmit={handleSubmit}>
                     <h1>Message Me</h1>
-                    <input 
-                        placeholder={numEmailsSent > 2 ? '' : 'name'}
-                        name='name'
-                        value={nameField.text}
-                        onBlur={handleNameValidation}
-                        onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
-                        className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
-                        disabled={numEmailsSent > 2}
-                    />
-                    <input 
-                        placeholder={numEmailsSent > 2 ? '' : 'your_email@email.com'}
-                        name='email'
-                        value={emailField.text}
-                        onBlur={handleEmailValidation}
-                        onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
-                        className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
-                        disabled={numEmailsSent > 2}
-                    />
-                    <textarea
-                        placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Enter your message here'}
-                        autoComplete='off'
-                        value={textField.text}
-                        onBlur={handleTextAreaValidation}
-                        onChange={ e => setTextField({ ...textField, text: e.target.value}) }
-                        className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
-                        disabled={numEmailsSent > 2}
-                    />
+                    <div>
+                        <label htmlFor='name'>Enter your name:</label>
+                        <input 
+                            placeholder={numEmailsSent > 2 ? '' : 'name'}
+                            name='name'
+                            value={nameField.text}
+                            onBlur={handleNameValidation}
+                            onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
+                            className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
+                            disabled={numEmailsSent > 2}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='email'>Enter your email:</label>
+                        <input 
+                            placeholder={numEmailsSent > 2 ? '' : 'your_email@email.com'}
+                            name='email'
+                            value={emailField.text}
+                            onBlur={handleEmailValidation}
+                            onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
+                            className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
+                            disabled={numEmailsSent > 2}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor='message'>Write your message here:</label>
+                        <textarea
+                            placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Enter your message here'}
+                            name='message'
+                            autoComplete='off'
+                            value={textField.text}
+                            onBlur={handleTextAreaValidation}
+                            onChange={ e => setTextField({ ...textField, text: e.target.value}) }
+                            className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
+                            disabled={numEmailsSent > 2}
+                        />
+                    </div>
                     <button 
                         type='submit' 
                         className={!isFormValid ? 'disabled' : undefined}
