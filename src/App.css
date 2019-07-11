@@ -10,13 +10,6 @@
   --colorful-bright: #9bebff;
   --mobile-break-point: 700px;
   --text-shadow: 0 1vh 1vh var(--shadow);
-  --box-shadow: var(--text-shadow);
-  --timing-very-slow: 1.5s;
-  --timing-slow: 1.2s;
-  --timing-medium-slow: 1s;
-  --timing-medium: .75s;
-  --timing-fast: .5s;
-  --timing-very-fast: .2s;
 }
 
 html, body {
@@ -112,6 +105,30 @@ a, button {
 
 
 @media (max-width: 1100px) {
+  h1 {
+    font-size: 7vw;
+    line-height: 7vw;
+    text-shadow: 0 0 2px var(--dark);
+  }
+  
+  span, h2 {
+    font-size: 6vw;
+    line-height: 6vw;
+    text-shadow: 0 0 2px var(--dark);
+  }
+  
+  p, li, figcaption {
+    font-size: 4vw;
+    line-height: 6vw;
+    letter-spacing: .1vw;
+  }
+  
+  a, button {
+    font-size: 3vw;
+    letter-spacing: .5vw;
+    line-height: 5vw;
+  }
+
   .decorative-1 {
     display: none;
   }
@@ -153,6 +170,10 @@ a, button {
 }
 
 @media (min-width: 1101px) {
+  body {
+    overflow: hidden;
+  }
+
   .stylish-container {
     opacity: 1;
     width: 70vw;
@@ -182,7 +203,7 @@ a, button {
   }
 
   .item-enter-active .decorative-1 {
-    transition: transform var(--timing-medium);
+    transition: transform .75s;
     transition-delay: 1.4s;
     transform: translateX(0);
   }
@@ -192,13 +213,12 @@ a, button {
   }
 
   .item-appear-active .decorative-1 {
-    transition: transform var(--timing-medium);
+    transition: transform .75s;
     transition-delay: .6s;
     transform: translateX(0);
   }
 
   .item-exit .decorative-1 {
-    /* transition: var(--timing-fast); */
     transition: transform 1s;
     transition-delay: 0s;
     transform: translateX(100%);

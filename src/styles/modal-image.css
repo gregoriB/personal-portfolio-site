@@ -1,18 +1,21 @@
 .modal.image-modal {
+    visibility: hidden;
     opacity: 0;
     z-index: 10;
     width: 100vw;
-    transition: opacity .5s;
+    transition: opacity, .5s;
+    transition-delay: .3s;
     background-color: rgba(0, 0, 0, 0.65);
 }
 
-.image-modal.active {
+.modal.image-modal.active {
     visibility: visible;
     opacity: 1;
-    transition: opacity .6s, height .1s, width .1s;
+    transition: opacity .3s;
 }
 
 .image-modal .image-container {
+    opacity: 0;
     user-select: none;
     display: flex;
     justify-content: center;
@@ -25,10 +28,17 @@
     transition-timing-function: ease-in;
 }
 
+.image-modal.active .image-container {
+    opacity: 1;
+    transition: .5s;
+    transition-delay: .7s;
+}
+
 .image-modal .image-container img {
     user-select: none;
     height: 100%;
     background: black;
+
 }
 
 .modal.image-modal .close-image {
@@ -63,11 +73,6 @@
 @media (max-width: 1100px) {
     .article-content .image-modal {
         user-select: none;
-        transition: opacity .2s;
-    }
-
-    .article-content .image-modal.active {
-        transition: opacity 1s;
     }
 
     .image-modal .image-container {
@@ -86,11 +91,6 @@
 
 
 @media (max-height: 450px) {
-    .modal-article .article-content img {
-        text-align: center;
-        max-width: 25vw;
-    }
-
     .image-modal .image-container img{
         max-width: 100%;
     }

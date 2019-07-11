@@ -23,7 +23,6 @@
 
 .home-container h1 {
     color: var(--colorful-lite);
-    /* font-size: 2.5rem; */
     text-align: center;
     margin: 0;
     margin-bottom: 1vw;
@@ -37,7 +36,7 @@
 .home-container .resume {
     display: block;
     width: 6.5vw;
-    margin: 2vw 0;
+    margin-top: 2vw;
     font-weight: bold;
     text-shadow: 0 0 1px var(--gray);
     border-radius: 1vw;
@@ -61,15 +60,29 @@
         width: 100vw;
     }
 
+    .home .stylish-container {
+        height: 100vh;
+        justify-content: flex-start;
+    }
+
     .home-container {
         align-self: flex-start;
+        justify-content: flex-start;
         margin: 0 auto;
         margin-top: 20vh;
-        width: 70vw;
+        width: 90vw;
+        height: 100%;
         opacity: 1;
     }
+
+    .home-container p {
+        margin: 2vw 0;
+    }
+
     .home-container .resume {
-        width: 7rem;
+        width: 25vw;
+        margin-top: 15vw;
+        border-radius: 10vw;
     }
 }
 
@@ -85,7 +98,7 @@
 
     .home.item-enter-active .home-container h1 {
         transform: translateX(0) rotate(-3deg);
-        transition: transform var(--timing-fast);
+        transition: transform .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
         transition-delay: 1s;
     }
@@ -111,7 +124,7 @@
 
     .home.item-exit-active .home-container h1 {
         transform: translateX(100vw);
-        transition: transform var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .4s;
     }
 
@@ -125,25 +138,25 @@
 
     .home.item-enter-done .home-container p {
         opacity: 1;
-        transition: opacity var(--timing-fast);
+        transition: opacity .5s;
         transition-delay: .23s;
     }
 
     .home.item-enter-done .resume {
         opacity: 1;
-        transition: opacity var(--timing-fast);
+        transition: opacity .5s;
         transition-delay: .3s;
     }
 
     .home.item-exit .home-container p {
         transform: translateX(100vw);
-        transition: transform var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .5s;
     }
 
     .home.item-exit .home-container .resume {
         transform: translateX(100vw);
-        transition: transform var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .6s;
     }
 
@@ -158,7 +171,7 @@
     
     .home.item-appear-active .home-container h1 {
         transform: translateX(0) rotate(-3deg);
-        transition: transform var(--timing-fast);
+        transition: transform .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
         transition-delay: .2s;
     }
@@ -169,5 +182,11 @@
 
     .home.item-appear .home-container .resume {
         opacity: 0;
+    }
+}
+
+@media (max-height: 450px) {
+    .home-container .resume {
+        margin-top: 5vh;
     }
 }

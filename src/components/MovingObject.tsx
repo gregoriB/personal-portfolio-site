@@ -52,10 +52,8 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
             setSkillPos(pos);
             setSkillBearing(bearing);
         }
-
-        let interval = 0;
-        
-        if (!isMobile && currentPage === 'About-Me') {
+        let interval = 0;        
+        if (!isMobile && page) {
             interval = window.setInterval(() => handleMove(), 16);
         } else {
             clearInterval(interval);

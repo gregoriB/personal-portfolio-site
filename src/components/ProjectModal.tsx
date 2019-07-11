@@ -16,18 +16,20 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
     const [scrollState, setScrollState] = useState<string | null>('inactive');
     const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
 
+
     const handleToggleImage = (e: mouseEvent) => {
-        if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'close')) {
+        if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'image-close')) {
             
             return;
         }
         setIsImageVisible(!isImageVisible);
+
     }
 
     const project = projectData[currentProject];
 
     const handleCloseModal = (e: mouseEvent) => {
-        if (!(e.target instanceof HTMLElement) || !e.target.dataset.util ||  isImageVisible) {
+        if (!(e.target instanceof HTMLElement) || e.target.dataset.util !== 'modal-close' ||  isImageVisible) {
 
             return;
         }
@@ -80,14 +82,14 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
     return (
         <div 
             className={`modal project-modal ${isModalOpen ? 'enter' : 'exit'}`}
-            data-util='close'
+            data-util='modal-close'
             onClick={handleCloseModal}
         >   
             <div className='main'>
                 <div className='content' >
                     <header className='header'>
                         <h1>{projectData[currentProject].name}</h1>
-                        <div data-util='close' className='close-button close-modal' onClick={handleCloseModal}>X</div>
+                        <div data-util='modal-close' className='close-button close-modal' onClick={handleCloseModal}>X</div>
                     </header>
                     <article className={`modal-article ${scrollState}`} ref={article}>
                         <div className='hide-scroll' />

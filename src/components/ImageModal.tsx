@@ -15,22 +15,25 @@ const ModalImage: React.SFC<IProps> = ({ name, image, isImageVisible, handleTogg
     const { isMobile } = useContext(StateContext);
     const hiddenImage = useRef<HTMLImageElement | null>(null)
 
+    const handleClick = (e: mouseEvent) => {
+        isImageVisible && handleToggleImage(e);
+    }
+
     return (
         <div 
             id='hidden-image'
             className={`modal image-modal ${isImageVisible && 'active'}`}
             ref={hiddenImage}
-            onClick={handleToggleImage}
-            data-util='close'
+            onClick={handleClick}
+            data-util='image-close'
         >
             <div className='image-container'>
                 <img 
-                    data-util={`${isMobile && 'close'}`}
+                    data-util={`${isMobile && 'image-close'}`}
                     src={require(`../images/${image}`)} 
                     alt={name}
-                    onClick={handleToggleImage}
                 />
-                <div data-util='close' className='close-button close-image' onClick={handleToggleImage}>X</div>
+                <div data-util='image-close' className='close-button close-image' onClick={handleToggleImage}>X</div>
             </div>
         </div>
     )

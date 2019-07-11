@@ -16,7 +16,7 @@
 .project-border {
     cursor: pointer;
     transition: .1s;
-    transition-property: width, height, opacity, margin;
+    transition-property: opacity, background-color;
     background-color: var(--medium);
     width: 15vw;
     height: 9.9vw;
@@ -163,7 +163,7 @@
     }
     
     .project {
-        justify-content: flex-end;
+        justify-content: center;
         opacity: 1;
         scroll-snap-align: center;
         margin: 1rem auto;
@@ -205,9 +205,14 @@
 
     .project h1 {
         position: relative;
-        text-shadow: .1rem .1rem .2rem var(--shadow);
         padding: 1rem 0;
         font-size: 150%;
+        line-height: 150%;
+        height: 100%;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .project .click-message {
@@ -252,6 +257,7 @@
     .project h1 {
         padding: 2rem 0;
         font-size: 200%;
+        line-height: 200%;
     }
 }
 
@@ -283,7 +289,7 @@
 
     .projects-page.item-enter-active .project-border:nth-child(n) {
         transform: translateX(0);
-        transition:  transform var(--timing-fast);
+        transition:  transform .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
         pointer-events: none;
     }
@@ -326,7 +332,7 @@
     }
 
     .item-exit-active .project-border {
-        transition: var(--timing-fast);
+        transition: .5s;
         transition-delay: .4s;
         background-color: var(--medium);
         transform: translateX(100vw);
@@ -386,7 +392,7 @@
 
     .projects-page.item-appear-active .project-border:nth-child(n) {
         transform: translateX(0);
-        transition: transform var(--timing-fast);
+        transition: transform .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
