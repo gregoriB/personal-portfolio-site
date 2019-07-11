@@ -36,12 +36,12 @@ const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isM
                             name 
                             ?
                                 <>
-                                    <div>Email successfully sent!</div>
+                                    <h2>Email successfully sent!</h2>
                                     <p>Hello, {name}.  I'll be getting back to you in 1-2 days.</p>
                                 </>
                             : 
                                 <>
-                                    <div>Something went wrong!</div>
+                                    <h1>Something went wrong!</h1>
                                     <p>Please try sending your message again or contact me directly!</p>
                                 </>
                         }

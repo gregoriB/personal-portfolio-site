@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MovingObject from '../components/MovingObject';
+import { StateContext } from '../contexts/StateContext';
 
 interface IProps {
     page: any,
 }
 
 const MovingObjects: React.SFC<IProps> = ({ page }) => {
+
+    const { isMobile } = useContext(StateContext);
+    if (isMobile) {
+        
+        return null;
+    }
+
     const skills = [
         { name: 'javascript', level: 2 },
         { name: 'react', level: 2 },

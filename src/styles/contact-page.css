@@ -4,12 +4,15 @@
 }
 
 .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
     opacity: 0;
     color: white;
-    max-width: 100%;
-    padding: 1rem;
-    width: 20rem;
-    height: 92%;
+    padding: 1vw;
+    width: 23vw;
+    height: 100%;
 }
 
 .contact-form * {
@@ -20,22 +23,21 @@
 .contact-form h1 {
     color: var(--colorful-lite);
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
     margin: 0 auto;
-    margin-left: 1rem;
+    margin-left: 1vw;
 }
 
 .contact-form input {
-    font-size: .9rem;
+    font-size: .9vw;
     color: white;
     outline: none;
     border: thin solid transparent;
-    padding: .7rem;
+    padding: .7vw;
     display: block;
-    margin-top: 1rem;
+    margin-top: .9vw;
     background-color: var(--medium);
     width: 100%;
-    height: 2rem;
+    height: 2vw;
 }
 
 .contact-form input:disabled {
@@ -49,13 +51,13 @@
 .contact-form textarea:disabled::placeholder {
     color: rgb(255, 0, 0);
     text-align: center;
-    letter-spacing: .5rem;
-    line-height: 10rem;
+    letter-spacing: .5vw;
+    line-height: 10vw;
     font-weight: bold;
 }
 
 .contact-form textarea {
-    font-size: .9rem;
+    font-size: .9vw;
     outline: none;
     box-sizing: border-box;
     border: thin solid transparent;
@@ -63,8 +65,8 @@
     background-color: var(--medium);
     width: 100%;
     height: 55%; 
-    margin: 1rem auto;
-    padding: .7rem;
+    margin: .9vw auto;
+    padding: .7vw;
     resize: none;
 }
 
@@ -81,20 +83,20 @@
     border: 2px solid transparent;
     background-color: var(--colorful-lite);
     font-weight: bold;
-    letter-spacing: 2px;
-    transition: .1s;
+    letter-spacing: .2vw;
+    transition: color .1s, background-color .1s;
     transition-timing-function: ease-in;
-    padding: .3rem;
-    width: 100px;
+    padding: .3vw;
+    width: 7vw;
+    height: 2vw;
+    line-height: 1vw;
     outline: none;
-    box-shadow: 0 .3rem .5rem var(--dark);
     text-shadow: 0 .5px .3px var(--dark);
 }
 
 .contact-form button.disabled {
     opacity: .3;
     pointer-events: none;
-    box-shadow: none;
 }
 
 .contact-form button:active {
@@ -102,9 +104,8 @@
     background-color: var(--colorful-lite);
     border: 2px solid var(--colorful-medium);
     color: var(--medium);
-    box-shadow: 0 .3rem .4rem var(--dark);
     text-shadow: 0 .5px .3px var(--dark);
-    transition: .1s;
+    transition: color .1s, background-color .1;
 }
   
 input:-webkit-autofill {
@@ -133,26 +134,25 @@ input:-webkit-autofill {
     margin-top: 5vw;
     width: 35%;
     align-self: flex-start;
-    margin-bottom: 9rem;
+    margin-bottom: 9vw;
 }
 
 .contact-info h2 {
-    font-size: 1.5rem;
+    font-size: 1.6vw;
     color: var(--colorful-lite);
 }
 
 .contact-info div {
-    margin-left: 1rem;
+    margin-left: 1vw;
 }
 
-.contact-info div * {
-    font-size: 1.2rem;
+.contact-info a {
+    font-size: 1vw;
 }
 
-.contact-info div a {
-    color: var(--colorful-lite);
-    text-decoration: underline;
-    text-shadow: var(--text-shadow);
+
+.contact-info p {
+    font-size: 1.1vw;
 }
 
 .contact-info hr {
@@ -166,16 +166,17 @@ input:-webkit-autofill {
 }
 
 .contact-info div a {
-    font-size: 1rem;
+    color: var(--colorful-lite);
+    text-decoration: underline;
     font-family: 'Amita', cursive;
     font-style: italic;
     text-shadow: 0 0 .5rem var(--shadow);
-    transition: .1s;
+    transition: color .1s;
 }
 
 .contact-info div a:hover {
     text-shadow: 0 0 .1rem white;
-    transition: .5s;
+    transition: text-shadow .5s;
 }
 
 @keyframes autofill {
@@ -208,35 +209,42 @@ input:-webkit-autofill {
         justify-content: space-between;
         box-sizing: border-box;
         background-color: transparent;
-        padding: 1rem;
-        padding-top: 10%;
+        padding: 5vw;
         min-height: 100vh;
-        box-shadow: none;
         margin: 0 auto;
         opacity: 1;
-        min-width: 70vw;
+        min-width: 100vw;
     }
     
     .contact-form h1 {
         margin: 0;
-        margin-bottom: 1rem;
         text-align: center;
     }
 
     .contact-form input {
+        border-radius: 1vw;
+        font-size: 4vw;
         background-color: var(--dark);
+        padding: 2vw;
         margin-top: 1rem;
+        height: 10vw;
     }
     
     .contact-form textArea {
+        border-radius: 1vw;
         background-color: var(--dark);
         margin: 1rem auto;
         height: 100%;
         max-height: 100%;
+        font-size: 4vw;
+        padding: 2vw;
     }
 
     .contact-form button {
-        margin: 0 auto;    
+        margin: 0 auto;
+        width: 100%;
+        font-size: 5vw;
+        height: 15vw;
     }
 
     .contact-form .message {
@@ -246,7 +254,8 @@ input:-webkit-autofill {
     .contact-info {
         opacity: 1;
         width: 100%;
-        margin: 10vh auto;
+        margin: 5vh auto;
+        margin-bottom: 0;
     }
 
     .contact-info div {
@@ -256,17 +265,22 @@ input:-webkit-autofill {
 
     .contact-info * {
         text-align: center;
-        margin: .5rem auto;
+    }
+
+    .contact-info h2 {
+        font-size: 6vw;
+    }
+
+    .contact-info p {
+        font-size: 4vw;
+    }
+
+    .contact-info a {
+        font-size: 3vw;
     }
     
     .contact-info hr {
-        visibility: visible;
-        border: 0;
-        height: 1px;
-        background: var(--medium);
-        background-image: linear-gradient(to right, var(--medium), var(--gray), var(--medium));
-        margin-left: 0;
-        width: 100%;
+        display: none;
     }
 
     @keyframes autofill {
@@ -284,25 +298,6 @@ input:-webkit-autofill {
     }
 }
 
-@media (max-height: 450px) {
-    .contact-form {
-        max-width: 80vw;
-        margin: 0 auto;
-        padding: .5rem;
-    }
-    .contact-form h1 {
-        font-size: 1.5rem;
-    }
-
-    .contact-form input, .contact-form textArea, .contact-form button {
-        margin: .2rem auto;
-    }
-
-    .contact-form .message {
-        display: none;
-    }
-}
-
 @media (min-width: 1101px) {
     .contact-page.item-enter .contact-form {
         opacity: 1;
@@ -311,7 +306,7 @@ input:-webkit-autofill {
 
     .contact-page.item-enter-active .contact-form {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-delay: 1s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
@@ -327,7 +322,7 @@ input:-webkit-autofill {
 
     .contact-page.item-exit-active .contact-form {
         transform: translateX(100vw);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .55s;
     }
 
@@ -338,7 +333,7 @@ input:-webkit-autofill {
 
     .contact-page.item-enter-active .contact-info {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-delay: 1.15s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
@@ -354,7 +349,7 @@ input:-webkit-autofill {
 
     .contact-page.item-exit-active .contact-info {
         transform: translateX(100vw);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .4s;
     }
 
@@ -365,7 +360,7 @@ input:-webkit-autofill {
 
     .contact-page.item-appear-active .contact-form {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .2s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
@@ -377,8 +372,33 @@ input:-webkit-autofill {
 
     .contact-page.item-appear-active .contact-info {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-delay: .35s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
+    }
+}
+
+@media (max-height: 450px) {
+    .contact-form {
+        max-width: 80vw;
+        max-height: 100vh;
+        margin: 0 auto;
+        padding: 1vw;
+    }
+
+    .contact-form h1 {
+        margin: 2vw auto;
+    }
+
+    .contact-form input, .contact-form textArea, .contact-form button {
+        margin: 1vw auto;
+    }
+
+    .contact-form .message {
+        display: none;
+    }
+
+    .contact-form button {
+        height: 30vw;
     }
 }

@@ -11,36 +11,29 @@
     background-color: #1f2833aa;
     box-sizing: border-box;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     z-index: 4;
     visibility: hidden;
     opacity: 0;
 }
 
-.main {
-    background-color: var(--colorful-medium);
-}
-
 .project-modal .main {
-    width: 70%;
-    max-height: 100%;
+    background-color: var(--colorful-medium);
+    width: 70vw;
     height: 100vh;
 }
 
 .project-modal .main .content {
-    justify-content: flex-start;
-    height: 96%;
-    padding: 1rem;
-}
-
-.main .content {
     position: relative;
+    justify-content: flex-start;
     display: flex;
     flex-direction: column;
+    height: 95vh;
+    padding: 1vw;
+    width: 100%;
 }
 
 .project-modal .content * {
-    box-sizing: border-box;
     color: var(--medium);
 }
 
@@ -50,30 +43,27 @@
 }
 
 .project-modal .header h1 {
-    font-size: 2.2rem;
     margin: 0;
-    margin-top: 1rem;
     text-shadow: 1px 0px 0px var(--dark);
 }
 
 .modal-article {
     margin: 0 auto;
     height: 90%;
-    width: 100%;
+    width: 95%;
     overflow: auto;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: 1s;
 }
 
 .modal-article .date {
-    font-size: .9rem;
+    font-size: .9vw;
     text-shadow: none;
     text-align: center;
-    margin: .5rem auto;
+    margin: .5vw 0;
 }
 
 .modal-article * {
@@ -86,21 +76,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 2rem;
-    height: 2rem;
-    font-size: 1.2rem;
+    min-width: 2vw;
+    height: 2vw;
+    font-size: 1.2vw;
     font-weight: bold;
     cursor: pointer;
-    transition: .15s;
-    line-height: 1rem;
+    transition-property: color, background-color;
+    transition: .1s;
+    line-height: 1vw;
     text-align: center;
-    clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
+    clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%);  /* top-left, top-right, bottom-right, bottom-left */
 }
 
-.close-modal {
+.project-modal .close-modal {
     position: absolute;
-    top: -.5rem;
-    right: -.5rem;
+    top: -.5vw;
+    right: 1.1vw;
     background-color: rgba(255, 255, 255, 0);
     text-shadow: 0 0 .1rem var(--shadow);
 }
@@ -116,7 +107,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 70%;
+    width: 100%;
     text-align: left;
     margin: 0 auto;
 }
@@ -124,9 +115,9 @@
 .article-content .image {
     display: flex;
     flex-direction: column;
-    margin: 1rem auto;
+    margin: 1vw 0;
     margin-bottom: 0;
-    max-width: 600px;
+    max-width: 60%;
 }
 
 .article-content .image img {
@@ -134,39 +125,39 @@
     text-align: center;
     margin: 0;
     width: 100%;
-    transition: .1s;
+    transition: box-shadow .1s;
     box-shadow: 0 0 2px var(--shadow);
 }
 
 .article-content figcaption {
-    font-size: .8rem;
-    margin: 1rem auto;
+    font-size: .8vw;
+    margin: 1vw 0;
     font-style: italic;
-    letter-spacing: .5px;
+    letter-spacing: .05vw;
 }
 
 .project-modal .article-content .description {
-    margin: 1rem auto;
-    font-size: .9rem;
-    max-width: 600px;
+    margin: 1vw 0;
+    max-width: 60%;
 }
 
-.modal-article h2{
-    margin: 2rem 0;
-    margin-bottom: .5rem;
+.modal-article h2 {
+    margin: 2vw 0;
+    margin-bottom: .5vw;
 }
 
 .modal-article p {
     text-align: justify;
-    text-indent: 1.5rem;
-    margin: 0 auto;
+    text-indent: 1.5vw;
+    margin: 0;
+    margin-bottom: 1vw;
 }
 
 .modal-article span {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.3rem;
+    font-size: 1.3vw;
     display: inline-block;
-    margin: 2rem 0;
+    margin: 2vw 0;
 }
 
 .project-modal .article-content .project-links {
@@ -178,14 +169,15 @@
 
 .project-modal .article-content .project-links a {
     display: block;
-    width: 7.5rem;
-    margin: 0 2rem;
+    width: 20%;
+    margin: 0 2vw;
     font-weight: bold;
     text-shadow: 0 0 1px var(--dark);
     border-radius: 10px;
     border: thin solid var(--dark);
-    transition: .2s;
+    transition: color .2s, background-color .2s;
     text-align: center;
+    letter-spacing: .05vw;
 }
 
 
@@ -208,11 +200,11 @@
 @media (min-width: 1101px) {
     .modal-article {
         scrollbar-color: var(--colorful-bright) var(--lite);
-        scrollbar-width: thin;
+        scrollbar-width: .6vw;
     }
 
     .modal-article::-webkit-scrollbar {
-        width: 7px;
+        width: .6vw;
     }
     
     .modal-article::-webkit-scrollbar-thumb:hover {
@@ -220,8 +212,8 @@
     }
 
     .project-modal .main {
-        clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
-        padding-right: 1rem;
+        clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%);  /* top-left, top-right, bottom-right, bottom-left */
+        padding-right: 1vw;
     }
 }
 
@@ -229,6 +221,8 @@
     .modal .close-modal:hover {
         color: white;
         background-color: rgba(255, 255, 255, 0.5);
+        transition: .1s;
+        transition-property: background-color, color, text-shadow;
     }
 
     .project-modal .article-content .project-links a:hover {
@@ -236,6 +230,7 @@
         color: var(--gray);
         text-shadow: 0 0 1px var(--gray);
         transition: .4s;
+        transition-property: background-color, color, text-shadow;
     }
 
     .modal-article::-webkit-scrollbar-thumb:hover {
@@ -247,6 +242,7 @@
         transition-delay: .3s;
         box-shadow: 0 5px 10px var(--shadow);
         transform: scale(1.01);
+        transition-property: transform, box-shadow;
     }
 }
 
@@ -263,57 +259,68 @@
     }
 
     .project-modal .main .content {
-        padding: .6rem;
+        width: 100%;
         height: 97vh;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
     }
+
+    .project-modal .main .content .modal-article {
+        height: 100%;
+    }
+    
 
     .project-modal .main .content header {
         display: flex;
         justify-content: space-between;
-        margin: 0;
     }
 
     .project-modal .main .content header h1 {
-        line-height: 1.5rem;
+        line-height: 7vw;
         width: 90%;
-        margin: 0;
-        font-size: 1.5rem;
+        margin: 2vw;
         text-align: left;
     }
 
     .project-modal .main .content header .close-modal {
+        align-self: center;
         position: static;
-        height: 1.5rem;
-        width: 1.5rem;
-        margin-right: -.5rem;
-    }
-
-    .modal-article {
-        margin: 1rem auto;
+        font-size: 5vw;
+        line-height: 5vw;
+        height: 5vw;
+        width: 5vw;
+        margin-right: 1vw;
+        text-shadow: none;
     }
 
     .project-modal .main .content .article-content {
         margin: 0 auto;
-        width: 96%;
+        width: 95vw;
+        padding: 0;
     }
 
     .project-modal .main .content .modal-article .date {
-        margin: 0 auto;
+        display: none;
+        font-size: 3vw;
+        margin: 3vw auto;
     }
 
-    .project-modal .main .content .article-content img {
-        margin: 0 auto;
+    .project-modal .main .content .article-content .image {
+        max-width: 90%;
+        margin: 2vw auto;
     }
 
     .modal-article figcaption {
         text-align: center;
+        font-size: 3.5vw;
         margin: 0;
-        margin-top: 1rem;
+        margin-top: 1.5vw;
     }
 
     .modal-article h2 {
         text-align: center;
-        margin: .5rem;
+        margin: 5vw;
     }
 
     .modal-article p:nth-of-type(1) {
@@ -324,39 +331,44 @@
         text-align: justify;
         text-indent: 0;
         margin: 0 auto;
+        margin-bottom: 5vw;
+    }
+
+    .modal-article span {
+        font-size: 4.5vw;
     }
 
     .project-modal .article-content .project-links {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         margin: 0 auto;
+        flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: center;
         z-index: 4;
-        padding: 0;
+        padding: 1vw;
         background-color: var(--colorful-medium);
     }
 
     .project-modal .article-content .project-links a {
         font-family: 'Amita', cursive;
-        padding: .1rem .3rem;
-        box-shadow: none;
-        margin: 0 .5rem;
+        margin: 0 3vw;
     }
     
     .project-modal .article-content .description {
         margin-bottom: 2rem;
+        max-width: 85vw;
     }
 
     .hide-scroll {
         visibility: visible;
         box-sizing: border-box;
         position: absolute;
-        right: 5px;
+        right: 0vw;
         height: 100%;
-        width: 10px;
+        width: 7vw;
         background-color: var(--colorful-medium);
         z-index: 3;
         opacity: 0;
@@ -368,18 +380,18 @@
     }    
 
     .modal-article::-webkit-scrollbar {
-        width: 5px;
+        width: 1.5vw;
     }
 }
 
 @media (max-height: 450px) {
     .project-modal .image {
-        margin: 0 auto;
-        height: 50%; 
-        width: 50%;
+        text-align: center;
+        display: block;
+        width: 90%;
     }
-
-    .article-content figcaption {
-        line-height: 1rem;
+    .project-modal .article-content .image img {
+        margin: 0 auto;
+        max-width: 70%;
     }
 }

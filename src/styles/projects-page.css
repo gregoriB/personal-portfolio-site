@@ -16,6 +16,7 @@
 .project-border {
     cursor: pointer;
     transition: .1s;
+    transition-property: opacity, background-color;
     background-color: var(--medium);
     width: 15vw;
     height: 9.9vw;
@@ -39,6 +40,7 @@
     width: 15vw;
     height: 9.9vw;
     transition: .1s;
+    transition-property: opacity;
 }
 
 .project:after {
@@ -52,6 +54,7 @@
     right: 0;
     z-index: 0;
     transition: 1s;
+    transition-property: opacity;
 }
 
 .projects #the-verge .project:after { background-image: url('../images/theVerge-top-stories.jpg') }
@@ -74,7 +77,7 @@
     left: 0;
     right: 0;
     font-family: 'Dancing Script', cursive;
-    font-size: 100%;
+    font-size: 1.1vw;
     color: var(--colorful-lite);
     text-align: center;
     text-shadow: 0 0 5px black;
@@ -83,8 +86,9 @@
     margin: 0 auto;
     padding: 5% 0;
     transition: .2s;
+    transition-property: background-color, opacity;
     background-color: #00000040;
-    line-height: 1.5rem;
+    line-height: 1.5vw;
     max-height: 20%;
 
 }
@@ -96,6 +100,7 @@
       opacity: 0;
       z-index: 1;
       transition: .2s;
+      transition-property: color, text-shadow, opacity;
       font-style: italic;
       font-size: 100%;
   }
@@ -111,6 +116,7 @@
         width: 16vw;
         height: 10.9vw;
         transition: .2s;
+        transition-property: width, height, margin, background-color;
     }
     
     .project-border:hover .project {
@@ -128,7 +134,7 @@
 
     .project-border:hover .click-message {
         opacity: 1;
-        transition: 1s;
+        transition: opacity 1s;
         transition-delay: .3s;
     }
 }
@@ -157,7 +163,7 @@
     }
     
     .project {
-        justify-content: flex-end;
+        justify-content: center;
         opacity: 1;
         scroll-snap-align: center;
         margin: 1rem auto;
@@ -170,6 +176,7 @@
         width: 100%;
         height: 100%;
         transition: 1s;
+        transition-property: opacity, height, width;
     }
     
     .project:after {
@@ -184,6 +191,8 @@
         right: 0;
         z-index: 0;
         transition: 1s;
+        transition-property: opacity, height, width;
+
     }
 
     .project-border:nth-child(1) {
@@ -196,9 +205,14 @@
 
     .project h1 {
         position: relative;
-        text-shadow: .1rem .1rem .2rem var(--shadow);
         padding: 1rem 0;
         font-size: 150%;
+        line-height: 150%;
+        height: 100%;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .project .click-message {
@@ -243,6 +257,7 @@
     .project h1 {
         padding: 2rem 0;
         font-size: 200%;
+        line-height: 200%;
     }
 }
 
@@ -262,19 +277,19 @@
 
     .projects-page.item-enter .project-border:nth-child(n) .project {
         opacity: 0;
-        transition: .5s;
+        transition: opacity .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
     .projects-page.item-enter-active .project-border:nth-child(n) .project {
         opacity: 1;
-        transition: 1s;
+        transition:  opacity 1s;
         transition-delay: 2.1s;
     }
 
     .projects-page.item-enter-active .project-border:nth-child(n) {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition:  transform .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
         pointer-events: none;
     }
@@ -317,7 +332,7 @@
     }
 
     .item-exit-active .project-border {
-        transition: var(--timing-fast);
+        transition: .5s;
         transition-delay: .4s;
         background-color: var(--medium);
         transform: translateX(100vw);
@@ -326,7 +341,7 @@
 
     .item-exit .project {
         opacity: 0;
-        transition: .3s;
+        transition: opacity .3s;
         transition-delay: 0;
     }
 
@@ -365,19 +380,19 @@
 
     .projects-page.item-appear .project-border:nth-child(n) .project {
         opacity: 0;
-        transition: .5s;
+        transition: opacity .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
     .projects-page.item-appear-active .project-border:nth-child(n) .project {
         opacity: 1;
-        transition: 1s;
+        transition: opacity 1s;
         transition-delay: 1.35s;
     }
 
     .projects-page.item-appear-active .project-border:nth-child(n) {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform .5s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 

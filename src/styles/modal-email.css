@@ -1,3 +1,7 @@
+.email-modal .main {
+    background-color: var(--colorful-medium);
+}
+
 .email-modal .main .content {
     margin: 0 auto;
     opacity: 0;
@@ -7,6 +11,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .spinner {
@@ -19,8 +24,8 @@
     border-top-color: var(--colorful-dark);
     border-right-color: var(--colorful-dark);
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 2vw;
+    height: 2vw;
     animation: react-logo-spin infinite 2s linear;
 }
 
@@ -41,35 +46,71 @@
 
 .email-message {
     height: 100%;
-    font-size: 2rem;
-    text-shadow: 0 0 1px var(--dark);
-    margin: 0 2rem;
+    margin: 0 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.email-message div {
+.email-message h1 {
+    font-family: 'Amita', cursive;
+    text-shadow: 0 0 1px var(--dark);
+    letter-spacing: 2px;
+    line-height: 1.5vw;
+    font-weight: normal;
+    font-size: 2vw;
     margin: 1rem auto;
     color: var(--dark);
 }
 
 .email-message p {
+    text-shadow: 0 0 1px var(--dark);
     margin: 1rem auto;
-    font-size: 1.2rem;
+    font-size: 1.1vw;
     color: var(--medium);
 }
 
 .email-modal .close-modal {
+    font-weight: bold;
+    position: absolute;
     color: var(--dark);
-    top: 1rem;
-    right: 1rem;
+    top: 1vw;
+    right: 1vw;
+    text-shadow: 0 0 .1rem var(--shadow);
+    transition: .1s;
+    transition-property: color, background-color;
 }
 
 @media (min-width: 1101px) {
     .email-modal .main {
         clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
-        /* top-left, top-right, bottom-right, bottom-left */
+    }
+}
+
+@media (max-width: 1100px) {
+    .email-modal .close-button {
+        align-self: center;
+        font-size: 5vw;
+        line-height: 5vw;
+        height: 5vw;
+        width: 5vw;
+        margin-right: 1vw;
+        text-shadow: none;
+    }
+
+    .email-message h1 {
+        font-size: 7vw;
+    }
+
+    .email-message p {
+        font-size: 4vw;
+        width: 80%;
+    }
+}
+
+@media (max-height: 450px) {
+    .email-modal .main {
+        min-height: 70vh;
     }
 }

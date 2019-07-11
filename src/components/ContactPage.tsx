@@ -134,6 +134,7 @@ const ContactMe = () => {
                     />
                     <textarea
                         placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Enter your message here'}
+                        name='message'
                         autoComplete='off'
                         value={textField.text}
                         onBlur={handleTextAreaValidation}
