@@ -19,8 +19,8 @@
     border-top-color: var(--colorful-dark);
     border-right-color: var(--colorful-dark);
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 2vw;
+    height: 2vw;
     animation: react-logo-spin infinite 2s linear;
 }
 
@@ -42,7 +42,7 @@
 .email-message {
     height: 100%;
     /* font-size: 2rem; */
-    margin: 0 2rem;
+    margin: 0 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,9 +53,9 @@
     font-family: 'Amita', cursive;
     text-shadow: 0 0 1px var(--dark);
     letter-spacing: 2px;
-    line-height: 1.5rem;
+    line-height: 1.5vw;
     font-weight: normal;
-    font-size: 2rem;
+    font-size: 2vw;
     margin: 1rem auto;
     color: var(--dark);
 }
@@ -69,8 +69,8 @@
 
 .email-modal .close-modal {
     color: var(--dark);
-    top: 1rem;
-    right: 1rem;
+    top: 1vw;
+    right: 1vw;
 }
 
 @media (min-width: 1101px) {

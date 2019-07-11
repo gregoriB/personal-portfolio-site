@@ -59,7 +59,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: 1s;
+    transition: width 1s, height 1s;
 }
 
 .modal-article .date {
@@ -79,21 +79,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 2rem;
-    height: 2rem;
-    font-size: 1.2rem;
+    min-width: 2vw;
+    height: 2vw;
+    font-size: 1.2vw;
     font-weight: bold;
     cursor: pointer;
-    transition: .15s;
-    line-height: 1rem;
+    transition: color .15s, background-color .15;
+    line-height: 1vw;
     text-align: center;
     clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
 }
 
-.close-modal {
+.project-modal .close-modal {
     position: absolute;
     top: -.5vw;
-    right: 1vw;
+    right: 1.1vw;
     background-color: rgba(255, 255, 255, 0);
     text-shadow: 0 0 .1rem var(--shadow);
 }
@@ -117,7 +117,7 @@
 .article-content .image {
     display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: 1vw 0;
     margin-bottom: 0;
     max-width: 60%;
 }
@@ -127,7 +127,7 @@
     text-align: center;
     margin: 0;
     width: 100%;
-    transition: .1s;
+    transition: box-shadow .1s;
     box-shadow: 0 0 2px var(--shadow);
 }
 
@@ -139,19 +139,19 @@
 }
 
 .project-modal .article-content .description {
-    margin: 1rem 0;
+    margin: 1vw 0;
     /* font-size: .9rem; */
     max-width: 60%;
 }
 
 .modal-article h2 {
-    margin: 2rem 0;
-    margin-bottom: .5rem;
+    margin: 2vw 0;
+    margin-bottom: .5vw;
 }
 
 .modal-article p {
     text-align: justify;
-    text-indent: 1.5rem;
+    text-indent: 1.5vw;
     margin: 0;
 }
 
@@ -159,7 +159,7 @@
     font-family: 'Dancing Script', cursive;
     font-size: 1.3vw;
     display: inline-block;
-    margin: 2rem 0;
+    margin: 2vw 0;
 }
 
 .project-modal .article-content .project-links {
@@ -172,12 +172,12 @@
 .project-modal .article-content .project-links a {
     display: block;
     width: 20%;
-    margin: 0 2rem;
+    margin: 0 2vw;
     font-weight: bold;
     text-shadow: 0 0 1px var(--dark);
     border-radius: 10px;
     border: thin solid var(--dark);
-    transition: .2s;
+    transition: color .2s, background-color .2s;
     text-align: center;
     letter-spacing: .05vw;
 }
@@ -202,11 +202,11 @@
 @media (min-width: 1101px) {
     .modal-article {
         scrollbar-color: var(--colorful-bright) var(--lite);
-        scrollbar-width: thin;
+        scrollbar-width: .6vw;
     }
 
     .modal-article::-webkit-scrollbar {
-        width: 7px;
+        width: .6vw;
     }
     
     .modal-article::-webkit-scrollbar-thumb:hover {
@@ -215,7 +215,7 @@
 
     .project-modal .main {
         clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%); 
-        padding-right: 1rem;
+        padding-right: 1vw;
     }
 }
 
@@ -230,6 +230,7 @@
         color: var(--gray);
         text-shadow: 0 0 1px var(--gray);
         transition: .4s;
+        transition-duration: backgroung-color, color, text-shadow;
     }
 
     .modal-article::-webkit-scrollbar-thumb:hover {
@@ -241,6 +242,7 @@
         transition-delay: .3s;
         box-shadow: 0 5px 10px var(--shadow);
         transform: scale(1.01);
+        transition-property: transform, box-shadow;
     }
 }
 

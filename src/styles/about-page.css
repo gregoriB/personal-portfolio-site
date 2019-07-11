@@ -31,17 +31,17 @@
     flex-wrap: wrap;
     max-height: 50%; 
     margin: 0;
-    padding-left: 1rem;
+    padding-left: 1vw;
 }
 
 .about-me-container li {
     list-style: none; 
-    margin: 0 1rem;
+    margin: 0 1vw;
 
 }
 
 .about-me-container p {
-    margin-left: 2rem;
+    margin-left: 2vw;
 
 }
 
@@ -89,7 +89,7 @@
 
     .about-me.item-enter-active .about-me-container {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
@@ -115,7 +115,7 @@
     }
     
     .about-me.item-exit-active .about-me-container {
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transform: translateX(100vw);
     }
 
@@ -138,7 +138,7 @@
 
     .about-me.item-appear-active .about-me-container {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 

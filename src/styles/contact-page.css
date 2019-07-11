@@ -25,7 +25,6 @@
 .contact-form h1 {
     color: var(--colorful-lite);
     font-family: 'Dancing Script', cursive;
-    /* font-size: 2.5rem; */
     margin: 0 auto;
     margin-left: 1vw;
 }
@@ -54,8 +53,8 @@
 .contact-form textarea:disabled::placeholder {
     color: rgb(255, 0, 0);
     text-align: center;
-    letter-spacing: .5rem;
-    line-height: 10rem;
+    letter-spacing: .5vw;
+    line-height: 10vw;
     font-weight: bold;
 }
 
@@ -87,9 +86,9 @@
     background-color: var(--colorful-lite);
     font-weight: bold;
     letter-spacing: .2vw;
-    transition: .1s;
+    transition: color .1s, background-color .1s;
     transition-timing-function: ease-in;
-    padding: .3rem;
+    padding: .3vw;
     width: 7vw;
     height: 2vw;
     line-height: 1vw;
@@ -111,7 +110,7 @@
     color: var(--medium);
     box-shadow: 0 .3rem .4rem var(--dark);
     text-shadow: 0 .5px .3px var(--dark);
-    transition: .1s;
+    transition: color .1s, background-color .1;
 }
   
 input:-webkit-autofill {
@@ -140,7 +139,7 @@ input:-webkit-autofill {
     margin-top: 5vw;
     width: 35%;
     align-self: flex-start;
-    margin-bottom: 9rem;
+    margin-bottom: 9vw;
 }
 
 .contact-info h2 {
@@ -149,7 +148,7 @@ input:-webkit-autofill {
 }
 
 .contact-info div {
-    margin-left: 1rem;
+    margin-left: 1vw;
 }
 
 .contact-info a {
@@ -177,12 +176,12 @@ input:-webkit-autofill {
     font-family: 'Amita', cursive;
     font-style: italic;
     text-shadow: 0 0 .5rem var(--shadow);
-    transition: .1s;
+    transition: color .1s;
 }
 
 .contact-info div a:hover {
     text-shadow: 0 0 .1rem white;
-    transition: .5s;
+    transition: text-shadow .5s;
 }
 
 @keyframes autofill {
@@ -318,7 +317,7 @@ input:-webkit-autofill {
 
     .contact-page.item-enter-active .contact-form {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-delay: 1s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
@@ -334,7 +333,7 @@ input:-webkit-autofill {
 
     .contact-page.item-exit-active .contact-form {
         transform: translateX(100vw);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-delay: .55s;
     }
 
@@ -345,7 +344,7 @@ input:-webkit-autofill {
 
     .contact-page.item-enter-active .contact-info {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-delay: 1.15s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
@@ -361,7 +360,7 @@ input:-webkit-autofill {
 
     .contact-page.item-exit-active .contact-info {
         transform: translateX(100vw);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-delay: .4s;
     }
 
@@ -372,7 +371,7 @@ input:-webkit-autofill {
 
     .contact-page.item-appear-active .contact-form {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-delay: .2s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
@@ -384,7 +383,7 @@ input:-webkit-autofill {
 
     .contact-page.item-appear-active .contact-info {
         transform: translateX(0);
-        transition: var(--timing-fast);
+        transition: transform var(--timing-fast);
         transition-delay: .35s;
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }

@@ -11,7 +11,7 @@
     width: 12vw;
     background-color: #0b0c10;
     text-align: center;
-    transition: .1s;
+    transition: transform .1s;
     clip-path: polygon(0% 3%, 70% 0%, 100% 100%, 0% 100%); /* top-left, top-right, bottom-right, bottom-left */
     z-index: 2;
     user-select: none;
@@ -39,12 +39,13 @@
     text-decoration: none;
     margin: 2vh 0;
     transition: .2s;
+    transition-property: color, opacity;
     /* width: 100%; */
 }
 
 .desktop-nav a:nth-of-type(1) {
     margin-bottom: 15vh;
-    margin-top: 5vh;
+    margin-top: 7vh;
 }
 
 .desktop-nav .active-link {
@@ -76,6 +77,7 @@
     font-size: 1.1vw;
     opacity: .8;
     transition: .2s;
+    transition-property: opacity, color;
     transition-delay: 0s;
     cursor: pointer;
     margin: 1vh 0;
@@ -90,7 +92,7 @@
     bottom: 0;
     right: 0;
     position: absolute;
-    transition: .2s;
+    transition: opacity .2s;
     transition-delay: .2s;
     z-index: -1;
     clip-path: polygon( 0% 5%, 100% 0%, 98% 100%, 5% 98%); 
@@ -120,6 +122,7 @@
         color: white;
         text-shadow: 0 0 3px black;
         transition: .5s;
+        transition-property: opacity, color, text-shadow;
         transition-delay: .6s;
     }
 

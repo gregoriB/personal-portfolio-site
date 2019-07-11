@@ -169,7 +169,7 @@ a, button {
   }
 
   ::-webkit-scrollbar {
-      width: 7px;
+      width: .7vw;
   }
   ::-webkit-scrollbar-track {
     background: var(--dark);
@@ -182,7 +182,7 @@ a, button {
   }
 
   .item-enter-active .decorative-1 {
-    transition: var(--timing-medium);
+    transition: transform var(--timing-medium);
     transition-delay: 1.4s;
     transform: translateX(0);
   }
@@ -192,14 +192,14 @@ a, button {
   }
 
   .item-appear-active .decorative-1 {
-    transition: var(--timing-medium);
+    transition: transform var(--timing-medium);
     transition-delay: .6s;
     transform: translateX(0);
   }
 
   .item-exit .decorative-1 {
-    transition: var(--timing-fast);
-    transition: 1s;
+    /* transition: var(--timing-fast); */
+    transition: transform 1s;
     transition-delay: 0s;
     transform: translateX(100%);
   }
