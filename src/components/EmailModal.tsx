@@ -36,7 +36,7 @@ const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isM
                             name 
                             ?
                                 <>
-                                    <h2>Email successfully sent!</h2>
+                                    <h1>Email successfully sent!</h1>
                                     <p>Hello, {name}.  I'll be getting back to you in 1-2 days.</p>
                                 </>
                             : 
