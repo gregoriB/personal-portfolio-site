@@ -148,7 +148,7 @@
 .mobile-nav.active .social-media a {
     transform: scale(1.01);
     opacity: 1;
-    transition-property: opacity, transform;
+    transition-property: opacity, -webkit-transform;
     transition-duration: .5s, .3s;
 }
 
