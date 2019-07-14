@@ -148,8 +148,8 @@
 .mobile-nav.active .social-media a {
     transform: scale(1.01);
     opacity: 1;
-    transition-property: opacity, -webkit-transform, transform;
-    transition-duration: .5s, .3s, .3s;
+    transition-property: opacity, -webkit-transform;
+    transition-duration: .5s, .3s;
 }
 
 .mobile-nav.active .social-media a:nth-of-type(1) {
