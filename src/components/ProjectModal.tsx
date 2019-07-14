@@ -16,7 +16,6 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
     const [scrollState, setScrollState] = useState<string | null>('inactive');
     const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
 
-
     const handleToggleImage = (e: mouseEvent) => {
         if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'image-close')) {
             
