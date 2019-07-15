@@ -35,7 +35,7 @@
 
 .home-container .resume {
     display: block;
-    width: 6.5vw;
+    width: 15vw;
     margin-top: 2vw;
     font-weight: bold;
     text-shadow: 0 0 1px var(--gray);
@@ -80,7 +80,7 @@
     }
 
     .home-container .resume {
-        width: 25vw;
+        width: 40vw;
         margin-top: 15vw;
         border-radius: 10vw;
     }

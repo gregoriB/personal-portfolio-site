@@ -25,6 +25,7 @@ const AboutMe = () => {
                             <li>REST APIs</li>
                             <li>JSON</li>
                             <li>EJS</li>
+                            <li>MongoDB</li>
                             <li>Bootstrap</li>
                             <li>Git</li>
                         </ul>
