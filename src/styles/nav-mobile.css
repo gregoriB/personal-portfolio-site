@@ -2,7 +2,7 @@
     user-select: none;
     position: fixed;
     top: 0;
-    left: -25vw;
+    left: -27vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,6 +40,7 @@
     opacity: 1;
     outline: none;
     transition: .3s;
+    transition-timing-function: linear;
     visibility: visible;
     z-index: 1;
     top: 5vw;
@@ -55,6 +56,7 @@
     width: 10vw;
     transform: rotate(270deg);
     transition: .5s;
+    transition-timing-function: linear;
 }
 
 .mobile-nav .links {
