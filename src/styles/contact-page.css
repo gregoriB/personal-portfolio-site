@@ -114,12 +114,16 @@ input:-webkit-autofill {
 }
 
 .contact-form .valid {
-    border-color: rgb(0, 156, 0);
+    border-bottom-color: var(--colorful-lite);
 }
 
 .contact-form .invalid {
-    border-color: rgb(165, 0, 0);
+    border-bottom-color: #fc0853;
 }
+
+/* .contact-form textarea.invalid {
+    border-color: #fc0853;
+} */
 
 .contact-form .message {
     display: block;

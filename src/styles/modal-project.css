@@ -199,7 +199,6 @@
 
 @media (min-width: 1101px) {
     .modal-article {
-        scrollbar-color: var(--colorful-bright) var(--lite);
         scrollbar-width: .6vw;
     }
 
@@ -227,7 +226,7 @@
 
     .project-modal .article-content .project-links a:hover {
         background-color: var(--dark);
-        color: var(--gray);
+        color: var(--colorful-medium);
         text-shadow: 0 0 1px var(--gray);
         transition: .4s;
         transition-property: background-color, color, text-shadow;

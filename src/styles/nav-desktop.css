@@ -9,7 +9,7 @@
     height: 100vh;
     font-weight: bold;
     width: 12vw;
-    background-color: #0b0c10;
+    background-color: var(--dark);
     text-align: center;
     transition: transform .1s;
     clip-path: polygon(0% 3%, 70% 0%, 100% 100%, 0% 100%); /* top-left, top-right, bottom-right, bottom-left */
@@ -33,8 +33,8 @@
 
 .desktop-nav a {
     font-size: 1.2vw;
-    opacity: .85;
-    color: white;
+    opacity: .5;
+    color: var(--lite);
     text-decoration: none;
     margin: 2vh 0;
     transition: .2s;
@@ -49,6 +49,7 @@
 .desktop-nav .active-link {
     opacity: 1;
     color: var(--colorful-lite);
+    text-shadow: 0 0 2px white;
 }
 
 .desktop-nav .social-media {
@@ -73,7 +74,7 @@
     height: 3.5vw;
     color: transparent;
     font-size: 1.1vw;
-    opacity: .8;
+    opacity: .3;
     transition: .2s;
     transition-property: opacity, color;
     transition-delay: 0s;
@@ -111,19 +112,19 @@
 @media (hover: hover) {
     .desktop-nav a:hover {
         opacity: 1;
-        text-shadow: 0 0 2px white;
     }
 
     .desktop-nav .social-media a:hover {
         opacity: 1;
-        color: white;
+        color: var(--gray);
         text-shadow: 0 0 3px black;
         transition: .5s;
         transition-property: opacity, color, text-shadow;
-        transition-delay: .6s;
+        transition-delay: .2s;
     }
 
     .desktop-nav .social-media a:hover:after {
         opacity: .1;
+        transition-delay: 0s;
     }
 }

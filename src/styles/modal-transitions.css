@@ -147,7 +147,7 @@
 
     .email-modal .main.active .content {
         opacity: 1;
-        transition: .2s;
+        transition: opacity .2s;
         transition-delay: 1s;
     }
 

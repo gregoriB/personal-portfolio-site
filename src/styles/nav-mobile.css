@@ -70,7 +70,7 @@
 }
 
 .mobile-nav .links a {
-    color: rgb(231, 231, 231);
+    color: var(--gray);
     padding: .6rem 0;
     text-align: center;
     text-decoration: none;

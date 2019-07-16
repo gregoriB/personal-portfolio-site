@@ -111,10 +111,10 @@
 
 @media (hover: hover) and (min-width: 1101px) {
     .project-border:hover {
-        margin: .2vw;
+        margin: .55vw;
         background-color: var(--colorful-medium);
-        width: 16vw;
-        height: 10.9vw;
+        width: 15.3vw;
+        height: 10.2vw;
         transition: .2s;
         transition-property: width, height, margin, background-color;
     }
