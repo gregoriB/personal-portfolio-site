@@ -1,11 +1,11 @@
 const projectData = [
     {
-        name: "The Verge Top Stories API Site",
+        name: "The Verge Top Articles API Site",
         date: "September 12th, 2018",
         image: "theVerge-top-stories.jpg",
         caption: 'A site that fetches the top 10 trending articles from TheVerge.com using an API from newsapi.org.',
-        linkSite: "https://theverge-top-stories.herokuapp.com/",
-        linkRepo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
+        site: "https://theverge-top-stories.herokuapp.com/",
+        repo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
         id: "the-verge",
         desc: `
             <h2>Technologies used:</h2>
@@ -32,8 +32,8 @@ const projectData = [
         date: "October 27th, 2018",
         image: "react-game.jpg",
         caption: 'A simple video game made with React.js.  Pick up the objects to increase your score as much as possible before the timer reaches zero.',
-        linkSite: "https://gregorib-react-game.netlify.com/",
-        linkRepo: "https://github.com/gregoriB/simple-game-React",
+        site: "https://gregorib-react-game.netlify.com/",
+        repo: "https://github.com/gregoriB/simple-game-React",
         id: "react-game",
         desc: `
             <h2>Technologies used:</h2>
@@ -62,8 +62,8 @@ const projectData = [
         date: "June 17th, 2019",
         image: "portfolio-site.jpg",
         caption: 'My personal portfolio site, made with React.js and Node.js.',
-        linkSite: null,
-        linkRepo: "https://github.com/gregoriB/personal-portfolio-site",
+        site: null,
+        repo: "https://github.com/gregoriB/personal-portfolio-site",
         id: "portfolio-site",
         desc: `
             <h2>Technologies used:</h2>
@@ -94,8 +94,8 @@ const projectData = [
         date: "February 24th, 2019",
         image: "3rd-strike-app.jpg",
         caption: 'Street Fighter III: Third Strike frame data.  Made using React.js and data scraped from a different website.',
-        linkSite: "https://3rd-strike-frame-data.netlify.com/",
-        linkRepo: "https://github.com/gregoriB/3rd-strike-app",
+        site: "https://3rd-strike-frame-data.netlify.com/",
+        repo: "https://github.com/gregoriB/3rd-strike-app",
         id: "third-strike",
         desc: `
             <h2>Technologies used:</h2>
@@ -125,8 +125,8 @@ const projectData = [
         date: "January 28th, 2019",
         image: "3rd-strike-extension.jpg",
         caption: 'A browser extension for scraping data from http://ensabahnur.free.fr/BastonNew.  The data is JSON-formatted and used in my 3rd Strike app.',
-        linkSite: null,
-        linkRepo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
+        site: null,
+        repo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
         id: "browser-extension",
         desc: `
             <h2>Technologies used:</h2>
@@ -155,8 +155,8 @@ const projectData = [
         date: "January 4th, 2019",
         image: "video-player.jpg",
         caption: 'A video player made with HTML5 and Javascript.  Features fullscreen functionality and responsive controls.',
-        linkSite: "https://codepen.io/gregorib/full/vvReVG",
-        linkRepo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
+        site: "https://codepen.io/gregorib/full/vvReVG",
+        repo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
         id: "video-player",
         desc: `
             <h2>Technologies used:</h2>
@@ -186,8 +186,8 @@ const projectData = [
         date: "December 29th, 2018",
         image: "html5-drawing-app.jpg",
         caption: 'An HTML5 Canvas drawing app with jpeg download functionality.',
-        linkSite: "https://codepen.io/gregorib/full/PXJryw",
-        linkRepo: "https://github.com/gregoriB/drawing-app-HTML5-Canvas",
+        site: "https://codepen.io/gregorib/full/PXJryw",
+        repo: "https://github.com/gregoriB/drawing-app-HTML5-Canvas",
         id: "drawing-app",
             desc: `
             <h2>Technologies used:</h2>

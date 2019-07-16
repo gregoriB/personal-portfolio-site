@@ -97,18 +97,18 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
                             <div className='image'>
                                 <img 
                                     src={require(`../images/${project.image}`)} 
-                                    alt={project.name}
+                                    alt='Screenshot of the website.'
                                     onClick={handleToggleImage}
                                 />
                                 <figcaption>{project.caption}</figcaption>
                             </div>
                             <div className='project-links'>
                                 { 
-                                    project.linkSite 
+                                    project.site 
                                     && 
-                                    <a href={project.linkSite} target='_blank' rel="noopener noreferrer">Try it out!</a> 
+                                    <a href={project.site} target='_blank' rel="noopener noreferrer">Try it out!</a> 
                                 }
-                                <a href={project.linkRepo} target='_blank' rel="noopener noreferrer">Source Code</a>
+                                <a href={project.repo} target='_blank' rel="noopener noreferrer">Source Code</a>
                             </div>
                             <div className='description' ref={description}>{project.desc}</div>
                         </div>
