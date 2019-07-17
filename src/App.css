@@ -4,6 +4,7 @@
   --lite: #8a8a8a;
   --shadow: #05070c;
   --gray: #d0e9e9;
+  --colorful-shadow: #9b4949;
   --colorful-dark: #2c6966;
   --colorful-medium: #45a29e;
   --colorful-lite: #66fcf1;
@@ -31,18 +32,29 @@ body {
 h1, h2, a {
   font-family: 'Dancing Script', cursive;
   text-decoration: none;
+  font-weight: normal;
 }
 
 h1 {
   font-size: 2.2vw;
   line-height: 2.5vw;
-  text-shadow: 0 0 2px var(--dark);
+  text-shadow: 1px 1px 1px var(--colorful-shadow);
+
 }
 
 span, h2 {
   font-size: 1.5vw;
   line-height: 2vw;
-  text-shadow: 0 0 2px var(--dark);
+  text-shadow: 1px 1px 1px var(--colorful-shadow);
+}
+
+.logo {
+  text-shadow: 1px 1px 1px var(--gray);
+}
+
+.desktop-nav a.active-link {
+  text-shadow: 1px 1px 1px #9b4949;
+
 }
 
 p, li, figcaption {
@@ -108,13 +120,11 @@ a, button {
   h1 {
     font-size: 7vw;
     line-height: 7vw;
-    text-shadow: 0 0 2px var(--dark);
   }
   
   span, h2 {
     font-size: 6vw;
     line-height: 6vw;
-    text-shadow: 0 0 2px var(--dark);
   }
   
   p, li, figcaption {
