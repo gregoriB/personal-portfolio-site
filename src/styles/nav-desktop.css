@@ -139,7 +139,6 @@
 
     .desktop-nav a.active-link:hover {
         color: var(--colorful-lite);
-        /* cursor: default; */
     }
 
     .desktop-nav .social-media a:hover {
