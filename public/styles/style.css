@@ -12,6 +12,12 @@
     font-display: block;
 }
 
+@font-face {
+    font-family: 'Italianno';
+	src: url('../fonts/Italianno-Regular.ttf') format('truetype');
+    font-display: block;
+}
+
 body {
     font-family: 'Amita', cursive;
     background-color: #252627;

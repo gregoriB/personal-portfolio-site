@@ -92,11 +92,14 @@
     line-height: 1vw;
     outline: none;
     text-shadow: 0 .5px .3px var(--dark);
+    box-shadow: 0 0 1px var(--colorful-shadow);
+
 }
 
 .contact-form button.disabled {
     opacity: .3;
     pointer-events: none;
+    box-shadow: none;
 }
 
 .contact-form button:active {
@@ -120,10 +123,6 @@ input:-webkit-autofill {
 .contact-form .invalid {
     border-bottom-color: #fc0853;
 }
-
-/* .contact-form textarea.invalid {
-    border-color: #fc0853;
-} */
 
 .contact-form .message {
     display: block;
@@ -176,6 +175,7 @@ input:-webkit-autofill {
     font-style: italic;
     text-shadow: 0 0 .5rem var(--shadow);
     transition: color .1s;
+    text-shadow: 0 0 2px var(--colorful-shadow);
 }
 
 .contact-info div a:hover {

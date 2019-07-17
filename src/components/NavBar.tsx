@@ -49,6 +49,14 @@ const NavBar = () => {
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
+                    className={`logo ${currentPage === 'Home' ? 'active-link' : 'inactive-link'}`}
+                    data-name='Home'
+                    to='Home'
+                    onClick={handleUpdateDisplay}
+                >
+                    BG
+                </Link>
+                <Link 
                     className={currentPage === 'Home' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
                     to='Home'
@@ -70,7 +78,7 @@ const NavBar = () => {
                     to='Projects'
                     onClick={handleUpdateDisplay}
                 >
-                    Projects
+                    My Projects
                 </Link>
                 <Link 
                     className={currentPage === 'Contact-Me' ? 'active-link' : 'inactive-link'}
@@ -78,7 +86,7 @@ const NavBar = () => {
                     to='Contact-Me'
                     onClick={handleUpdateDisplay}
                 >
-                    Contact Me
+                    Contact Info
                 </Link>
             </div>
             <div className='social-media' >

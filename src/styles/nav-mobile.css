@@ -59,6 +59,10 @@
     transition-timing-function: linear;
 }
 
+.mobile-nav .logo {
+    display: none;
+}
+
 .mobile-nav .links {
     align-items: center;
     display: flex;
