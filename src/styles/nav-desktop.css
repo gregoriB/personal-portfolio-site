@@ -42,7 +42,7 @@
     margin: 2.5vh 0;
     transition: .2s;
     transition-property: color, opacity;
-    line-height: inherit;
+    line-height: 1vh;
 }
 
 .desktop-nav a:nth-of-type(2) {
@@ -134,7 +134,12 @@
 
 @media (hover: hover) {
     .desktop-nav a:hover {
-        opacity: 1;
+        color: var(--gray);
+    }
+
+    .desktop-nav a.active-link:hover {
+        color: var(--colorful-lite);
+        /* cursor: default; */
     }
 
     .desktop-nav .social-media a:hover {
@@ -153,5 +158,6 @@
     .desktop-nav .logo:hover {
         text-shadow: 3px 3px 3px var(--colorful-shadow);
         transition: .2s;
+        color: var(--colorful-lite);
     }
 }
