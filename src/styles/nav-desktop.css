@@ -39,9 +39,10 @@
     opacity: .6;
     color: var(--lite);
     text-decoration: none;
-    margin: 2vh 0;
+    margin: 2.5vh 0;
     transition: .2s;
     transition-property: color, opacity;
+    line-height: inherit;
 }
 
 .desktop-nav a:nth-of-type(2) {
