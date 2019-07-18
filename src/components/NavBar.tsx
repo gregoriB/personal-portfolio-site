@@ -91,7 +91,7 @@ const NavBar = () => {
             </div>
             <div className='social-media' >
                 <a href='https://github.com/gregoriB' id='github-image' target='_blank' rel="noopener noreferrer">Github</a>
-                <a href='https://www.linkedin.com/in/brandon-gregori-59a973176/' id='linkedin-image' target='_blank' rel="noopener noreferrer">Linkedin</a>
+                <a href='https://www.linkedin.com/in/brandon-gregori' id='linkedin-image' target='_blank' rel="noopener noreferrer">Linkedin</a>
                 <a href='https://www.facebook.com/people/Brandon-Gregori/1128665234' id='facebook-image' target='_blank' rel="noopener noreferrer">Facebook</a>
             </div>
         </div>
