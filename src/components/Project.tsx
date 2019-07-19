@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
-    const { isMobile, setIsModalOpen, setIsNavOpen } = useContext(StateContext);
+    const { isMobile, isModalOpen, setIsModalOpen, setIsNavOpen } = useContext(StateContext);
 
     const project = useRef<HTMLDivElement | null>(null);
 
@@ -32,10 +32,10 @@ const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
     }
     
     return (
-        <div className='project-border' id={id} >
+        <div className='project-border' id={id} onClick={handleClick}>
             <div ref={project} className='project'  >
                 <p className='click-message'>Click to see more</p>
-                <h1><button className='project-name' onClick={handleClick} tabIndex={0}>{name}</button></h1>
+                <h1><button className='project-name' tabIndex={isModalOpen ? -1 : 0}>{name}</button></h1>
             </div>
         </div>
     );

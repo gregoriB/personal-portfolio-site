@@ -8,8 +8,8 @@ import '../styles/nav-desktop.css';
 type MouseClick = React.MouseEvent<any>
 
 const NavBar = () => {
-    const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile } = useContext(StateContext);
-    
+    const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile, isModalOpen } = useContext(StateContext);
+
     const handleUpdateDisplay = (e: MouseClick) => {
         if (e.currentTarget.dataset.name === currentPage) {
             
@@ -44,6 +44,16 @@ const NavBar = () => {
         }
     }, [setIsMobile]);
 
+    const navBarJSXProperties = { 
+        tabIndex: isModalOpen ? -1 : 0,
+        onClick: (e: MouseClick) => handleUpdateDisplay(e)
+    }
+
+    const anchorTagProperties = {
+        target: '_blank',
+        rel: "noopener noreferrer"
+    }
+
     return (
         <div className={handleAssignNavClass()}>
             <button onClick={handleToggleNav}>|||</button>
@@ -52,7 +62,7 @@ const NavBar = () => {
                     className={`logo ${currentPage === 'Home' ? 'active-link' : 'inactive-link'}`}
                     data-name='Home'
                     to='Home'
-                    onClick={handleUpdateDisplay}
+                    {...navBarJSXProperties}
                 >
                     BG
                 </Link>
@@ -60,7 +70,7 @@ const NavBar = () => {
                     className={currentPage === 'Home' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
                     to='Home'
-                    onClick={handleUpdateDisplay}
+                    {...navBarJSXProperties}
                 >
                     Home
                 </Link>
@@ -68,7 +78,7 @@ const NavBar = () => {
                     className={currentPage === 'About-Me' ? 'active-link' : 'inactive-link'}
                     data-name='About-Me' 
                     to='About-Me'
-                    onClick={handleUpdateDisplay}
+                    {...navBarJSXProperties}
                 >
                     About Me
                 </Link>
@@ -76,7 +86,7 @@ const NavBar = () => {
                     className={currentPage === 'Projects' ? 'active-link' : 'inactive-link'}
                     data-name='Projects' 
                     to='Projects'
-                    onClick={handleUpdateDisplay}
+                    {...navBarJSXProperties}
                 >
                     My Projects
                 </Link>
@@ -84,15 +94,15 @@ const NavBar = () => {
                     className={currentPage === 'Contact-Me' ? 'active-link' : 'inactive-link'}
                     data-name='Contact-Me' 
                     to='Contact-Me'
-                    onClick={handleUpdateDisplay}
+                    {...navBarJSXProperties}
                 >
                     Contact Info
                 </Link>
             </div>
-            <div className='social-media' >
-                <a href='https://github.com/gregoriB' id='github-image' target='_blank' rel="noopener noreferrer">Github</a>
-                <a href='https://www.linkedin.com/in/brandon-gregori' id='linkedin-image' target='_blank' rel="noopener noreferrer">Linkedin</a>
-                <a href='https://www.facebook.com/people/Brandon-Gregori/1128665234' id='facebook-image' target='_blank' rel="noopener noreferrer">Facebook</a>
+            <div className='social-media'>
+                <a href='https://github.com/gregoriB' id='github-image' {...navBarJSXProperties} {...anchorTagProperties}>Github</a>
+                <a href='https://www.linkedin.com/in/brandon-gregori' id='linkedin-image' {...navBarJSXProperties} {...anchorTagProperties}>Linkedin</a>
+                <a href='https://www.facebook.com/people/Brandon-Gregori/1128665234' id='facebook-image' {...navBarJSXProperties} {...anchorTagProperties}>Facebook</a>
             </div>
         </div>
     )

@@ -3,22 +3,22 @@ import React from 'react'
 type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
 
 interface IProps {
-    emailSuccessful: boolean,
+    isEmailSuccessful: boolean,
     isModalOpen: boolean,
     name: string,
     setIsModalOpen(val: boolean): void,
-    setEmailSuccessful(val: boolean): void
+    setIsEmailSuccessful(val: boolean): void
     clearFields(): void;
 }
 
-const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isModalOpen, setIsModalOpen, name, clearFields }) => {
+const EmailModal: React.FC<IProps> = ({ isEmailSuccessful, setIsEmailSuccessful, isModalOpen, setIsModalOpen, name, clearFields }) => {
     const handleToggleModal = (e:mouseEvent) => {
         if (!(e.target instanceof HTMLElement) || !e.target.dataset.util) {
 
             return;
         }
         setIsModalOpen(false);
-        setTimeout(() => setEmailSuccessful(false), 700);
+        setTimeout(() => setIsEmailSuccessful(false), 700);
         name && clearFields();
     }
     return (
@@ -27,10 +27,10 @@ const EmailModal: React.FC<IProps> = ({ emailSuccessful, setEmailSuccessful, isM
             data-util='close'
             onClick={handleToggleModal}
         >
-            <div className={`spinner ${!emailSuccessful && 'active'}`}></div>
-            <div className={`main ${emailSuccessful ? 'active' : 'inactive'}`}>
+            <div className={`spinner ${!isEmailSuccessful && 'active'}`}></div>
+            <div className={`main ${isEmailSuccessful ? 'active' : 'inactive'}`}>
                 <div className='content'>
-                    <div className='close-button close-modal' data-util='close'>X</div>
+                    <div className='close-button close-modal' data-util='close' tabIndex={1}>X</div>
                     <div className='email-message'>
                         {
                             name 

@@ -49,6 +49,7 @@
 }
 
 .modal-article {
+    outline: none;
     margin: 0 auto;
     height: 90%;
     width: 95%;
@@ -239,7 +240,7 @@
         background: var(--colorful-bright);
     }
 
-    .article-content .image img:hover {
+    .article-content .image img:hover, .image img:focus {
         transition: .1s;
         transition-delay: .3s;
         box-shadow: 0 5px 10px var(--shadow);

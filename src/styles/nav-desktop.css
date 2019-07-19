@@ -43,6 +43,7 @@
     transition: .2s;
     transition-property: color, opacity;
     line-height: 1vh;
+    outline: none;
 }
 
 .desktop-nav a:nth-of-type(2) {
@@ -133,15 +134,23 @@
 }
 
 @media (hover: hover) {
-    .desktop-nav a:hover {
+    .desktop-nav a:hover, a:focus {
         color: var(--gray);
     }
 
-    .desktop-nav a.active-link:hover {
+    .desktop-nav a:focus {
+        transition: 0s;
+    }
+
+    .desktop-nav a.active-link:hover, a.active-link:focus {
         color: var(--colorful-lite);
     }
 
-    .desktop-nav .social-media a:hover {
+    .desktop-nav a.active-link:hover {
+        transition: 0s;
+    }
+
+    .desktop-nav .social-media a:hover, .desktop-nav .social-media a:focus {
         opacity: 1;
         color: var(--gray);
         transition: .5s;
@@ -149,12 +158,12 @@
         transition-delay: .2s;
     }
 
-    .desktop-nav .social-media a:hover:after {
+    .desktop-nav .social-media a:hover:after, .desktop-nav .social-media a:focus:after {
         opacity: .1;
         transition-delay: 0s;
     }
 
-    .desktop-nav .logo:hover {
+    .desktop-nav .logo:hover, .logo:focus {
         text-shadow: 3px 3px 3px var(--colorful-shadow);
         transition: .2s;
         color: var(--colorful-lite);

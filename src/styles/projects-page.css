@@ -91,6 +91,7 @@
 }
 
 .project h1 button {
+    cursor: pointer;
     color: var(--colorful-lite);
     font-family: 'Dancing Script', cursive;
     font-size: 1.1vw;

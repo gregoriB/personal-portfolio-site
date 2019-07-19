@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import EmailModal from './EmailModal'; 
 import '../styles/contact-page.css';
 import '../styles/modal-email.css';
+import { StateContext } from '../contexts/StateContext';
 
 type FormElem = React.ChangeEvent<HTMLFormElement>;
+type Blur = React.SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>
 
 const formInitialState = {
     text: '', 
@@ -15,17 +17,39 @@ const ContactMe = () => {
         text: string;
         isValid: boolean | null;
     }
-    
+    const { isModalOpen, setIsModalOpen } = useContext(StateContext);
+
     const [nameField, setNameField] = useState<MyObject>(formInitialState);
     const [emailField, setEmailField] = useState<MyObject>(formInitialState);
     const [textField, setTextField] = useState<MyObject>(formInitialState);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [emailSuccessful, setEmailSuccessful] = useState<boolean>(false);
+    const [isEmailSuccessful, setIsEmailSuccessful] = useState<boolean>(false);
     const [emailModalMessage, setEmailModalMessage] = useState<string>('');
     const [numEmailsSent, setNumEmailsSent] = useState<number>(0);
 
+    const formJSXProperties = {
+        onBlur: (e:Blur) => handleChooseValidationType(e),
+        tabIndex: isModalOpen ? -1 : 0,
+        disabled: numEmailsSent > 2
+    }
+    
     const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
+
+    const handleChooseValidationType = (e: Blur) : void => {
+        switch(e.currentTarget.name) {
+            case 'name':
+                handleNameValidation();
+                break;
+            case 'email':
+                handleEmailValidation();
+                break;
+            case 'message':
+                handleTextAreaValidation();
+                break;
+            default:
+                break;
+        }
+    }
 
     const handleNameValidation = (): void => {
         const name = nameField.text;
@@ -83,15 +107,15 @@ const ContactMe = () => {
               headers: { 'Content-Type': 'text/plain' } 
             });
             const json: string = await response.json();
-            json && setNumEmailsSent(numEmailsSent + 1)
-            json && setTimeout(() => {
+            if (json) {
+                setNumEmailsSent(numEmailsSent + 1)
                 setEmailModalMessage(JSON.parse(json).name);
-                setEmailSuccessful(true);
-            }, 1000);
-            setTimeout(() => !json && setEmailSuccessful(true), 7000)
+                setIsEmailSuccessful(true);
+            }
+            setTimeout(() => !json && setIsEmailSuccessful(true), 7000)
         } catch (error) {
             console.error(error);
-            setEmailSuccessful(true);
+            setIsEmailSuccessful(true);
         }
     }
 
@@ -122,9 +146,7 @@ const ContactMe = () => {
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         }
-    }, 
-        [setIsModalOpen]
-    );
+    }, [setIsModalOpen]);
 
     return (
         <div className='contact-page page'>
@@ -135,29 +157,26 @@ const ContactMe = () => {
                         placeholder={numEmailsSent > 2 ? '' : 'name'}
                         name='name'
                         value={nameField.text}
-                        onBlur={handleNameValidation}
                         onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
                         className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
-                        disabled={numEmailsSent > 2}
+                        {...formJSXProperties}
+
                     />
                     <input 
                         placeholder={numEmailsSent > 2 ? '' : 'your_email@email.com'}
                         name='email'
                         value={emailField.text}
-                        onBlur={handleEmailValidation}
                         onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
                         className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
-                        disabled={numEmailsSent > 2}
+                        {...formJSXProperties}
                     />
                     <textarea
                         placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Enter your message here'}
                         name='message'
-                        autoComplete='off'
                         value={textField.text}
-                        onBlur={handleTextAreaValidation}
                         onChange={ e => setTextField({ ...textField, text: e.target.value}) }
                         className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
-                        disabled={numEmailsSent > 2}
+                        {...formJSXProperties}
                     />
                     <button 
                         type='submit' 
@@ -172,7 +191,7 @@ const ContactMe = () => {
                     <div>
                         <hr />
                         <p>Brandon Gregori</p>
-                        <a href="mailto: brandon@brandon-gregori.com" target='_blank' rel="noopener noreferrer">brandon@brandon-gregori.com</a>
+                        <a href="mailto: brandon@brandon-gregori.com" target='_blank' rel="noopener noreferrer" tabIndex={isModalOpen ? -1 : 0}>brandon@brandon-gregori.com</a>
                         <p>(720) 260-4150</p>
                         <hr />
                     </div>
@@ -180,8 +199,8 @@ const ContactMe = () => {
             </div>
             <EmailModal
                 clearFields={handleClearFields}
-                emailSuccessful={emailSuccessful} 
-                setEmailSuccessful={setEmailSuccessful} 
+                isEmailSuccessful={isEmailSuccessful}
+                setIsEmailSuccessful={setIsEmailSuccessful}
                 isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}
                 name={emailModalMessage}
             />

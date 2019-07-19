@@ -5,7 +5,7 @@ import projectData from '../helpers/projectData';
 import '../styles/modal-project.css';
 import '../styles/modal-transitions.css';
 
-type mouseEvent = React.SyntheticEvent<HTMLDivElement>;
+type mouseEvent = React.SyntheticEvent<HTMLDivElement | HTMLImageElement>;
 
 interface IProps {
     currentProject: number
@@ -16,7 +16,18 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
     const [scrollState, setScrollState] = useState<string | null>('inactive');
     const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
 
+    const { name, date, image, alt, caption, site, repo, desc }  = projectData[currentProject];
+
+    const handleImageKeyPress = (e: KeyboardEvent) => {
+        console.log(e.key)
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            !isImageVisible && setIsImageVisible(true)
+        }
+    }
+
     const handleToggleImage = (e: mouseEvent) => {
+        console.log('image')
         if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'image-close')) {
             
             return;
@@ -24,8 +35,6 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
         setIsImageVisible(!isImageVisible);
 
     }
-
-    const project = projectData[currentProject];
 
     const handleCloseModal = (e: mouseEvent) => {
         if (!(e.target instanceof HTMLElement) || e.target.dataset.util !== 'modal-close' ||  isImageVisible) {
@@ -37,6 +46,13 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
 
     const description = useRef<HTMLDivElement | null>(null);
     const article = useRef<HTMLElement | null>(null);
+    const imageElement = useRef<HTMLImageElement | null>(null)
+
+    useEffect(() => {
+        if (isModalOpen) {
+            setTimeout(() => article.current && article.current!.focus(), 1000)
+        }
+    }, [isModalOpen])
 
     useEffect(() => {
         let scrollTimeout: number;
@@ -44,21 +60,14 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
         const currentArticle = article.current!;
 
         const handleUpdateArticle = () => {
-            currentDesc.innerHTML = project.desc;
+            currentDesc.innerHTML = desc;
             currentArticle.scrollTo(0, 0);
         };
         handleUpdateArticle();
 
         const handleKeyPress = (e: KeyboardEvent) => {
-            if (e.key !== 'Escape') {
-    
-                return;
-            }
-
-            if (isImageVisible) {
-                setIsImageVisible(false);
-            } else {
-                setIsModalOpen(false);
+            if (e.key === 'Escape') {
+                isImageVisible ? setIsImageVisible(false): setIsModalOpen(false);
             }
         }
         window.addEventListener('keydown', handleKeyPress);
@@ -75,7 +84,7 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
             currentArticle.removeEventListener('scroll', handleScrollBarVisibility);
         }
     }, 
-        [project.desc, isImageVisible, setIsImageVisible, setIsModalOpen, article, description]
+        [desc, isImageVisible, setIsImageVisible, setIsModalOpen, article, description, imageElement]
     );
 
     return (
@@ -90,27 +99,31 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
                         <h1>{projectData[currentProject].name}</h1>
                         <div data-util='modal-close' className='close-button close-modal' onClick={handleCloseModal}>X</div>
                     </header>
-                    <article className={`modal-article ${scrollState}`} ref={article}>
+                    <article tabIndex={1} className={`modal-article ${scrollState}`} ref={article} >
                         <div className='hide-scroll' />
-                        <div className='article-content'>
-                            <div className='date'>{project.date}</div>
+                        <div className='article-content' >
+                            <div className='date'>{date}</div>
                             <div className='image'>
                                 <img 
-                                    src={require(`../images/${project.image}`)} 
-                                    alt='Screenshot of the website.'
+                                    onFocus={() => imageElement.current!.addEventListener('keydown', handleImageKeyPress) }
+                                    onBlur={() => imageElement.current!.removeEventListener('keydown', handleImageKeyPress) }
                                     onClick={handleToggleImage}
+                                    ref={imageElement}
+                                    src={require(`../images/${image}`)} 
+                                    alt={alt}
+                                    tabIndex={0}
                                 />
-                                <figcaption>{project.caption}</figcaption>
+                                <figcaption>{caption}</figcaption>
                             </div>
                             <div className='project-links'>
-                                { 
-                                    project.site 
+                                {
+                                    site 
                                     && 
-                                    <a href={project.site} target='_blank' rel="noopener noreferrer">Try it out!</a> 
+                                    <a href={site} target='_blank' rel="noopener noreferrer">Try it out!</a> 
                                 }
-                                <a href={project.repo} target='_blank' rel="noopener noreferrer">Source Code</a>
+                                <a href={repo} target='_blank' rel="noopener noreferrer">Source Code</a>
                             </div>
-                            <div className='description' ref={description}>{project.desc}</div>
+                            <div className='description' ref={description}>{desc}</div>
                         </div>
                     </article>
                 </div>
@@ -118,8 +131,8 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
             <ModalImage
                 handleToggleImage={handleToggleImage}
                 isImageVisible={isImageVisible}
-                image={project.image}
-                name={project.name}
+                image={image}
+                name={name}
             />
         </div>
     )
