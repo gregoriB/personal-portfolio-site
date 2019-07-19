@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EmailModal from './EmailModal'; 
 import '../styles/contact-page.css';
 import '../styles/modal-email.css';
@@ -108,6 +108,23 @@ const ContactMe = () => {
         handleEmailValidation();
         handleNameValidation();
     }
+
+    useEffect(() => {
+        const handleKeyPress = (e: KeyboardEvent) => {
+            if (e.key !== 'Escape') {
+    
+                return;
+            }
+            setIsModalOpen(false);
+        }
+        window.addEventListener('keydown', handleKeyPress);
+        
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        }
+    }, 
+        [setIsModalOpen]
+    );
 
     return (
         <div className='contact-page page'>

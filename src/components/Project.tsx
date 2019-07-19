@@ -32,10 +32,10 @@ const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
     }
     
     return (
-        <div className='project-border' id={id}>
-            <div ref={project} className='project' onClick={handleClick}>
+        <div className='project-border' id={id} >
+            <div ref={project} className='project'  >
                 <p className='click-message'>Click to see more</p>
-                <h1 className='project-name'>{name}</h1>
+                <h1><button className='project-name' onClick={handleClick} tabIndex={0}>{name}</button></h1>
             </div>
         </div>
     );

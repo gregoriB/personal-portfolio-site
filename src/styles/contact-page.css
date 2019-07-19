@@ -30,7 +30,7 @@
 .contact-form input {
     font-size: .9vw;
     color: white;
-    outline: none;
+    /* outline: none; */
     border: thin solid transparent;
     padding: .7vw;
     display: block;
@@ -58,7 +58,7 @@
 
 .contact-form textarea {
     font-size: .9vw;
-    outline: none;
+    /* outline: none; */
     box-sizing: border-box;
     border: thin solid transparent;
     color: white;
@@ -90,7 +90,6 @@
     width: 7vw;
     height: 2vw;
     line-height: 1vw;
-    outline: none;
     text-shadow: 0 .5px .3px var(--dark);
     box-shadow: 0 0 1px var(--colorful-shadow);
 
