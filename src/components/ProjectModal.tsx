@@ -19,7 +19,6 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
     const { name, date, image, alt, caption, site, repo, desc }  = projectData[currentProject];
 
     const handleImageKeyPress = (e: KeyboardEvent) => {
-        console.log(e.key)
         if (e.key === 'Enter') {
             e.preventDefault();
             !isImageVisible && setIsImageVisible(true)
@@ -27,7 +26,6 @@ const ProjectModal: React.SFC<IProps> = ({ currentProject }) => {
     }
 
     const handleToggleImage = (e: mouseEvent) => {
-        console.log('image')
         if (!(e.target instanceof HTMLElement) || (isImageVisible && e.target.dataset.util !== 'image-close')) {
             
             return;
