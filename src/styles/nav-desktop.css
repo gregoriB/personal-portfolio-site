@@ -129,8 +129,8 @@
     background-image: url('../SVGs/linkedin.svg');
 }
 
-.desktop-nav #facebook-image:after {
-    background-image: url('../SVGs/facebook.svg');
+.desktop-nav #twitter-image:after {
+    background-image: url('../SVGs/twitter.svg');
 }
 
 @media (hover: hover) {

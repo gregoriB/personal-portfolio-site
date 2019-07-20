@@ -185,8 +185,8 @@
     background-image: url('../SVGs/linkedin.svg');
 }
 
-.mobile-nav #facebook-image {
-    background-image: url('../SVGs/facebook.svg');
+.mobile-nav #twitter-image {
+    background-image: url('../SVGs/twitter.svg');
 }
 
 @media (max-height: 450px) {

@@ -109,7 +109,7 @@ const NavBar = () => {
             <div className='social-media'>
                 <a href='https://github.com/gregoriB' id='github-image' {...navBarJSXProperties} {...anchorTagProperties}>Github</a>
                 <a href='https://www.linkedin.com/in/brandon-gregori' id='linkedin-image' {...navBarJSXProperties} {...anchorTagProperties}>Linkedin</a>
-                <a href='https://www.facebook.com/people/Brandon-Gregori/1128665234' id='facebook-image' {...navBarJSXProperties} {...anchorTagProperties}>Facebook</a>
+                <a href='https://twitter.com/BrandonGregori' id='twitter-image' {...navBarJSXProperties} {...anchorTagProperties}>Twitter</a>
             </div>
         </div>
     )
