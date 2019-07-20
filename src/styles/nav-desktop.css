@@ -24,7 +24,7 @@
 .desktop-nav .links {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     height: 50vh;
     margin-left: .7vw;
@@ -32,6 +32,9 @@
 }
 
 .desktop-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Inconsolata', monospace;
     font-family: 'Amita';
     font-weight: normal;
@@ -46,8 +49,8 @@
     outline: none;
 }
 
-.desktop-nav a:nth-of-type(2) {
-    margin-top: 18vh;
+.desktop-nav .links a:nth-of-type(1) {
+    margin-top: 30vh;
 }
 
 .desktop-nav .active-link {
@@ -58,21 +61,44 @@
 }
 
 .desktop-nav a.logo {
-    width: 3.5vw;
-    min-height: 3vw;
-    display: flex;
-    align-items: center;
-    transform: rotate(-5deg);
-    font-size: 2.6vw;
-    font-weight: normal;
-    font-family: 'Italianno';
-    color: var(--colorful-lite);
     opacity: 1;
-    text-shadow: 2px 2px 2px var(--colorful-shadow);
-    margin-top: 5vh;
+    background: none;
+    position: absolute;
+    left: -10%;
+    top: 7%;
+    width: 90%;
+    height: 8vh;
+    margin: 0;
 }
 
-.desktop-nav .active-link.logo {
+.desktop-nav a.logo div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    font-family: 'Italianno';
+    clip-path: polygon( 0% 35%, 100% 10%, 100% 57%, 0% 100%);  
+    /* top-left, top-right, bottom-right, bottom-left */
+    background-image: linear-gradient(to right, #d0e9e957 0%, #d0e9e957 10%);
+    background-repeat: no-repeat;
+    background-size: 12vw;
+    animation: logo-shimmer 10s linear 0s infinite;
+}
+
+@keyframes logo-shimmer {
+    0% { background-position: -15vw 0; }
+    5% { background-position: -15vw 0; }
+    85% { background-position: 15vw 0; }
+    100% { background-position: 15vw 0; }
+}
+
+.desktop-nav a.logo div span {
+    font-size: 1.1vw;
+    color: var(--colorful-bright);
+    text-shadow: none;
+    transform: rotate(-8deg);
     text-shadow: 2px 2px 2px var(--colorful-shadow);
 }
 
@@ -161,11 +187,5 @@
     .desktop-nav .social-media a:hover:after, .desktop-nav .social-media a:focus:after {
         opacity: .1;
         transition-delay: 0s;
-    }
-
-    .desktop-nav .logo:hover, .logo:focus {
-        text-shadow: 3px 3px 3px var(--colorful-shadow);
-        transition: .2s;
-        color: var(--colorful-lite);
     }
 }

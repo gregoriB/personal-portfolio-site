@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect } from 'react';
+import React, {  useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
@@ -9,6 +9,7 @@ type MouseClick = React.MouseEvent<any>;
 
 const NavBar = () => {
     const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile, isModalOpen } = useContext(StateContext);
+    const [ logo, setLogo ] = useState('');
 
     const handleUpdateDisplay = (e: MouseClick) => {
         const { name, type } = e.currentTarget.dataset;
@@ -61,18 +62,40 @@ const NavBar = () => {
         'data-type': 'social-media'
     }
 
+    useEffect(()=> {
+        const dynamicLogo = (text: string = ''): string => {
+            const generateBannerText = () => {
+                const coinToss = Math.random();
+                return coinToss <= .33 ? 'brandon-gregori.com' : coinToss > .33 && coinToss < .66 ? 'Web Developer' : 'Brandon Gregori';
+            }
+            const maximumLoops = 1000;
+            let newBannerText = generateBannerText(), counter = 0;
+            while (newBannerText === text && counter < maximumLoops) {
+                newBannerText = generateBannerText();
+                counter++;
+            }
+            return newBannerText;
+        }
+        setLogo('Brandon Gregori');
+        const randomNames = window.setInterval(() => setLogo(prevState => dynamicLogo(prevState)), 10000);
+
+        return () => {
+            clearInterval(randomNames)
+        }
+    }, [])
+
     return (
         <div className={handleAssignNavClass()}>
+            <Link 
+                className={`logo ${currentPage === 'Home' ? 'active-link' : 'inactive-link'}`}
+                data-name='Home'
+                to='Home'
+                {...navBarJSXProperties}
+            >
+                <div><span>{logo}</span></div>
+            </Link>
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
-                <Link 
-                    className={`logo ${currentPage === 'Home' ? 'active-link' : 'inactive-link'}`}
-                    data-name='Home'
-                    to='Home'
-                    {...navBarJSXProperties}
-                >
-                    BG
-                </Link>
                 <Link 
                     className={currentPage === 'Home' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
