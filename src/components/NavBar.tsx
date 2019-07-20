@@ -5,17 +5,23 @@ import { StateContext } from '../contexts/StateContext';
 import '../styles/nav-mobile.css';
 import '../styles/nav-desktop.css';
 
-type MouseClick = React.MouseEvent<any>
+type MouseClick = React.MouseEvent<any>;
 
 const NavBar = () => {
     const { currentPage, setCurrentPage, isNavOpen, setIsNavOpen, isMobile, setIsMobile, isModalOpen } = useContext(StateContext);
 
     const handleUpdateDisplay = (e: MouseClick) => {
-        if (e.currentTarget.dataset.name === currentPage) {
+        const { name, type } = e.currentTarget.dataset;
+        if (name === currentPage) {
             
             return e.preventDefault();
         }
-        setCurrentPage(e.currentTarget.dataset.name);
+        if (type === 'social-media') {
+
+            return e.currentTarget.blur();
+        }
+
+        !e.ctrlKey && setCurrentPage(e.currentTarget.dataset.name);
         setIsNavOpen(false);
     }
 
@@ -51,7 +57,8 @@ const NavBar = () => {
 
     const anchorTagProperties = {
         target: '_blank',
-        rel: "noopener noreferrer"
+        rel: "noopener noreferrer",
+        'data-type': 'social-media'
     }
 
     return (
