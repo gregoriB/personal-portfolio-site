@@ -31,7 +31,7 @@ const App: React.SFC<any> = () => {
 
   useEffect(() => {
     const location = window.location.pathname.replace(/\//gi, '');
-    if (location && currentPage !== location) {
+    if (currentPage !== location) {
       setCurrentPage(location);
     }
   });
