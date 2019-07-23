@@ -1,0 +1,25 @@
+.error-page .stylish-container {
+    align-items: center;
+}
+
+.error-page .stylish-container h1 {
+    color: var(--colorful-bright);
+    opacity: 0;
+    visibility: hidden;
+    transition: .8s;
+}
+
+.error-page.item-enter h1 {
+    opacity: 0;
+    visibility: visible;
+}
+
+.error-page.item-enter-active h1 {
+    opacity: 1;
+    transition: opacity .2s ease-in .5s;
+}
+
+.error-page.item-enter-done h1 {
+    opacity: 1;
+    visibility: visible;
+}

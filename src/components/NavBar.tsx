@@ -89,7 +89,7 @@ const NavBar = () => {
             <Link 
                 className={`logo ${currentPage === 'Home' ? 'active-link' : 'inactive-link'}`}
                 data-name='Home'
-                to='Home'
+                to='/'
                 {...navBarJSXProperties}
             >
                 <div><span>{logo}</span></div>
@@ -99,7 +99,7 @@ const NavBar = () => {
                 <Link 
                     className={currentPage === 'Home' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
-                    to='Home'
+                    to='/'
                     {...navBarJSXProperties}
                 >
                     Home

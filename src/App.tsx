@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { StateContext } from './contexts/StateContext';
 
@@ -8,12 +8,13 @@ import Home from './components/HomePage';
 import AboutMe from './components/AboutPage';
 import Projects from './components/ProjectsPage';
 import ContactMe from './components/ContactPage';
+import ErrorPage from './components/ErrorPage';
 
 import './styles/normalize.css';
 import './App.css';
 
 const App: React.SFC<any> = () => {
-  const { isModalOpen, setIsModalOpen, isMobile, currentPage } = useContext(StateContext);
+  const { isModalOpen, setIsModalOpen, isMobile, currentPage, setCurrentPage } = useContext(StateContext);
   const [previousPage, setPreviousPage] = useState<string>('Home');
   const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
 
@@ -21,6 +22,17 @@ const App: React.SFC<any> = () => {
     enter: isMobile ? 500 : isFirstLoad ? 1200 : 2000,
     exit: isMobile ? 500 : isFirstLoad ? 1200 : 2000
   };
+
+  const handleError = () => {
+    setCurrentPage('Error');
+
+    return <ErrorPage />
+  }
+
+  useEffect(() => {
+    const location = window.location.pathname.replace(/\//gi, '');
+    setCurrentPage(location || 'Home');
+  });
 
   useEffect(() => {
     setIsFirstLoad(false);
@@ -53,6 +65,8 @@ const App: React.SFC<any> = () => {
                 <Route exact path='/About-Me' component={AboutMe} />
                 <Route exact path='/Projects' component={Projects} />
                 <Route exact path='/Contact-Me' component={ContactMe} />
+                <Route exact path='/404' render={handleError} />
+                <Redirect from='*' to='/404' />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
