@@ -24,14 +24,16 @@ const App: React.SFC<any> = () => {
   };
 
   const handleError = () => {
-    setCurrentPage('Error');
+    setCurrentPage('404');
 
     return <ErrorPage />
   }
 
   useEffect(() => {
     const location = window.location.pathname.replace(/\//gi, '');
-    setCurrentPage(location || 'Home');
+    if (location && currentPage !== location) {
+      setCurrentPage(location);
+    }
   });
 
   useEffect(() => {
