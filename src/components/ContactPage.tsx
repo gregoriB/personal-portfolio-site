@@ -29,7 +29,7 @@ const ContactMe = () => {
 
     const formJSXProperties = {
         onBlur: (e:Blur) => handleChooseValidationType(e),
-        tabIndex: isModalOpen ? -1 : 0,
+        tabIndex: isModalOpen ? -1 : undefined,
         disabled: numEmailsSent > 2
     }
     

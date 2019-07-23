@@ -51,8 +51,8 @@ const NavBar = () => {
         }
     }, [setIsMobile]);
 
-    const navBarJSXProperties = { 
-        tabIndex: isModalOpen ? -1 : 0,
+    const navBarJSXProperties = {
+        tabIndex: isModalOpen ? -1 : undefined,
         onClick: (e: MouseClick) => handleUpdateDisplay(e)
     }
 

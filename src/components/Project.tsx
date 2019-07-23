@@ -35,7 +35,7 @@ const Project: React.SFC<IProps> = ({ name, index, setProject, id }) => {
         <div className='project-border' id={id} onClick={handleClick}>
             <div ref={project} className='project'  >
                 <p className='click-message'>Click to see more</p>
-                <h1><button className='project-name' tabIndex={isModalOpen ? -1 : 0}>{name}</button></h1>
+                <h1><button className='project-name' tabIndex={isModalOpen ? -1 : undefined}>{name}</button></h1>
             </div>
         </div>
     );
