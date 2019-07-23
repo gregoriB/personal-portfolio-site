@@ -30,13 +30,6 @@ const App: React.SFC<any> = () => {
   }
 
   useEffect(() => {
-    const location = window.location.pathname.replace(/\//gi, '');
-    if (currentPage !== location) {
-      setCurrentPage(location);
-    }
-  });
-
-  useEffect(() => {
     setIsFirstLoad(false);
   }, [setIsFirstLoad])
 
