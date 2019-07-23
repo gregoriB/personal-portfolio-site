@@ -87,7 +87,7 @@ const NavBar = () => {
     return (
         <div className={handleAssignNavClass()}>
             <Link 
-                className={`logo ${currentPage === 'Home' ? 'active-link' : 'inactive-link'}`}
+                className={`logo ${currentPage === 'Home' || currentPage === '' ? 'active-link' : 'inactive-link'}`}
                 data-name='Home'
                 to='/'
                 {...navBarJSXProperties}
@@ -97,7 +97,7 @@ const NavBar = () => {
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
-                    className={currentPage === 'Home' ? 'active-link' : 'inactive-link'}
+                    className={currentPage === 'Home' || currentPage === '' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
                     to='/'
                     {...navBarJSXProperties}
