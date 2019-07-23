@@ -163,7 +163,7 @@
 
 @media (hover: hover) {
     .desktop-nav a:hover, a:focus {
-        /* color: var(--gray); */
+        color: var(--gray);
     }
 
     .desktop-nav a:focus {
