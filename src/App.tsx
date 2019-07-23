@@ -23,12 +23,6 @@ const App: React.SFC<any> = () => {
     exit: isMobile ? 500 : isFirstLoad ? 1200 : 2000
   };
 
-  const handleError = () => {
-    setCurrentPage('404');
-
-    return <ErrorPage />
-  }
-
   useEffect(() => {
     setIsFirstLoad(false);
   }, [setIsFirstLoad])
@@ -60,7 +54,7 @@ const App: React.SFC<any> = () => {
                 <Route exact path='/About-Me' component={AboutMe} />
                 <Route exact path='/Projects' component={Projects} />
                 <Route exact path='/Contact-Me' component={ContactMe} />
-                <Route exact path='/404' render={handleError} />
+                <Route exact path='/404' component={ErrorPage} />
                 <Redirect from='*' to='/404' />
               </Switch>
             </CSSTransition>
