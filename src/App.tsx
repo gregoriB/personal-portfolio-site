@@ -14,7 +14,7 @@ import './styles/normalize.css';
 import './App.css';
 
 const App: React.SFC<any> = () => {
-  const { isModalOpen, setIsModalOpen, isMobile, currentPage, setCurrentPage } = useContext(StateContext);
+  const { isModalOpen, setIsModalOpen, isMobile, currentPage } = useContext(StateContext);
   const [previousPage, setPreviousPage] = useState<string>('Home');
   const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
 
