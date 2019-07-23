@@ -65,9 +65,9 @@
     background: none;
     position: absolute;
     left: -10%;
-    top: 7%;
+    top: 2%;
     width: 90%;
-    height: 8vh;
+    height: 20vh;
     margin: 0;
 }
 
@@ -79,18 +79,19 @@
     align-items: center;
     font-weight: normal;
     font-family: 'Italianno';
-    clip-path: polygon( 0% 35%, 100% 10%, 100% 57%, 0% 100%);  
+    clip-path: polygon( 0% 60%, 100% 10%, 100% 29%, 0% 90%);  
     /* top-left, top-right, bottom-right, bottom-left */
     background-image: linear-gradient(to right, #d0e9e957 0%, #d0e9e957 10%);
     background-repeat: no-repeat;
     background-size: 12vw;
+    transform: rotate(20deg);
     animation: logo-shimmer 10s linear 0s infinite;
 }
 
 @keyframes logo-shimmer {
     0% { background-position: -15vw 0; }
     5% { background-position: -15vw 0; }
-    85% { background-position: 15vw 0; }
+    95% { background-position: 15vw 0; }
     100% { background-position: 15vw 0; }
 }
 
@@ -98,8 +99,9 @@
     font-size: 1.1vw;
     color: var(--colorful-bright);
     text-shadow: none;
-    transform: rotate(-8deg);
+    transform: rotate(-30deg);
     text-shadow: 2px 2px 2px var(--colorful-shadow);
+    margin-top: -1.2vh;
 }
 
 .desktop-nav .social-media {
