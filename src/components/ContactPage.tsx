@@ -154,7 +154,7 @@ const ContactMe = () => {
                 <form className='contact-form contact' onSubmit={handleSubmit}>
                     <h1>Message Me</h1>
                     <input 
-                        placeholder={numEmailsSent > 2 ? '' : 'name'}
+                        placeholder={numEmailsSent > 2 ? '' : 'Name'}
                         name='name'
                         value={nameField.text}
                         onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
@@ -163,7 +163,7 @@ const ContactMe = () => {
 
                     />
                     <input 
-                        placeholder={numEmailsSent > 2 ? '' : 'your_email@email.com'}
+                        placeholder={numEmailsSent > 2 ? '' : 'your.address@email.com'}
                         name='email'
                         value={emailField.text}
                         onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
@@ -171,7 +171,7 @@ const ContactMe = () => {
                         {...formJSXProperties}
                     />
                     <textarea
-                        placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Enter your message here'}
+                        placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Type a message here...'}
                         name='message'
                         value={textField.text}
                         onChange={ e => setTextField({ ...textField, text: e.target.value}) }
@@ -181,6 +181,7 @@ const ContactMe = () => {
                     <button 
                         type='submit' 
                         className={!isFormValid ? 'disabled' : undefined}
+                        aria-label='submit'
                     >
                         SEND
                     </button>

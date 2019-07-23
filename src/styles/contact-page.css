@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
-    opacity: 0;
+    /* opacity: 0; */
     color: white;
     padding: 1vw;
     width: 23vw;
@@ -72,7 +72,8 @@
 
 .contact-form *::placeholder {
     color: var(--gray);
-    opacity: .7;
+    /* opacity: .7; */
+    opacity: 0;
 }
 
 .contact-form button {
@@ -132,7 +133,7 @@ input:-webkit-autofill {
 }
 
 .contact-info {
-    opacity: 0;
+    /* opacity: 0; */
     margin-top: 5vw;
     width: 35%;
     align-self: flex-start;
@@ -314,6 +315,18 @@ input:-webkit-autofill {
         transition-timing-function: cubic-bezier(0,.88,.43,.99);
     }
 
+    .contact-page.item-enter-done .contact-form input::placeholder {
+        opacity: .7;
+        transition: opacity .5s;
+        transition-delay: .1s;
+    }
+
+    .contact-page.item-enter-done .contact-form textarea::placeholder {
+        opacity: .7;
+        transition: opacity .5s;
+        transition-delay: .1s;
+    }
+
     .contact-page.item-enter-done .contact-form {
         opacity: 1;
     }                   
@@ -326,7 +339,31 @@ input:-webkit-autofill {
     .contact-page.item-exit-active .contact-form {
         transform: translateX(100vw);
         transition: transform .5s;
-        transition-delay: .55s;
+        transition-delay: .5s;
+    }
+
+    .contact-page.item-exit .contact-form input {
+        opacity: .7;
+        transition: opacity 0s;
+        transition-delay: 0s;
+    }
+
+    .contact-page.item-exit .contact-form textarea {
+        opacity: .7;
+        transition: opacity 0s;
+        transition-delay: 0s;
+    }
+
+    .contact-page.item-exit .contact-form input::placeholder {
+        opacity: 0;
+        transition: opacity .3s;
+        transition-delay: 0s;
+    }
+
+    .contact-page.item-exit .contact-form textarea::placeholder {
+        opacity: 0;
+        transition: opacity .3s;
+        transition-delay: 0s;
     }
 
     .contact-page.item-enter .contact-info {
