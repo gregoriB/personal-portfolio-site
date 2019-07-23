@@ -79,7 +79,7 @@
     align-items: center;
     font-weight: normal;
     font-family: 'Italianno';
-    clip-path: polygon( 0% 60%, 100% 12%, 100% 28%, 0% 92%);  
+    clip-path: polygon( 0% 55%, 100% 12%, 100% 28%, 0% 92%);  
     /* top-left, top-right, bottom-right, bottom-left */
     background-image: linear-gradient(to right, #d0e9e957 0%, #d0e9e957 100%);
     background-repeat: no-repeat;
