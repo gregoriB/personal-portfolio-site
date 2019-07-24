@@ -38,8 +38,11 @@ const App: React.SFC<any> = ({ history }) => {
   }, [currentPage]);
 
   useEffect(() => {
-    window.setInterval(() => console.log(currentPage), 1000);
-  })
+    let interval = window.setInterval(() => console.log(currentPage), 1000);
+    return () => {
+      clearInterval(interval)
+    }
+  }, [currentPage])
 
   return (
     <div className='app'>
