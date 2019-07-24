@@ -87,7 +87,7 @@ const NavBar = () => {
     return (
         <div className={handleAssignNavClass()}>
             <Link 
-                className={`logo ${currentPage === 'Home' || currentPage === '' ? 'active-link' : 'inactive-link'}`}
+                className='logo'
                 data-name='Home'
                 to='/'
                 {...navBarJSXProperties}

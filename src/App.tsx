@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { StateContext } from './contexts/StateContext';
 
@@ -13,9 +13,8 @@ import ErrorPage from './components/ErrorPage';
 import './styles/normalize.css';
 import './App.css';
 
-const App: React.SFC<any> = () => {
-  const { isModalOpen, setIsModalOpen, isMobile, currentPage } = useContext(StateContext);
-  const [previousPage, setPreviousPage] = useState<string>('Home');
+const App: React.SFC<any> = ({ history }) => {
+  const { isModalOpen, setIsModalOpen, isMobile, currentPage, setCurrentPage } = useContext(StateContext);
   const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
 
   let transitions = {
@@ -24,17 +23,20 @@ const App: React.SFC<any> = () => {
   };
 
   useEffect(() => {
+    const location = window.location.pathname.replace(/\//, '');
+    if (location !== currentPage) {
+      setCurrentPage(location);
+    }
+  }, [window.location.pathname, currentPage, history, setCurrentPage])
+
+  useEffect(() => {
     setIsFirstLoad(false);
   }, [setIsFirstLoad])
 
   useEffect(() => {
-    if (currentPage !== previousPage) {
-      window.scrollTo(0, 0);
-      isModalOpen && setIsModalOpen(false);
-      setPreviousPage(currentPage);
-    }
-
-  }, [previousPage, currentPage, isModalOpen, setIsModalOpen, isMobile, transitions]);
+    window.scrollTo(0, 0);
+    isModalOpen && setIsModalOpen(false);
+  }, [currentPage]);
 
   return (
     <div className='app'>
@@ -65,4 +67,4 @@ const App: React.SFC<any> = () => {
   );
 }
 
-export default App;
+export default withRouter(App);
