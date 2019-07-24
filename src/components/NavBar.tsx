@@ -97,7 +97,7 @@ const NavBar = () => {
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
-                    className={currentPage === 'Home' || currentPage === '' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'home' || currentPage === '' ? 'active-link' : 'inactive-link'}
                     data-name='Home'
                     to='/'
                     {...navBarJSXProperties}
@@ -105,7 +105,7 @@ const NavBar = () => {
                     Home
                 </Link>
                 <Link 
-                    className={currentPage === 'About-Me' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'about-me' ? 'active-link' : 'inactive-link'}
                     data-name='About-Me' 
                     to='About-Me'
                     {...navBarJSXProperties}
@@ -113,7 +113,7 @@ const NavBar = () => {
                     About Me
                 </Link>
                 <Link 
-                    className={currentPage === 'Projects' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'projects' ? 'active-link' : 'inactive-link'}
                     data-name='Projects' 
                     to='Projects'
                     {...navBarJSXProperties}
@@ -121,7 +121,7 @@ const NavBar = () => {
                     My Projects
                 </Link>
                 <Link 
-                    className={currentPage === 'Contact-Me' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'contact-me' ? 'active-link' : 'inactive-link'}
                     data-name='Contact-Me' 
                     to='Contact-Me'
                     {...navBarJSXProperties}
