@@ -1,5 +1,5 @@
 import React, {  useContext, useEffect, useState, useRef } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
 import '../styles/nav-mobile.css';
@@ -13,6 +13,10 @@ const NavBar = () => {
 
     const handleUpdateDisplay = (e: MouseClick) => {
         const { name, type } = e.currentTarget.dataset;
+        if (name === currentPage || ( name === 'Home' && !currentPage )) {	
+
+            return e.preventDefault();	
+        }
         if (type === 'social-media') {
 
             return e.currentTarget.blur();
