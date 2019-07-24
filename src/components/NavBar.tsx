@@ -13,7 +13,7 @@ const NavBar = () => {
 
     const handleUpdateDisplay = (e: MouseClick) => {
         const { name, type } = e.currentTarget.dataset;
-        if (name === currentPage) {
+        if (name === currentPage || ( name === 'Home' && !currentPage )) {
             
             return e.preventDefault();
         }
@@ -22,7 +22,7 @@ const NavBar = () => {
             return e.currentTarget.blur();
         }
 
-        !e.ctrlKey && setCurrentPage(e.currentTarget.dataset.name);
+        !e.ctrlKey && setCurrentPage(name);
         setIsNavOpen(false);
     }
 

@@ -14,7 +14,7 @@ import './styles/normalize.css';
 import './App.css';
 
 const App: React.SFC<any> = ({ history }) => {
-  const { isModalOpen, setIsModalOpen, isMobile, currentPage, setCurrentPage } = useContext(StateContext);
+  const { isMobile, currentPage, setCurrentPage } = useContext(StateContext);
   const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
 
   let transitions = {
@@ -35,7 +35,6 @@ const App: React.SFC<any> = ({ history }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    isModalOpen && setIsModalOpen(false);
   }, [currentPage]);
 
   return (
