@@ -105,9 +105,9 @@ const NavBar = () => {
                     Home
                 </Link>
                 <Link 
-                    className={currentPage.toLowerCase() === 'about-me' ? 'active-link' : 'inactive-link'}
-                    data-name='About-Me' 
-                    to='About-Me'
+                    className={currentPage.toLowerCase() === 'about' ? 'active-link' : 'inactive-link'}
+                    data-name='About' 
+                    to='About'
                     {...navBarJSXProperties}
                 >
                     About Me
@@ -121,9 +121,9 @@ const NavBar = () => {
                     My Projects
                 </Link>
                 <Link 
-                    className={currentPage.toLowerCase() === 'contact-me' ? 'active-link' : 'inactive-link'}
-                    data-name='Contact-Me' 
-                    to='Contact-Me'
+                    className={currentPage.toLowerCase() === 'contact' ? 'active-link' : 'inactive-link'}
+                    data-name='Contact' 
+                    to='Contact'
                     {...navBarJSXProperties}
                 >
                     Contact Info

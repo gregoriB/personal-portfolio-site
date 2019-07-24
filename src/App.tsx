@@ -37,13 +37,6 @@ const App: React.SFC<any> = ({ history }) => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  useEffect(() => {
-    let interval = window.setInterval(() => console.log(currentPage), 1000);
-    return () => {
-      clearInterval(interval)
-    }
-  }, [currentPage])
-
   return (
     <div className='app'>
       <Router>
@@ -59,9 +52,9 @@ const App: React.SFC<any> = ({ history }) => {
               <Switch location={location}>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Home' component={Home} />
-                <Route exact path='/About-Me' component={AboutMe} />
+                <Route exact path='/About' component={AboutMe} />
                 <Route exact path='/Projects' component={Projects} />
-                <Route exact path='/Contact-Me' component={ContactMe} />
+                <Route exact path='/Contact' component={ContactMe} />
                 <Route exact path='/404' component={ErrorPage} />
                 <Redirect from='*' to='/404' />
               </Switch>
