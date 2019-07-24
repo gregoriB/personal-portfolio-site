@@ -54,7 +54,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
         }
         let interval = 0;        
         if (!isMobile && page) {
-            interval = window.setInterval(() => handleMove(), 16);
+            interval = window.setInterval(() => handleMove(), window.innerWidth * .0032);
         } else {
             clearInterval(interval);
         }
@@ -72,7 +72,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
                 width: size.width,
                 height: size.height,
                 backgroundImage: `url(${require(`../SVGs/${skill}.svg`)})`,
-                opacity: level / 4
+                opacity: level / 8
             }}
         />
     )
