@@ -1,5 +1,5 @@
-import React, {  useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {  useContext, useEffect, useState, useRef } from 'react';
+import { Link, Route } from 'react-router-dom';
 import { StateContext } from '../contexts/StateContext';
 
 import '../styles/nav-mobile.css';
@@ -13,10 +13,6 @@ const NavBar = () => {
 
     const handleUpdateDisplay = (e: MouseClick) => {
         const { name, type } = e.currentTarget.dataset;
-        if (name === currentPage || ( name === 'Home' && !currentPage )) {
-            
-            return e.preventDefault();
-        }
         if (type === 'social-media') {
 
             return e.currentTarget.blur();
@@ -62,6 +58,12 @@ const NavBar = () => {
         'data-type': 'social-media'
     }
 
+    const logoRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        logoRef.current!.focus();
+    }, [currentPage])
+
     useEffect(()=> {
         const dynamicLogo = (text: string = ''): string => {
             const generateBannerText = () => {
@@ -86,18 +88,22 @@ const NavBar = () => {
 
     return (
         <div className={handleAssignNavClass()}>
-            <Link 
-                className='logo'
-                data-name='Home'
-                to='/'
-                {...navBarJSXProperties}
-            >
-                <div><span>{logo}</span></div>
-            </Link>
+            <div className='logo' ref={logoRef} tabIndex={-1}>
+                <div>
+                    <Link
+                        className={currentPage.toLowerCase() === 'home' || currentPage === '' ? 'active-link' : undefined}
+                        data-name='Home'
+                        to='/'
+                        {...navBarJSXProperties}
+                    >
+                        {logo}
+                    </Link>
+                </div>
+            </div>
             <button onClick={handleToggleNav}>|||</button>
             <div className='links'>
                 <Link 
-                    className={currentPage.toLowerCase() === 'home' || currentPage === '' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'home' || currentPage === '' ? 'active-link' : undefined}
                     data-name='Home'
                     to='/'
                     {...navBarJSXProperties}
@@ -105,7 +111,7 @@ const NavBar = () => {
                     Home
                 </Link>
                 <Link 
-                    className={currentPage.toLowerCase() === 'about' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'about' ? 'active-link' : undefined}
                     data-name='About' 
                     to='About'
                     {...navBarJSXProperties}
@@ -113,7 +119,7 @@ const NavBar = () => {
                     About Me
                 </Link>
                 <Link 
-                    className={currentPage.toLowerCase() === 'projects' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'projects' ? 'active-link' : undefined}
                     data-name='Projects' 
                     to='Projects'
                     {...navBarJSXProperties}
@@ -121,7 +127,7 @@ const NavBar = () => {
                     My Projects
                 </Link>
                 <Link 
-                    className={currentPage.toLowerCase() === 'contact' ? 'active-link' : 'inactive-link'}
+                    className={currentPage.toLowerCase() === 'contact' ? 'active-link' : undefined}
                     data-name='Contact' 
                     to='Contact'
                     {...navBarJSXProperties}
