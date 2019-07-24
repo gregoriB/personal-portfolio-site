@@ -37,6 +37,10 @@ const App: React.SFC<any> = ({ history }) => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  useEffect(() => {
+    window.setInterval(() => console.log(currentPage), 1000);
+  })
+
   return (
     <div className='app'>
       <Router>
