@@ -54,7 +54,7 @@ const MovingObject: React.SFC<IProps> = ({ skill, index, level, page }) => {
         }
         let interval = 0;        
         if (!isMobile && page) {
-            interval = window.setInterval(() => handleMove(), window.innerWidth * .0032);
+            interval = window.setInterval(() => handleMove(), 32);
         } else {
             clearInterval(interval);
         }
