@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
-import EmailModal from './EmailModal'; 
-import '../styles/contact-page.css';
-import '../styles/modal-email.css';
-import { StateContext } from '../contexts/StateContext';
+import React, { useState, useEffect, useContext } from "react";
+import EmailModal from "./EmailModal";
+import "../styles/contact-page.css";
+import "../styles/modal-email.css";
+import { StateContext } from "../contexts/StateContext";
 
 type FormElem = React.ChangeEvent<HTMLFormElement>;
-type Blur = React.SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>
+type Blur = React.SyntheticEvent<HTMLInputElement | HTMLTextAreaElement>;
 
 const formInitialState = {
-    text: '', 
+    text: "",
     isValid: null
-}
+};
 
 const ContactMe = () => {
     interface MyObject {
@@ -24,48 +24,50 @@ const ContactMe = () => {
     const [textField, setTextField] = useState<MyObject>(formInitialState);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [isEmailSuccessful, setIsEmailSuccessful] = useState<boolean>(false);
-    const [emailModalMessage, setEmailModalMessage] = useState<string>('');
+    const [emailModalMessage, setEmailModalMessage] = useState<string>("");
     const [numEmailsSent, setNumEmailsSent] = useState<number>(0);
 
     const formJSXProperties = {
-        onBlur: (e:Blur) => handleChooseValidationType(e),
+        onBlur: (e: Blur) => chooseValidationType(e),
         tabIndex: isModalOpen ? -1 : undefined,
         disabled: numEmailsSent > 2
-    }
-    
-    const isFormValid: boolean | null = nameField.isValid && emailField.isValid && textField.text.length > 0;
+    };
 
-    const handleChooseValidationType = (e: Blur) : void => {
-        switch(e.currentTarget.name) {
-            case 'name':
-                handleNameValidation();
+    const isFormValid: boolean | null =
+        nameField.isValid && emailField.isValid && textField.text.length > 0;
+
+    const chooseValidationType = (e: Blur): void => {
+        switch (e.currentTarget.name) {
+            case "name":
+                nameValidation();
                 break;
-            case 'email':
-                handleEmailValidation();
+            case "email":
+                emailValidation();
                 break;
-            case 'message':
-                handleTextAreaValidation();
+            case "message":
+                textAreaValidation();
                 break;
             default:
                 break;
         }
-    }
+    };
 
-    const handleNameValidation = (): void => {
+    const nameValidation = (): void => {
         const name = nameField.text;
         const re = /^[A-Z a-z]*$/;
-        const isValid : boolean = re.test(name) && name.length > 0 && name.length <= 60;
+        const isValid: boolean =
+            re.test(name) && name.length > 0 && name.length <= 60;
         setNameField({
             ...nameField,
             text: nameField.text,
             isValid
         });
         if (!isValid) {
-            setErrorMessage('Please enter your name')
+            setErrorMessage("Please enter your name");
         }
     };
 
-    const handleEmailValidation = (): void => {
+    const emailValidation = (): void => {
         const email = emailField.text;
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const isValid = re.test(email);
@@ -75,11 +77,11 @@ const ContactMe = () => {
             isValid
         });
         if (!isValid) {
-            setErrorMessage('Please enter a valid email address')
+            setErrorMessage("Please enter a valid email address");
         }
     };
 
-    const handleTextAreaValidation = (): void => {
+    const textAreaValidation = (): void => {
         const text = textField.text;
         const isValid = text.length > 0;
         setTextField({
@@ -88,126 +90,167 @@ const ContactMe = () => {
             isValid
         });
         if (!isValid) {
-            setErrorMessage('Please add a message')
+            setErrorMessage("Please add a message");
         }
     };
 
-    const handleClearFields = () => {
+    const clearFields = () => {
         setNameField(formInitialState);
         setEmailField(formInitialState);
         setTextField(formInitialState);
-    }
+    };
 
-    const handleSendDataToServer = async (e:FormElem) => {
+    const sendDataToServer = async (e: FormElem) => {
         e.preventDefault();
         try {
             const response = await fetch("/.netlify/functions/sendEmail", {
-              method: 'POST',
-              body: JSON.stringify({ "name": nameField.text, "email": emailField.text, "text": textField.text  }),
-              headers: { 'Content-Type': 'text/plain' } 
+                method: "POST",
+                body: JSON.stringify({
+                    name: nameField.text,
+                    email: emailField.text,
+                    text: textField.text
+                }),
+                headers: { "Content-Type": "text/plain" }
             });
             const json: string = await response.json();
             if (json) {
-                setNumEmailsSent(numEmailsSent + 1)
+                setNumEmailsSent(numEmailsSent + 1);
                 setEmailModalMessage(JSON.parse(json).name);
                 setIsEmailSuccessful(true);
             }
-            setTimeout(() => !json && setIsEmailSuccessful(true), 7000)
+            setTimeout(() => !json && setIsEmailSuccessful(true), 7000);
         } catch (error) {
             console.error(error);
             setIsEmailSuccessful(true);
         }
-    }
+    };
 
-    const handleSubmit = (e: FormElem ) => {
-        e.preventDefault()
+    const handleSubmit = (e: FormElem) => {
+        e.preventDefault();
         if (isFormValid) {
             return (
-                setIsModalOpen(true),
-                setErrorMessage(''),
-                handleSendDataToServer(e)
-            )
+                setIsModalOpen(true), setErrorMessage(""), sendDataToServer(e)
+            );
         }
-        handleTextAreaValidation();
-        handleEmailValidation();
-        handleNameValidation();
-    }
+        textAreaValidation();
+        emailValidation();
+        nameValidation();
+    };
 
     useEffect(() => {
         const handleKeyPress = (e: KeyboardEvent) => {
-            if (e.key !== 'Escape') {
-    
+            if (e.key !== "Escape") {
                 return;
             }
             setIsModalOpen(false);
-        }
-        window.addEventListener('keydown', handleKeyPress);
-        
+        };
+        window.addEventListener("keydown", handleKeyPress);
+
         return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        }
+            window.removeEventListener("keydown", handleKeyPress);
+        };
     }, [setIsModalOpen]);
 
     return (
-        <div className='contact-page page'>
+        <div className="contact-page page">
             <div className="stylish-container">
-                <form className='contact-form contact' onSubmit={handleSubmit}>
+                <form className="contact-form contact" onSubmit={handleSubmit}>
                     <h1>Message Me</h1>
-                    <input 
-                        placeholder={numEmailsSent > 2 ? '' : 'Name'}
-                        name='name'
+                    <input
+                        placeholder={numEmailsSent > 2 ? "" : "Your Name"}
+                        name="name"
                         value={nameField.text}
-                        onChange={ e => setNameField({ ...nameField, text: e.target.value }) }
-                        className={ nameField.isValid ? 'valid' : nameField.isValid === null ? '' : 'invalid' }
+                        onChange={e =>
+                            setNameField({ ...nameField, text: e.target.value })
+                        }
+                        className={
+                            nameField.isValid
+                                ? "valid"
+                                : nameField.isValid === null
+                                ? ""
+                                : "invalid"
+                        }
                         {...formJSXProperties}
-
                     />
-                    <input 
-                        placeholder={numEmailsSent > 2 ? '' : 'your.address@email.com'}
-                        name='email'
+                    <input
+                        placeholder={
+                            numEmailsSent > 2 ? "" : "your_email@address.com"
+                        }
+                        name="email"
                         value={emailField.text}
-                        onChange={ e => setEmailField({ ...emailField, text: e.target.value }) }
-                        className={ emailField.isValid ? 'valid' : emailField.isValid === null ? '' : 'invalid' }
+                        onChange={e =>
+                            setEmailField({
+                                ...emailField,
+                                text: e.target.value
+                            })
+                        }
+                        className={
+                            emailField.isValid
+                                ? "valid"
+                                : emailField.isValid === null
+                                ? ""
+                                : "invalid"
+                        }
                         {...formJSXProperties}
                     />
                     <textarea
-                        placeholder={numEmailsSent > 2 ? 'EMAILS DISABLED' : 'Type a message here...'}
-                        name='message'
+                        placeholder={
+                            numEmailsSent > 2
+                                ? "EMAILS DISABLED"
+                                : "Please leave a message here..."
+                        }
+                        name="message"
                         value={textField.text}
-                        onChange={ e => setTextField({ ...textField, text: e.target.value}) }
-                        className={ textField.isValid ? 'valid' : textField.isValid === null ? '' : 'invalid' }
+                        onChange={e =>
+                            setTextField({ ...textField, text: e.target.value })
+                        }
+                        className={
+                            textField.isValid
+                                ? "valid"
+                                : textField.isValid === null
+                                ? ""
+                                : "invalid"
+                        }
                         {...formJSXProperties}
                     />
-                    <button 
-                        type='submit' 
-                        className={!isFormValid ? 'disabled' : undefined}
-                        aria-label='submit'
+                    <button
+                        type="submit"
+                        className={!isFormValid ? "disabled" : undefined}
+                        aria-label="submit"
                     >
                         SEND
                     </button>
-                    <strong className='message'>{errorMessage}</strong>
+                    <strong className="message">{errorMessage}</strong>
                 </form>
-                <div className='contact-info contact'>
+                <div className="contact-info contact">
                     <h2>Or contact me directly:</h2>
                     <div>
                         <hr />
                         <p>Brandon Gregori</p>
-                        <a href="mailto: brandon@brandon-gregori.com" target='_blank' rel="noopener noreferrer" tabIndex={isModalOpen ? -1 : 0}>brandon@brandon-gregori.com</a>
+                        <a
+                            href="mailto: brandon@brandon-gregori.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            tabIndex={isModalOpen ? -1 : 0}
+                        >
+                            brandon@brandon-gregori.com
+                        </a>
                         <p>(720) 260-4150</p>
                         <hr />
                     </div>
                 </div>
             </div>
             <EmailModal
-                clearFields={handleClearFields}
+                clearFields={clearFields}
                 isEmailSuccessful={isEmailSuccessful}
                 setIsEmailSuccessful={setIsEmailSuccessful}
-                isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
                 name={emailModalMessage}
             />
-            <div className='decorative-1' />
+            <div className="decorative-1" />
         </div>
     );
-}
+};
 
 export default ContactMe;
