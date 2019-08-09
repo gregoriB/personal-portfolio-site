@@ -197,7 +197,7 @@ const ContactMe = () => {
                         placeholder={
                             numEmailsSent > 2
                                 ? "EMAILS DISABLED"
-                                : "Please leave a message here..."
+                                : "Leave a message for me here..."
                         }
                         name="message"
                         value={textField.text}
