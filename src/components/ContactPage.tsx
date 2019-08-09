@@ -28,7 +28,7 @@ const ContactMe = () => {
     const [numEmailsSent, setNumEmailsSent] = useState<number>(0);
 
     const formJSXProperties = {
-        onBlur: (e: Blur) => chooseValidationType(e),
+        onBlur: (e: Blur) => determineFieldToValidate(e),
         tabIndex: isModalOpen ? -1 : undefined,
         disabled: numEmailsSent > 2
     };
@@ -36,23 +36,23 @@ const ContactMe = () => {
     const isFormValid: boolean | null =
         nameField.isValid && emailField.isValid && textField.text.length > 0;
 
-    const chooseValidationType = (e: Blur): void => {
+    const determineFieldToValidate = (e: Blur): void => {
         switch (e.currentTarget.name) {
             case "name":
-                nameValidation();
+                validateNameField();
                 break;
             case "email":
-                emailValidation();
+                validateEmailField();
                 break;
             case "message":
-                textAreaValidation();
+                validateTextField();
                 break;
             default:
                 break;
         }
     };
 
-    const nameValidation = (): void => {
+    const validateNameField = (): void => {
         const name = nameField.text;
         const re = /^[A-Z a-z]*$/;
         const isValid: boolean =
@@ -67,7 +67,7 @@ const ContactMe = () => {
         }
     };
 
-    const emailValidation = (): void => {
+    const validateEmailField = (): void => {
         const email = emailField.text;
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const isValid = re.test(email);
@@ -81,7 +81,7 @@ const ContactMe = () => {
         }
     };
 
-    const textAreaValidation = (): void => {
+    const validateTextField = (): void => {
         const text = textField.text;
         const isValid = text.length > 0;
         setTextField({
@@ -132,9 +132,9 @@ const ContactMe = () => {
                 setIsModalOpen(true), setErrorMessage(""), sendDataToServer(e)
             );
         }
-        textAreaValidation();
-        emailValidation();
-        nameValidation();
+        validateTextField();
+        validateEmailField();
+        validateNameField();
     };
 
     useEffect(() => {
