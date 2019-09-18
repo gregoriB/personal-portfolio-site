@@ -36,6 +36,7 @@ const AboutMe = () => {
                             <li>REST APIs</li>
                             <li>JSON</li>
                             <li>MySQL</li>
+                            <li>PostgreSQL</li>
                             <li>MongoDB</li>
                             <li>Mongoose</li>
                         </ul>
@@ -43,12 +44,12 @@ const AboutMe = () => {
                     <section className="about-me-container">
                         <h2>Plans and goals:</h2>
                         <p>
-                            I aspire to be a professional full-stack engineer with a focus on front-end
-                            development. I love using React.js and would enjoy working with it full-time,
-                            but I'm also very open to learning new frameworks and other technologies.
-                            Soon I intend to get more into mobile development with progressive web apps
-                            and React-native, and building serverless websites using AWS lambda functions
-                            and other cloud computing services.
+                            I'm a full-stack engineer with a focus on front-end development. I love using
+                            React.js and would enjoy working with it full-time, but I'm also very open to
+                            learning new frameworks and other technologies. Soon I intend to get more
+                            into mobile development with progressive web apps and React-native, and
+                            building serverless websites using AWS lambda functions and other cloud
+                            computing services.
                         </p>
                     </section>
                 </div>

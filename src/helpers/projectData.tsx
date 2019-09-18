@@ -1,30 +1,28 @@
 const projectData = [
     {
-        name: "The Verge Top Articles API Site",
-        date: "September 12th, 2018",
-        image: "theVerge-top-stories.jpg",
-        alt: "The verge dot com top stories site.  Shows a banner with the verge logo, and only the to two news stories.",
-        caption: 'A site that fetches the top 10 trending articles from TheVerge.com using an API from newsapi.org.',
-        site: "https://theverge-top-stories.herokuapp.com/",
-        repo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
-        id: "the-verge",
+        name: "Super Meter Arcade Ecommerce Shop",
+        date: "September 18, 2019",
+        image: "super-meter-arcade.jpg",
+        alt:
+            "The front page of the store-front.  It shows a large banner with a statement about their competitive prices, and a carousel of featured items.",
+        caption:
+            "A full-stack ecommerce site.  Features product searching/filtering, and CRUD functionality for user registration and authentication.",
+        site: "https://super-meter-arcade.herokuapp.com",
+        repo: "https://github.com/gregoriB/super-meter-arcade-ecommerce-site",
+        id: "super-meter-arcade",
         desc: `
             <h2>Technologies used:</h2>
-            <p>CSS, Node, Express, EJS</p>
+            <p>Typescript, React, Redux, Node, Express, SQL, Bootstrap</p>
 
             <h2>The goal:</h2>
-            <p>I wanted to improve my CSS styling abilities, advance my skills with git, gain experience with fetching data from an external API using asynchronous 
-            requests, and to improve at mobile responsive design skills.</p>
+            <p>I made this to improve at full-stack development, and to gain more experience with Redux, Typescript, and SQL databases.</p>
 
             <h2>Obstacles overcome:</h2>
-            <p>Since the API data is from a 3rd party source that is likely scraped from the theVerge.com website, some of it needed to be altered to make it
-            work nicely with my site.  For example, the image urls had spaces in them, which did not work in the browser.  I had to dynamically replace
-            the spaces with "%20" when necessary for the images to render correctly. I also had to learn how to use .ENV files to export my API key so I could
-            safely upload it to my public github repo without also making my key public.</p>
+            <p>The largest hurdles faced with this project were on the SQL side of things.  I had only done MySQL courses up to this point, so I was diving deeper into things and solving problems as they arose.  The entire application is tied pretty heavily to the database.  For instance, doing a search returns database query results dynamically as the user is typing into the search bar.  Another issue was with product categorization.  My first instinct is to add an array of categories to each product in the table, but that's not the relational DB way.  So instead I made a "categories" table and a table to connect it with the "products" table.  Then I had to make a view that would query that table to return all of the product info along with the category array I needed for proper filtering.</p>
+            <p>User authentication was another hurdle because I had to learn how data encryption and hashing works.  For security reasons, I didn't want passwords being stored as raw text on my server.  There also ended up being a lot of time spent getting more comfortable with both Redux, and Typescript.  I also decided to use <em>styled-components</em> this time around to help keep the styling more organized, and <em>Bootstrap</em> to save time with things like modals and the home page carousel.  Lastly, I made the backend using MySQL, but ended up switching that over to Postgres before hosting.  I did this because Heroku natively supports Postgres DBs, and because I wanted to learn Postgres.</p>
             
             <h2>Final thoughts:</h2>
-            <p>Even through it's one of my earliest projects, the quality of this site still holds up today. For my first solo website build, I couldn't be happier with how
-            it turned out.</p>
+            <p>With this project I wanted to create something that could conceivably be a real-world application.  While I didn't get to implement every feature I had in mind, such as persistent user shopping carts and automated discounts during sales events, I think the finished product is very polished, functional, and user-friendly.</p>
             <span>- Brandon Gregori</span>
         `
     },
@@ -32,8 +30,10 @@ const projectData = [
         name: "A Simple Video Game",
         date: "October 27th, 2018",
         image: "react-game.jpg",
-        alt: 'Screen shot of the game.  They are on stage eight with a score of 53,750 and 12 seconds left on the timer.  There are 15 pieces left for the player to pick up before starting the next level.',
-        caption: 'A simple video game made with React.js.  Pick up the objects to increase your score as much as possible before the timer reaches zero.',
+        alt:
+            "Screen shot of the game.  They are on stage eight with a score of 53,750 and 12 seconds left on the timer.  There are 15 pieces left for the player to pick up before starting the next level.",
+        caption:
+            "A simple video game made with React.js.  Pick up the objects to increase your score as much as possible before the timer reaches zero.",
         site: "https://gregorib-react-game.netlify.com/",
         repo: "https://github.com/gregoriB/simple-game-React",
         id: "react-game",
@@ -60,11 +60,42 @@ const projectData = [
         `
     },
     {
+        name: "The Verge Top Articles API Site",
+        date: "September 12th, 2018",
+        image: "theVerge-top-stories.jpg",
+        alt:
+            "The verge dot com top stories site.  Shows a banner with the verge logo, and only the to two news stories.",
+        caption:
+            "A site that fetches the top 10 trending articles from TheVerge.com using an API from newsapi.org.",
+        site: "https://theverge-top-stories.herokuapp.com/",
+        repo: "https://github.com/gregoriB/the-verge-top-stories-NodeJS",
+        id: "the-verge",
+        desc: `
+            <h2>Technologies used:</h2>
+            <p>CSS, Node, Express, EJS</p>
+
+            <h2>The goal:</h2>
+            <p>I wanted to improve my CSS styling abilities, advance my skills with git, gain experience with fetching data from an external API using asynchronous 
+            requests, and to improve at mobile responsive design skills.</p>
+
+            <h2>Obstacles overcome:</h2>
+            <p>Since the API data is from a 3rd party source that is likely scraped from the theVerge.com website, some of it needed to be altered to make it
+            work nicely with my site.  For example, the image urls had spaces in them, which did not work in the browser.  I had to dynamically replace
+            the spaces with "%20" when necessary for the images to render correctly. I also had to learn how to use .ENV files to export my API key so I could
+            safely upload it to my public github repo without also making my key public.</p>
+            
+            <h2>Final thoughts:</h2>
+            <p>Even through it's one of my earliest projects, the quality of this site still holds up today. For my first solo website build, I couldn't be happier with how
+            it turned out.</p>
+            <span>- Brandon Gregori</span>
+        `
+    },
+    {
         name: "Personal Portfolio Site",
         date: "June 17th, 2019",
         image: "portfolio-site.jpg",
         alt: 'the "about me" page for this website.',
-        caption: 'My personal portfolio site, made with React.js and Node.js.',
+        caption: "My personal portfolio site, made with React.js and Node.js.",
         site: null,
         repo: "https://github.com/gregoriB/personal-portfolio-site",
         id: "portfolio-site",
@@ -96,8 +127,9 @@ const projectData = [
         name: "3rd Strike Frame Data App",
         date: "February 24th, 2019",
         image: "3rd-strike-app.jpg",
-        alt: 'A table displaying the special move frame data for Chun Li',
-        caption: 'Street Fighter III: Third Strike frame data.  Made using React.js and data scraped from a different website.',
+        alt: "A table displaying the special move frame data for Chun Li",
+        caption:
+            "Street Fighter III: Third Strike frame data.  Made using React.js and data scraped from a different website.",
         site: "https://3rd-strike-frame-data.netlify.com/",
         repo: "https://github.com/gregoriB/3rd-strike-app",
         id: "third-strike",
@@ -128,8 +160,10 @@ const projectData = [
         name: "3rd Strike Web Scraper Extension",
         date: "January 28th, 2019",
         image: "3rd-strike-extension.jpg",
-        alt: 'A screenshot of the browser extension page showing that the extension is installed and displaying the drop down info for the extension.',
-        caption: 'A browser extension for scraping data from http://ensabahnur.free.fr/BastonNew.  The data is JSON-formatted and used in my 3rd Strike app.',
+        alt:
+            "A screenshot of the browser extension page showing that the extension is installed and displaying the drop down info for the extension.",
+        caption:
+            "A browser extension for scraping data from http://ensabahnur.free.fr/BastonNew.  The data is JSON-formatted and used in my 3rd Strike app.",
         site: null,
         repo: "https://github.com/gregoriB/3rd-strike-web-scraper-browser-extension",
         id: "browser-extension",
@@ -159,8 +193,10 @@ const projectData = [
         name: "HTML5 Video Player",
         date: "January 4th, 2019",
         image: "video-player.jpg",
-        alt: 'A video player with "Big Buck Bunny" playing on it.  The video is not in fullscreen and there is a button below it for choosing a different video file',
-        caption: 'A video player made with HTML5 and Javascript.  Features fullscreen functionality and responsive controls.',
+        alt:
+            'A video player with "Big Buck Bunny" playing on it.  The video is not in fullscreen and there is a button below it for choosing a different video file',
+        caption:
+            "A video player made with HTML5 and Javascript.  Features fullscreen functionality and responsive controls.",
         site: "https://codepen.io/gregorib/full/vvReVG",
         repo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
         id: "video-player",
@@ -191,12 +227,12 @@ const projectData = [
         name: "HTML5 Canvas Drawing App",
         date: "December 29th, 2018",
         image: "html5-drawing-app.jpg",
-        alt: 'A very bad drawing of a tree and a small house on a sunny day.',
-        caption: 'An HTML5 Canvas drawing app with jpeg download functionality.',
+        alt: "A very bad drawing of a tree and a small house on a sunny day.",
+        caption: "An HTML5 Canvas drawing app with jpeg download functionality.",
         site: "https://codepen.io/gregorib/full/PXJryw",
         repo: "https://github.com/gregoriB/drawing-app-HTML5-Canvas",
         id: "drawing-app",
-            desc: `
+        desc: `
             <h2>Technologies used:</h2>
             <p>HTML5, CSS, Javascript</p>
 
@@ -216,6 +252,6 @@ const projectData = [
             <span>- Brandon Gregori</span>
         `
     }
-]
+];
 
 export default projectData;
