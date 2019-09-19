@@ -177,7 +177,7 @@ const projectData = [
 
             <h2>Obstacles overcome:</h2>
             <p>I had to learn how to make a browser extension first.  Once I did that, it was really just a matter of looping through the table HTML, getting the 
-            relevant data, putting it into an object, and then downloading it into a JSON file.  Most of the difficulty came form navigating through a table HTML that was clearly not meant for that, and then 
+            relevant data, putting it into an object, and then downloading it into a JSON file.  Most of the difficulty came from navigating through a table HTML that was clearly not meant for that, and then 
             creating the conditional logic to organize the data.  There were a lot of nested loops, but luckily the dataset is small enough that the process still runs 
             extremely fast.  Then I just had to learn how to download the object into a JSON file.</p>
             
