@@ -118,8 +118,7 @@ const projectData = [
             
             <h2>Final thoughts:</h2>
             <p>This was as great experience and I'm very happy with how it turned out.  I had my doubts while developing it, mostly because I was spending more time 
-            working on my portfolio site than any of the projects in my porfolio, but the end result is so worth it.  Given that this was my most advanced project to date, I
-            decided to also include it in my portfolio.</p>
+            working on my portfolio site than any of the projects I had for my porfolio at the time, but the end result was so worth it.</p>
             <span>- Brandon Gregori</span>
         `
     },
