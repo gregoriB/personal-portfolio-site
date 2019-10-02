@@ -19,7 +19,7 @@ const AboutMe = () => {
                             <li>Typescript</li>
                             <li>React</li>
                             <li>Redux</li>
-                            <li>Jest</li>
+                            <li>Testing</li>
                             <li>AJAX</li>
                             <li>SCSS</li>
                             <li>Bootstrap</li>
@@ -35,8 +35,7 @@ const AboutMe = () => {
                             <li>EJS</li>
                             <li>REST APIs</li>
                             <li>JSON</li>
-                            <li>MySQL</li>
-                            <li>PostgreSQL</li>
+                            <li>SQL</li>
                             <li>MongoDB</li>
                             <li>Mongoose</li>
                         </ul>
