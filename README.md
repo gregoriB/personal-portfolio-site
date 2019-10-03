@@ -9,7 +9,7 @@
 
 <div style='width: 900px; margin: 0 auto;'>
 
-Made with React, Typescript, CSS, and AWS Lambda functions for using NodeMailer. Check out the `node-express-server` branch for a Node and Express server version.
+Made with React, TypeScript, CSS, and AWS Lambda functions for using NodeMailer. Check out the `node-express-server` branch for a Node and Express server version.
 
 </div>
 

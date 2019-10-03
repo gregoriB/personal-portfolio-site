@@ -3,15 +3,15 @@
     opacity: 0;
     z-index: 10;
     width: 100vw;
-    transition: opacity, .5s;
-    transition-delay: .3s;
+    transition: opacity, 0.5s;
+    transition-delay: 0.3s;
     background-color: rgba(0, 0, 0, 0.65);
 }
 
 .modal.image-modal.active {
     visibility: visible;
     opacity: 1;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
 }
 
 .image-modal .image-container {
@@ -24,21 +24,20 @@
     margin: 0 auto;
     width: 80%;
     height: 80%;
-    transition: .2s;
+    transition: 0.2s;
     transition-timing-function: ease-in;
 }
 
 .image-modal.active .image-container {
     opacity: 1;
-    transition: .5s;
-    transition-delay: .7s;
+    transition: 0.5s;
+    transition-delay: 0.7s;
 }
 
 .image-modal .image-container img {
     user-select: none;
     height: 100%;
     background: black;
-
 }
 
 .modal.image-modal .close-image {
@@ -47,30 +46,30 @@
     top: 0;
     right: 2vw;
     color: white;
-    text-shadow: 0 0 .1rem black;
+    text-shadow: 0 0 0.1rem black;
     background: rgba(0, 0, 0, 0.5);
     color: var(--gray);
-    transition: .2s;
-    opacity: .8;
+    transition: 0.2s;
+    opacity: 0.8;
 }
 
 .image-modal .close-image:active {
     background: rgba(255, 255, 255);
     color: white;
-    transform: scale(.95);
+    transform: scale(0.95);
 }
 
 @media (hover: hover) {
     .modal.image-modal .close-image:hover {
         background-color: var(--gray);
         color: var(--lite);
-        text-shadow: 0 0 .1rem var(--shadow);
+        text-shadow: 0 0 0.1rem var(--shadow);
         opacity: 1;
-        transition: .2s;
+        transition: 0.2s;
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .article-content .image-modal {
         user-select: none;
     }
@@ -80,7 +79,7 @@
         height: auto;
     }
 
-    .image-modal .image-container img{
+    .image-modal .image-container img {
         width: 95%;
     }
 
@@ -89,9 +88,8 @@
     }
 }
 
-
 @media (max-height: 450px) {
-    .image-modal .image-container img{
+    .image-modal .image-container img {
         max-width: 100%;
     }
 }

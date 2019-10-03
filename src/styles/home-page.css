@@ -29,7 +29,7 @@
 }
 
 .home-container p {
-    letter-spacing: .1vw;
+    letter-spacing: 0.1vw;
     margin: 0;
 }
 
@@ -41,7 +41,7 @@
     text-shadow: 0 0 1px var(--gray);
     border-radius: 1vw;
     border: thin solid var(--gray);
-    transition: .2s;
+    transition: 0.2s;
     transition-property: backround-color, color;
 }
 
@@ -50,12 +50,12 @@
         background-color: var(--gray);
         color: var(--dark);
         text-shadow: 0 0 1px var(--dark);
-        transition: .4s;
+        transition: 0.4s;
         transition-property: backround-color, color;
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .home {
         width: 100vw;
     }
@@ -86,7 +86,7 @@
     }
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 1301px) {
     .home.item-enter .home-container {
         opacity: 1;
     }
@@ -98,8 +98,8 @@
 
     .home.item-enter-active .home-container h1 {
         transform: translateX(0) rotate(-3deg);
-        transition: transform .5s;
-        transition-timing-function: cubic-bezier(0,.88,.43,.99);
+        transition: transform 0.5s;
+        transition-timing-function: cubic-bezier(0, 0.88, 0.43, 0.99);
         transition-delay: 1s;
     }
 
@@ -108,9 +108,9 @@
     }
 
     .home.item-enter-done .home-container h1 {
-        transform: translateY(.5vw) rotate(0);
-        transition: transform .2s;
-        transition-timing-function: cubic-bezier(.5,.01,1,.3);
+        transform: translateY(0.5vw) rotate(0);
+        transition: transform 0.2s;
+        transition-timing-function: cubic-bezier(0.5, 0.01, 1, 0.3);
     }
 
     .home.item-exit .home-container {
@@ -119,13 +119,13 @@
     }
 
     .home.item-exit .home-container h1 {
-        transform: translateY(.5vw);
+        transform: translateY(0.5vw);
     }
 
     .home.item-exit-active .home-container h1 {
         transform: translateX(100vw);
-        transition: transform .5s;
-        transition-delay: .4s;
+        transition: transform 0.5s;
+        transition-delay: 0.4s;
     }
 
     .home.item-enter .home-container p {
@@ -138,42 +138,42 @@
 
     .home.item-enter-done .home-container p {
         opacity: 1;
-        transition: opacity .5s;
-        transition-delay: .23s;
+        transition: opacity 0.5s;
+        transition-delay: 0.23s;
     }
 
     .home.item-enter-done .resume {
         opacity: 1;
-        transition: opacity .5s;
-        transition-delay: .3s;
+        transition: opacity 0.5s;
+        transition-delay: 0.3s;
     }
 
     .home.item-exit .home-container p {
         transform: translateX(100vw);
-        transition: transform .5s;
-        transition-delay: .5s;
+        transition: transform 0.5s;
+        transition-delay: 0.5s;
     }
 
     .home.item-exit .home-container .resume {
         transform: translateX(100vw);
-        transition: transform .5s;
-        transition-delay: .6s;
+        transition: transform 0.5s;
+        transition-delay: 0.6s;
     }
 
     .home.item-appear .home-container {
         opacity: 1;
     }
-    
+
     .home.item-appear .home-container h1 {
         opacity: 1;
         transform: translateX(100vw);
     }
-    
+
     .home.item-appear-active .home-container h1 {
         transform: translateX(0) rotate(-3deg);
-        transition: transform .5s;
-        transition-timing-function: cubic-bezier(0,.88,.43,.99);
-        transition-delay: .2s;
+        transition: transform 0.5s;
+        transition-timing-function: cubic-bezier(0, 0.88, 0.43, 0.99);
+        transition-delay: 0.2s;
     }
 
     .home.item-appear .home-container p {

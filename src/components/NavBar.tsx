@@ -46,10 +46,9 @@ const NavBar = () => {
 
     useEffect(() => {
         const checkIfMobile = () => {
-            const mobileScreen = { width: 1100, height: 400 };
+            const mobileScreen = { width: 1300, height: 400 };
             const isDisplayMobile =
-                window.innerWidth < mobileScreen.width ||
-                window.innerHeight < mobileScreen.height;
+                window.innerWidth < mobileScreen.width || window.innerHeight < mobileScreen.height;
             setIsMobile(isDisplayMobile);
         };
         checkIfMobile();
@@ -112,8 +111,7 @@ const NavBar = () => {
                 <div>
                     <Link
                         className={
-                            currentPage.toLowerCase() === "home" ||
-                            currentPage === ""
+                            currentPage.toLowerCase() === "home" || currentPage === ""
                                 ? "active-link"
                                 : undefined
                         }
@@ -129,8 +127,7 @@ const NavBar = () => {
             <div className="links">
                 <Link
                     className={
-                        currentPage.toLowerCase() === "home" ||
-                        currentPage === ""
+                        currentPage.toLowerCase() === "home" || currentPage === ""
                             ? "active-link"
                             : undefined
                     }
@@ -141,11 +138,7 @@ const NavBar = () => {
                     Home
                 </Link>
                 <Link
-                    className={
-                        currentPage.toLowerCase() === "about"
-                            ? "active-link"
-                            : undefined
-                    }
+                    className={currentPage.toLowerCase() === "about" ? "active-link" : undefined}
                     data-name="About"
                     to="About"
                     {...navBarJSXProperties}
@@ -153,11 +146,7 @@ const NavBar = () => {
                     About Me
                 </Link>
                 <Link
-                    className={
-                        currentPage.toLowerCase() === "projects"
-                            ? "active-link"
-                            : undefined
-                    }
+                    className={currentPage.toLowerCase() === "projects" ? "active-link" : undefined}
                     data-name="Projects"
                     to="Projects"
                     {...navBarJSXProperties}
@@ -165,11 +154,7 @@ const NavBar = () => {
                     My Projects
                 </Link>
                 <Link
-                    className={
-                        currentPage.toLowerCase() === "contact"
-                            ? "active-link"
-                            : undefined
-                    }
+                    className={currentPage.toLowerCase() === "contact" ? "active-link" : undefined}
                     data-name="Contact"
                     to="Contact"
                     {...navBarJSXProperties}

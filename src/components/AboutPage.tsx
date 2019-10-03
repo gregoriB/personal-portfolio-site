@@ -15,8 +15,8 @@ const AboutMe = () => {
                         <ul>
                             <li>HTML5</li>
                             <li>CSS3</li>
-                            <li>Javascript/ES6+</li>
-                            <li>Typescript</li>
+                            <li>JavaScript/ES6+</li>
+                            <li>TypeScript</li>
                             <li>React</li>
                             <li>Redux</li>
                             <li>Testing</li>
@@ -24,7 +24,7 @@ const AboutMe = () => {
                             <li>SCSS</li>
                             <li>Bootstrap</li>
                             <li>Git</li>
-                            <li>Linux</li>
+                            <li>Linux(Debian)</li>
                         </ul>
                     </section>
                     <section className="about-me-container">
@@ -35,7 +35,7 @@ const AboutMe = () => {
                             <li>EJS</li>
                             <li>REST APIs</li>
                             <li>JSON</li>
-                            <li>SQL</li>
+                            <li>MySQL/PostgreSQL</li>
                             <li>MongoDB</li>
                             <li>Mongoose</li>
                         </ul>

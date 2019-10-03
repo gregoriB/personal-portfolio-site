@@ -1,25 +1,25 @@
 @font-face {
-    font-family: 'Amita';
-	src: url('../fonts/Amita-Regular.ttf') format('truetype'),
-         url('../fonts/Amita-Bold.tff') format('truetype');
+    font-family: "Amita";
+    src: url("../fonts/Amita-Regular.ttf") format("truetype"),
+        url("../fonts/Amita-Bold.tff") format("truetype");
     font-display: block;
 }
 
 @font-face {
-    font-family: 'Dancing Script';
-	src: url('../fonts/DancingScript-Regular.ttf') format('truetype'),
-         url('../fonts/DancingScript-Bold.tff') format('truetype');
+    font-family: "Dancing Script";
+    src: url("../fonts/DancingScript-Regular.ttf") format("truetype"),
+        url("../fonts/DancingScript-Bold.tff") format("truetype");
     font-display: block;
 }
 
 @font-face {
-    font-family: 'Italianno';
-	src: url('../fonts/Italianno-Regular.ttf') format('truetype');
+    font-family: "Italianno";
+    src: url("../fonts/Italianno-Regular.ttf") format("truetype");
     font-display: block;
 }
 
 body {
-    font-family: 'Amita', cursive;
+    font-family: "Amita", cursive;
     background-color: #252627;
 }
 
@@ -46,7 +46,7 @@ body {
     font-style: italic;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     #no-script {
         text-align: center;
         margin-top: 10vh;

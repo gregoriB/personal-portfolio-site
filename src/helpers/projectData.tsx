@@ -12,14 +12,14 @@ const projectData = [
         id: "super-meter-arcade",
         desc: `
             <h2>Technologies used:</h2>
-            <p>Typescript, React, Redux, Node, Express, SQL, Bootstrap</p>
+            <p>TypeScript, React, Redux, Node, Express, SQL, Bootstrap</p>
 
             <h2>The goal:</h2>
-            <p>I made this to improve at full-stack development, and to gain more experience with Redux, Typescript, and SQL databases.</p>
+            <p>I made this to improve at full-stack development, and to gain more experience with Redux, TypeScript, and SQL databases.</p>
 
             <h2>Obstacles overcome:</h2>
             <p>The largest hurdles faced with this project were on the SQL side of things.  I had only done MySQL courses up to this point, so I was diving deeper into things and solving problems as they arose.  The entire application is tied pretty heavily to the database.  For instance, doing a search returns database query results dynamically as the user is typing into the search bar, so I had to figure out how to do that.  Another hurdle was with product categorization.  My first instinct was to add an array of categories to each product in the table, but that's not the relational DB way.  So instead I made a "categories" table and another table to join it with the "products" table.  Then I had to make a query that would return all of the product info along with the category array I needed for proper filtering.</p>
-            <p>For security reasons, I didn't want passwords being stored as raw text on my server.  I had to learn how data encryption and hashing works for that.  There also ended up being a lot of time spent getting more comfortable with both Redux and Typescript, and I decided to learn <em>styled-components</em> this time around to help keep the styling more organized, and <em>react-bootstrap</em> to save time with things like modals and the home page carousel.  Lastly, I made the backend using MySQL but ended up switching it to Postgres before hosting.  I did this because Heroku natively supports Postgres DBs, and because I wanted to learn Postgres.</p>
+            <p>For security reasons, I didn't want passwords being stored as raw text on my server.  I had to learn how data encryption and hashing works for that.  There also ended up being a lot of time spent getting more comfortable with both Redux and TypeScript, and I decided to learn <em>styled-components</em> this time around to help keep the styling more organized, and <em>react-bootstrap</em> to save time with things like modals and the home page carousel.  Lastly, I made the backend using MySQL but ended up switching it to Postgres before hosting.  I did this because Heroku natively supports Postgres DBs, and because I wanted to learn Postgres.</p>
             
             <h2>Final thoughts:</h2>
             <p>With this project I wanted to create something that could conceivably be a real-world application.  While I didn't get to implement every feature I had in mind, such as persistent user shopping carts and automated discounts during sales events, I think the finished product is very polished, functional, and user-friendly.</p>
@@ -39,7 +39,7 @@ const projectData = [
         id: "react-game",
         desc: `
             <h2>Technologies used:</h2>
-            <p>Javascript, React, CSS</p>
+            <p>JavaScript, React, CSS</p>
 
             <h2>The goal:</h2>
             <p>After learning the basics of React, I wanted to see if I could use it to make a video game.  As it turns out, I can.</p>
@@ -101,7 +101,7 @@ const projectData = [
         id: "portfolio-site",
         desc: `
             <h2>Technologies used:</h2>
-            <p>Typescript, React, React-router, Node, Express, CSS</p>
+            <p>TypeScript, React, React-router, Node, Express, CSS</p>
 
             <h2>The goal:</h2>
             <p>I wanted to create a personal portfolio site that was unique, visually pleasing, fast, efficient, and would show off my skills with 
@@ -134,7 +134,7 @@ const projectData = [
         id: "third-strike",
         desc: `
             <h2>Technologies used:</h2>
-            <p>Javascript, React, React-router, JSON, CSS</p>
+            <p>JavaScript, React, React-router, JSON, CSS</p>
 
             <h2>The goal:</h2>
             <p>This is the first site I made purely for personal reasons.  It's an ongoing
@@ -168,11 +168,11 @@ const projectData = [
         id: "browser-extension",
         desc: `
             <h2>Technologies used:</h2>
-            <p>HTML, CSS, Javacript</p>
+            <p>HTML, CSS, JavaScript</p>
 
             <h2>The goal:</h2>
             <p>The data I needed for my 3rd Strike app was only available in tables on one website, and was stored on a private database.  I decided to make a 
-            web scraping extension using Javascript that I could use to format and download the data into a JSON file.  There were almost 80 JSON files worth of data, so scraping 
+            web scraping extension using JavaScript that I could use to format and download the data into a JSON file.  There were almost 80 JSON files worth of data, so scraping 
             the site seemed like the most time efficient option.</p>
 
             <h2>Obstacles overcome:</h2>
@@ -195,13 +195,13 @@ const projectData = [
         alt:
             'A video player with "Big Buck Bunny" playing on it.  The video is not in fullscreen and there is a button below it for choosing a different video file',
         caption:
-            "A video player made with HTML5 and Javascript.  Features fullscreen functionality and responsive controls.",
+            "A video player made with HTML5 and JavaScript.  Features fullscreen functionality and responsive controls.",
         site: "https://codepen.io/gregorib/full/vvReVG",
         repo: "https://github.com/gregoriB/custom-HTML5-video-player-Javascript",
         id: "video-player",
         desc: `
             <h2>Technologies used:</h2>
-            <p>HTML5, CSS, Javascript</p>
+            <p>HTML5, CSS, JavaScript</p>
 
             <h2>The goal:</h2>
             <p>Considering how lacking the built-in browser video player is, I thought it would be a good idea to make my own in case I need one in the future.</p>
@@ -233,7 +233,7 @@ const projectData = [
         id: "drawing-app",
         desc: `
             <h2>Technologies used:</h2>
-            <p>HTML5, CSS, Javascript</p>
+            <p>HTML5, CSS, JavaScript</p>
 
             <h2>The goal:</h2>
             <p>I wanted to make something interactive with HTML5 canvas.</p>

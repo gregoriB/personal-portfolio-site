@@ -38,7 +38,7 @@
     margin-left: 2vw;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .about-me {
         width: 90vw;
         margin: 0 auto;
@@ -76,7 +76,7 @@
     }
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 1301px) {
     .about-me.item-enter .about-me-container {
         opacity: 1;
         transform: translateX(100vw);

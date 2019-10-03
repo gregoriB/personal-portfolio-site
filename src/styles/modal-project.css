@@ -62,10 +62,10 @@
 }
 
 .modal-article .date {
-    font-size: .9vw;
+    font-size: 0.9vw;
     text-shadow: none;
     text-align: center;
-    margin: .5vw 0;
+    margin: 0.5vw 0;
 }
 
 .modal-article * {
@@ -74,7 +74,7 @@
 
 .close-button {
     user-select: none;
-    font-family: cursive, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: cursive, "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,24 +84,29 @@
     font-weight: bold;
     cursor: pointer;
     transition-property: color, background-color;
-    transition: .1s;
+    transition: 0.1s;
     line-height: 1vw;
     text-align: center;
-    clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%);  /* top-left, top-right, bottom-right, bottom-left */
+    clip-path: polygon(
+        0% 1%,
+        100% 0%,
+        99% 99%,
+        1% 97%
+    ); /* top-left, top-right, bottom-right, bottom-left */
 }
 
 .project-modal .close-modal {
     position: absolute;
-    top: -.5vw;
+    top: -0.5vw;
     right: 1.1vw;
     background-color: rgba(255, 255, 255, 0);
-    text-shadow: 0 0 .1rem var(--shadow);
+    text-shadow: 0 0 0.1rem var(--shadow);
 }
 
 .close-button.close-modal:active {
     color: white;
     background-color: white;
-    transform: scale(.9);
+    transform: scale(0.9);
 }
 
 .article-content {
@@ -127,15 +132,15 @@
     text-align: center;
     margin: 0;
     width: 100%;
-    transition: box-shadow .1s;
+    transition: box-shadow 0.1s;
     box-shadow: 0 0 2px var(--shadow);
 }
 
 .article-content figcaption {
-    font-size: .8vw;
+    font-size: 0.8vw;
     margin: 1vw 0;
     font-style: italic;
-    letter-spacing: .05vw;
+    letter-spacing: 0.05vw;
     text-align: justify;
 }
 
@@ -147,7 +152,7 @@
 .modal-article h2 {
     font-weight: bold;
     margin: 2vw 0;
-    margin-bottom: .5vw;
+    margin-bottom: 0.5vw;
 }
 
 .modal-article p {
@@ -158,7 +163,7 @@
 }
 
 .modal-article span {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     font-size: 1.3vw;
     display: inline-block;
     margin: 2vw 0;
@@ -179,11 +184,10 @@
     text-shadow: 0 0 1px var(--dark);
     border-radius: 10px;
     border: thin solid var(--dark);
-    transition: color .2s, background-color .2s;
+    transition: color 0.2s, background-color 0.2s;
     text-align: center;
-    letter-spacing: .05vw;
+    letter-spacing: 0.05vw;
 }
-
 
 .project-modal .article-content .project-links a:active {
     background-color: var(--medium);
@@ -201,21 +205,26 @@
     background: var(--colorful-lite);
 }
 
-@media (min-width: 1101px) {
+@media (min-width: 1301px) {
     .modal-article {
-        scrollbar-width: .6vw;
+        scrollbar-width: 0.6vw;
     }
 
     .modal-article::-webkit-scrollbar {
-        width: .6vw;
+        width: 0.6vw;
     }
-    
+
     .modal-article::-webkit-scrollbar-thumb:hover {
-        background: var(--colorful-bright); 
+        background: var(--colorful-bright);
     }
 
     .project-modal .main {
-        clip-path: polygon( 0% 1%, 100% 0%, 99% 99%, 1% 97%);  /* top-left, top-right, bottom-right, bottom-left */
+        clip-path: polygon(
+            0% 1%,
+            100% 0%,
+            99% 99%,
+            1% 97%
+        ); /* top-left, top-right, bottom-right, bottom-left */
         padding-right: 1vw;
     }
 }
@@ -224,7 +233,7 @@
     .modal .close-modal:hover {
         color: white;
         background-color: rgba(255, 255, 255, 0.5);
-        transition: .1s;
+        transition: 0.1s;
         transition-property: background-color, color, text-shadow;
     }
 
@@ -232,7 +241,7 @@
         background-color: var(--dark);
         color: var(--colorful-medium);
         text-shadow: 0 0 1px var(--gray);
-        transition: .4s;
+        transition: 0.4s;
         transition-property: background-color, color, text-shadow;
     }
 
@@ -240,16 +249,17 @@
         background: var(--colorful-bright);
     }
 
-    .article-content .image img:hover, .image img:focus {
-        transition: .1s;
-        transition-delay: .3s;
+    .article-content .image img:hover,
+    .image img:focus {
+        transition: 0.1s;
+        transition-delay: 0.3s;
         box-shadow: 0 5px 10px var(--shadow);
         transform: scale(1.01);
         transition-property: transform, box-shadow;
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
     .project-modal {
         z-index: 3;
         margin: 0;
@@ -272,7 +282,6 @@
     .project-modal .main .content .modal-article {
         height: 100%;
     }
-    
 
     .project-modal .main .content header {
         display: flex;
@@ -356,10 +365,10 @@
     }
 
     .project-modal .article-content .project-links a {
-        font-family: 'Amita', cursive;
+        font-family: "Amita", cursive;
         margin: 0 3vw;
     }
-    
+
     .project-modal .article-content .description {
         margin-bottom: 2rem;
         max-width: 85vw;
@@ -375,12 +384,12 @@
         background-color: var(--colorful-medium);
         z-index: 3;
         opacity: 0;
-        transition: opacity .5s;
+        transition: opacity 0.5s;
     }
-    
+
     .modal-article.inactive .hide-scroll {
         opacity: 1;
-    }    
+    }
 
     .modal-article::-webkit-scrollbar {
         width: 1.5vw;
