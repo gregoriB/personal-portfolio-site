@@ -5,8 +5,6 @@
     <img src="https://raw.githubusercontent.com/gregoriB/personal-portfolio-site/master/src/images/portfolio-site.jpg" alt="portfolio site"/>
 </div>
 
-#### [Check it out here!](https://www.brandon-gregori.com)
-
 <div style='width: 900px; margin: 0 auto;'>
 
 Made with React, TypeScript, CSS, and AWS Lambda functions for using NodeMailer. Check out the `node-express-server` branch for a Node and Express server version.
